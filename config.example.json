@@ -1,0 +1,19 @@
+{
+  "site_title": "Qiaomu WeChat Library",
+  "output_dir": "site_output",
+  "state_file": ".qiaomu-state.json",
+  "build_notebooklm_bundles": true,
+  "notebooklm_dir_name": "notebooklm",
+  "bundle_mode": "incremental",
+  "max_bundle_articles": 25,
+  "max_bundle_words": 120000,
+  "publish_mode": "github-pages",
+  "targets": [
+    {
+      "knowledge_base_id": "kb_example",
+      "folder_id": "folder_example",
+      "folder_name": "WeChat Favorites",
+      "knowledge_base_name": "IMA Knowledge Base"
+    }
+  ]
+}

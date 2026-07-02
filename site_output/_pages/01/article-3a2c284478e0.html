@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>什么是构网型储能变流器下垂控制？</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/2UlhQJ-_3rIUudroLw4w9g">原文链接</a></p>
+      <h1>什么是构网型储能变流器下垂控制？</h1>
+      <p>武工谈储能电力</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/mmbiz_jpg/pzp7hTibIHKEs0v9KWJlslxlds5y70W066VU9Rt9AxELibZianmdialicTayAiceb3vNlnic0fiaKky39HKicLE1n2Yw8YaVnqodZecnSCicHyBOGPEfo/0?wx_fmt=jpeg" alt="什么是构网型储能变流器下垂控制？ cover">
+    </header>
+    <article><p>下垂控制是一种经典的构网型控制策略，通过调节功率与频率、电压的关系实现系统稳定。其基本原理是：</p>
+<p>传统下垂控制包含两个控制环：</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/pzp7hTibIHKFcj36gEqicoILfe50UGyyagAkBm4DYEbwe9Ev2DseL6yl5JcGZeRjysWENdHHhbpbyFficZpiaibRIBsdQk1PGTibLJ3wZ0BZUziaxM/640?wx_fmt=jpeg" /></p>
+<p>下垂控制的工作原理：</p>
+<p>1、有功-频率调节（P-f）：当系统频率下降时，PCS自动增加有功功率输出；频率上升时减少输出。</p>
+<p>2、无功-电压调节（Q-U）：当母线电压下降时，PCS自动增加容性无功输出补偿电压压降。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/pzp7hTibIHKFMonRxrnsxR3RyDBDGTJicibfhE9iauyqSKbN4GGEibibEYhI28cp0S40bcH7XToPbs0HwvVYn1ia1SS33a5hHOiaMROwVlxhflORjqY/640?wx_fmt=jpeg" /></p>
+<p>当感性负载启动导致母线电压下降时，PCS依据该物理模型自动增加容性无功输出，补偿电网电压压降。</p>
+<p>Kq物理意义等同于励磁系统的调差系数，决定了电压偏差与无功输出的线性关系。利用积分环节对电压偏差的累积效应，平滑调整PCS的无功基准点，将关键母线电压无差拉回至目标值，彻底消除一次调压固有的稳态偏差。</p>
+<p>3、自主均分能力：多台PCS可依据自身容量比例自动分担系统的无功需求，无需通信互联即可避免并联系统中的无功环流问题。</p></article>
+  </main>
+</body>
+</html>

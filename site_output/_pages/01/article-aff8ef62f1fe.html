@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>高压级联储能：为什么巨头都在布局这条技术路线？</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/Nh2BpH30A-YjU58zZ7TieQ">原文链接</a></p>
+      <h1>高压级联储能：为什么巨头都在布局这条技术路线？</h1>
+      <p>储能e家</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/mmbiz_jpg/Er2CNPYOllFiaaez1wY6Aib8yhGG75l2iazAsldn6PHzxpSu9wEVbfSsNyNz3EyrkPzskDn2VibzlhV21mFLjmCvYBkonibWiaqcKNCWQ405fB6UM/0?wx_fmt=jpeg" alt="高压级联储能：为什么巨头都在布局这条技术路线？ cover">
+    </header>
+    <article><p><img class="rich_pages wxw-img" data-s="300,640" data-w="143" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" data-ratio="0.6293706" data-aistatus="1" width="100%" src="https://mmbiz.qpic.cn/mmbiz_png/t25nCTwB91rDFyysqL2q9AIa9zrYvdZiars1LzARia4UBRyj45lm0uxdvWBeyDuzmu9YbWMg0CCCtubIAbmN4VPA/640?wx_fmt=png"></p>
+<p><strong>点击蓝字 关注我们</strong></p>
+<p><img data-ratio="0.8534483" width="100%" data-aistatus="1" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" class="rich_pages wxw-img" data-s="300,640" data-w="116" src="https://mmbiz.qpic.cn/mmbiz_png/t25nCTwB91rDFyysqL2q9AIa9zrYvdZiaIdLRjiaMnMyJSpJXnSKrhF4fZibzuMzdgslia3Rv8icGyKNOoWSac8XibzA/640?wx_fmt=png"></p>
+<p>你好，欢迎来到储能e家！储能知识，我们只讲干货！</p>
+<p><img data-w="640" data-s="300,640" class="rich_pages wxw-img" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" data-aistatus="1" width="100%" data-ratio="0.221875" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/MVPvEL7Qg0GnB0HoAz6et8CCnxyj1ZuTbibLicgffRjlcMdVIdN51jg8QUEWdeDSfJYJ6p3qeJQdGMo4rpVa2jPA/640?wx_fmt=gif"></p>
+<p>本文字数：<strong>2641字</strong></p>
+<p>阅读时间：<strong>8分钟</strong></p>
+<p>一台35kV的储能系统，居然不用变压器？</p>
+<p>去年某头部厂商展出一款高压级联产品，业内人围着拓扑图看了半小时——传统方案里那个占地几吨、损耗不小的工频变压器，真的没了。</p>
+<p>怎么做到的？今天用一张图，把这套技术拆明白。</p>
+<p><img data-aistatus="1" class="rich_pages wxw-img" data-ratio="0.9898148" width="100%" data-s="300,640" data-w="1080" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" src="https://mmbiz.qpic.cn/mmbiz_png/Er2CNPYOllESAH6EUpmHGrmicPLFk2rwfnS4yiaUiaPqJLBSjPDCpvam9p0zBWibhfDibC8ibus9pTdUKWHWoRH9VfmtqyEl8icApQESSU4g15tDE4/640?wx_fmt=png"></p>
+<p>高压级联拓扑图</p>
+<p><strong>01</strong></p>
+<p><strong>先看整体：这是什么电路？</strong></p>
+<p>这是一个典型的 三相级联 H 桥（CHB）拓扑，是工商业高压储能最主流的方案之一。</p>
+<p>它的核心思想是：<strong>用很多个低压小模块，在交流侧 “串联” 起来，直接拼出高压交流电，不用大变压器</strong>。</p>
+<p>你可以把它想象成：</p>
+<p>传统方案：一堆电池 → 1 个大逆变器 → 变压器升压 → 电网</p>
+<p>级联方案：一堆电池分成很多组 → 每组一个小逆变器 → 全部串联 → 直接高压并网</p>
+<p><strong>02</strong></p>
+<p><strong>从左到右，逐部分拆解</strong></p>
+<p><img data-aistatus="1" data-w="1080" data-ratio="0.9916667" data-s="300,640" class="rich_pages wxw-img" width="100%" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" src="https://mmbiz.qpic.cn/mmbiz_png/Er2CNPYOllG0URqobSoZRIFwGorkWrl1dicDQQLYW7NibUYwbJPOEcaDSP0jwvyxDEsjIQoVP1giaYx5aSiclTjDRc8lNGhsE7IebLquKKHdVl0/640?wx_fmt=png"></p>
+<p>三相交流电网</p>
+<ol>
+<li>最上方：三相交流电网（Vsa, Vsb, Vsc）</li>
+</ol>
+<p>这三根线，就是我们要接入的 10kV/35kV 三相交流电网。</p>
+<p>储能系统最终就是要把直流电，转换成和这三根线同频同相的交流电送进去。</p>
+<p><img data-s="300,640" data-w="616" class="rich_pages wxw-img" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" width="100%" data-aistatus="1" data-ratio="0.9772727" src="https://mmbiz.qpic.cn/sz_mmbiz_png/Er2CNPYOllGE3BGp0yqTm6ibDGWiavtbRDibBcB1utV2Lia9vCON3voej9iaEVoJYl4x5Wg0KoUxTIAh2KxlImMnldp2HoVqrGU9AlAAy2ibmwV5s/640?wx_fmt=png"></p>
+<p>滤波电感</p>
+<ol>
+<li>每个相的前端：电感L和电阻R</li>
+</ol>
+<p>每个相都串了一个 L,R，这是滤波电感（也叫网侧电感）。</p>
+<p>作用：</p>
+<p>平滑电流波形，让注入电网的电流更干净；</p>
+<p>抑制电流冲击，保护后面的模块；</p>
+<p>限制故障电流，提升系统稳定性。</p>
+<p><img data-aistatus="1" data-ratio="0.9962963" class="rich_pages wxw-img" data-s="300,640" width="100%" data-w="1080" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" src="https://mmbiz.qpic.cn/sz_mmbiz_png/Er2CNPYOllFVc6EQj9Cibyg829lEjMQdSOadsVzzLmgyIpsoibz2EJ0MLN0vFxpNVZSg8gkWBkmhccBG2eibA3yWLOUEwduSX8dY8VrvKYnGHM/640?wx_fmt=png"></p>
+<p>H桥模块</p>
+<ol>
+<li>每个相的核心：N 个串联的 H 桥模块</li>
+</ol>
+<p>这是整个拓扑最关键的部分，我们拿 A 相来举例（B、C 相结构完全一样）：</p>
+<p>A 相有 N 个一模一样的模块，从上到下串起来，标了 1、2…N。</p>
+<p>每个模块都是一个 H 桥逆变器 + 电池簇 / 电容。</p>
+<p>单个 H 桥模块是怎么工作的？</p>
+<p>每个 H 桥由 4 个功率管（图里画的 4 个开关符号）组成。</p>
+<p>它的直流侧，接的是电池簇（储能电池），旁边那个小电容是滤波电容，用来稳定电压。</p>
+<p>它的交流侧，可以输出三种电平：+Vdc、0、-Vdc（Vdc 是电池簇的电压，比如几百伏）。</p>
+<p>多个模块串起来，怎么得到高压？</p>
+<p>把每个模块的交流输出端首尾相接，电压是叠加的。</p>
+<p>比如：每个模块输出 ±500V，如果有 10 个模块串联，理论上就能得到 ±5000V 的高压，叠加成接近正弦波的阶梯波。</p>
+<p>这样一来，N 个模块的电压加起来，就可以直接达到 10kV/35kV 的电网电压，不需要工频变压器升压。</p>
+<ol>
+<li>三相输出：Vak, Vbk, Vck</li>
+</ol>
+<p>这三个电压，就是 A、B、C 三相级联模块串联后的输出电压。</p>
+<p>再经过前面的L,R滤波，就能得到标准的三相交流电，直接并入电网。</p>
+<p><strong>03</strong></p>
+<p><strong>一个周期怎么拼出正弦波</strong></p>
+<p>我用一个工频周期（50Hz，20ms）的 4 个关键阶段，给你拆解一下这个高压级联拓扑，是怎么 “拼出” 正弦波的。</p>
+<p>为了好理解，我们只看其中A 相的 N 个串联模块。</p>
+<p>核心原理先记住：</p>
+<p><strong>每个 H 桥模块，能输出三种状态：+Vdc、0、-Vdc</strong>。</p>
+<p>N 个模块串联，就像搭积木，通过不同模块的组合，叠加出一个接近正弦波的阶梯状高压波形。</p>
+<p>下面以 A 相输出正半周为例，带你走完一整个周期。</p>
+<p><strong>阶段 1：正弦波上升沿（从 0 开始爬坡）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压从 0V 开始，慢慢往上增加。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>让第 1 个模块输出+Vdc，其他所有模块都输出0V。</p>
+<p>此时总输出电压 = Vdc。</p>
+<p>随着电压需求增加，我们让第 2 个模块也输出+Vdc，其他模块保持0V。</p>
+<p>此时总输出电压 = Vdc + Vdc = 2Vdc。</p>
+<p>以此类推，每往上加一级电压，就多让一个模块输出+Vdc。</p>
+<ul>
+<li><strong>效果</strong>：电压像上台阶一样，一级一级往上爬，模拟正弦波的上升曲线。</li>
+</ul>
+<p><strong>阶段 2：正弦波正半周峰值附近（平顶阶段）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压达到正半周的最高点，并维持一段时间。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>让所有 N 个模块都输出+Vdc。</p>
+<p>此时总输出电压达到最大值：N × Vdc。</p>
+<p>这个电压要略高于电网峰值电压，这样才能实现能量双向流动。</p>
+<ul>
+<li><strong>效果</strong>：电压波形达到最高点，形成一个平台，对应正弦波的峰值部分。</li>
+</ul>
+<p><strong>阶段 3：正弦波下降沿（从峰值回落）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压从最高点，慢慢降到 0V。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>从第一个模块开始，依次把它们的状态从+Vdc切换到0V。</p>
+<p>比如，关掉第 1 个模块，输出电压就从N×Vdc降到(N-1)×Vdc。</p>
+<p>关掉第 2 个模块，电压再降到(N-2)×Vdc。</p>
+<p>直到所有模块都输出0V，总电压就回到了 0 点。</p>
+<ul>
+<li><strong>效果</strong>：电压像下台阶一样，一级一级往下掉，模拟正弦波的下降曲线。</li>
+</ul>
+<p><strong>阶段 4：正弦波负半周（电压反向）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压变成负值，完成一个完整的交流周期。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>这个过程和阶段 1、2、3 完全一样，只是把模块的输出状态换成了-Vdc。</p>
+<p>先让一个模块输出-Vdc，电压为-Vdc。</p>
+<p>再让两个模块输出-Vdc，电压为-2Vdc。</p>
+<p>直到所有模块都输出-Vdc，达到负半周峰值，再依次关掉，回到 0 点。</p>
+<ul>
+<li><strong>效果</strong>：完成负半周的阶梯波形，和正半周对称。</li>
+</ul>
+<p><strong>总结一下：为什么要这么做？</strong></p>
+<ol>
+<li>
+<p><strong>波形质量高</strong>：N 个模块越多，阶梯数就越多，拼出来的波形就越像真正的正弦波，谐波非常小，对电网友好。</p>
+</li>
+<li>
+<p><strong>高压直接输出</strong>：不用笨重的工频变压器，靠模块串联就能 “堆” 出 10kV/35kV 高压，效率更高、成本更低。</p>
+</li>
+<li>
+<p><strong>控制灵活</strong>：每个模块都可以独立控制，既能并网发电，也能吸收电能给电池充电，还能参与电网调频调压。</p>
+</li>
+</ol>
+<p><strong>04</strong></p>
+<p><strong>四大技术优势</strong></p>
+<p><strong>原因一：模块化、可扩展性强</strong></p>
+<p>想做更高电压？加几个模块就行。</p>
+<p>容量不够？每个模块的电池扩容就行。</p>
+<p>模块坏了可以旁路，不影响整机工作，可靠性高。</p>
+<p><strong>原因二：输出波形质量高，谐波小</strong></p>
+<p>多个模块叠加出来的阶梯波，和正弦波非常接近，不用复杂的滤波就能满足电网要求。</p>
+<p><strong>原因三：省去了笨重的工频变压器</strong></p>
+<p>直接用模块串联得到高压，省了成本、省了空间、省了损耗。</p>
+<p><strong>原因四：电池簇独立控制，寿命更长</strong></p>
+<p>每个电池簇都有自己的 H 桥，可以单独均衡，减少环流，延长电池寿命。</p>
+<p><strong>05</strong></p>
+<p><strong>行业趋势观察</strong></p>
+<p>技术路线没有绝对的好坏，只有场景适配。</p>
+<p>高压级联的优势在<strong>高压、大功率、模块化场景</strong>；中小功率场景，传统方案依然有其价值。</p>
+<p>关键是——看懂原理，才能选对路线。</p>
+<p>如果这篇对你有用，顺手转发给正在选技术方案的同事。</p>
+<p>原创不易，转载请联系授权。</p>
+<p><strong>END</strong></p>
+<p><strong>（关注我们，获取更多储能破局之道）<br />
+ 原创不易，转载请联系授权</strong></p></article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>英伟达发布 AIDC 储能认证标准：10大指标划定准入底线，BESS成核心调节单元</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/-DvFeyiKyvb_zTkEY9Th8Q">原文链接</a></p>
+      <h1>英伟达发布 AIDC 储能认证标准：10大指标划定准入底线，BESS成核心调节单元</h1>
+      <p>储能与电力市场</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/nJIHJiauQqnxibRIELQDsub98wUILPZEBa2GKmSeF5W7ts4165INbHHuTjlRxjbHqMjs5SWOcaxReDZdFXNmFVuKETic5oaMpLUx08lzLChOec/0?wx_fmt=jpeg" alt="英伟达发布 AIDC 储能认证标准：10大指标划定准入底线，BESS成核心调节单元 cover">
+    </header>
+    <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/UlFs2V2deGGKEDibhk7Eia22LDrNLxB6OgxVpll7E3b0mibBZia8uXbfbUsDemdSQhPzJ5VCQ9X8EPp3zQWJ5kCafQ/640?wx_fmt=gif&amp;from=appmsg" /></p>
+<p>「储能与电力市场」获悉，近日，英伟达发布面向AIDC的《储能系统自我认证指南》。定义了储能系统的应用价值、强制性能指标、完整资质认证流程与全维度准入要求，适用于英伟达AIDC配套储能厂商。</p>
+<p>英伟达明确：通过本指南自我认证仅代表储能交流侧控制性能达标，不直接等同于全站稳定运行；但若无法在SCR、阻抗和负载包络内保持稳定运行，均判定认证不通过。</p>
+<p>在AIDC场景下，BESS不再仅作为备用电源，而是深度参与电力系统的实时调节。其核心作用包括：</p>
+<ul>
+<li>
+<p><strong>AI负荷平滑</strong>：作为设施级缓冲，吸收或注入功率以平抑GPU集群毫秒级的功率骤变，保护上游发电和电网设备。</p>
+</li>
+<li>
+<p><strong>扰动穿越与支撑</strong>：在电网电压跌落或频率波动时保持运行，并协助系统恢复，确保AIDC负载在暂态过程中不脱网。</p>
+</li>
+<li>
+<p><strong>多模式运行灵活性</strong>：支持并网、孤岛及与柴油发电机协同等多种模式，并具备黑启动能力，提升供电可靠性。</p>
+</li>
+<li>
+<p><strong>加速并网进程</strong>：通过BESS的调节能力，缓解电网接入审批中的容量和稳定性顾虑，缩短AIDC项目的并网周期。</p>
+</li>
+</ul>
+<p>基于上述作用，英伟达在指南中提出了储能配套AIDC必须满足10项硬性准入门槛：</p>
+<p>自主孤岛运行能力：PCS须稳定过渡到孤岛模式并维持运行。失去外部电压参考后，电压和频率调节不得超过规定性能限制。</p>
+<p>AI缓冲动态响应：展示主动爬坡率平滑能力，以缓冲AI负载突然波动对电源的冲击。系统须在快速功率转换和正常负载条件下保持定稳定，不得出现振荡或控制“追逐”。</p>
+<p>电流极限行为：在建模栅格条件下，不存在不稳定振荡或不受控的电压崩溃。</p>
+<p>低/高电压穿越：以IEEE 2800穿越行为为基准，有效用曲线可取代。</p>
+<p>无功功率支撑：在PCS电流限值内通过Q提供电压支撑，记录Q优先级规则。</p>
+<p>无缝并网离网切换：展示受控切换，不得失步或出现不稳定控制模式追逐。过渡性能须使用ANSI C84.1电压偏差和IEEE 2800动态电压/频率穿越进行量化。</p>
+<p>黑启动：展示对死母线通电并稳定进行V/f调节的黑启动能力。</p>
+<p>遥测与控制：实时报告V、I、P、Q、f、SOC、报警和限值状态。须支持3个并发Modbus TCP连接，所有节点以1秒频率轮询。SOC值须包含在所有遥测报告中。</p>
+<p>控制透明度：提供EMT模型及阻抗/导纳扫描验证+ Nyquist/无源性工件。须符合NERC可靠性指南。</p>
+<p>需求响应调度能力：具备定义的响应时间、爬坡限制和SOC储备逻辑。</p>
+<p>此外，厂商完成全部12项硬件实测+仿真比对方可提交认证，指南给出明确测量精度红线：仪器方面，要求电压±0.2%、电流±0.2%、有功/无功功率 ±0.5%、频率 ±0.01Hz等。</p>
+<p>核心认证测试包含：遥测验证与数据完整性、电网自适应电压和频率调节（孤岛）、当前极限特征性（P优先、Q优先、混合优先级）、AI缓冲代理测试（快速斜坡跟踪）、AI缓冲EMT验证（基于模型，必须）、需求响应调度性能、低电压/高电压穿越功能测试（硬件或HIL）、无缝并离网切换、带发电机的孤岛运行（基于模型）、黑启动、联合任务下SOC飘移与能力管理、控制透明度包测评。</p>
+<p>除了技术资格外，储能厂商需提交最近12个月期间PCS交付量；24个月内达到10倍扩产的可信可执行的计划等资料。</p>
+<p>看个广告休息一下</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/nJIHJiauQqnw9IeTWUqA11oo5hThgskicTt13mh4Msbv9RMKSibRJXTtAXRAxYjwod88N4nKYyB4DgN8PhqiaicorQhnFAXibH6NIxK6NWxXYWJpc/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p>原文如下：</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/nJIHJiauQqnzJARVCsNLZrThaF8JwtgeZJ0EC4xLv466VJUQFpv3xdFuCzNQA4h619vIulicA7iaCKSzGkibKKCy3142PK1JiaePyicrT5x8zzwGw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/nJIHJiauQqnwCUPeicedVDzicFpTDkyOebAPSyib5IqWW5TyoYUunO3SmpQe0iag6lLHrIdU0fiawB4seJMw9387VmIVhE3hLuYYTbGjp4Via9BcvY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/nJIHJiauQqnzHgvYZDLBAMlrRgp5xUZf1yUxynicA5AxUnjXtgInq3gAwicaC0M5cfGp5A9mmxTl5DxrCB2bU81sjiawGy7uVQw5SiaFWGHUXZzc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/nJIHJiauQqnwlctnNQP7gLnTx0Dc9OUcDcJyibOwPFKrScmqtmFOR0PuwicfK9OtHNbeIKCmqWRHpRK1ibP0Oeia1Z8rRRNq3QOUYmjWCp7gE9nI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>责任编辑：尹思琦</p>
+<p>审核：五月</p>
+<p>欢迎订阅寻熵研究院研究报告《中国储能市场2025年分析与2026年展望》《2025年储能市场招投标及价格全景分析》《2025年储能市场政策及典型收益模式分析》《中国用户侧储能发展报告2025》《中国独立储能发展报告2025》。</p>
+<p>可联系「储能与电力市场」小助手，储储，获取相关报告信息。</p>
+<p>联系电话：<strong>15801531578</strong>（微信同号）</p>
+<p>微信账号：<strong>ESSpartners</strong></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/nJIHJiauQqnwPpHRnIub7mUN6ziaJjk14c13uT9rMI3RkTr9vficCicosT2D03OQhUzVmzutY1W5mUlRgO9czmlhNsG5iae3nnicFBA6yYeZWwcyc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><a href="">#英伟达</a><a href="">#AIDC</a><a href="">#储能系统</a></p></article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>欧洲调频架构详解 惯量/FFR/FCR/aFRR/mFRR</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/FfvOD88NDGM7lOtYsBdmtQ">原文链接</a></p>
+      <h1>欧洲调频架构详解 惯量/FFR/FCR/aFRR/mFRR</h1>
+      <p>小6</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/mmbiz_jpg/zNhedSttJFlhl7LmBvbFfNjibKBweIib4KDD00Bd86wnAAibY99IfChsHPkVGwQHpVeBiaA7V7ibIwGzPusaye2zqDEZrZavicxGZjIWORBkuxicjs/0?wx_fmt=jpeg" alt="欧洲调频架构详解 惯量/FFR/FCR/aFRR/mFRR cover">
+    </header>
+    <article><p>电力系统的频率需要维持50Hz，当发电功率和负载功率不平衡时，频率不稳定导致设备故障、甚至大面积停电。因此，需要多层级的调频措施</p>
+<p>整理惯量响应/FFR快速频率储备/FCR一次调频/aFRR二次调频/mFRR三次调频相关内容供参考</p>
+<h3></h3>
+<p><strong>Part 01 机械/转动惯量响应</strong> ###</p>
+<p><strong>原理：</strong>同步发电机（火电、水电）转子有巨大的转动惯量，当系统发生大扰动（机组跳闸，短路），转子释放/吸收能量，抑制频率快速变化，这是<strong>自动、瞬时</strong>的物理响应</p>
+<ul>
+<li>
+<p>发电功率＜用电功率→频率下降→转子释放旋转动能→输出有功，抑制频率下降</p>
+</li>
+<li>
+<p>发电功率＞用电功率→频率上升→转子吸收旋转动能→吸收有功，抑制频率上升</p>
+</li>
+</ul>
+<p><strong>作用：</strong>给后续<strong>调频</strong>措施<strong>争取反应时间</strong>，防止频率瞬间变化导致系统崩溃</p>
+<p><strong>应用场景：</strong>大扰动如机组大规模跳闸，负载大规模变化引起频率瞬间变化</p>
+<h3>Part 02 FFR快速频率储备</h3>
+<p><strong>原理：</strong>介于惯量响应和一次调频之间的快速响应，当频率偏差超过触发阈值时，快速功率响应。本地自主闭环，无需调度下发指令</p>
+<p><strong>作用：</strong>当系统惯量较小，FFR作为惯量响应的补充，快速减缓频率变化率</p>
+<p><strong>应用场景：</strong>惯量不足无法应对大扰动事件，需求短时大功率支撑，通常频率变化0.3\~0.5Hz（北欧规范）</p>
+<h3>Part 03 FCR频率控制储备/一次调频</h3>
+<p><strong>原理：</strong>同步机组的调速器通过下垂控制，当频率超过死区时，自动调整出力以稳定频率。本地控制，无需调度中心指令</p>
+<ul>
+<li>
+<p>频率下降 → 增加进汽 / 进水 → 多发有功</p>
+</li>
+<li>
+<p>频率上升 → 减少进汽 / 进水 → 少发有功</p>
+</li>
+</ul>
+<p><strong>作用：</strong>一次调频属于<strong>有差调节</strong>，只将频率调节至新的稳定点，无法调回50Hz</p>
+<p><strong>应用场景：</strong>日常小波动小扰动、负荷随机变化，通常频率变化超±0.01Hz</p>
+<h3>Part 04 aFRR自动频率恢复储备/二次调频</h3>
+<p><strong>原理：</strong>自动发电控制AGC，调度中心远程调整发电机组出力，将频率调整至50Hz，电网统一协调</p>
+<p><strong>作用：</strong>无差调节，频率最终重回50Hz</p>
+<p><strong>应用场景：</strong>一次调频后频率仍有偏差，由电网调度中心 AGC 系统统一统筹</p>
+<h3>Part 05 mFRR手动频率恢复储备/三次调频</h3>
+<p><strong>原理：</strong>基于<strong>负荷、能源、电价等关系</strong>，优化出力计划。不属于实时频率控制，属于<strong>调度计划层面</strong></p>
+<p><strong>作用：</strong><strong>追求最优调度，确保经济性和可靠性</strong></p>
+<p><strong>应用场景：</strong><strong>经济运行，优化负荷分配，中长期计划功率调度</strong></p>
+<h3>Part 06 调频过程说明</h3>
+<p><img class="rich_pages wxw-img" data-ratio="0.9957582184517497" data-w="943" height="470" data-type="png" width="472" data-imgfileid="100000341" data-aistatus="1" src="https://mmbiz.qpic.cn/mmbiz_jpg/zNhedSttJFm9Ty6S0stW9GOXibicObFDRPkexeHAfNX2p56XicmAGFibYcuaFHxWTfMFs6LbCUOlZv8PGhOhIGAduegqibg2pobwqqaVfu4HcUzo/640?wx_fmt=jpeg&amp;from=appmsg"></p>
+<p>结合上图，说明扰动发生后，频率在各措施的作用下的恢复过程</p>
+<p><strong>→</strong><strong>扰动发生，频率偏移</strong></p>
+<p><strong>→</strong><strong>惯量响应（瞬间缓冲）</strong></p>
+<p><strong>说明：</strong><strong>发电机组的转子转动惯量直接决定频率变化率，惯量越大，频率变化率越小，防止频率瞬间暴跌，越有利于后续的调频措施</strong></p>
+<p><strong>动作过程：</strong><strong>瞬时惯量响应，通常持续时间2-8s；构网型PCS通常10ms内响应，时间常数20s内</strong></p>
+<p><strong>→</strong><strong>FFR</strong><strong>快速频率储备（秒级紧急兜底）</strong></p>
+<p><strong>说明：</strong><strong>减缓频率变化率，可视为惯量响应的补充</strong></p>
+<p>动作过程：通常1\~2s内开始响应并完全激活，持续时间10s →→FCR一次调频（自主稳频） 说明：稳定到新的频率点（无法恢复至50Hz） 动作过程：通常2s内开始响应，到30s时完全激活，持续时间15min</p>
+<p><strong>→aFRR</strong><strong>二次调频（精准拉回50Hz）</strong></p>
+<p><strong>说明：</strong><strong>精确拉回50Hz</strong></p>
+<p><strong>动作过程：</strong><strong>从第30s时开始主导响应，到5min时完全激活，持续时间15min</strong></p>
+<p><strong>→mFRR</strong><strong>三次调频（最优分配）</strong></p>
+<p><strong>说明：</strong><strong>最优调度分配</strong></p>
+<p><strong>动作过程：</strong><strong>从第5min时开始响应，到12.5min时完全激活，持续时间5min至数小时</strong></p>
+<p><strong>频率调节是分层管控、且有交集的，通过相互协调配合，维持频率稳定</strong></p>
+<h3></h3>
+<p>###</p>
+<p>Part 07 对比和小结</p>
+<p>|   <strong>项目</strong>    |  <strong>转动惯量</strong>  |   <strong>FFR</strong>   |       <strong>FCR</strong>       |        <strong>aFRR</strong>         | <strong>mFRR</strong> |
+|-------------|------------|-------------|---------------------|-------------------------|----------|
+|   <strong>含义</strong>    |    固有特性    |    快速调频     |        一次调频         |          二次调频           |   三次调频   |
+|   <strong>原理</strong>    |转子转动惯量，物理响应 | 通常电力电子技术响应  |       调速器下垂控制       |        AGC自动发电控制        |  经济优化调度  |
+|   <strong>目的</strong>    |决定频率变化率RoCoF|减缓频率变化率RoCoF |稳定新的频率点，无法回到50Hz。有差调节|恢复到50Hz<br/><br/><strong>无差调节</strong>|  经济优化调度  |
+|  <strong>开始时间</strong>   |   无延时，瞬间   |   通常1-2s内   |        通常2s内        |          第30s           |  第5min   |
+|<strong>功率完全激活时间</strong> |   无延时，瞬间   |   通常1-2s    |        第30s         |          第5min          | 第12.5min |
+|  <strong>持续时间</strong>   |   通常2-8s   |    通常10s    |        15min        |          15min          | 5min至数小时 |
+|  <strong>控制方式</strong>   |   自动/本地    |    自动/本地    |        自动/本地        |       自动/调度（TSO）        |手动/调度（TSO）|
+|<strong>死区/</strong><strong>阈值</strong>|    大扰动     |北欧：0.3\~0.5Hz|       ±0.01Hz       |            无            |    无     |</p>
+<p>储能系统参与调频，表现形式均为发出或吸收有功功率，优势在于快速响应</p>
+<p>但储能系统无法提供机械/转动惯量，通过采用构网型PCS，在软件算法中模拟发电机特性，提供合成（虚拟）惯量，能量形式仍是通过电池和PCS以有功功率形式进行</p>
+<p>FFR对于储能系统的完全激活时间（达到指定功率的时间）要求比较高，北欧最快要求700ms，很多储能产品虽然采用MODBUS TCP 协议，也能做到300ms内，结合具体功率精度和标准要求，再细化探讨，技术层面没啥问题</p>
+<p>上述参数，各国会根据自身情况做适当调整，以实际为准</p>
+<p><strong>中英文名词对照</strong></p>
+<p><strong>输电系统运营商 TSO Transmisstion system operator</strong></p>
+<p>频率变化率 RoCoF Rate of Change of Frequency</p>
+<p>机械惯量 Mechanical Inertia</p>
+<p>合成惯量 Synthetic Inertia</p>
+<p>调速器 Governor </p>
+<p>下垂控制 Droop Control</p>
+<p>死区 Deadband</p>
+<p>快速频率储备 FFR Fast Frequency Reserve</p>
+<p>频率控制储备 FCR Frequency Containment Reserve</p>
+<p>或一次调频Primary Frequency Reserve</p>
+<p>自动发电控制 AGC Automatic Generation Control</p>
+<p>自动频率恢复储备 aFRR automatic Frequency Restoration Reserve</p>
+<p>或二次调频 Secondary Frequency Reserve</p>
+<p>手动频率恢复储备 mFRR manual Frequency Restoration Reserve </p>
+<p>或三次调频 Tertiary Frequency Reserve</p></article>
+  </main>
+</body>
+</html>

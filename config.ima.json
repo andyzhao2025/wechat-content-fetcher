@@ -1,0 +1,20 @@
+{
+  "site_title": "飞哥的知识库 - 01储能系统设计",
+  "output_dir": "site_output/ima-storage-design",
+  "state_file": ".qiaomu-state-ima-storage-design.json",
+  "build_notebooklm_bundles": true,
+  "notebooklm_dir_name": "notebooklm",
+  "bundle_mode": "incremental",
+  "max_bundle_articles": 25,
+  "max_bundle_words": 120000,
+  "base_url": "https://andyzhao2024.github.io/wechat-content-fetcher",
+  "publish_mode": "github-pages",
+  "targets": [
+    {
+      "knowledge_base_id": "qlRg6iKAYt3T2XBkH-T7Wl72UbYdcLN3B_AzJl5AxEg=",
+      "folder_id": "folder_7402509031189406",
+      "folder_name": "01储能系统设计",
+      "knowledge_base_name": "飞哥的知识库"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+.pytest_cache/
+__pycache__/
+*.pyc
+
+.qiaomu-state*.json
+
+site_output/*
+!site_output/_pages/
+!site_output/_pages/**

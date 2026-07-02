@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>能源调度算法MPC及场景的开源库</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/ZmBJe5lEmy67Whc3_HFCDQ">原文链接</a></p>
+      <h1>能源调度算法MPC及场景的开源库</h1>
+      <p>工策</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/OcflibThFlhScjdbpBPjyqClDqRmNmHWR1tbQVHuTuaD60MCqIzxg5g4HicZqU5UBIPOzHn0YticWdhF923TpMo9A/0?wx_fmt=jpeg" alt="能源调度算法MPC及场景的开源库 cover">
+    </header>
+    <article><h2>✅ <strong>1. 微电网（Microgrid）能源调度</strong></h2>
+<p><strong>1.1 MicrogridMPC（基础微电网 MPC）</strong><br />
+GitHub: https://github.com/AoufNihed/MicrogridMPC<br />
+<strong>说明</strong>：针对微电网的线性 MPC 控制示例，调度光伏、储能与负载。</p>
+<p><strong>1.2 ol‑ems（在线学习增强型 MPC）</strong><br />
+GitHub: https://github.com/vittpi/ol-ems<br />
+<strong>说明</strong>：结合在线负载/电价预测与 MPC，用于微电网能源管理控制。</p>
+<p><strong>1.3 microgrid‑dispatch‑simulator（微电网调度仿真）</strong><br />
+GitHub: https://github.com/leejt489/microgrid-dispatch-simulator<br />
+<strong>说明</strong>：微电网滚动时域调度仿真平台，可集成 MPC 调度策略。</p>
+<hr />
+<h2>✅ <strong>2. 建筑 / 社区 能源管理系统（EMS）</strong></h2>
+<p><strong>2.1 MPC‑based‑Energy‑Management‑System（经典 EMS MPC）</strong><br />
+GitHub: https://github.com/Nicolas1325/MPC-based-Energy-Management-System<br />
+<strong>说明</strong>：针对建筑/社区 EMS 的 MPC 能源调度示例代码，含储能、光伏与负载管理。</p>
+<p><strong>2.2 REC‑Energy‑Management‑MPC‑RL（智能 EMS：MPC + RL）</strong><br />
+GitHub: https://github.com/pierlucaanania/REC-Energy-Management-MPC-RL<br />
+<strong>说明</strong>：融合强化学习与 MPC 的能源管理，实现智能优化调度。</p>
+<hr />
+<h2>✅ <strong>3. 热能 / 热网络 能源调度</strong></h2>
+<p><strong>3.1 PyREmatcher（热网络 MPC 负载移位）</strong><br />
+GitHub: https://github.com/richplane/PyREmatcher<br />
+<strong>说明</strong>：MPC 控制用于热网络负载移位，可扩展至建筑热能调度。</p>
+<hr />
+<h2>✅ <strong>4. 通用 MPC 工具箱（可用于任意能源调度问题）</strong></h2>
+<p><strong>4.1 do‑mpc（通用 Python MPC 工具箱）</strong><br />
+GitHub: https://github.com/do-mpc/do-mpc<br />
+<strong>说明</strong>：功能完备的 MPC 框架，支持非线性 MPC、经济 MPC、稳健 MPC，适合开发能源调度模块。</p>
+<p><strong>4.2 pyMPC（轻量 Python MPC 库）</strong><br />
+GitHub: https://github.com/forgi86/pyMPC<br />
+<strong>说明</strong>：轻量级 MPC 库，可用于快速构建优化控制器（适用于小型能源系统调度）。</p>
+<hr />
+<h2>✅ <strong>5. 智能 / 学习型 MPC 能源调度</strong></h2>
+<blockquote>
+<p>注：这一类多与上面的场景交叉，本栏目补充突出<strong>学习增强</strong>部分。</p>
+</blockquote>
+<p><strong>5.1 ol‑ems（在线学习 + MPC；微电网）</strong><br />
+GitHub: https://github.com/vittpi/ol-ems<br />
+<strong>说明</strong>：结合在线学习、预测模型与 MPC 优化，用于微电网。</p>
+<p><strong>5.2 REC‑Energy‑Management‑MPC‑RL（MPC + 强化学习；社区 EMS）</strong><br />
+GitHub: https://github.com/pierlucaanania/REC-Energy-Management-MPC-RL<br />
+<strong>说明</strong>：强化学习增强的 MPC，用于提高调度效果与策略自适应能力。</p>
+<hr />
+<h2>📌 概览表（按场景 + GitHub 链接）</h2>
+<p>|    场景     |              算法 名称               |                            GitHub 链接                            |
+|-----------|----------------------------------|-----------------------------------------------------------------|
+|    微电网    |           MicrogridMPC           |            https://github.com/AoufNihed/MicrogridMPC            |
+|    微电网    |              ol‑ems              |                https://github.com/vittpi/ol-ems                 |
+|    微电网    |   microgrid‑dispatch‑simulator   |    https://github.com/leejt489/microgrid-dispatch-simulator     |
+|建筑 / 社区 EMS|MPC‑based‑Energy‑Management‑System|https://github.com/Nicolas1325/MPC-based-Energy-Management-System|
+|建筑 / 社区 EMS|   REC‑Energy‑Management‑MPC‑RL   | https://github.com/pierlucaanania/REC-Energy-Management-MPC-RL  |
+|    热网络    |           PyREmatcher            |            https://github.com/richplane/PyREmatcher             |
+| 通用 MPC 框架 |              do‑mpc              |                https://github.com/do-mpc/do-mpc                 |
+| 通用 MPC 框架 |              pyMPC               |                https://github.com/forgi86/pyMPC                 |</p>
+<hr /></article>
+  </main>
+</body>
+</html>
