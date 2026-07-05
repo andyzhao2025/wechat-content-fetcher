@@ -7,7 +7,7 @@
   "bundle_mode": "incremental",
   "max_bundle_articles": 25,
   "max_bundle_words": 120000,
-  "base_url": "https://andyzhao2024.github.io/wechat-content-fetcher",
+  "base_url": "https://andyzhao2025.github.io/wechat-content-fetcher",
   "publish_mode": "github-pages",
   "targets": [
     {

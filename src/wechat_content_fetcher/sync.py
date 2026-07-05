@@ -79,6 +79,8 @@ def run_ima_sync(config: SiteConfig, dependencies: SyncDependencies) -> SyncSumm
             target.knowledge_base_id,
             target.folder_id,
         )
+        if not source_articles and previous_snapshot is not None:
+            continue
         result = _render_target(
             config=config,
             target=target,
