@@ -9,6 +9,7 @@ import re
 
 import markdown as markdown_lib
 
+from wechat_content_fetcher.assets import localize_article_for_output
 from wechat_content_fetcher.config import SiteConfig
 from wechat_content_fetcher.models import FolderSnapshot, RenderedArticle, TargetConfig, WechatArticle
 from wechat_content_fetcher.slug import slugify
@@ -158,7 +159,7 @@ def _write_group_bundles(
     for index, chunk in enumerate(chunks, start=1):
         file_name = f"{group_slug}-part-{index:03d}.html"
         output_path = bundle_root / file_name
-        output_path.write_text(_render_bundle_page(group_name, chunk), encoding="utf-8")
+        output_path.write_text(_render_bundle_page(group_name, chunk, output_path), encoding="utf-8")
         bundle_files.append(file_name)
         article_ids.extend(record.rendered.article_id for record in chunk)
         if base_url:
@@ -175,10 +176,10 @@ def _write_group_bundles(
     }
 
 
-def _render_bundle_page(group_name: str, records: list[BundleArticleRecord]) -> str:
+def _render_bundle_page(group_name: str, records: list[BundleArticleRecord], output_path: Path) -> str:
     sections = []
     for record in records:
-        article = record.article
+        article = localize_article_for_output(record.article, output_path)
         body_html = markdown_lib.markdown(article.markdown_body)
         meta_parts = []
         if article.author:

@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from pathlib import Path
 
+from wechat_content_fetcher.assets import mirror_article_assets
 from wechat_content_fetcher.bundle import BundleArticleRecord, write_target_bundles
 from wechat_content_fetcher.config import SiteConfig
 from wechat_content_fetcher.fixtures import build_fixture_articles
@@ -125,6 +126,7 @@ def _render_target(
             article: WechatArticle = fetch_article(source_article)
         except WechatFetchError:
             continue
+        article = mirror_article_assets(config.output_dir, source_article.article_id, article)
         page_name = _build_unique_page_name(
             article_title=article.title,
             article_id=source_article.article_id,

@@ -24,6 +24,8 @@ class WechatArticle:
     publish_time: str
     cover_url: str
     markdown_body: str
+    asset_paths: dict[str, Path] = field(default_factory=dict)
+    local_cover_path: Path | None = None
 
 
 @dataclass(frozen=True)

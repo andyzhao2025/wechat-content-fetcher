@@ -5,6 +5,7 @@ from pathlib import Path
 
 import markdown as markdown_lib
 
+from wechat_content_fetcher.assets import localize_article_for_output
 from wechat_content_fetcher.models import RenderedArticle
 from wechat_content_fetcher.models import WechatArticle
 
@@ -43,6 +44,7 @@ def render_folder_index(output_path: Path, folder_title: str, articles: list[Ren
 
 
 def render_article_page(output_path: Path, article: WechatArticle) -> None:
+    article = localize_article_for_output(article, output_path)
     body_html = markdown_lib.markdown(article.markdown_body)
     cover_html = (
         f'<img src="{escape(article.cover_url)}" alt="{escape(article.title)} cover">'
