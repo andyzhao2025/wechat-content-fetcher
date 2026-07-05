@@ -1,5 +1,8 @@
 from pathlib import Path
 
+import pytest
+
+from wechat_content_fetcher.ima_client import IMAApiError
 from wechat_content_fetcher.config import SiteConfig
 from wechat_content_fetcher.models import FolderSnapshot, SourceArticle, SyncDependencies, TargetConfig
 from wechat_content_fetcher.sync import run_ima_sync
@@ -233,3 +236,37 @@ def test_run_ima_sync_keeps_previous_snapshot_when_ima_returns_empty(tmp_path: P
     state_text = config.state_file.read_text(encoding="utf-8")
     assert '"media-1"' in state_text
     assert '"favorites/title-alpha.html"' in state_text
+
+
+class QuotaExceededIMAClient:
+    def list_folder_articles(self, knowledge_base_id: str, folder_id: str):
+        raise IMAApiError(220021, "资料获取次数已达上限，请明天再尝试")
+
+
+def test_run_ima_sync_raises_when_ima_quota_is_exhausted(tmp_path: Path):
+    config = SiteConfig(
+        site_title="IMA Export",
+        output_dir=tmp_path / "site",
+        state_file=tmp_path / "state.json",
+        base_url="",
+        publish_mode="github-pages",
+        targets=[
+            TargetConfig(
+                knowledge_base_id="kb-1",
+                folder_id="folder-1",
+                folder_name="Favorites",
+                knowledge_base_name="Knowledge Base One",
+            )
+        ],
+    )
+
+    with pytest.raises(IMAApiError) as exc_info:
+        run_ima_sync(
+            config,
+            dependencies=SyncDependencies(
+                ima_client=QuotaExceededIMAClient(),
+                wechat_fetcher=FakeWechatFetcher(),
+            ),
+        )
+
+    assert exc_info.value.code == 220021

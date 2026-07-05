@@ -96,6 +96,7 @@ class IMAApiRunner:
     def call(self, api_path: str, body: dict[str, Any]) -> str:
         command = [
             "node",
+            "--max-old-space-size=4096",
             str(self.script_path),
             api_path,
             json.dumps(body, ensure_ascii=False),
@@ -167,7 +168,9 @@ class IMAKnowledgeBaseClient:
                 try:
                     media_payload = self.runner.call("openapi/wiki/v1/get_media_info", {"media_id": item.item_id})
                     source_url = extract_wechat_article_url(media_payload)
-                except IMAApiError:
+                except IMAApiError as exc:
+                    if exc.code == 220021:
+                        raise
                     continue
                 if not source_url:
                     continue
