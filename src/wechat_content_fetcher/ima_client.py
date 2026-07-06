@@ -14,6 +14,10 @@ class IMAApiError(RuntimeError):
         super().__init__(message)
         self.code = code
 
+    @property
+    def is_quota_exhausted(self) -> bool:
+        return self.code == 220021
+
 
 @dataclass(frozen=True)
 class IMAKnowledgeItem:

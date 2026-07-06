@@ -27,6 +27,22 @@ def build_parser() -> argparse.ArgumentParser:
         ),
         help="Path to ima_api.cjs bridge script.",
     )
+    parser.add_argument(
+        "--reason",
+        choices=["scheduled_daily", "manual", "monthly_audit"],
+        default="scheduled_daily",
+        help="Execution reason for IMA mode.",
+    )
+    parser.add_argument(
+        "--force",
+        action="store_true",
+        help="Force processing even if metadata fingerprint is unchanged.",
+    )
+    parser.add_argument(
+        "--full-rescan",
+        action="store_true",
+        help="Fetch all articles instead of only changed or pending ones.",
+    )
     return parser
 
 
@@ -50,11 +66,17 @@ def main() -> int:
                 ima_client=IMAKnowledgeBaseClient(IMAApiRunner(Path(args.ima_script))),
                 wechat_fetcher=UrlMdWechatFetcher(),
             ),
+            reason=args.reason,
+            force=args.force,
+            full_rescan=args.full_rescan,
         )
         print(
-            f"ima sync complete: targets={summary.targets_processed}, "
-            f"pages={summary.rendered_pages}, indexes={summary.updated_indexes}"
+            f"ima sync {summary.status}: targets={summary.targets_processed}, "
+            f"pages={summary.rendered_pages}, indexes={summary.updated_indexes}, "
+            f"skipped={summary.targets_skipped}, partial={summary.targets_partial}"
         )
+        if summary.error_summary:
+            print(f"details: {summary.error_summary}")
         return 0
 
     if args.mode == "pages":

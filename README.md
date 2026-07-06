@@ -32,8 +32,24 @@ Real mode uses the local `ima_api.cjs` bridge and these IMA APIs:
 Example:
 
 ```bash
-python run_fetcher.py --config config.ima.json --mode ima --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
+python run_fetcher.py --config config.ima.json --mode ima --reason scheduled_daily --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
 ```
+
+Supported sync reasons:
+
+- `scheduled_daily` - scan metadata and skip unchanged targets
+- `manual` - force processing after a user-reported IMA edit
+- `monthly_audit` - full deep rebuild for reconciliation
+
+Examples:
+
+```bash
+python run_fetcher.py --config config.ima.json --mode ima --reason scheduled_daily --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
+python run_fetcher.py --config config.ima.json --mode ima --reason manual --force --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
+python run_fetcher.py --config config.ima.json --mode ima --reason monthly_audit --full-rescan --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
+```
+
+If IMA returns a daily quota exhaustion error, the run is recorded as `partial` and remaining article IDs stay queued for the next run.
 
 ## NotebookLM Bundles
 
@@ -72,7 +88,7 @@ This project publishes prebuilt static output. GitHub Actions does not fetch IMA
 Local flow:
 
 ```bash
-python run_fetcher.py --config config.ima.json --mode ima --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
+python run_fetcher.py --config config.ima.json --mode ima --reason scheduled_daily --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
 python run_fetcher.py --config config.ima.json --mode pages
 ```
 
@@ -97,7 +113,7 @@ Before you want NotebookLM import URLs instead of relative filenames, set:
 Then rerun:
 
 ```bash
-python run_fetcher.py --config config.ima.json --mode ima --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
+python run_fetcher.py --config config.ima.json --mode ima --reason scheduled_daily --ima-script C:\Users\Administrator\.openclaw-ima\workspace\skills\ima-skill\ima_api.cjs
 python run_fetcher.py --config config.ima.json --mode pages
 ```
 

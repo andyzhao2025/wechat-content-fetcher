@@ -57,3 +57,10 @@ def test_ima_knowledge_base_client_raises_when_media_quota_is_exhausted():
         client.list_folder_articles("kb-1", "folder-1")
 
     assert exc_info.value.code == 220021
+
+
+def test_ima_api_error_exposes_quota_exhaustion_helper():
+    error = IMAApiError(220021, "资料获取次数已达上限，请明天再尝试")
+
+    assert error.code == 220021
+    assert error.is_quota_exhausted is True

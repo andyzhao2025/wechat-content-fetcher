@@ -2,6 +2,7 @@ from pathlib import Path
 
 from wechat_content_fetcher.config import SiteConfig
 from wechat_content_fetcher.pages import prepare_github_pages_artifact
+from wechat_content_fetcher.publish import build_commit_message, site_has_changes
 
 
 def test_prepare_github_pages_artifact_copies_site_and_adds_nojekyll(tmp_path: Path):
@@ -50,3 +51,32 @@ def test_prepare_github_pages_artifact_stays_under_site_output_root(tmp_path: Pa
     assert (artifact_dir / "index.html").read_text(encoding="utf-8") == "<html>root</html>"
     assert (artifact_dir / "favorites" / "page.html").read_text(encoding="utf-8") == "<html>article</html>"
     assert (artifact_dir / ".nojekyll").exists()
+
+
+def test_site_has_changes_detects_added_or_modified_files(tmp_path: Path):
+    before_dir = tmp_path / "before"
+    after_dir = tmp_path / "after"
+    before_dir.mkdir()
+    after_dir.mkdir()
+    (before_dir / "index.html").write_text("<html>v1</html>", encoding="utf-8")
+    (after_dir / "index.html").write_text("<html>v2</html>", encoding="utf-8")
+
+    assert site_has_changes(before_dir, after_dir) is True
+
+
+def test_site_has_changes_returns_false_when_artifacts_match(tmp_path: Path):
+    before_dir = tmp_path / "before"
+    after_dir = tmp_path / "after"
+    before_dir.mkdir()
+    after_dir.mkdir()
+    (before_dir / "index.html").write_text("<html>same</html>", encoding="utf-8")
+    (after_dir / "index.html").write_text("<html>same</html>", encoding="utf-8")
+
+    assert site_has_changes(before_dir, after_dir) is False
+
+
+def test_build_commit_message_is_windows_safe():
+    message = build_commit_message("2026-07-06")
+
+    assert message == "chore: daily sync 2026-07-06"
+    assert "$(" not in message

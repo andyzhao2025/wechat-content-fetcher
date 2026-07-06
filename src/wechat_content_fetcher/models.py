@@ -66,3 +66,55 @@ class SourceArticle:
 class SyncDependencies:
     ima_client: object
     wechat_fetcher: object
+
+
+@dataclass(frozen=True)
+class TargetSyncState:
+    target_key: str
+    sync_status: str = "never_started"
+    known_article_ids: list[str] = field(default_factory=list)
+    pending_article_ids: list[str] = field(default_factory=list)
+    article_pages: dict[str, str] = field(default_factory=dict)
+    article_groups: dict[str, str] = field(default_factory=dict)
+    last_seen_fingerprint: str = ""
+    last_successful_fingerprint: str = ""
+    last_successful_incremental_sync_at: str = ""
+    last_successful_full_sync_at: str = ""
+    last_successful_monthly_audit_at: str = ""
+    last_quota_exhausted_at: str = ""
+    last_run_reason: str = ""
+    last_run_status: str = ""
+    last_error: str = ""
+
+    @property
+    def article_ids(self) -> list[str]:
+        return self.known_article_ids
+
+    def as_folder_snapshot(self) -> FolderSnapshot:
+        return FolderSnapshot(
+            target_key=self.target_key,
+            article_ids=list(self.known_article_ids),
+            article_pages=dict(self.article_pages),
+            article_groups=dict(self.article_groups),
+        )
+
+
+@dataclass(frozen=True)
+class SyncRunRecord:
+    run_id: str
+    started_at: str
+    ended_at: str
+    reason: str
+    status: str
+    targets: list[str] = field(default_factory=list)
+    fingerprint_before: dict[str, str] = field(default_factory=dict)
+    fingerprint_after: dict[str, str] = field(default_factory=dict)
+    articles_added: dict[str, list[str]] = field(default_factory=dict)
+    articles_removed: dict[str, list[str]] = field(default_factory=dict)
+    articles_fetched: dict[str, list[str]] = field(default_factory=dict)
+    articles_failed: dict[str, list[str]] = field(default_factory=dict)
+    pending_article_ids: dict[str, list[str]] = field(default_factory=dict)
+    quota_exhausted: bool = False
+    publish_changed: bool = False
+    published: bool = False
+    error_summary: str = ""
