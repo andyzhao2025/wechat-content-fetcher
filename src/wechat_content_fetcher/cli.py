@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 from wechat_content_fetcher.config import load_config
@@ -77,6 +78,22 @@ def main() -> int:
         )
         if summary.error_summary:
             print(f"details: {summary.error_summary}")
+        print(
+            "IMA_SYNC_RESULT="
+            + json.dumps(
+                {
+                    "status": summary.status,
+                    "targets_processed": summary.targets_processed,
+                    "rendered_pages": summary.rendered_pages,
+                    "updated_indexes": summary.updated_indexes,
+                    "targets_skipped": summary.targets_skipped,
+                    "targets_partial": summary.targets_partial,
+                    "error_summary": summary.error_summary,
+                    "quota_exhausted": summary.quota_exhausted,
+                },
+                ensure_ascii=False,
+            )
+        )
         return 0
 
     if args.mode == "pages":

@@ -49,3 +49,6 @@ def test_cli_returns_zero_for_partial_ima_sync(monkeypatch, tmp_path: Path, caps
     stdout = capsys.readouterr().out
     assert "ima sync partial" in stdout
     assert "details: IMA quota exhausted" in stdout
+    assert '"status": "partial"' in stdout
+    assert '"quota_exhausted": true' in stdout
+    assert "IMA_SYNC_RESULT=" in stdout

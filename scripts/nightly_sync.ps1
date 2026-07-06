@@ -8,6 +8,7 @@ $stagingDir = Join-Path $publishRoot "staging"
 $pagesRelativePath = "site_output\_pages"
 $pagesArtifactDir = Join-Path $repo $pagesRelativePath
 $today = Get-Date -Format "yyyy-MM-dd"
+$imaSyncSummary = $null
 
 function Invoke-Step {
     param(
@@ -38,8 +39,32 @@ try {
 
     Set-Location $repo
 
-    Invoke-Step -Label "ima sync" -Script {
-        python run_fetcher.py --config config.ima.json --mode ima --reason scheduled_daily --ima-script $imaScript
+    Write-Output "== ima sync =="
+    $imaOutput = (& python run_fetcher.py --config config.ima.json --mode ima --reason scheduled_daily --ima-script $imaScript) 2>&1
+    foreach ($line in $imaOutput) {
+        Write-Output $line
+        if ($line -is [string] -and $line.StartsWith("IMA_SYNC_RESULT=")) {
+            $imaSyncSummary = $line.Substring("IMA_SYNC_RESULT=".Length) | ConvertFrom-Json
+        }
+    }
+    if ($LASTEXITCODE -ne 0) {
+        throw "ima sync failed with exit code $LASTEXITCODE"
+    }
+
+    $skipPublishForQuota = $false
+    if ($null -ne $imaSyncSummary) {
+        $skipPublishForQuota = (
+            $imaSyncSummary.status -eq "partial" -and
+            $imaSyncSummary.quota_exhausted -eq $true -and
+            [int]$imaSyncSummary.rendered_pages -eq 0 -and
+            [int]$imaSyncSummary.updated_indexes -eq 0
+        )
+    }
+
+    if ($skipPublishForQuota) {
+        Write-Output "quota-limited partial sync without new pages; skipping publish"
+        Write-Output "== nightly sync done =="
+        return
     }
 
     Invoke-Step -Label "pages build" -Script {
