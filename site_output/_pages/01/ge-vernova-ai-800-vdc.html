@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GE VERNOVA《AI工厂800 VDC参考设计》</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/E2JrdMrNY_xu3G2sHjshSg">原文链接</a></p>
+      <h1>GE VERNOVA《AI工厂800 VDC参考设计》</h1>
+      <p>西斯基</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/kcEJ3YHBQLIraS64IKaWgQ8f90iaInibaCm55z09ibCVhcQsLXWl6ic5F4fz9icqBd9XkWJSibjMrME9oMFA1ySWVIYLQ4ggt92JYJQAh6iaB0ic1ibE/0?wx_fmt=jpeg" alt="GE VERNOVA《AI工厂800 VDC参考设计》 cover">
+    </header>
+    <article><p>摘要</p>
+<ol>
+<li>
+<p>推动超大规模 AI 工厂</p>
+</li>
+<li>
+<p>AI 工厂机架级供电解决方案</p>
+</li>
+<li>
+<p>高密度 AI 计算基础设施设计</p>
+</li>
+<li>
+<p>AI 工厂 800 VDC 参考设计</p>
+</li>
+<li>
+<p>AI 工厂 DC 架构中的保护与弹性功能</p>
+</li>
+<li>
+<p>支持 AI 工厂 800 VDC 参考设计的储能</p>
+</li>
+<li>
+<p>下一步</p>
+</li>
+</ol>
+<h2>一、摘要</h2>
+<p>GE Vernova 已与 NVIDIA 合作，开发以 800 VDC 电力分配为核心的千兆级人工智能（AI）工厂参考设计。这些设计为操作员提供了实际的指导，以加速高密度 AI 集群的部署。</p>
+<p>凭借多学科专业知识，GE Vernova 提供综合基础设施解决方案——从电网连接到高可靠性的现场发电、先进的能源储存以及强大的电气系统。与 NVIDIA 的合作确保这些解决方案能够满足当前和未来人工智能工作负载的严格要求。</p>
+<p>所提出的参考设计概述了800 VDC配电的清晰技术路线图。</p>
+<p><strong>其核心是整合四个主要功能</strong>：交流/直流（AC/DC）转换（包括带有AC/DC整流器的变压器、中压固态变压器MV SST配置）、功率摆动滤波与调节、能源存储以及控制接口。</p>
+<p>变压器和交流/直流整流器配置是一种成熟且可靠的方案，利用经过验证、易于获取的组件。这一高效的解决方案已准备好进行大规模部署。GE Vernova 在太阳能、海洋和重型能源领域实施类似配置方面有着坚实的业绩记录。</p>
+<p>MV SST 配置代表了一种前瞻性的解决方案，有望在未来几年大规模部署于人工智能工厂。</p>
+<p>通过利用碳化硅（SiC）功率电子组件，并过渡到更高电压的直流配电以及简化电力转换，这些设计提高了效率，减少了损耗和成本，并支持可扩展、弹性的人工智能数据中心运营。</p>
+<p>先进的保护和能源存储集成进一步确保在动态人工智能工作负载下的可靠性和电网稳定性。</p>
+<p>GE Vernova 现在正在推进这些直流参考设计的演示和标准化工作，支持人工智能基础设施的全球发展。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/kcEJ3YHBQLKuAB0DMVl2HFBzHqE26QmCcicuic9uUXfAGfl8nAOngfaZOt7f99iaPxx93RuxjKWTTnLUFJPRAh2075cXenvuQh4KepfzrLGN8I/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>一、Site Substation（站点变电站）</h2>
+<p>这是数据中心与公共电网的接口边界。</p>
+<ul>
+<li>
+<p><strong>HVAC 245 kV</strong>：来自电网的超高压交流电。</p>
+</li>
+<li>
+<p><strong>MVAC（中压交流）</strong>：通过变电站主变压器降压至数据中心中压等级（通常 10–35 kV）。</p>
+</li>
+<li>
+<p><strong>现场电源</strong>：图中左侧下方显示了<strong>柴油发电机</strong>（或燃气轮机）和<strong>电池储能系统（BESS）</strong>，它们直接并联在中压交流侧（MVAC），作为备用电源。</p>
+</li>
+<li>
+<p><strong>作用</strong>：完成高压隔离、降压和备用电源接入，但<strong>不直接产生直流</strong>。</p>
+</li>
+</ul>
+<h2>二、Facility（设施级）— 核心变革：DC Former with SST</h2>
+<p>这是整张图的灵魂，传统数据中心在此环节使用 <strong>工频变压器 + AC UPS + PDU</strong> 三级设备，而这里被一个<strong>"DC Former（直流形成器）"</strong>取代，内部核心是 <strong>SST（固态变压器）</strong>。</p>
+<h3>SST 内部结构（框内四个模块）</h3>
+<p>中压交流输入 → [AC/DC 整流器] → [DC/DC 变换器] → [高频变压器] → [DC/DC 变换器] → 400-800 VDC 输出</p>
+<ol>
+<li>
+<p><strong>前端 AC/DC</strong>：三相 H 桥整流，将中压交流整为高压直流母线。</p>
+</li>
+<li>
+<p><strong>隔离型 DC/DC</strong>：双有源桥（DAB）拓扑，通过<strong>高频变压器</strong>（图中圆圈符号）实现中压侧与低压侧的磁隔离。</p>
+</li>
+<li>
+<p><strong>后端 DC/DC</strong>：将高压直流降至 <strong>400–800 VDC</strong> 的低压直流母线（LVDC）。</p>
+</li>
+<li>
+<p><strong>高频隔离</strong>：传统工频变压器重达数吨且只能处理 50/60 Hz，而 SST 使用 <strong>kHz 级高频磁芯</strong>，体积和重量可缩小 90% 以上。</p>
+</li>
+</ol>
+<h3>直流侧储能</h3>
+<p>图中 SST 输出端下方挂接了一组<strong>电池图标</strong>，表示储能系统直接挂在 <strong>400–800 VDC 母线</strong>上。这与传统架构将 UPS 放在交流侧完全不同：</p>
+<ul>
+<li>
+<p>储能直接以直流形式充放电，<strong>省掉 AC/DC 双向转换损耗</strong>。</p>
+</li>
+<li>
+<p>响应速度从秒级提升到毫秒级，可直接吸收 GPU 负载波动。</p>
+</li>
+</ul>
+<hr />
+<h2>三、IT Rack 400–800 Vdc（机架级）</h2>
+<p>这是电力进入计算设备的"最后一公里"，图中展示了两级降压：</p>
+<h3>1. PDU（配电单元）</h3>
+<ul>
+<li>
+<p>虽然名字还是 PDU，但此处是<strong>直流配电单元</strong>，将 400–800 VDC 母线分配至各个机架。</p>
+</li>
+<li>
+<p>不再需要进行 AC/DC 转换，也<strong>没有传统 UPS 的逆变环节</strong>。</p>
+</li>
+</ul>
+<h3>2. DC PSU：800 V → 12 V</h3>
+<ul>
+<li>
+<p>这是机架内的大功率 <strong>DC-DC 变换器</strong>（如之前讨论的 LLC 谐振变换器）。</p>
+</li>
+<li>
+<p>利用 <strong>GaN/SiC 第三代半导体</strong>，将 800V 直流一次降压至 12V 直流。</p>
+</li>
+<li>
+<p>此环节需要<strong>薄膜电容</strong>作为 DC-Link 支撑和输出滤波（对应之前讨论的母线支撑电路）。</p>
+</li>
+</ul>
+<h3>3. 12 V → 0.x V（VRM）</h3>
+<ul>
+<li>
+<p>最后一级是主板上的 <strong>VRM（电压调节模块）</strong>，使用多相 Buck 变换器将 12V 进一步降至 <strong>0.5–1.0V</strong>（GPU 核心电压，即图中的 "0.x V"）。</p>
+</li>
+<li>
+<p>这一级距离 GPU 芯片最近，电流最大（可达数千安培），对瞬态响应要求极高。</p>
+</li>
+</ul>
+<p>|         传统 2025 架构          |                本图 SST 架构                |
+|:----------------------------|:----------------------------------------|
+|工频变压器 → AC UPS → PDU → 机架 PSU|      SST 一步直转 → 直流 PDU → 机架 DC PSU      |
+|           交流母线为主            |<strong>直流母线贯穿始终</strong><br/><br/>（Site 出 MVAC 后立刻整流）|
+|           储能接在交流侧           |         储能接在 <strong>400–800V 直流母线</strong>          |
+|  机架 PSU 需处理 AC/DC + DC/DC   |        机架 PSU <strong>只做 DC/DC</strong>，效率更高         |
+|          链路复杂、体积庞大          |      <strong>全电力电子链路</strong><br/><br/>，高频化、小型化      |</p>
+<hr />
+<hr />
+<h2>五、与产业链的对应关系</h2>
+<p>结合之前讨论，这张图可以映射到具体供应商：</p>
+<ul>
+<li>
+<p><strong>SST 内部</strong>：需要 <strong>SiC MOSFET</strong>（高压侧整流）+ <strong>GaN FET</strong>（低压侧高频 DC-DC）+ <strong>高频平面变压器</strong> + <strong>薄膜电容</strong>（DC-Link）。</p>
+</li>
+<li>
+<p><strong>直流母线储能</strong>：<strong>LTO 电池</strong>（低频能量）+ <strong>Skeleton/Eaton 超级电容</strong>（高频功率波动滤波）。</p>
+</li>
+<li>
+<p><strong>机架 PSU</strong>：台达、光宝等 Tier1 提供的 <strong>800V→12V 大功率 DC-DC</strong>，内部同样大量使用薄膜电容和 GaN 器件。</p>
+</li>
+<li>
+<p><strong>GPU 供电</strong>：英伟达 GB200/300 机架，最终由 VRM 提供 0.x V 核心电压。</p>
+</li>
+</ul>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/kcEJ3YHBQLKZ6mUcYTicwCMSXQvJIo1qiadHHLH3u5A5DsIAQragLwoeIwWED4NqfVluNK5V2qmtp3fDSUwX02Ticic7grYJORnOtZaviaAb0jQs/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>|      维度       |               <strong>图3</strong>               |                     <strong>图6</strong>                     |
+|:--------------|:-----------------------------------|:-----------------------------------------------|
+|    <strong>标题</strong>     |DC reference design using an <strong>SST</strong>|Energy storage integration from power to IT rack|
+|   <strong>核心主题</strong>    |          <strong>固态变压器（全电力电子）</strong>          |               <strong>三级储能部署（务实过渡方案）</strong>               |
+|<strong>Facility 前端</strong>|            SST（无工频变压器）             |               <strong>传统工频变压器 + 整流器</strong>                |
+|   <strong>交流环节</strong>    |       MVAC 直进 SST，无 LVAC 母线        |              <strong>保留 LVAC（低压交流）母线</strong>               |
+|   <strong>储能位置</strong>    |          仅在 SST 输出端挂一组电池           |    <strong>机架级 / 800V 母线级 / 变电站级</strong><br/><br/> 三级储能    |
+|   <strong>备用电源</strong>    |           柴油发电机接 MVAC 侧            |  <strong>Backup Genset 接 LVAC 母线</strong><br/><br/>（传统方式）   |
+|  <strong>机架 PSU</strong>   |           800V → 12V 单级            |        800V → <strong>50-12V</strong> → 0.xV（两级或宽范围）        |</p>
+<hr />
+<hr />
+<h2>Facility 前端：SST vs 传统变压器</h2>
+<p>这是两张图<strong>最根本的差异</strong>：</p>
+<h3>图3（SST 路线）— 激进革命，这是<strong>终极形态</strong>，但 SST 目前成本极高、可靠性待验证，预计 2027+ 才可能规模部署。</h3>
+<h3>图6（传统变压器+整流路线）— 务实过渡，利用现有变压器和柴油发电机资产，只需增加整流器即可向 800V DC 演进。</h3></article>
+  </main>
+</body>
+</html>

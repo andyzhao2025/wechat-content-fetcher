@@ -1,0 +1,1670 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>03 应用场景</title>
+</head>
+<body>
+  <main>
+    <h1>03 应用场景</h1>
+    
+<section>
+  <header>
+    <h2>一文读懂一次调频和二次调频，储能如何参与</h2>
+    <p><a href="https://mp.weixin.qq.com/s/wEIhcS8NnoolqXCjU__HWg">原文链接</a></p>
+    <p><span>电力方案砖家</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicRYOZ8X8biblB85lqibuwQCicfdWHTEiaMbykoS7wiczOYXvV2hyFibLTicKQg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>电力系统频率的稳定性是衡量电能质量的核心指标，也是保障电网安全、可靠运行的基石。我国电网标准频率为50Hz，运行偏差需控制在±0.2Hz的极窄范围内。电力供需匹配是新型电力系统核心痛点，本文重点讲一下电力系统中的一次调频与二次调频机制，以及电化学储能系统在其中扮演的关键角色及其市场价值。</p>
+<h2>一、电力系统频率调节的基本原理</h2>
+<p>为应对功率扰动引发的频率偏差，电力系统构建了多层次的协同调频体系，其中一次调频和二次调频是核心环节。  </p>
+<p>根据《电力辅助服务市场基本规则》，电力辅助服务是指为维持电力系统安全稳定运行，保证电能质量，除正常电能生产、输送、使用外，由可调节资源提供的调峰、调频、备用、爬坡等服务。调频服务是指运营主体通过调速系统、自动功率控制等，减少系统频率偏差(或联络线控制偏差)所提供的服务。调频服务分为一次调频服务和二次调频服务。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicb7GMQJK3RFhEPibCBRtMHIrtmGofLGibrjV1UofQ9A3qibDKHfHZUkwTg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h3>1. 一次调频</h3>
+<p>一次调频是电力系统应对频率扰动的<strong>第一道防线</strong>，是一种基于发电机组自身调速器特性实现的、分散式的、自动的快速响应。其核心原理是利用同步发电机组的<strong>下垂控制</strong>特性。</p>
+<blockquote>
+<p><strong>调节原理：</strong></p>
+<p>当系统频率偏离额定值时，各并网机组的调速器会自动调整其有功功率输出，以减缓频率变化速率。这是一种<strong>有差调节</strong>，即调节作用的大小与频率偏差成正比，但无法完全消除频率偏差，系统最终会稳定在一个新的、有静差的频率点。<br />
+<strong>技术指标：</strong>  </p>
+<p><strong>响应时间：通常在数秒内启动，持续时间为数十秒。</strong>  </p>
+<p><strong>控制死区：为避免对微小扰动频繁响应，设置有控制死区。例如，火电机组的一次调频死区通常为50±0.033Hz。</strong>  </p>
+<p><strong>调节目标：快速抑制频率突变，防止因频率大幅偏离而引发的连锁故障。</strong></p>
+</blockquote>
+<h3>2. 二次调频</h3>
+<p>二次调频，通常通过<strong>自动发电控制（AGC）</strong>系统实现，是消除一次调频后残留频率偏差、将系统频率精确恢复至额定值的<strong>中心化控制过程</strong>。</p>
+<blockquote>
+<p><strong>调节原理：</strong></p>
+<p>电网调度中心根据区域控制误差（ACE）计算出总调节需求，并按一定策略将调节指令下发给指定的AGC机组。这是一种包含<strong>无差调节</strong>的闭环控制，旨在将频率偏差和联络线交换功率偏差的积分值清零。<br />
+<strong>技术指标：</strong>  </p>
+<p><strong>响应时间：响应速度慢于一次调频，通常为数十秒至数分钟。</strong>  </p>
+<p><strong>调节精度：精度高，目标是将频率恢复至50Hz±0.05Hz的更严格范围内。</strong>  </p>
+<p><strong>调节目标：实现频率的无差恢复，并维持计划的联络线功率交换。</strong></p>
+</blockquote>
+<ol>
+<li>调频容量与调频里程</li>
+</ol>
+<p>调频容量是指调频单元为提供调频服务而预留的向上或向下调节容量。</p>
+<p>调频里程是指调频单元响应AGC控制指令结束时的实际出力值与响应指令开始时的实际出力值之差的绝对值。一个交易时段内的调频里程为调频单元在该时段内产生的调频里程之和。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicjJOOsl6q093ZTkrAskOBdzBkrHEXhukCibjTokL1zbEpxruXyBE21EA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>4. 综合调频性能指标</p>
+<p>调频服务是一种同量不同质的服务，综合调频性能指标是评价调频服务质效的综合性指标，由调节速率、响应时间和调节精度三个子指标组成。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmictWLnqicHntWtRfe0LWcGW3t1NunJrmbH0oYD4dUYopTdQObDZDPbBQA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>5. 交易组织流程</p>
+<p>调频市场采用集中竞价、边际出清、日前预出清、日内逐小时滚动出清调用的方式开展交易。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicRiaic5MJWM35whzFMjLL1dBClbwACcL9hZ8h3uFAKNrjEF0QEtZOfl9g/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>二、储能系统在频率调节中的技术实现与优势</h2>
+<p>电化学储能系统凭借其独特的物理特性，在一次和二次调频中均展现出传统发电机组无法比拟的技术优势，可同时参与两种调频服务。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicuWBFLwRbuGUKFWRYaa3DjwuSQj8liclhiaqU1pibnEzWArt50ZFlVmTlw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h3>1. 参与调频的技术路径</h3>
+<p><strong>一次调频：储能系统通过其功率转换系统（PCS）执行</strong><strong>虚拟下垂控制</strong>策略。当监测到系统频率偏差超出死区时，PCS能在毫秒级时间内快速、按比例地响应，进行充放电，从而提供快速的虚拟惯量支撑。</p>
+<p><strong>二次调频：储能系统作为高度灵活的AGC资源，直接接收并精准执行调度中心下发的功率调节指令。其秒级的爬坡速率和精确的功率控制能力，使其能高效完成AGC调节任务。</strong></p>
+<h3>2. 核心技术优势</h3>
+<p>相较于传统火电机组，储能参与调频的优势显著：</p>
+<p><strong>快速响应能力：储能的响应时间可达毫秒级，远快于火电机组的数秒级，能更有效地抑制频率初始变化率。</strong></p>
+<p><strong>高调节精度：储能的功率输出控制精准，调节偏差小，能更精确地跟踪AGC指令，实现高质量的频率调节。</strong></p>
+<p><strong>双向调节灵活性：储能可以快速在充电和放电状态间切换，既能提供正向调节（增发功率），也能提供反向调节（吸收功率），完美契合频率双向波动的调节需求。</strong></p>
+<p><strong>运行状态独立：其调节能力不受机组启停、燃料等机械或化学过程的限制，部署和调用更为灵活。</strong></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicy2eRtkW25nlvvuu8KCicXKqyIjn5ozqiblCiazicibp6mb01ffsc6ElbHpw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>三、储能参与调频辅助服务的市场化收益模式</h2>
+<p>在电力市场化改革背景下，储能通过参与调频辅助服务市场，可将其技术优势转化为经济收益。其收益主要由以下几部分构成：</p>
+<h3>1. 调频里程补偿</h3>
+<p>这是收益的基础部分，根据储能系统在调频过程中实际响应指令而产生的充放电能量（即“调频里程”）进行补偿。计算方式通常为：  </p>
+<p><strong>调频里程补偿 = Σ（单次调频调用功率 × 单次调用时长 × 里程单价）</strong>。</p>
+<h3>2. 调频性能补偿（K值）</h3>
+<p>为激励提供高质量的调频服务，市场引入了性能系数（K值）作为收益乘数。K值综合评价了资源的调节速率、响应时间和调节精度。根据南方区域的规则，综合调频性能评价指标 Ki 的计算公式为：  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmic58ibuialxatdbUayOmGPQTn1X3nhscibRcgiaVBlR3k38Pcl3c3Rm8GwnQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<ol>
+<li>容量补偿</li>
+</ol>
+<p>部分地区为保障调频资源的可用性，设置了容量补偿机制。该补偿与储能系统的可用调频容量挂钩，按月或年进行结算，为储能项目提供了一部分固定收益。计算公式为：<strong>容量补偿 = 储能可用容量 × 容量补偿标准 × 投运率</strong>。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/NJ1Ol4PKqQfSdeJnnEWCCocuPlViazCmicKEiaj83KvNXeSOjwyCJr7XSRP9ibY8bUX4zlibpgeNgfq2oetjEcxhH6g/640?wx_fmt=jpeg" /></p>
+<h2>四、结论</h2>
+<p>一次调频与二次调频作为保障频率安全的协同机制，对调节资源的技术性能提出了更高要求。电化学储能系统凭借其快速响应、高精度的功率控制和灵活的双向调节能力，成为参与频率调节的理想技术选择。随着电力辅助服务市场的不断完善，储能的技术优势能够有效转化为市场价值，为其商业化应用开辟了广阔空间，并为构建安全、高效、绿色的新型电力系统提供了关键支撑。</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/NJ1Ol4PKqQcSP4k6uUHvNeP3w0fKoRZaYibvq8OBRymMaCfBeglu4XuMZlafJw5siaR8Gw5bPqCujt4ibcP7knv7Q/640?wx_fmt=jpeg&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=11" /></p>
+<p>扫码加砖家微信，进学习交流群！海量优质资料分享学习交流！部分图片来源于网络或AI生成，版权归原作者所有。</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>欧洲调频架构详解 惯量/FFR/FCR/aFRR/mFRR</h2>
+    <p><a href="https://mp.weixin.qq.com/s/FfvOD88NDGM7lOtYsBdmtQ">原文链接</a></p>
+    <p><span>小6</span></p>
+  </header>
+  <article><p>电力系统的频率需要维持50Hz，当发电功率和负载功率不平衡时，频率不稳定导致设备故障、甚至大面积停电。因此，需要多层级的调频措施</p>
+<p>整理惯量响应/FFR快速频率储备/FCR一次调频/aFRR二次调频/mFRR三次调频相关内容供参考</p>
+<h3></h3>
+<p><strong>Part 01 机械/转动惯量响应</strong> ###</p>
+<p><strong>原理：</strong>同步发电机（火电、水电）转子有巨大的转动惯量，当系统发生大扰动（机组跳闸，短路），转子释放/吸收能量，抑制频率快速变化，这是<strong>自动、瞬时</strong>的物理响应</p>
+<ul>
+<li>
+<p>发电功率＜用电功率→频率下降→转子释放旋转动能→输出有功，抑制频率下降</p>
+</li>
+<li>
+<p>发电功率＞用电功率→频率上升→转子吸收旋转动能→吸收有功，抑制频率上升</p>
+</li>
+</ul>
+<p><strong>作用：</strong>给后续<strong>调频</strong>措施<strong>争取反应时间</strong>，防止频率瞬间变化导致系统崩溃</p>
+<p><strong>应用场景：</strong>大扰动如机组大规模跳闸，负载大规模变化引起频率瞬间变化</p>
+<h3>Part 02 FFR快速频率储备</h3>
+<p><strong>原理：</strong>介于惯量响应和一次调频之间的快速响应，当频率偏差超过触发阈值时，快速功率响应。本地自主闭环，无需调度下发指令</p>
+<p><strong>作用：</strong>当系统惯量较小，FFR作为惯量响应的补充，快速减缓频率变化率</p>
+<p><strong>应用场景：</strong>惯量不足无法应对大扰动事件，需求短时大功率支撑，通常频率变化0.3\~0.5Hz（北欧规范）</p>
+<h3>Part 03 FCR频率控制储备/一次调频</h3>
+<p><strong>原理：</strong>同步机组的调速器通过下垂控制，当频率超过死区时，自动调整出力以稳定频率。本地控制，无需调度中心指令</p>
+<ul>
+<li>
+<p>频率下降 → 增加进汽 / 进水 → 多发有功</p>
+</li>
+<li>
+<p>频率上升 → 减少进汽 / 进水 → 少发有功</p>
+</li>
+</ul>
+<p><strong>作用：</strong>一次调频属于<strong>有差调节</strong>，只将频率调节至新的稳定点，无法调回50Hz</p>
+<p><strong>应用场景：</strong>日常小波动小扰动、负荷随机变化，通常频率变化超±0.01Hz</p>
+<h3>Part 04 aFRR自动频率恢复储备/二次调频</h3>
+<p><strong>原理：</strong>自动发电控制AGC，调度中心远程调整发电机组出力，将频率调整至50Hz，电网统一协调</p>
+<p><strong>作用：</strong>无差调节，频率最终重回50Hz</p>
+<p><strong>应用场景：</strong>一次调频后频率仍有偏差，由电网调度中心 AGC 系统统一统筹</p>
+<h3>Part 05 mFRR手动频率恢复储备/三次调频</h3>
+<p><strong>原理：</strong>基于<strong>负荷、能源、电价等关系</strong>，优化出力计划。不属于实时频率控制，属于<strong>调度计划层面</strong></p>
+<p><strong>作用：</strong><strong>追求最优调度，确保经济性和可靠性</strong></p>
+<p><strong>应用场景：</strong><strong>经济运行，优化负荷分配，中长期计划功率调度</strong></p>
+<h3>Part 06 调频过程说明</h3>
+<p><img class="rich_pages wxw-img" data-ratio="0.9957582184517497" data-w="943" height="470" data-type="png" width="472" data-imgfileid="100000341" data-aistatus="1" src="https://mmbiz.qpic.cn/mmbiz_jpg/zNhedSttJFm9Ty6S0stW9GOXibicObFDRPkexeHAfNX2p56XicmAGFibYcuaFHxWTfMFs6LbCUOlZv8PGhOhIGAduegqibg2pobwqqaVfu4HcUzo/640?wx_fmt=jpeg&amp;from=appmsg"></p>
+<p>结合上图，说明扰动发生后，频率在各措施的作用下的恢复过程</p>
+<p><strong>→</strong><strong>扰动发生，频率偏移</strong></p>
+<p><strong>→</strong><strong>惯量响应（瞬间缓冲）</strong></p>
+<p><strong>说明：</strong><strong>发电机组的转子转动惯量直接决定频率变化率，惯量越大，频率变化率越小，防止频率瞬间暴跌，越有利于后续的调频措施</strong></p>
+<p><strong>动作过程：</strong><strong>瞬时惯量响应，通常持续时间2-8s；构网型PCS通常10ms内响应，时间常数20s内</strong></p>
+<p><strong>→</strong><strong>FFR</strong><strong>快速频率储备（秒级紧急兜底）</strong></p>
+<p><strong>说明：</strong><strong>减缓频率变化率，可视为惯量响应的补充</strong></p>
+<p>动作过程：通常1\~2s内开始响应并完全激活，持续时间10s →→FCR一次调频（自主稳频） 说明：稳定到新的频率点（无法恢复至50Hz） 动作过程：通常2s内开始响应，到30s时完全激活，持续时间15min</p>
+<p><strong>→aFRR</strong><strong>二次调频（精准拉回50Hz）</strong></p>
+<p><strong>说明：</strong><strong>精确拉回50Hz</strong></p>
+<p><strong>动作过程：</strong><strong>从第30s时开始主导响应，到5min时完全激活，持续时间15min</strong></p>
+<p><strong>→mFRR</strong><strong>三次调频（最优分配）</strong></p>
+<p><strong>说明：</strong><strong>最优调度分配</strong></p>
+<p><strong>动作过程：</strong><strong>从第5min时开始响应，到12.5min时完全激活，持续时间5min至数小时</strong></p>
+<p><strong>频率调节是分层管控、且有交集的，通过相互协调配合，维持频率稳定</strong></p>
+<h3></h3>
+<p>###</p>
+<p>Part 07 对比和小结</p>
+<p>|   <strong>项目</strong>    |  <strong>转动惯量</strong>  |   <strong>FFR</strong>   |       <strong>FCR</strong>       |        <strong>aFRR</strong>         | <strong>mFRR</strong> |
+|-------------|------------|-------------|---------------------|-------------------------|----------|
+|   <strong>含义</strong>    |    固有特性    |    快速调频     |        一次调频         |          二次调频           |   三次调频   |
+|   <strong>原理</strong>    |转子转动惯量，物理响应 | 通常电力电子技术响应  |       调速器下垂控制       |        AGC自动发电控制        |  经济优化调度  |
+|   <strong>目的</strong>    |决定频率变化率RoCoF|减缓频率变化率RoCoF |稳定新的频率点，无法回到50Hz。有差调节|恢复到50Hz<br/><br/><strong>无差调节</strong>|  经济优化调度  |
+|  <strong>开始时间</strong>   |   无延时，瞬间   |   通常1-2s内   |        通常2s内        |          第30s           |  第5min   |
+|<strong>功率完全激活时间</strong> |   无延时，瞬间   |   通常1-2s    |        第30s         |          第5min          | 第12.5min |
+|  <strong>持续时间</strong>   |   通常2-8s   |    通常10s    |        15min        |          15min          | 5min至数小时 |
+|  <strong>控制方式</strong>   |   自动/本地    |    自动/本地    |        自动/本地        |       自动/调度（TSO）        |手动/调度（TSO）|
+|<strong>死区/</strong><strong>阈值</strong>|    大扰动     |北欧：0.3\~0.5Hz|       ±0.01Hz       |            无            |    无     |</p>
+<p>储能系统参与调频，表现形式均为发出或吸收有功功率，优势在于快速响应</p>
+<p>但储能系统无法提供机械/转动惯量，通过采用构网型PCS，在软件算法中模拟发电机特性，提供合成（虚拟）惯量，能量形式仍是通过电池和PCS以有功功率形式进行</p>
+<p>FFR对于储能系统的完全激活时间（达到指定功率的时间）要求比较高，北欧最快要求700ms，很多储能产品虽然采用MODBUS TCP 协议，也能做到300ms内，结合具体功率精度和标准要求，再细化探讨，技术层面没啥问题</p>
+<p>上述参数，各国会根据自身情况做适当调整，以实际为准</p>
+<p><strong>中英文名词对照</strong></p>
+<p><strong>输电系统运营商 TSO Transmisstion system operator</strong></p>
+<p>频率变化率 RoCoF Rate of Change of Frequency</p>
+<p>机械惯量 Mechanical Inertia</p>
+<p>合成惯量 Synthetic Inertia</p>
+<p>调速器 Governor </p>
+<p>下垂控制 Droop Control</p>
+<p>死区 Deadband</p>
+<p>快速频率储备 FFR Fast Frequency Reserve</p>
+<p>频率控制储备 FCR Frequency Containment Reserve</p>
+<p>或一次调频Primary Frequency Reserve</p>
+<p>自动发电控制 AGC Automatic Generation Control</p>
+<p>自动频率恢复储备 aFRR automatic Frequency Restoration Reserve</p>
+<p>或二次调频 Secondary Frequency Reserve</p>
+<p>手动频率恢复储备 mFRR manual Frequency Restoration Reserve </p>
+<p>或三次调频 Tertiary Frequency Reserve</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>储能柜合规化运输（实操）</h2>
+    <p><a href="https://mp.weixin.qq.com/s/6BvlyQSbfPP92Kgi7jyX6g">原文链接</a></p>
+    <p><span>舒晋</span></p>
+  </header>
+  <article><p>储能柜出海硬核干货｜UN3536合规全流程、船东审核逻辑、最新国际新规详解</p>
+<p>在全球能源转型浪潮下，海外光伏、风电配套储能需求迎来爆发式增长。</p>
+<p>中国储能设备、储能柜出口订单持续爆满，成为跨境出口赛道的超级增量品类。</p>
+<p>但行情越火爆，海运门槛越严苛。</p>
+<p>近两年，储能柜海运监管持续收紧：</p>
+<p>船东对带电高危货柜风控全面升级、IMDG 国际海运规则持续迭代、欧盟电池法案、美国 UL 新规层层落地。</p>
+<p>合规成本飙升、舱位收紧、查验率暴涨、运价波动剧烈，储能柜出海早已告别 “随便发、简单发” 的时代。</p>
+<p>很多客户只问一句：储能柜能不能出？</p>
+<p>但作为专业跨境供应链人，我们要回答的是：</p>
+<p>如何在 100% 合规的前提下，把这些带电的 “钢铁巨兽”，安全、准时、低成本、零扣货风险送抵全球项目现场。</p>
+<p>今天把储能柜（ESS）出口全套标准、UN 归类逻辑、必备文件、加固标准、国际新规一次性讲透，全是一线实操经验。</p>
+<p>一、最核心：储能柜精准 UN 归类（90% 的人都会搞错）</p>
+<p>储能柜出口第一步绝对不是订舱，而是精准判定 UN 编号，归类错误 = 直接退柜、扣货、重报、延误。</p>
+<ol>
+<li>UN3536（储能柜专属）</li>
+</ol>
+<p>定义：固定在货运单元内、独立具备储能、放电功能的锂电池储能系统（ESS 储能柜）</p>
+<p>- 设备核心功能就是储能、储电、供电</p>
+<p>- 集成电池模组、BMS、PCS、温控、消防系统</p>
+<p>- 海运强制 9 类危险品，仅限甲板积载</p>
+<ol>
+<li>UN3481（极易混淆）</li>
+</ol>
+<p>适用：电池为设备本体运行提供动力</p>
+<p>电池只是附属配件，设备主体功能≠储能，仅辅助设备运转供电。</p>
+<ol>
+<li>UN3480</li>
+</ol>
+<p>适用：纯裸电芯、锂电池模组、单独电池</p>
+<p>✅ 一句话终极区分：</p>
+<p>设备用来发电储电 = UN3536</p>
+<p>电池给机器干活供电 = UN3481</p>
+<p>单独电池裸装 = UN3480</p>
+<p>空储能柜（无电池、无带电模组）：普通普货运输，无需危报。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/23fKAfwxMsg2Zt4EsWibzIJwXQOQDj8UGzKQ4YY09vLtDYydYAx7qE8AeQyFAom1BAalWC6Q9LNOBKqUMeFpkdf8vPiciawicuh0GUJPsu5f2q0/640?wx_fmt=jpeg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/23fKAfwxMsjEUp9RpjRtvztDZpUibmXrvfY3YcBzccGGTtQJe9fUFN9AUlK5iciabJOKdNmtvaXGs7f6l6legDELPLlxoCs3wLqZlDXG3qvvws/640?wx_fmt=jpeg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/23fKAfwxMsj7tJ89k34jKWPf7lAicF2FicLicQ28JIsU5Zvhc9gDhGypiazACNfBjXBrQzyj2Ty2NXuax5KI1av1ibLNOd9ImDJ0vVgov3h7s110/640?wx_fmt=jpeg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/23fKAfwxMshOib5ub3oo23dIa8WtJtlGiaamBJKOHPJicHBHcXwedtkHjKB95TQG6NwEa9uPAQNwumbWMDzV0tV9w0PhCcAKBjNUrouDsdRdIs/640?wx_fmt=jpeg" /></p>
+<p>二、储能柜出海四大核心必备文件（船东硬性审核）  </p>
+<p>正规船公司接储能柜，资料缺一拒收，不存在通融。</p>
+<ol>
+<li>UN38.3 锂电池航空海运安全报告</li>
+</ol>
+<p>- 针对电芯、电池模组检测（不是整柜）</p>
+<p>- 无固定过期时间，但行业船东通用标准：1 年内新版报告有效</p>
+<p>- 电池型号、批次、厂家一旦变更，必须重做报告</p>
+<ol>
+<li>海运运输条件鉴定书</li>
+</ol>
+<p>- 国内权威机构出具</p>
+<p>- 明确标注：UN3536、Class9、运输限制、积载要求</p>
+<p>- 发货人抬头必须和订舱、报关、提单完全一致</p>
+<ol>
+<li>新版合规 MSDS（16 项完整版）</li>
+</ol>
+<p>- 重点审核第 14 项运输信息，严格匹配 IMDG 规则</p>
+<p>- 操作说明需注明：禁止暴力装卸、禁止倒置、远离热源、防撞击挤压</p>
+<ol>
+<li>柜体结构安全证书（船东加分项 + 高端客户强制）</li>
+</ol>
+<p>DNV/BV/CCS 等船级社出具：</p>
+<p>- 柜体结构强度、抗堆叠、防火、抗震、风载能力证明</p>
+<p>大型海外新能源项目必审，也是船东优先放舱的核心依据。</p>
+<p>三、包装、加固、标识｜储能柜安全出海关键细节</p>
+<p>储能柜自重极大、带电风险高，加固不到位，海运途中极易热失控、位移、起火风险。</p>
+<p>【内部标准】</p>
+<p>- 电池 PACK、模组全螺栓刚性固定、焊接加固</p>
+<p>- 间隙全部使用阻燃填充材料，严禁普通泡沫、软性填充物</p>
+<p>【外部加固】</p>
+<p>- 重柜（30–40 吨级）标配：角铁打底、钢带十字加固、防滑卡位</p>
+<p>- 出运可提供专业加固示意图、绑扎照片，供船东、港口审核</p>
+<p>【外箱强制标识】</p>
+<p>所有储能柜四面必须清晰粘贴：</p>
+<p>- UN3536 官方标识</p>
+<p>- 9 类危险品菱形标</p>
+<p>- 电池总容量（kWh）</p>
+<p>- 禁止明火、禁止倒置标识</p>
+<p>- 24 小时应急联系电话</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/23fKAfwxMsiauj0mmA122RqdQoJMc0vsFXsygaSgb0pTCiaAicAezlGnRCia7ZdRXOdzGxTDO0NSIECZzHkAaiaNWaDib5BOeib7vzJesdcxMeXtsI/640?wx_fmt=jpeg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/23fKAfwxMsjElAVia9mJcT4ICjF28mtJjSh3g8MshUhicz9KvJic1EBgJSw0f3XDGaUHVyxf4cAs616FWDsnC9qssLicKib8Vr6GeiagDf3uQfte0/640?wx_fmt=jpeg" /></p>
+<p>四、2026–2027 储能出海必关注：全球新规大变革  </p>
+<p>储能出口早已不是单纯物流问题，合规、认证、法案决定能否清关落地。</p>
+<ol>
+<li>欧盟《电池法案｜电池护照》</li>
+</ol>
+<p>2027 年 2 月 18 日正式强制生效</p>
+<p>针对＞2kWh 工业储能电池：</p>
+<p>强制录入全生命周期数据：碳足迹、回收材料比例、供应链溯源、电池健康数据</p>
+<p>未来无电池护照，欧盟禁止清关、禁止销售、禁止投入项目使用。</p>
+<ol>
+<li>美国市场</li>
+</ol>
+<p>北美储能项目通用强制标准：</p>
+<p>UL9540 系统认证 + UL9540A 热失控燃烧测试</p>
+<p>无认证无法落地并网。</p>
+<ol>
+<li>中东、东南亚新兴市场</li>
+</ol>
+<p>普遍需要：CoC 符合性证书、第三方现场监装验货、出厂质检报告</p>
+<ol>
+<li>IMDG 2024 新版海运规则（2026 年 1 月强制）</li>
+</ol>
+<p>锂电池、储能、带电设备分类精细化升级</p>
+<p>监管更严、积载隔离要求更高，意味着：</p>
+<p>未来储能出海，合规门槛只会越来越高，不会降低。</p>
+<p>五、写在最后</p>
+<p>储能，是中国高端制造出海的核心王牌赛道。</p>
+<p>但订单暴涨≠出海容易。</p>
+<p>在外网监管收紧、船东风控从严、合规成本持续走高的大环境下：</p>
+<p>储能柜出口，拼的从来不是低价，而是专业、合规、风控、稳定交付。</p>
+<p>每一台出海的储能柜，</p>
+<p>都是一套完整的安全体系、合规体系、供应链体系的落地。</p>
+<p>精准归类、资料齐全、加固规范、合规先行，</p>
+<p>才是储能企业长期出海的底气。</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>海辰储能重型设备落地欧洲！</h2>
+    <p><a href="https://mp.weixin.qq.com/s/aD63vXIW_65P6UtT3mP9wQ">原文链接</a></p>
+    <p><span>点击关注</span></p>
+  </header>
+  <article><p>本月初，德国威廉港完成首批单台48吨级电池储能系统单的海铁联运作业，这批设备顺利运抵Eurogate码头。此次运输的12台48吨级BESS单元均由海辰储能生产，由“KAWA BUDAPEST”号货轮从宁波港启运，依托川崎航运中欧快线（CEX）服务抵达欧洲。货物在码头完成卸载后，直接转运至威廉港铁路货运站装车，发往匈牙利布达佩斯，全程物流由浙江海港（德国）供应链管理有限公司统筹。<br />
+电池集装箱运输已是全球各大港口的常规业务，但单台48吨的重量已逼近欧洲及全球多数枢纽港口的物流承载极限。正如美国清洁能源协会储能部门负责人此前所言，北美地区同样面临此类物流挑战。<br />
+借助威廉港海铁联运模式，这批重型设备成功规避了公路运输普遍存在的“最后一公里”瓶颈。欧洲铁路线路的设计轴重标准普遍高于高速公路，可支持重型集成设备跨境运输，且面临的监管限制更少。当前，储能项目为实现集约化布局持续提升电池能量密度，这一趋势直接加剧了设备的重量压力，给港口装卸及内陆运输环节带来挑战，而欧洲老化的基础设施进一步放大了这一难题。中东欧地区的大量桥梁及次级公路均设有严格轴重限制，一台48吨的电池系统被压缩至20英尺或40英尺集装箱内，形成的集中荷载往往超出诸多老旧桥梁的安全承载范围。<br />
+在基础设施无法满足重载运输要求的情况下，开发商往往只能选择“半空载”方式发运电池，再于项目现场完成电芯集成。这种方式不仅大幅增加人工成本，还会提升电池在安装过程中受灰尘、湿气污染的风险。在近期《光伏》杂志举办的线上研讨会上，中国企业荣捷能源展示的幻灯片对20英尺、10英尺标准集装箱及企业自研非标集装箱的成本构成进行了对比拆解。<br />
+目前，威廉港是德国唯一具备48吨级设备海铁直联运能力的海港。随着储能行业向单机5MWh及以上容量的集装箱式系统升级，设备在同等尺寸下的重量进一步增加，具备深水港条件且配套铁路货运站的枢纽港口，正成为决定储能项目建设进度的关键因素。</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>华为SST战略布局：技术路线、竞争格局与投资判断</h2>
+    <p><a href="https://mp.weixin.qq.com/s/AeApybz9NalhbnvFZqdahA">原文链接</a></p>
+    <p><span>JANIX</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZXrBSBL6PTwXsngicRetf7yeJUlUVl0NGOoOppFhGtjO7Yadd5gtr2IqmueVzo9DzeiaoTZ4Rat2FFoqQnfmTLO2iceu37EOMKIwyAPHvr63e0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>一、SST是什么：技术本质与产业定位</h2>
+<p><strong>1.定义与本质</strong>：</p>
+<p>SST以电力电子变换（AC/DC→高频DC/DC→DC/AC/DC）替代传统工频变压器电磁感应，实现主动电压/电能质量管理与双向潮流，是 <strong>“半导体替代电磁”的范式迁移</strong>。</p>
+<p><strong>2.产业定位</strong>：</p>
+<ul>
+<li>
+<p>NVIDIA在2025年OCP全球峰会800V DC白皮书中，将SST定位为AIDC<strong>终极供电方案</strong>之一，实现中压AC→800V DC高效、紧凑、可控转换。</p>
+</li>
+<li>
+<p>华为2026年5月15日东莞全球AIDC产业论坛发布“源网荷储AIDC战略”，提出Watt/Heat/Bit+建设模式“3+1”重构，将SST作为Watt重构<strong>长路径终点</strong>——从电网友好UPS+构网储能的“MIMO供电架构”，逐步演进至以SST为核心的<strong>融合构网型能源路由器</strong>。</p>
+</li>
+</ul>
+<p>3.技术与经济对比（vs传统工频变压器+多级供电）：</p>
+<ul>
+<li>
+<p><strong>转换级数</strong>：传统4–5级（中压变→UPS→HVDC/配电→PSU等）；SST缩至<strong>2级左右</strong>。</p>
+</li>
+<li>
+<p><strong>端到端效率</strong>：传统约80%–85%；SST提升至<strong>97%–98%+</strong>（随拓扑/负载略有差异）。</p>
+</li>
+<li>
+<p><strong>体积/重量</strong>：工频体积大、重量重；SST频率提升至20–100kHz，MFT阵列体积/重量降至传统<strong>1/3–1/5</strong>（1MVA案例：SST约0.4m³/0.6t vs传统约1–1.2m³/1.8–2t）。</p>
+</li>
+<li>
+<p><strong>响应与可控性</strong>：传统秒级；SST<strong>毫秒级</strong>，支持双向功率流动与电能质量治理。</p>
+</li>
+<li>
+<p><strong>铜材用量</strong>：大幅减少，符合绿色低碳趋势。</p>
+</li>
+<li>
+<p><strong>路线分裂风险</strong>：<strong>±400V与800V</strong>若长期无法统一，将导致标准碎片化、延缓行业渗透。</p>
+</li>
+<li>
+<p><strong>MTBF与可靠性短板</strong>：当前SST的<strong>MTBF偏低</strong>，需5年以上现场运行数据建立市场信任。</p>
+</li>
+<li>
+<p><strong>NVIDIA生态缺席</strong>：华为未加入800V联盟，短期或被排除在部分认证体系之外，但<strong>国内市场仍有自主空间</strong>。</p>
+</li>
+<li>
+<p><strong>政策与兑现节奏</strong>：节能变压器政策口径宽于SST，对SST直接拉动强度需<strong>动态评估</strong>。</p>
+</li>
+</ul>
+<h3>二、从三个视角看待SST技术的未来发展</h3>
+<ul>
+<li>
+<p><strong>产业视角</strong>：SST技术成熟度约<strong>60%</strong>，瓶颈在<strong>MTBF与成本</strong>；2026年适合产品验证与试点，<strong>2028年可规模部署</strong>（前提：MTBF显著提升、成本回落）</p>
+</li>
+<li>
+<p><strong>技术视角</strong>：SST响应从秒级→毫秒级，运维体系需从传统电气转向<strong>电力电子技能</strong>；<strong>±400V</strong>在运维安全与培训成本上更友好</p>
+</li>
+<li>
+<p><strong>数据视角</strong>：决策核心指标（MTBF、模块效率、成本倍率、SiC BOM占比、渗透率、市场规模、天岳份额、国产化率）已基本可量化</p>
+</li>
+</ul>
+<p>华为国内AIDC主推±400V高压直流（兼容336V存量、平滑演进），海外与高端场景储备800V技术，形成内外双轨、滚动迭代路径，是对交付周期、存量兼容与安全运维的系统性权衡，而非妥协，未来整机环节利润与话语权将集中于具备全栈电力电子+渠道+标准能力的系统集成商</p>
+<h2>三：最后还是一句话总结</h2>
+<p>华为节奏落后台达 1–2 年，打法不同：华为至今未发布 SST 成品 / 原型机，2026—2028 年明确暂缓成品、攻坚核心技术；中期引入第三方试点、再自研落地；远期外溢至全场景。台达已出货、获谷歌大单，走产品与交付路线；华为走生态与标准定义路线，不在同一维度竞争。</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>R016-2025 船舶应用电池动力规范-全文119页</h2>
+    <p><a href="https://mp.weixin.qq.com/s/jGirs8ziM-Q4H4FhQ-BvcA">原文链接</a></p>
+    <p><span>一起学新能源</span></p>
+  </header>
+  <article><h1>今天分享的干货内容是“液冷PCS电气原理图”，推荐大家收藏学习\~</h1>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjyqcRfO9iaRphk1ibYmWrX686MeKs6IpYabHc5K3a1CMQks2T5Rjqs7OL57bmBzVW4TPh96icQCpBpcmgybLaWJbPcsYEdxKtN1Zw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39Ijy2zvTL6JrJqrV5ic9Durp9qliatqTUSgLvIVuWTTHR5DibqVgMnOAqDOFkF7kalY1ufHLPrXTpIl79m0gtO69PEPibZO0wLFnlntI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39Ijy654vnWs6uTFTDfVQmoia26mxIFXna9DVqN2j7ibh94QJYia7iaplicTztWpaTaZ1FY4WXwWtOz8smZgINYSp6yCicaSyWnffI6E0HY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjyB7SBYNnVyDHoJP5EibopXph4QjX1TDCWWw00eGan7lyHfic7wooxviaRXYCIUKcGYGib0P3ONiaWnqmUJCAZo9Msr4ibTjtFbw0lhI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjyYqFnwteVrH39pQkQFVQHPe6ianEur1NxUS9FnMU0bRialO4LnWKHtiauGyO2rRbCuU2SLalKGibHGf8A4cR2NMnq6l0gnPBe5kicQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjzwKd2wXpToZmaX17FYw5x0nOcmGkGVvm7j4oE1XWm2XqNIWicDxqrUukQTM7VciarJfQgG5sYZ49VVE6KibI95iakOvupyjnZKIq8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjxMhmCXLVqUEwAc3PggtnPBp9ic5QVaibdkkDSFE2vgaXRUmfhhyz7Mx7JrHtLn4RBAmI6CLnNPodnmo3ljK5Mzia5WSAR0twXnL0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjzhNvjBoicGgibnPAtDbY47cndGq3icRKMjpIEu4DfD94Wn2Eo7icOgLvfyicSK6MCotP6pVzRlWmKib2A8mGx3yyG876gR4R8oiahhdY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><strong><em>*储能系统学习点这里</em></strong>*</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzvLQME3md2l1QHXPomVNNMD2gNicibh07LuYHAv8CShFBiajQ3kqbSpy8UpiaX3TN1ENptfTIW9kltiavSUtqP0DwZqxw1OMZtsGg4/640?wx_fmt=other&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=12" /></p>
+<p><strong><em>*<a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247495050&amp;idx=1&amp;sn=f38681a48e63829c9834e090494f636d&amp;scene=21#wechat_redirect">储能学习内容展示-知识星球</a></em></strong>*</p>
+<p><strong><em>*注：《一起学储能》星球含《储能资料库》星球所有储能资料</em></strong>*</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjytUt7Bz8kIEicfZbO9QjYwIrIiaibgCc4rmyZIJt9icGLBHiaDqo8JC74zCj9xCI6MZPqANRaRr5zG3THzIOUSQveVLZv6NzzjKmhA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39Ijzj9cMG2kEibfcxFKvzguVFvMhI9CpibTa5pauNiaILL1oRPfReLQbPhevPO8sRuc60Eicw55QVOCkBxVMV2dj4uhZ5ZT8Sy1LlUCA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39Ijxwib1k16FiaibyRZhzfjmGDuT62F0jYTFfibeFd2Td8odgFe2xKpMpJ8ZSrYXnPNJq0zObt1fiaicpnwW6PblUokc3U6Fao68KTCBqg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjylXqRoBL0vdJPZKL6f1dQMiaXNicN6TJRbjiaZ8llssiaGotNTaSswKOpXTn9mgrowK0HQficy3a8ATNvofZU7u4KuPZd4MUeRbc1k/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39Ijx4q4ARZ4xhhiaEzmCUVKZAw6iaLReB6EUI7lWjcAOP1ISaD3Rt4K7a8AlQdgCkcN4eaXrtBqNibp0XHf2gQcw9MDLRwWtYbwia2jQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>以上为部分内容展示，原文档可进入知识星球下载。</p>
+<hr />
+<p>本号已搭建知识星球，内含 1400 + 份新能源核心设计资料，每周更新干货，支持资料代找服务。感兴趣的朋友可扫码加入，一起学习交流。</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_jpg/cicZ6db39Ijz54hjaFvYECzAQficpaOOQ3I4XvZoM84J3RQ2skM4XedTLNoEYcNiak3rQyicyTgY23GY6ct7OTARTibPT0YKxI0UkYA0rY7v9L8s/640?wx_fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=9" /></p>
+<p><strong><em>*储能系统学习点这里</em></strong>*</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzvLQME3md2l1QHXPomVNNMD2gNicibh07LuYHAv8CShFBiajQ3kqbSpy8UpiaX3TN1ENptfTIW9kltiavSUtqP0DwZqxw1OMZtsGg4/640?wx_fmt=other&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=12" /></p>
+<p><strong><em>*<a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247495050&amp;idx=1&amp;sn=f38681a48e63829c9834e090494f636d&amp;scene=21#wechat_redirect">储能学习内容展示-知识星球</a></em></strong>*</p>
+<p><strong><em>*注：《一起学储能》星球含《储能资料库》星球所有储能资料</em></strong>*</p>
+<p><strong>END</strong></p>
+<p><strong>【免责声明】本文所用图片、文字如涉及作品版权问题，请及时告知，将立即删除，无任何商业用途！</strong></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>2026独立储能政策及收益模式全解析（完整版·政策+技术+成本+收益+风险+落地）-25页</h2>
+    <p><a href="https://mp.weixin.qq.com/s/W-VlKC8S2WJWInI8DJwZVg">原文链接</a></p>
+    <p><span>一起学新能源</span></p>
+  </header>
+  <article><p>知识星球调价：倒计时4天，详情见下文<img alt="反手index 指向上下图标" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjyognOcQlUJbiaAtQ63S1IEG0TDjdELdVoFpQxO27kVwJiaH88YSAyfkicwEBibscoD2qCibLhtwrPFUd6nce4D52Eh8HRVaKURIZh0/640?wx_fmt=other&amp;from=appmsg&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=0" /></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247505917&amp;idx=1&amp;sn=85a09e9b57fb3291fb714223b23b0b22&amp;scene=21#wechat_redirect">通知公告：新能源知识星球资料、课程和规则调整公告</a></p>
+<hr />
+<p>今天分享的干货内容是“2026独立储能政策及收益模式全解析（完整版·政策+技术+成本+收益+风险+落地）”，推荐大家收藏学习\~</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjyeISNicQYfxOrkEeSOqQX7uehRM22jH2YsPhYQPxUmcNQmY0erlaIuBN17NicF109d0mfCXyYIhb4WWrsAtQIUQV104FRxVFP6k/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjyZialaMV1DM91ARibc9ZwG4pmPha2GAGcSMZYiacz2h2Bs1peh99G6LOWIyuAFNy31gWCVgoIoVpshAUG03vnOX4KIYq13icWjfGs/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzIgEHCRD0A1zPaOqDzFmnQOF7aRhm3JtBIgySBmOJNZwGNfCZ3GUR4biamTaDBSEAFjfGrjTwvdMgLeTe39LeABqzv5CrIsFaw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjzB4qdPh7hFE6iaa1MHwtJuayQMlIp7OG1bEzvsibPkWtp1c2fSh5SNcGpJYzbFFT7Vvya4KeCAmT2049yRm62gHhDPukDDianR0s/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><strong><em>*储能系统学习点这里</em></strong>*</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzvLQME3md2l1QHXPomVNNMD2gNicibh07LuYHAv8CShFBiajQ3kqbSpy8UpiaX3TN1ENptfTIW9kltiavSUtqP0DwZqxw1OMZtsGg4/640?wx_fmt=other&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=12" /></p>
+<p><strong><em>*<a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247495050&amp;idx=1&amp;sn=f38681a48e63829c9834e090494f636d&amp;scene=21#wechat_redirect">储能学习内容展示-知识星球</a></em></strong>*</p>
+<p><strong><em>*注：《一起学储能》星球含《储能资料库》星球所有储能资料</em></strong>*</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjyTZ3bwVGOiblLv1oMErAVqSbMFF5LwqiaNiaQFqwPGIPmwKCibyMLMxRkXEaz28rHPGavib1ecLqf34Ykxneu3icSYPWR5qDLictupm0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjxeqgB07gibKJDibxwGezDnGrBicjxJYcLBP27TtaAPpRqRquAWTDdfRQb9xFUMhoYgZlQ8iadt1bia5WzE2hWOT7YMp2ROI8948Pn4/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjyW6IsAyvGVf76EcVJXhe1gSHCsJEMgG0zjpwvKyianoRj28yRtVxDm8r5ZmxfngGuXMEtAHHzL2yor0A8fr52ibv0CrtdOpXsjE/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39Ijwv6Be2tKjiacAc5uoSBrwRYMzich4SIAY61POOQkic4Cov0bBLAmZtmHm5jcLQ6ZpNs2Jw1fFpUa6e5FVDYTuVXXU48fSJjnq6Xc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjxJdTTH3WyNyn83jcMmfSYo4RiarB4lQXrRXFrxEcmlg1dwPCJC1jGKOoujKsmgia84kfPITCVgnLqXYKCNuMDicCzTWXuqiayL3Qs/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzJYpCI6mynxrtjx9YxmReRwjGibAmNzKfmvWiaLoMtTNX4XC8tgeTLKoKXaVnuhcia9MB8wDTRAN6LAWG55HabaVpNqk8G0mzg9Y/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>以上为部分内容展示，原文档可进入知识星球下载。</p>
+<p>往期相关文章展示：</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247501045&amp;idx=1&amp;sn=9f41e1c0d2218bda00f275f0180c6ab5&amp;scene=21#wechat_redirect">蒙西电网侧独立储能电站收益分析：政策与市场双轮驱动-全文30页</a></p>
+<hr />
+<p>本号已搭建知识星球，内含 1400 + 份新能源核心设计资料，每周更新干货，支持资料代找服务。感兴趣的朋友可扫码加入，一起学习交流。</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_jpg/cicZ6db39Ijz54hjaFvYECzAQficpaOOQ3I4XvZoM84J3RQ2skM4XedTLNoEYcNiak3rQyicyTgY23GY6ct7OTARTibPT0YKxI0UkYA0rY7v9L8s/640?wx_fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=9" /></p>
+<p><strong><em>*储能系统学习点这里</em></strong>*</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzvLQME3md2l1QHXPomVNNMD2gNicibh07LuYHAv8CShFBiajQ3kqbSpy8UpiaX3TN1ENptfTIW9kltiavSUtqP0DwZqxw1OMZtsGg4/640?wx_fmt=other&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=12" /></p>
+<p><strong><em>*<a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247495050&amp;idx=1&amp;sn=f38681a48e63829c9834e090494f636d&amp;scene=21#wechat_redirect">储能学习内容展示-知识星球</a></em></strong>*</p>
+<p><strong><em>*注：《一起学储能》星球含《储能资料库》星球所有储能资料</em></strong>*</p>
+<p><strong>END</strong></p>
+<p><strong>【免责声明】本文所用图片、文字如涉及作品版权问题，请及时告知，将立即删除，无任何商业用途！</strong></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>清华大学：电力现货市场的基本原理与方法培训课件-67页</h2>
+    <p><a href="https://mp.weixin.qq.com/s/OtCkiwkG5lNC2ud8i8EXOw">原文链接</a></p>
+    <p><span>一起学新能源</span></p>
+  </header>
+  <article><p>今天分享的干货内容是“清华大学：电力现货市场的基本原理与方法培训课件”，推荐大家收藏学习\~</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjzyptLlQe8AptVn9eNPOTzfCkE9RZIic5pRCFVw6RwpXiaqctStpYXrHn1icB7ZAVjIG4tZZjyw4tgfibflvAoLCKEMF0NfibcTtyVU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjwWd3TAXzFZSfnibSdx9A296GLsPozsicMHiaANr9PiatdCXC09nYiaiaYzjuA6uAibVE2M6k4yYsBiauMqRnic1kQ5WFW7xcQhs8WfJMec/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjzvGpGKqTv39qawOXgib5ny7wqjoRKkrP17EwdrgHC1KUzQMSjtJ7cePauEV1LZK8hgLXLpXf7j5iafibBown4Sd9mTMSC17nbeZg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjzDuEAcDYW3mNMb1ucibicmz4JhrB09O3GZ4znHa1F2szHt4l4XuBUoT1W3bacQpbe2jIbvJFz57WpXE1fq9mPLYyuicAnJS33Srg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjyYFuxdhOYTucKQPD7ZoLe88R6nV4olVFQ8ia0Qg7EjBibgjZnibfbib08lwqRMCmgH15045DjJibRGBEh5WR0tSE0x8NAJicwyCPb6g/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjyvicNvJRZBiaA35W6H3qkrdk4ibZdQIhXfMibNNs6PExl6yCFb6P4sXEVrTw7tambeSFTpaALJhJB8w4DlQtLOOLaFQicCTQd99o2c/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39Ijwjf5KYb9DCdvrkhKcq2SnlO741PeogDf2Ez7mQJ4ibs6rOfDkQEZkib5vxXoWel5JHUdicZXnW3B67piaGbicGoAuPrvm97f9zX7Aw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/cicZ6db39IjynM3Q8iahxsQQyYAe2WKrKUyRrDQPpzjQ8DrYXPLaQjpyN20U0RNQfsbane4ibdlum7icEVibbvXjdSueSFbypiaibQem2lCFL6Uj1g/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>以上为部分内容展示，原文档可进入知识星球下载。</p>
+<p>往期相关文章展示：</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247507393&amp;idx=2&amp;sn=9618ce299e9aa9315e2e19777e486769&amp;scene=21#wechat_redirect">新建新能源机组并网手续办理全流程</a></p>
+<hr />
+<p>本号已搭建知识星球，内含 1400 + 份新能源核心设计资料，每周更新干货，支持资料代找服务。感兴趣的朋友可扫码加入，一起学习交流。</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_jpg/cicZ6db39Ijz54hjaFvYECzAQficpaOOQ3I4XvZoM84J3RQ2skM4XedTLNoEYcNiak3rQyicyTgY23GY6ct7OTARTibPT0YKxI0UkYA0rY7v9L8s/640?wx_fmt=jpeg&amp;from=appmsg&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=9" /></p>
+<p><strong><em>*储能系统学习点这里</em></strong>*</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/cicZ6db39IjzvLQME3md2l1QHXPomVNNMD2gNicibh07LuYHAv8CShFBiajQ3kqbSpy8UpiaX3TN1ENptfTIW9kltiavSUtqP0DwZqxw1OMZtsGg4/640?wx_fmt=other&amp;watermark=1&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=12" /></p>
+<p><strong><em>*<a href="https://mp.weixin.qq.com/s?__biz=MzkzMzY3MDUwOA==&amp;mid=2247495050&amp;idx=1&amp;sn=f38681a48e63829c9834e090494f636d&amp;scene=21#wechat_redirect">储能学习内容展示-知识星球</a></em></strong>*</p>
+<p><strong><em>*注：《一起学储能》星球含《储能资料库》星球所有储能资料</em></strong>*</p>
+<p><strong>END</strong></p>
+<p><strong>【免责声明】本文所用图片、文字如涉及作品版权问题，请及时告知，将立即删除，无任何商业用途！</strong></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>电池闪充只需几分钟，究竟是如何实现的？</h2>
+    <p><a href="https://mp.weixin.qq.com/s/7JHCL29_A6Te0NxLZyFirg">原文链接</a></p>
+    <p><span>三亿检测</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/QZRHGcOhBp8jryxcibtPibRwbP2ic8icwRYHP3DibLkn66ZqmT55P2UeXBAgxcojYhfj4nALh1xfNB5zFldU1bQjMog/640?wx_fmt=gif" /></p>
+<p>JiangSu 3E Testing</p>
+<p><strong>CNAS</strong><strong>认可，</strong><strong>CMA</strong><strong>认定</strong></p>
+<p>比亚迪最新超级闪充技术以第二代刀片电池+全域1000V高压平台+兆瓦级充电系统为核心，通过材料、结构、热管理、BMS全链路创新，实现10%-70%仅5分钟、10%-97%仅9分钟的量产最快充电速度，同时保障全温域适配与电池寿命无损。</p>
+<p><img alt="image.png" src="https://mmecoa.qpic.cn/mmecoa_png/pibd2S9qT2PZDRicVSnUh7AYCHlyJxdmh0RWe6o4ibfVoFWfQWXb0VVXZBNQRHewiaRFPB4viaZibWh1Xj6IHS1R12p7gw0f7AB0ibfKx4o6BAoYkc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>（图片由AI生成，仅做参考）</p>
+<p><strong>一</strong></p>
+<p><strong>电池技术革新</strong></p>
+<p><strong>材料革新</strong></p>
+<p>正极升级：采用磷酸锰铁锂复合技术，提升电压平台至3.75V，同时增加锰元素含量，提升离子嵌入容量与迁移速率。</p>
+<p>负极突破：硅碳负极+迁移通道贯通设计，硅含量提升至15%，理论容量提升3倍，同时构建三维离子传输网络。</p>
+<p>电解液优化：高电导电解液+新型导电添加剂，电导率提升40%，离子迁移阻力降低50%。</p>
+<p>核心效果：电芯内阻降低50%，大电流充电产热减少一半，从源头解决发热痛点。</p>
+<p><strong>结构创新</strong></p>
+<p>全极耳技术：取消传统极耳，采用全域集流结构，电流分布更均匀，内阻降低30%。</p>
+<p>薄型刀片形态：电芯厚度从传统15mm降至7mm，散热面积提升70%，散热效率大幅提升。</p>
+<p>对称叠片工艺：电芯正负极片对称叠放，应力分布均匀，提升结构强度与循环稳定性。</p>
+<p>蜂窝状支撑：电芯内部采用蜂窝状结构，增强抗冲击能力，同时提升散热均匀性。</p>
+<p><strong>二</strong></p>
+<p><strong>充电系统</strong></p>
+<p><img alt="image.png" src="https://mmecoa.qpic.cn/sz_mmecoa_png/pibd2S9qT2PYiaDGhyRfoQbMBiagXDVp4iaRwopY9ruDHqO3qWu7pATQfjfwhChrowDdJuftNicqf8LwYL7JW8Yb3O8jx0jZztTqic0Xs5eu4ibLicY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>（图片由AI生成，仅做参考）</p>
+<p><strong>全域千伏高压架构</strong></p>
+<p>原生全域设计：电池、电机、电源、空调等全系统均为1000V承载能力，无升压模块，减少能量损耗。</p>
+<p>1500V车规级SiC芯片：全球最高电压等级SiC器件，导通损耗降低50%，开关频率提升至3万转/分钟。</p>
+<p>功率密度突破：SiC功率模块功率密度达200kW/L，较传统IGBT提升3倍比亚迪。</p>
+<p>兼容能力：支持400V-1000V全平台，普通车型充电速度提升30%-50%。</p>
+<p><strong>材料革新</strong></p>
+<p>单枪峰值功率：1500kW，全球量产最高，相当于同时为3-4台主流电动车快充。</p>
+<p>创新设计：滑轨悬吊式T型桩，枪线悬空，重量仅2kg，单手可插拔，操作便捷。</p>
+<p>储能协同：搭配超级快放储能系统，突破电网容量限制，多车同充不掉速。</p>
+<p>智能体验：闪充APP实现即插即充、无感支付，补能流程极简。</p>
+<p><strong>三</strong></p>
+<p><strong>热管理系统</strong></p>
+<p><strong>精准温控体系</strong></p>
+<p>96个全域温度监测点：覆盖电芯、模组、Pack全维度，实现毫秒级温度监测与反馈。</p>
+<p>三维液冷系统：电芯上下双面冷媒直冷，导热效率提升5倍以上，散热速度提升3倍。</p>
+<p>温差控制：全程电芯温差控制在±2℃以内，杜绝局部过热。</p>
+<p><strong>全温域适配技术</strong></p>
+<p>低温预加热：充电前自动预热至最佳工作温度（25℃），-30℃环境下充电效率仅比常温低10%比亚迪。</p>
+<p>动态热调节：充电过程中根据电流、电压实时调整散热强度，平衡充电速度与温度控制。</p>
+<p>极端环境优化：极寒环境下采用高导热保温材料，减少热量流失，保障充电效率。</p>
+<p><strong>四</strong></p>
+<p><strong>智能电池管理系统</strong></p>
+<p><strong>智能电池管理系统</strong></p>
+<p>1000A大电流监测：全球首款支持1000A超大电流的车规级BMS，采样频率达10kHz比亚迪。</p>
+<p>动态功率调节：实时监测电芯状态，智能调节充电电流，避免过充、过流、过热。</p>
+<p>全生命周期管理：记录充电习惯，优化充电策略，延长电池寿命。</p>
+<p><strong>多重安全防护</strong></p>
+<p>材料安全：磷酸锰铁锂正极热稳定性优于三元材料，热失控温度提升至200℃以上。</p>
+<p>结构安全：刀片电池采用陶瓷隔膜+阻燃电解液，遇热不收缩、不燃烧。</p>
+<p>系统冗余：多重熔断器、继电器、温度传感器，异常时毫秒级切断电源。</p>
+<p>超国标测试：针刺、挤压、火烧等测试均通过，安全性能远超国标。</p>
+<p><strong>五</strong></p>
+<p><strong>全链路协同</strong></p>
+<p><strong>充电流程优化</strong></p>
+<p>车辆与充电桩双向通信，自动匹配最佳充电参数。</p>
+<p>充电前BMS自动检测电池状态，预加热至最佳温度。</p>
+<p>采用恒流-恒压优化策略，全程保持高功率输出，无80%后骤降现象。</p>
+<p>充电完成后自动断电，保障电池安全。</p>
+<p><strong>生态协同</strong></p>
+<p>车桩兼容：兼容国标充电接口，无缝接入现有充电网络。</p>
+<p>智能调度：闪充桩可根据电网负荷自动调节输出，保障电网稳定。</p>
+<p>全场景覆盖：支持家用、商用、高速等全场景充电需求。</p>
+<p>这项技术的核心突破在于解决了"快充必伤电池"的行业痛点，让电动车充电速度真正达到燃油车加油体验，为全面电动化奠定了基础。随着技术量产落地，将彻底改变用户补能体验，推动新能源汽车进入闪充时代。</p>
+<p><strong>END</strong></p>
+<p>JiangSu 3E Testing</p>
+<p><strong>CNAS</strong><strong>认可，</strong><strong>CMA</strong><strong>认定</strong></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=1&amp;sn=23112ab69b1761e22aec2c232837c4be&amp;scene=21#wechat_redirect"><img data-w="1080" style="outline: 0px;border-width: 0px;border-style: initial;border-color: initial;width: 578px;visibility: visible !important;" width="100%" data-cropsely1="0" data-ratio="0.13333333333333333" data-backw="578" data-cropselx2="578" data-cropsely2="56" data-aistatus="1" data-type="jpeg" data-imgfileid="100008358" data-s="300,640" data-backh="78" data-cropselx1="0" class="rich_pages wxw-img" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpibeI07sgO9OFic9c7JukO9AwRmNjkrLgl9w2nEouPIxIkkIjXbtKTiavla7DKFwh7dicV3fX3plc42qA/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"></a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=3&amp;sn=0bf5638b22e56651886750f975abfa8b&amp;scene=21#wechat_redirect"><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpibKa6HT33MYhoenC2O449WcyFsIowmZZz0ScJPlUA1NFYVtyqomXkcE1Rq3mWUyK1RjST5DkAJicCQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" /></a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=2&amp;sn=bedea17474848900534a0a031626b878&amp;scene=21#wechat_redirect"><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpibKa6HT33MYhoenC2O449WcBSpPDGqlK9O47G8x7OZ14mUSszqcLpK95mMO9bHT9iaQ1XQt14OMia4g/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1" /></a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=4&amp;sn=7b8772466ae5afb8892843c351990ec4&amp;scene=21#wechat_redirect"><img data-imgfileid="100008360" data-w="1080" data-type="jpeg" data-aistatus="1" data-cropsely2="154" data-cropselx2="578" style="outline: 0px;border-width: 0px;border-style: initial;border-color: initial;border-radius: 8px;width: 578px;background-size: 16px !important;visibility: visible !important;" data-s="300,640" data-cropsely1="0" data-cropselx1="0" data-backw="578" class="rich_pages wxw-img" data-ratio="0.26666666666666666" data-backh="154" width="100%" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpib6O45jibLofmoXAHhUDUzPWupETKNmk59sw5iccISjwwvBgB32sYze7PcHIDsHlnP5o9pbYTiaSWvhg/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"></a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=5&amp;sn=d713531002b403eb5f2fdc129ca219ef&amp;scene=21#wechat_redirect"><img data-w="1080" data-backh="154" data-s="300,640" data-cropselx1="0" style="outline: 0px;border-width: 0px;border-style: initial;border-color: initial;border-radius: 8px;width: 578px;background-size: 16px !important;visibility: visible !important;" width="100%" data-cropselx2="578" data-cropsely1="0" data-ratio="0.26666666666666666" data-cropsely2="154" data-imgfileid="100008357" data-aistatus="1" data-backw="578" data-type="jpeg" class="rich_pages wxw-img" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpib6O45jibLofmoXAHhUDUzPWphNdialglPSpDgfxjKiaOicAUhxCuw0NfvmMRU8bY2WFtnmMJW6VqYohQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"></a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=6&amp;sn=dcdacf44ed049598de54ecfebedeb2c4&amp;scene=21#wechat_redirect"><img data-backw="578" data-backh="154" data-type="jpeg" data-imgfileid="100008362" data-s="300,640" data-ratio="0.26666666666666666" data-aistatus="1" data-w="1080" style="outline: 0px;border-width: 0px;border-style: initial;border-color: initial;border-radius: 8px;width: 578px;background-size: 16px !important;visibility: visible !important;" width="100%" class="rich_pages wxw-img" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpib6O45jibLofmoXAHhUDUzPWZYcvu4icvoloyCgL7cWia3GSU6nV0iaAwsorGDnibYjCP6GjdqZhHMIjOQ/640?wx_fmt=jpeg&amp;wxfrom=5&amp;wx_lazy=1&amp;wx_co=1"></a></p>
+<p><strong>三</strong></p>
+<p><strong>亿</strong></p>
+<p><strong>检</strong></p>
+<p><strong>测</strong></p>
+<p>江苏三亿检测技术有限公司（简称3E）成立于2016年，是一家专业的综合性第三方检测实验室。实验室占地面积7000多平方米，拥有近1200套先进的设备，是CMA、CNAS认可的实验室。</p>
+<p>公司主要从事汽车整车、汽车电子、汽车零部件、汽车材料、电子电气产品的检测及方案设计、咨询、标准研发、认证等服务。检测项目包含环境可靠性试验、材料性能试验、失效分析、电气性能与信号传输、力学试验、综合型试验等，满足客户检测需求的多样化与高效性。</p>
+<p>三亿检测专注打造汽车检测服务新生态，立足全国市场，提升检测服务品质，推进技术能力攀升，助力汽车行业高质量发展。</p>
+<p><a href="http://mp.weixin.qq.com/s?__biz=Mzg4NjY3NzE4Nw==&amp;mid=2247488679&amp;idx=1&amp;sn=23112ab69b1761e22aec2c232837c4be&amp;chksm=cf975f0bf8e0d61d0767f8c62402f0103c4919bb0723c5b77ae61356ccde8a42fa2d07c4aea3&amp;scene=21#wechat_redirect"><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpic7qjDfia2ibV8d2RjsN5jCsu4txaSkBDnW7C2Yll4WU3gmozgBsRnxwGYv6uGS6KicweibDYPHXn9ibfg/640?wx_fmt=jpeg&amp;from=appmsg" /></a></p>
+<p><img alt="" src="https://mmecoa.qpic.cn/sz_mmecoa_png/pibd2S9qT2PbrTia9aKgOELIiaVwEVIib0k48DY97xwvYgiazd2bJVzIibia5WsY4nDlNAg3K6RCvlhzz9r7l6aw3u8vwYClosupGX7Z3EJkvfULQM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/QZRHGcOhBpib7icY9oBZQElWPb7mialtBQpBLZicooMegYF5hrOE8DInCXEqCql2reFzuJgAlVYOxdRkssMJRpzWSw/640?wx_fmt=jpeg&amp;from=appmsg" /></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>专家报告 | 构网型技术发展与展望报告（104页）.pdf</h2>
+    <p><a href="https://mp.weixin.qq.com/s/rpAgrMjRMT6Wkx40L7tAWg">原文链接</a></p>
+    <p><span>储王</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/B7X3bEF1rOxEoZ6aEtJnpialHa9iariagNzUicDFWtkJUyowOhcsHCZrYmP91ZxUUclZHhcEt0JLv2809Y4KnneY1Q/640?wx_fmt=gif&amp;from=appmsg" /></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzk5MDMxMDE5Nw==&amp;mid=2247483797&amp;idx=1&amp;sn=b2a466e09fc9d1523bba9557e3444d8d&amp;scene=21&amp;click_id=16#wechat_redirect"><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/B7X3bEF1rOy9IJ5m2iaEdK7uuGoQF9btqjhphIszJMDiamy9GPzSYJE2U0X270dP4cZkSWyfmMTIjPpiaLrvibXPZg/640?wx_fmt=gif&amp;from=appmsg" /></a></p>
+<p>今日与大家分享的报告是：  </p>
+<p>《构网型技术发展与展望报告》</p>
+<p>看完记得转发朋友圈+行业群哦，后期会持续分享！</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuz0EK1ZbepcBwhQiagBeqsLibnnJIOS8jcpfCsxEd0nrX8wdVroQBmndXg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzWsjN1WA3rCI1XnB1IcUPibMjaKq1uZjibPoOPS21ibuPYv7Xrcwetq73w/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzC43cyjFOF3sS0nBicMd8h5UszRwib6FQ4tv77ExHxAicT02rjq9r8IgVw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzjcy8YYicpYOoOHJ1Q0wmhxfDibdVOEHSicJEvTsMUAQXpNEeGiacVDuQwQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzGQDPkEFQ5gicfZkYLEV4IbLJQSsQYgH8ticTer26woNkic7Xe7TBlzTrQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzgeFQ0tVeETRCS2swvTa7yAUBM9bs2wKVxTXLSwsLDD0jJeXFDlicjqQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzbJYNYQ8HJThfIvklzyuMgtpelNkyletAGBccAB6q0Aa9NXVeNDbOWA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzVuKQSHQRXzicqFuVgBz36C3kwXyf6dEiauhPMeLnNuCJUxp2deQ4fDJw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzoeFvHwXzRFjU8j8iaYDxbOBiblE8nzIL6gXCyK8J9uIlPicnOicZyZbj8Q/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzWTGT03qsTBHBsEzhz64DgboGoicThZvUNWu0sGoKxBJ9N0gCQL9wibRw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzCvasQrvjZjqHGxhjIMia0ZBrZIjoN1c0oIeh9erLMloaK6fLbIiagcbg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzzibJNnzIZuduJ5nwJBUmVYdtaDRLRcpibxIdq921HBIr11xwA9A9LD4Q/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzuZSOa7QyepQWLOic7aOVx9Sko0XZMF1cl4VZte8kqs4dFpX9ibR2z0wA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabpKxXaFwTiajKQPSHcJL4zuzZSAOmxOngVpxqXpKgeXBXKZtxPfHsgwyaFehQhicYl6zCwxO8fNo30Q/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>（完整版报告共计104页）</p>
+<p>..........................</p>
+<p>以上为部分内容预览～</p>
+<p>想获取完整版资料，可扫码添加小编微信领取</p>
+<p>备注“工作单位+姓名+报告名称”优先通过</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/KXMcOz5gvGrYpPJ5hAyoAXGFKKFL52kwNnKIRWfxrc6RndGQH8oa6kJPG55OA0rss6VfUnI56I7iaUyDa35cmyQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=wxpic#imgIndex=0" /></p>
+<p>看完记得转发朋友圈+行业群哦，后期会持续分享！</p>
+<p>免责声明：本文所用的视频、图片、文字如涉及作品版权问题，请第一时间告知，我们将立即删除，无任何商业用途！</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>专家报告 | 华为智能组串式构网型储能解决方案.pdf</h2>
+    <p><a href="https://mp.weixin.qq.com/s/VHDGJrB3FYp7sBqIZALM1w">原文链接</a></p>
+    <p><span>搬砖中</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/B7X3bEF1rOxEoZ6aEtJnpialHa9iariagNzUicDFWtkJUyowOhcsHCZrYmP91ZxUUclZHhcEt0JLv2809Y4KnneY1Q/640?wx_fmt=gif&amp;from=appmsg" /></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzk5MDMxMDE5Nw==&amp;mid=2247483797&amp;idx=1&amp;sn=b2a466e09fc9d1523bba9557e3444d8d&amp;scene=21&amp;click_id=16#wechat_redirect"><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/B7X3bEF1rOy9IJ5m2iaEdK7uuGoQF9btqjhphIszJMDiamy9GPzSYJE2U0X270dP4cZkSWyfmMTIjPpiaLrvibXPZg/640?wx_fmt=gif&amp;from=appmsg" /></a></p>
+<p>今日与大家分享的报告是：  </p>
+<p>《华为智能组串式构网型储能解决方案》</p>
+<p>看完记得转发朋友圈+行业群哦，后期会持续分享！</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36MsmYd6mduh6rQCVPkLxauzg5iaNibnAtdWKkrCfZx5esNwro7E0tVLxg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36pWumqxcwsRBM6NKQcMUJNdIXX1O6xM16xpoWAVMUatkJ6dMhxeC9Kg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36XpzQgO4mPEnvKiap320SndkDHfRZmicZpdSibrkWdzic30lgMTGhGEGWrg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36acv9V1mYt80fSgNHUhfHGwyqwAT0lxH7yUEvylRcPbpySECoIiaYgjw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36GEsvGxcwiarxibic8CrDPdibXnVmhxSCyFc1wUox8AiaJeIXXeNfzCNS4RQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36El8A9ZerIoq4d4KmEGIkTtbAoS419mKicV3IspIo53ElAKG0mCqZe9g/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36gvKgR9PMTzS7ofIyJ8rNlggiayiaAWrx7Ok6rgMQ9WLnbdcZEthFqibag/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36Ydh1ByZhG7wLKatEUKEZfLoC5NCxYmSd2zSERAknRmIq8d0EQ6dibRQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD365dyElBztNjcBh36PyBsg0cI9edBgLt2j7euHuicexticsgfo7AMRyU4A/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36d3XDrHh61arJCbcHCKiaDYiciaNSncwSibubzZCu2fShovOz71uiciaMOiaQg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD363O9VhdRY6UcvpoV2Z4yjy9xCgvmo72BT6B9pTQiceOf8eNF3Iy3tiaBQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36AcftDaw50SLiaegCMcibjxE5lpzha529d2wubIeVB3wPSc5NV4yLZDeg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36yYicbSwtfaEPPuiajBXQ8V8cia9RaCPsPDozvhynD07TFLymaydN31icdA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36nWtOkzSUgq0iaV97W6gjDRunlHGXpEAgvGlzxcfMCjATBYpIoibsXayA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36Jjp3IbdylIY1Qe7vPR538QyLGU6wp1JfSljABRPTXNooKebmnssbQg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD360cicfXicPo0icFP3ynE1ribZ3M8A3hDmdI1xFUjkFt7Xso15SE4YowmE4A/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrZCeaCfDS5SmrO1m0MFD36Yp1BeXkzkAViciaXQib0Dyicic5vb3RklNzxeU355Yyqibqvu1haqNiadZhVQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>.........................</p>
+<p>以上为部分内容预览～</p>
+<p>想获取完整版资料，可扫码添加小编微信领取</p>
+<p>备注“工作单位+姓名+报告名称”优先通过</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/KXMcOz5gvGrYpPJ5hAyoAXGFKKFL52kwNnKIRWfxrc6RndGQH8oa6kJPG55OA0rss6VfUnI56I7iaUyDa35cmyQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=wxpic#imgIndex=0" /></p>
+<p>看完记得转发朋友圈+行业群哦，后期会持续分享！</p>
+<p>免责声明：本文所用的视频、图片、文字如涉及作品版权问题，请第一时间告知，我们将立即删除，无任何商业用途！</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>专家报告 | 构网型储能EPC总承包工程实践分享.pdf</h2>
+    <p><a href="https://mp.weixin.qq.com/s/iid0O3_VzGJNvjHaIEh3-Q">原文链接</a></p>
+    <p><span>搬砖中</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/B7X3bEF1rOxEoZ6aEtJnpialHa9iariagNzUicDFWtkJUyowOhcsHCZrYmP91ZxUUclZHhcEt0JLv2809Y4KnneY1Q/640?wx_fmt=gif&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/B7X3bEF1rOzYQKICtelMtvpDbQmgzdgZEmVYzZYpI9eZdm8icr2ib7qHdl5Y9YGqzrTqZCkKFPPXibFILHqvT4MbQ/640?wx_fmt=gif&amp;from=appmsg" /></p>
+<p>今日与大家分享的报告是：  </p>
+<p>《构网型储能EPC总承包工程实践分享》</p>
+<p>看完记得转发朋友圈+行业群哦，后期会持续分享！</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWM4CBQT9k3glCJZh3cBUHZibvFN6fMyJ4R8zOSteIdLwoGJY8icYeYiaVQ/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=13&amp;tp=wxpic#imgIndex=0" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWt9J7tKKZfFPOw4PUoKjyuPib3llgjwSujeiaHfkUXX1nCOialBiaIZjbow/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=1" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWSwWScphnHVIlNdiaQS3JJeToNjAl779fAiaWibwEpo4ohribspP4vAFuvw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=2" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWVQicpmC3wEibse4lF0ibQduVLQASRhSbYQfmQ5rysJgxav1bjJQRaicKXg/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=3" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXW4feVPTNVkeUx5cz3JUFtn5DPFKgVpBicQZyxqnXKjOXFL4K2BRgCcrQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWNKofqpTQibULibrVPT930R9vgogOjlUsnAJuK2YgUcbOiaiaUzWFasI7Jw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=5" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWbtdOYONqWpF6IrUUe5v3qxCsyMKVhGTic9CzC5ibweVgZD4azicyVavwg/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=6" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXW063znibETq921kAUYBx6lAJUE0j3yibHLCK83Z3Qw3RetsvU1DD9v2aQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=7" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWXnFHAt0V277E08SG2EayHyCI3JKnjOD2Cy1ChR91IwZEvZwKsic7qAg/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWphG5jPKF3SErLNQibvIdsYQlzQccpqLJA0AgvaLphCicCMdHPxSvDkKw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWPf5KmlLl8gSpOgwWNw9WmC00STvrFSow8et4j6sp8qrfY02pEbJiatA/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWLZoEWm13u4FoXZQ7icIibgqia4QA4lc2OMbTnQy3wTslq9AxBibWlCnbHw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=11" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWGaibiblt8iceV466JBUo04NAZq3yWTtzkicVHAG8xD78oibQGowSmyPxB6g/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=12" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWgY8wzKibdkjCFgriaGmbkHZN3VAZsoicXL1b1D6xHibjg3wAm8Kl1PzNtA/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=13" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXW1OQG2vZHnLV56eNd0dRqpVyzOWMiaSYp85j4RZP202XfjCE6pkK8CIg/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=14" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWEOicSg2GMEmez9Ljna01UuMkr4tgqqZptFVXsk1kHl28WEs7ppKyE5w/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=15" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWKbMvfIPCYjXr4QrTtQOG6pSibhzsOmvUtTmlLibkpibfA5ibxIU6PvUFCQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=16" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWbQQTsFTVZUqIoBiagdPVRwSKpniaohLzEexF7BDwqwnIGudfibjUV6tew/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=17" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWGzURP2UULOfJ7oLsbW04EicI1ok9xIJeEvYia1fs3NDR687Z9HDKktag/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=18" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWCLeAqBrgiadAE0vsztibBHkzibyiaf9ZUoRvWib3o9OQX456n2LSEU8dnzw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=19" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWY2UjLYRcfD3qiaI5eCKpNWypg1RHJEYNU25hDKwukiaK4iaNDFQic4WrqQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=20" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWJiakAxKoj9LdtHTNsmwfeGevnBen2Ve0LBF88gy2rP4GRMWlJmvN9qQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=21" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWzW7VTicp0UC879pfnUedRFFicLCeAEvxJ39tRJjzjfHibXcD1GkUVMwBQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=22" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWGmXL5UBVCia5IJWqZaaH3rFtJMB4awHrvGzML0ctmDpbcEFM5yNKyFQ/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=23" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWoUakTckH8yXpqr2sX9Xs520muh04avyggnU2rxUwg8QliazWkVICt8w/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=24" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWULxSauF1CNWehoZ808iaViaIKFiajNEG33kT0x6jflKT4VgnmQWdvj9xg/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=25" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXW6ZecVkflTqJrXcSRqsdYnrN3ex4E7Ke6ujhY3mZVv6iby8JniaNtAqbg/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=26" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWg5QusGkx7KbjMNEcsKah6aUGujjssFYAoc8Bd0fUKGGFEibybVpU6nw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=27" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWVNDqm1nW2CL5MDrxCEicdmPIcW5L2o8Lbs9ymiaN4BuL7Wg6A7EO7D8w/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=28" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/WVZtkzSOabrlynubkEDAtibxH8oibp6UXWSlrwwQONuOopvpicvQCKUdLCMJqFicrZEmfUC5vEFyqJfTs5g9QPVxbw/640?wx_fmt=png&amp;from=appmsg&amp;tp=wxpic&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=29" /></p>
+<p>..............................</p>
+<p>以上为部分内容预览～</p>
+<p>想获取完整版资料</p>
+<p>扫码关注，后台回复【003】领取</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/B7X3bEF1rOzsxlRWquZBzXkbeKmVdDicibyPneYNDOmCdKUww7tcSsmE1MISJrUbaqvXwu3R9n0ibRtRksCjng3Dg/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p>看完记得转发朋友圈+行业群哦，后期会持续分享！</p>
+<p>免责声明：本文所用的视频、图片、文字如涉及作品版权问题，请第一时间告知，我们将立即删除，无任何商业用途！</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>构网型储能电站对于过载300%的需求，是如何实现的？</h2>
+    <p><a href="https://mp.weixin.qq.com/s/7CykZ2ET_TfhG7TEWeXVtQ">原文链接</a></p>
+    <p><span>储能小王</span></p>
+  </header>
+  <article><p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/Wh4Ob7uwAm9GPoXZ1vOTNQR2iceLlY3YW7AfRvS57FxAyzt3VkIlFNNYgicZ77yeFbNC2zexEWibE5icwj1sYn8D5MHvW5wl7hCABultlyJVichs/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" />  </p>
+<p>在新能源高比例并网的今天，电网的“稳定性”越来越成为行业关注的核心。风电、光伏的间歇性、波动性，让电网面临着前所未有的频率、电压波动挑战——当极端天气导致风电骤降、光伏骤减，或电网发生短路等突发故障时，需要一种“应急支撑力量”，能在瞬间释放超大功率，稳住电网的“脉搏”。</p>
+<p>构网型储能电站，正是这种“应急支撑力量”的核心载体。不同于传统跟网型储能“被动跟随电网”的特性，构网型储能能像同步发电机一样，主动支撑电网电压和频率，甚至在电网故障时，凭借自身的过载能力，为电网提供关键的故障电流和惯量支撑。其中，最引人关注的，就是其<strong>“300%过载/10秒”的核心指标</strong>——简单来说，就是能在10秒内，输出相当于自身额定功率3倍的瞬时功率，从容应对电网的突发冲击。</p>
+<p>很多行业同仁都会有疑问：3倍额定功率，相当于让一台5MW的储能电站，瞬间爆发出15MW的功率，这在技术上到底是如何实现的？毕竟，常规电器哪怕短时间过载，都可能出现烧毁、故障的情况，构网型储能电站为何能“扛住”这种瞬时冲击，还能稳定发挥支撑作用？</p>
+<h2><strong>一、300%过载，到底是个什么指标？</strong></h2>
+<p>行业内所说的“300%过载”，并不是无限制的“超功率运行”，而是有明确的标准要求和应用场景。</p>
+<p>根据<strong>《构网型变流器通用技术规范》</strong>等行业标准，构网型储能电站的300%过载能力，核心定义是：输出300%额定电流（即3倍额定功率），持续时间不低于10秒。</p>
+<p>这里有两个关键信息，须重点说明：</p>
+<p><strong>第一，过载的核心是“电流过载”，而非“功率无限制提升”。</strong>因为功率=电压×电流，在电网故障场景下，电网电压会出现瞬时跌落，此时要维持功率支撑，就需要通过提升电流来补偿——3倍额定电流，对应的就是3倍额定功率（理想状态下），其核心目的是为电网提供足够的故障电流，支撑电网电压恢复，避免故障扩大。</p>
+<p><strong>第二，10秒的时间限制，是“安全红线”。</strong>3倍过载属于“短时脉冲运行”，不能长期维持，10秒的时长，是综合了器件耐受能力、热积累风险、电网支撑需求后，行业约定的安全阈值——既能满足电网故障时的瞬时支撑需求，又能避免储能设备因长期过载而损坏。</p>
+<p>简单来说，300%过载能力，就是构网型储能电站的“应急爆发力”：电网正常运行时，它按额定功率平稳工作；电网出现故障时，它能在10秒内“全力冲刺”，释放3倍功率，帮电网稳住局面，等电网恢复稳定后，再迅速回归额定运行状态。</p>
+<h3><strong>硬件层：“超配+高热容”，筑牢过载的物理基础</strong></h3>
+<p>任何瞬时大功率输出，都离不开硬件的支撑。构网型储能电站能实现300%过载，最核心的前提，就是硬件层面的“冗余设计”——简单说，就是“硬件配置比实际需求高”，预留出足够的过载空间，确保短时冲击下不损坏。这就像一辆汽车，平时按100km/h行驶，但若遇到紧急情况，能短时冲到300km/h，前提是发动机、轮胎、刹车等核心部件，都按更高的标准设计。</p>
+<p>构网型储能的硬件冗余设计，主要集中在PCS（储能变流器）、直流侧电池簇、电磁元件三个核心部分。</p>
+<p><strong>1. PCS功率器件：定制级“扛造”，能扛住3倍电流冲击</strong></p>
+<p>PCS是储能电站的“能量转换核心”，相当于“心脏”——负责将电池的直流电转换成交流电，输送到电网。300%过载，最考验的就是PCS的功率器件，尤其是IGBT模块（PCS的核心元件，相当于“开关”，控制电流的通断和大小）。</p>
+<p>常规跟网型储能的IGBT模块，电流等级通常按1.25-1.5倍额定电流选型，仅能满足正常运行和轻微过载需求；而构网型储能的IGBT模块，必须进行“超配设计”：</p>
+<p>一方面，选用定制级高热容量IGBT芯片。这种芯片的结温耐受能力更强，能承受10秒级的瞬时脉冲冲击——常规IGBT的结温上限通常在125℃，而构网型储能专用IGBT，短时结温可提升至150℃，10秒内产生的热量不会导致芯片热击穿，相当于给IGBT加了一层“耐高温防护”。</p>
+<p>另一方面，电流等级按3倍峰值选型。也就是说，若某台PCS的额定电流是1000A，其IGBT模块的额定电流至少要达到3000A，确保3倍过载时，电流能顺利通过，不会出现器件烧毁、短路等问题。</p>
+<p>除了IGBT模块，PCS的拓扑架构也会根据容量需求，采用不同的设计策略，进一步降低过载时的器件应力：集中式PCS（适用于大容量场站）：采用“单台PCS全功率硬扛”的方式，比如一台5MW的PCS，自身硬件配置就能支撑15MW的瞬时输出，无需其他PCS协同，结构简单，响应速度更快。组串式PCS（适用于中小型场站或分布式场景）：采用“多子模块并联分流”的方式，3倍电流由多个子模块共同承担，每个子模块只需承受部分电流，大幅降低单管的运行应力，提升系统的可靠性——就像几个人一起扛重物，每个人的负担都会减轻。</p>
+<p><strong>2. 电磁元件：强化结构，抵御9倍电磁力冲击</strong></p>
+<p>PCS输出的3倍电流，会通过电感、变压器等电磁元件输送到电网。电流越大，产生的电磁力就越强——3倍电流产生的电磁力，是额定电流的9倍（电磁力与电流的平方成正比）。如果电磁元件的结构不够坚固，很容易在瞬时电磁力的作用下，出现振动、铁芯饱和、甚至结构形变，导致设备故障。</p>
+<p>因此，构网型储能的电感、变压器，都经过了专门的结构强化设计：一是按3倍电流、9倍电磁力进行结构加固，优化线圈绕制工艺，增加铁芯厚度，防止10秒内出现振动、形变；二是优化漏感与饱和曲线，确保在3倍大电流下，电磁元件不会退出线性工作区——如果线性区被突破，电感、变压器的性能会急剧下降，甚至无法正常传输电流，影响过载支撑效果。</p>
+<p><strong>3. 直流侧电池簇：短时“解禁”，释放3倍脉冲电流</strong></p>
+<p>PCS的大功率输出，最终依赖于直流侧电池簇的电流供给——相当于“心脏供血”，如果电池无法在短时间内释放足够的电流，PCS再强也无法实现3倍过载。因此，构网型储能的电池簇，也进行了针对性的设计。</p>
+<p>首先，电池选型上，必须选用高倍率电芯。常规储能电芯的放电倍率通常在1C左右（即1小时内放完额定容量），而构网型储能专用电芯，放电倍率需达到3C及以上，支持短时脉冲输出——也就是说，电芯能在10秒内，释放相当于自身额定容量3倍的电流，为PCS提供充足的“能量来源”。</p>
+<p>其次，BMS（电池管理系统）采用“动态限流策略”。平时，BMS会将电池的放电电流限制在1C左右，保护电池安全；当检测到电网需要过载支撑时，BMS会临时放宽电流限制，允许电池以3C的倍率放电，但严格控制时间在10秒内，10秒后立即恢复正常限流，避免电池因长期高倍率放电而衰减、损坏。</p>
+<p>此外，直流母线会配置大容量电容，起到“缓冲作用”。3倍过载时，电流会出现瞬时尖峰，大容量电容能快速吸收、释放这些尖峰电流，抑制直流母线的电压波动，确保电池和PCS的运行稳定——就像一个“蓄水池”，能应对瞬时的水量冲击，避免水管爆裂。</p>
+<h3><strong>软件控制层：虚拟同步机技术，稳住过载时的“电压根基”</strong></h3>
+<p>如果说硬件是构网型储能实现300%过载的“身体基础”，那么软件控制就是“大脑核心”。尤其是虚拟同步机（VSM）技术，作为构网型储能的核心控制技术，直接决定了过载时，储能电站能否“稳住阵脚”，不脱网、不限流，真正发挥电网支撑作用。</p>
+<p>很多人会疑惑：跟网型储能也能实现一定程度的过载，为什么构网型储能的过载能力更关键？核心区别就在于控制方式：跟网型储能是“电压跟随者”，电网电压、频率变化时，它被动调整自身输出；而构网型储能是“电压源提供者”，通过虚拟同步机技术，模拟同步发电机的外特性，主动维持电网电压和频率稳定——哪怕在3倍过载的极端情况下，也能守住电压底线，不脱网、不崩溃。</p>
+<p>虚拟同步机技术在300%过载中的作用，主要体现在三个方面：</p>
+<p><strong>1. 虚拟惯量+阻尼，抑制振荡，稳住相位</strong></p>
+<p>电网发生故障时，频率会出现瞬时突变（比如突然下降），如果储能电站的响应跟不上，就会出现功率振荡、相位偏移，甚至脱网。虚拟同步机技术的核心优势，就是能模拟同步发电机的惯量和阻尼特性，延缓频率突变，抑制振荡。在3倍过载瞬间（通常是10毫秒内），虚拟同步机控制系统会立即投入虚拟惯量H——惯量越大，频率变化越缓慢，就像给电网的频率变化“踩了一脚刹车”，为后续的调节争取时间；同时，通过强阻尼D，抑制功率和电压的低频振荡，避免3倍电流下，储能电站与电网出现“失步”现象（相当于两个人跑步，节奏不一致，就会摔倒）。简单来说，虚拟惯量和阻尼，就像储能电站的“稳定器”，确保过载时，储能电站能与电网保持同步，不出现“乱了节奏”的情况。</p>
+<p><strong>2. 电压源型限流：限幅不限压，主动支撑电网</strong></p>
+<p>这是构网型储能与跟网型储能最核心的区别，也是300%过载能发挥支撑作用的关键。跟网型储能采用“电流源控制”，当出现过载时，为了保护自身设备，会立即降低输出电压，甚至直接脱网，无法为电网提供支撑；而构网型储能采用“电压源控制”，过载时的控制逻辑是“限幅不限压”——即只限制电流幅值在3倍额定电流以内，不降低输出电压，始终维持端口电压接近额定值，主动向电网注入故障电流，帮助电网恢复电压。举个通俗的例子：电网就像一条公路，电压就是公路的“宽度”，电流就是公路上的“车辆”。当公路出现拥堵（电网故障）时，跟网型储能就像“减少车辆、甚至关闭车道”（降电压、脱网），只会让拥堵更严重；而构网型储能就像“保持车道宽度不变，控制车辆数量不超过上限”（限电流、保电压），帮助疏导交通，让公路尽快恢复畅通。</p>
+<p><strong>3. 毫秒级响应，确保过载指令“瞬间执行”</strong></p>
+<p>电网故障的发展速度非常快，通常以毫秒级计算，如果储能电站的过载响应速度太慢，就无法及时提供支撑，可能导致故障扩大。因此，构网型储能的控制系统，必须具备毫秒级的响应能力。实际应用中，构网型储能的有功、无功响应时间通常小于10毫秒——也就是说，从检测到电网故障、发出过载指令，到PCS输出3倍功率，整个过程不超过10毫秒，能瞬间响应电网的支撑需求。同时，控制系统支持有功、无功、视在功率的全过载模式，可根据电网故障的具体场景，输出纯感性或纯容性功率——比如电网出现电压跌落时，输出容性功率支撑电压；出现频率下降时，输出有功功率提升频率，全方位适配不同的故障场景，确保支撑效果。</p>
+<h3><strong>热管理与保护：卡死10秒窗口，守住安全底线</strong></h3>
+<p>3倍过载时，储能设备会在短时间内产生大量热量——如果热量无法及时控制，或者过载时间超出限制，就会导致器件烧毁、电池衰减，甚至引发安全事故。因此，构网型储能电站的热管理与保护系统，核心任务就是“卡死10秒过载窗口”，确保短时过载后，设备能安全回归正常运行。</p>
+<p>这部分的设计逻辑，可总结为“短时热耐受+时序保护”，两者协同作用，既满足过载支撑需求，又守住设备安全底线。</p>
+<p><strong>1. 短时热耐受：“冲一波就退”，不追求长期散热</strong> 很多人会疑问：3倍过载产生的热量那么大，为什么不设计更强的散热系统？其实，这是一种“精准设计”——因为3倍过载仅持续10秒，属于“瞬时热冲击”，不需要追求长期的高功率散热，只需利用器件自身的短时热容量，就能承受10秒内的热量积累。构网型储能的散热系统，是按额定功率长期运行设计的，能满足正常运行时的热量散发；而10秒过载产生的额外热量，主要依靠IGBT芯片、电池等器件的自身热容量来吸收——就像一个人短时冲刺，不需要一直保持冲刺速度，身体的能量储备就能支撑短时间的高强度运动，冲刺结束后，再慢慢恢复即可。当然，这种设计的前提是，器件的热容量足够大（也就是前面提到的定制级IGBT、高倍率电池），能在10秒内吸收热量，且不超过自身的耐受极限。</p>
+<p><strong>2. 时序保护：到点必降、异常即停，不抱侥幸</strong> 如果说短时热耐受是“被动承受”，那么时序保护就是“主动控制”，确保过载时间不超标、设备运行不异常。首先，设置“硬时限”控制。控制系统会精准计时，从过载指令发出的那一刻开始，严格控制过载时间不超过10秒——10秒一到，立即启动功率降额程序，逐步将功率从3倍降至1.5倍，再降至1.2倍，最终回归额定功率，避免热量持续积累，损坏设备。这种“到点必降”的逻辑，是行业内的统一标准，也是确保设备安全的核心红线。其次，采用“分层保护”机制，区分“正常支撑”与“设备故障”，避免误动或漏动：器件级保护实时监测IGBT芯片的结温、电池的温度和电压，一旦超过设定阈值，立即降功率或停机——比如IGBT结温超过150℃，不管过载时间是否达到10秒，都会立即降功率，防止芯片烧毁；系统级保护监测电网的过流、过压、频率异常，以及储能系统的内部故障（如短路、漏电），如果是电网正常的支撑需求，就按10秒过载逻辑执行；如果是设备内部故障，就立即停机，避免故障扩大。这种分层保护，既保证了电网支撑的有效性，又守住了设备的安全底线，避免出现“为了支撑电网而损坏自身设备”的情况。</p>
+<h3><strong>场站级协同：多机并联，让过载更稳定、更可靠</strong></h3>
+<p>前面我们聊的，主要是单台PCS或单个电池簇的过载设计。但实际应用中，构网型储能电站通常是多台PCS并联运行（比如一个100MW的储能场站，由20台5MW的PCS组成），此时，就需要通过场站级协同控制，确保多台PCS能同步实现300%过载，且负荷均分，避免单台设备过载压力过大。</p>
+<p>场站级协同的核心，是“虚拟同步场站控制技术”——通过一个统一的控制系统，对所有PCS进行协调管理，实现3倍过载电流的均分。比如，一个由10台5MW PCS组成的场站，需要输出150MW的3倍过载功率时，控制系统会指令每台PCS输出15MW的功率，每台设备都承担3倍额定功率，避免单台PCS承担全部过载压力，提升整个场站的可靠性。</p>
+<p>此外，场站级协同还能实现“并离网无缝切换”——哪怕电网发生黑启动（电网完全失电后重新启动），或者储能场站进入孤岛运行模式（脱离电网，独立为局部负荷供电），依然能实现3倍过载，带起冲击负荷（比如大型电机启动时的瞬时大功率需求），确保局部供电的稳定性。</p>
+<p>这种多机并联的协同设计，不仅提升了过载能力的可靠性，还能根据场站容量灵活扩展——比如需要更大的过载支撑能力，只需增加PCS的数量，通过协同控制，就能实现更高功率的过载输出，适配不同规模的电网支撑需求。</p>
+<h3><strong>总结：300%过载，是技术协同的“必然结果”</strong></h3>
+<p>看到这里，相信大家已经明白：构网型储能电站的300%过载能力，并不是某一项技术的“单点突破”，而是硬件、软件、热管理、场站协同等多方面技术的“合力之作”——硬件层的“超配设计”，为过载提供了物理基础，确保能扛住3倍电流和9倍电磁力的冲击；软件层的虚拟同步机技术，为过载提供了“大脑支撑”，确保能稳住电压、抑制振荡，不脱网、不限压；热管理与保护系统，为过载守住了安全底线，确保10秒内热量不超标、设备不损坏；场站级协同控制，为过载提供了可靠性保障，实现多机均分负荷，灵活适配不同场景。</p>
+<p>在新能源高比例并网的大背景下，构网型储能的300%过载能力，不仅是其区别于传统跟网型储能的核心优势，更是电网安全稳定运行的“重要保障”——它就像电网的“应急救援队”，平时默默待命，一旦电网出现故障，就会瞬间释放3倍功率，用10秒的“冲刺”，稳住电网的“脉搏”，为电网故障恢复争取宝贵时间。</p>
+<p>随着技术的不断迭代，构网型储能的过载能力还会不断优化，比如延长过载时间、提升过载功率，进一步适配电网的复杂支撑需求。而对于行业从业者来说，理解300%过载的实现逻辑，不仅能帮助我们更好地选型、运维构网型储能电站，更能深刻认识到构网型储能在新型电力系统中的核心价值——它不仅仅是“储能容器”，更是电网的“稳定器”和“应急支撑者”。</p>
+<p>未来，随着构网型储能技术的广泛应用，相信会有更多具备高过载能力的储能电站落地，为新能源高比例并网保驾护航，推动新型电力系统的高质量发展。</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_jpg/Wh4Ob7uwAmicbiamtajnfOqNGZ9yhcnprbu68Xib5aFWribG5iaURyOicV4OoVlg3HkibZC0aDkwoZpd5QiblMoMG7WnWqqFUEYPqUrBIEtcEXUrVd8/640?wx_fmt=jpeg&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=0" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/Wh4Ob7uwAm9UE9QTyGwmxIyVzT9IuhLiatcacqS59aibnDCGrZOhBY1ZeibicqFP8PC5tWXdWiboHDSpvug53mYicr8zibicvDwrqVqcx8Sg7qYwLWY/640?wx_fmt=jpeg&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=1" /></p>
+<p>免责声明：本文所用的视频、图片、文字如涉及作品版权问题，请第一时间告知，将立即删除，无任何商业用途！</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>构网型储能系统白皮书</h2>
+    <p><a href="https://mp.weixin.qq.com/s/LdDrOYT23IDN1hIfc5X1yg">原文链接</a></p>
+    <p><span>新能源时代</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplpMPZYcAltSzZKQ2tyQ58HJT3dPBuzzjJia73jHZVP3DPjaQcwCWg7urcf5QicfqicwiafKMUDXibG7DH2qZuQibJBJIBEy6ricCkfHHA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOploNYibCC2C1rePTFWmEcya9JdRIKhBsW0BqznTiaYVS6hib8APNUfS6IC19xU1EkwEGX65f48kf2JkPmU1FZM4buzOzkoK5DDu1WY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplrKblwpuicQybQ46b5ty5XT59WJbiaAwXhHdeEAAhYDjnlDTHh94cTsLoM7Bwr4LnhOvoQdb7gE5V9vFKoc754q5AQV8OKmepcH0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplqwsia94icrobPb6TnDrbSh3BEXC46ABh1GiazPGmicAIqUvE5h3TicLkMoSNnm0pKEiaUtS3djZUaO9UGb7dxZiaBMx7WKFTbo3u2FC8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplrlsOLLwX9mGtgBiaascBV9hEHC5yzeQNmcT913tKwel7AVjjpyibF0gkkicVtd9w9l3nnxkrcKEltLyeReOL7ZM2kH9ka11IicmnA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplqNfV9NQrfaFSFZ2XwZyyia3jicleVtLH3HInejDBic7myNAvSWanUQDXibT5txIvWGoYwpia6dPdqpkONEoN1JWLWUeyibNPXVGlezg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplqHyiacuMx4zQqZibj7zsB3huwNIMiarajbhN45D0L2g0z9zXygSFc1MwcDPc6crVtePxFEiaic0MEOTlRaX3MZckIgfXqIOicnKAVyY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplrvI0m8IGswnia3ccaCXgdtSLyGwe8RBs6VV8KfF0z0SdRpExVQrzMnzdWN3vbzPwrkTtFQSqZZmx7JnEhkWGwvNwmdFKLOzReA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOploN4MibD7auMC4mWtBQ1Lk0sRwaib6WChocwibPAhX9ib3K2FHKtjEV9LLqg8ibpgCV0WL0aoE59QSAl766U3WpsNEYfwf95485YmNk/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplovge4ib2zMYyOA5WEJOu1ke9icjFxwCjouFDqVTKSKhaflsLQEz31Z4H6SlZMLXZ9EyRSqrn1VOoVHhV0YsiaXENwyNCibdseBdzA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplpsCVAx4uicGIbicibfUa70u49YVZf8IicGldbmPd7a55STibV4GLg7SoGHzpTEfiaIO1Krhuk0ouBmDnr4rJnkSysIjKFnlibXibO0Dt8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplqC18Htfe0NDDhzBGZqN3mQq9C7SiahNiab4ibJxviabEcdUtMcpkmtEiaPaXonvPFQxcRROFD8DR8KaPVn0B2giaPW5CUmFtBhGia47Q/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplqqfb3ibo0Hqa7qg1FMfyTIicoLfO7LzaOXb5EbjwdI8t2mJwS39mBmkPcrmm7ia0npjyhibLdXUm4KoicUeuBWpumibStvy0ibzUBpIc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplriasvmDlWgEfWbWxKpkb3WIiclO6JbpX57wbeUiaPAD8nMcDHZ6LMl96dDTfd8mkAVvx99ib72RpHsmXCXWUiaLyf0fraicD6UtSObM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplr7rF3dF7v8FaVSJ4HGDqok42ThMECSibUEBjUIzfXAGtVcxa7660bY6GsrTiaszqlichb8CpoqqKxEU70icm51oBTW1WjkJBBD240/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplolWYjyXOkdTWiaEHtD7j9ZqicB0Nlkho0ic8RRg1r6lfs8dDMOQIevqoIoPjXokEuB3wwKIo1haOwruk2O1iaXoOvtyEyOfsE6FQI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplogYh9EODJWkLeNfQqzlOhiaeQJtAo2Q5bDAkANibs7dO6Yeib5KyDNGXoYB13aRfK0sD3jqTtdenXTpia3b2pgic7vq0PibEIxkBvow/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplricKEMHS6Er0zAaEuyDofbUgH9ytptDQSuCInl3ibfXvkicSPm1HDicqzfJly4ujWvKbibXNgsecOx0J8Qzwne87fiaicm5jostSJ0Dc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplo7rjlkB0n2gicOcicd2qXx30SYQqR35ILlt5Wf5PCcU1gmkX4A0WZ7eTVFic8N2w7yiaHe80TUfapfBmmAPD10jjvzwGbVtWfr1jI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplrlwzD9ibTwNSUAgvJTl1BCiceLuNuN5Zb4mibNbRKhc9Xc0SzS6MQ29JLRasoO2QscAIGn5iaCHyEfKEjzYQfWa9QHEC9hsDyzTQw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplpztgfO6QZDQEunicCVtT8T0j0UMiaDicUjrHDPIibU3xhjCulibwII0z8R6glywGHlS5pZEnKzRmTia2pCtjUn50vCEOqIdYSo1TIFM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplrIwuiazzGzuNUtaf8T007XW1FgkrEib0yK6ib1YXPnOI2Sz6rpMibP3Xt0hHNiaZu4geiaMh6olc0d1OeBfsQmJJhc02ekU1akKZ8uc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplooLWY6WiapcTNfygBfJWfvBuoMJ9DXRL6Y4dIdHhJ1S7LrtNiby6OL1tYiaSzIhQazK9JJNrjXuXRsgewkU4kJ3LH8vAIZvUwGQE/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOploVia8iajqc1zzncmNuXVY772BQG9n3B84iclEUd4ph3Jdc8PhdMMkHOTRcBSmPZ3AdjUXkVQzc8mRSOUDweHsiaIF4aCfXTknIudI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplpn1fcVsJLIfaz5dPA2eia8WQp3zM7KMfPhukDeyZkGr51yAabbaNbMic69Dhf2NEbsYsmdn2wmrDAczrAa6mhf0WITibvC7vmkLA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOploQRRURdhJjnbe6YqpAEIp6b4bOiaXLUS1kYBvM8QDAnNMGuoPbNwFNej50rbzug4wouUpHcLeiaoy93crXQiaHufHviaLia4Z8VB40/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplo0BsDqFHKnfs0pfb8maxibUa5vq1poeTiaiaJwFNDicRAKe3icDKYIdjlFBKW3mruLMr5FBgECHp5ZZuZ80icT8ibTtJfq3vF6AndtmM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplrmiaHI1AglMbg22icMib4el3otWsktbKE6Yw8LoODj9YRIcBhSVjVOEpsicjSvxroZx9JzZRqfsjyMTG7fUJ9URSgr1Sk2w5JkBFo/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplpOjOn6IQBne8AbHbhkL0tyxxgz2RZV1szrQtOd5jpibESr1ia8VibPz9h6CuvMPOkf0R6EI7QAU2uTHUicFiaq64LM1jUDibghE0CgI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplroy32W5Nr47iaTCWCgCNAVL5xaLSjv9EskUaA8XiaLdJAAjNs3sYot5y1ibzyedkbXvKeRqXe43pJibouux357k2Ts9iblGWecVv0I/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplomIbtLXACdbApBXhqCfSicLIH4XSJpTA0NdNNicffcEicvdFHJ5PJbLgPcjyOEkZYcBgPJ452qt4fBy7jH1bdiaCmUd9YUdlrLye8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplrYSMCD9Zibk0iaFdQQNSGKYOVUbbMmPxesbLDq5ZHWNAjMvvygJZrTxX7YA6KLP0C24E18YKeKMgGpQ3kbjoHFJsZleAZZhrpho/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOplqzOpiaj4saicpiaeic22cawySTgoSx7foYK21JJwwDCjGG1Jh40gYpy728Ru2JAcAVm7kwTVSFsicRGRrcjvejz29b6jINBupuMibos/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/o8BeIQkOplqOiakqk05R7Dhdo8WPGuk2oTSia9kQ6eW4LZEvEGfdPYnknofU9ckLiaNM9OFnYQ3ia43XicyxzIsojgU8iaaXfDTGdn8nyv4iaCKG6A/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/o8BeIQkOploBPQAb9Y2JHqZ7eib6euwjwXml6hvKLWV6Kh6b5xPWUXkN4BtHrgGTf2ZnH9bY0BdpgZF72GqCwL32ich4iaag5icZ6rqQ2T3HHaw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>【免责声明】 文章为作者独立观点，不代表"新能源时代"公众号立场。如因作品内容、版权等存在问题，请于本文刊发7日内联系"新能源时代"公众号进行删除或洽谈版权使用事宜。</p>
+<p><strong>--【电池工艺】--</strong></p>
+<p>[1] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483662&amp;idx=1&amp;sn=1770562f8f80daca652aa32f354d433c&amp;chksm=fdd43ca8caa3b5beefe888eb9b66e6a6a82c0537dd620fde6e34c998ddfe1b0aa6e9c35b0393&amp;scene=21#wechat_redirect">锂电池之正极配料</a>  </p>
+<p>[2] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483666&amp;idx=1&amp;sn=4724e46f807a1024a81ca535d83024e5&amp;chksm=fdd43cb4caa3b5a2f9cc32707ee239a41b09dd1e00827df9f2ec18da34d62c5d2bf9e65d3065&amp;scene=21#wechat_redirect">锂电池之负极配料和涂布</a></p>
+<p>[3] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483701&amp;idx=1&amp;sn=64a6f2bc328f22ee5347c4ed191af183&amp;chksm=fdd43c93caa3b58527a98e099306d06d676682aaea0f06ad67c357b3163f3dc456bca08ccd41&amp;scene=21#wechat_redirect">锂电池之对辊和分切</a>  </p>
+<p>[4] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483704&amp;idx=1&amp;sn=b9333c3e2101061a6a97133fa45e90e3&amp;chksm=fdd43c9ecaa3b5883fc9949a411aa48f5415fa4af44781b72bd3896433e73172377dd009ecf0&amp;scene=21#wechat_redirect">正极涂布</a>  </p>
+<p>[5] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483707&amp;idx=1&amp;sn=8ca432aa2f09e427d37ef9525fe3b6f8&amp;chksm=fdd43c9dcaa3b58b99eda25ba539cf0abfd8686abf08884d0d65e8e1cbc9dfc08a690a6c732f&amp;scene=21#wechat_redirect">锂电池之入壳和滚槽</a>  </p>
+<p>[6] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483719&amp;idx=1&amp;sn=7267c56194bb0935d72bea4215ee7632&amp;chksm=fdd43ce1caa3b5f7033e71dbd7f17ab22176395c038b125e135e56e806ec708d5a03ea310cac&amp;scene=21#wechat_redirect">锂电池之电芯烘烤、注液与超焊盖帽</a>  </p>
+<p>[7] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483743&amp;idx=1&amp;sn=b07adc735f3cb0aa62e383f3714a6f2e&amp;chksm=fdd43cf9caa3b5ef1f1ba36415f8d459319d29a77a86e477f197944869f1c7b3140716d7ecbf&amp;scene=21#wechat_redirect">锂电池之封口和清洗</a>  </p>
+<p>[8] 精品 | <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483746&amp;idx=1&amp;sn=76dd948929d31f2a73234959e65f8bd7&amp;chksm=fdd43cc4caa3b5d2364a07763736498232a8b26ba12067ae0b3a5926ecc516aa1597235838be&amp;scene=21#wechat_redirect">锂电池之化成和分容</a></p>
+<p><strong>--【电池设计】--</strong></p>
+<p>[9] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483796&amp;idx=1&amp;sn=4850407019b1ca27827b825561ee7177&amp;chksm=fdd43c32caa3b5244ead738a457f5759840fefdb7a46564e40784b3f746af8ca5946e0ec74f1&amp;scene=21#wechat_redirect">软包卷绕电池设计——电化学设计篇</a>  </p>
+<p>[10] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483807&amp;idx=1&amp;sn=2f90468e8cc9121124b602eedf815a4e&amp;chksm=fdd43c39caa3b52f4ab07a3ebc0781316c322c56936012789c302fecd6d45315b94f7d5c6690&amp;scene=21#wechat_redirect">软包卷绕电池设计——结构设计篇</a>  </p>
+<p>[11] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483988&amp;idx=1&amp;sn=59147ac28edb892dcba125e0762af9e9&amp;chksm=fdd43ff2caa3b6e4657aaed6d808f7420d0bcab78113e2215bb9f847cf6d3bd83bbb7f45cd61&amp;scene=21#wechat_redirect">【干货】锂扣式电池组装与测试</a></p>
+<p><strong>--【设计理论】--</strong></p>
+<p>[12] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483894&amp;idx=1&amp;sn=11473243e9ed257d4b3f2eb7133bd359&amp;chksm=fdd43c50caa3b546b2ca14e2b654a3f76adb7f7079f6124ec3805bac70ff57a6112f24955739&amp;scene=21#wechat_redirect">锂电池浆料沉浆理论计算</a>  </p>
+<p>[13] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483901&amp;idx=1&amp;sn=f7cf6d966da2b639ef5fa346a9d6b8db&amp;chksm=fdd43c5bcaa3b54d587c19a500c4b8f17577a2066267bf92f7649aa077a7a1de57c7a63e02cd&amp;scene=21#wechat_redirect">锂电池极片设计理论</a></p>
+<p>[14] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483934&amp;idx=1&amp;sn=2ce3ec7651568dfd171c68db0e223b47&amp;chksm=fdd43fb8caa3b6ae5596b7900bf09ec4c9bacc9ae827ce3ad8885975347634e7ba606581de7c&amp;scene=21#wechat_redirect">【干货】锂电池极耳设计理论公式</a></p>
+<p>[15] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484111&amp;idx=1&amp;sn=4d21e75ef6215b239b529baa309739dc&amp;chksm=fdd43f69caa3b67f443db1ee8cc7f2d01af6ff5395b7785742cb9ff2fd088f88c81b62aa9190&amp;scene=21#wechat_redirect">电池盖帽工作原理【篇一】</a></p>
+<p>[16] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484144&amp;idx=1&amp;sn=12ec62d7e925fb6f68ccec73e79dc00b&amp;chksm=fdd43f56caa3b640bef8fb18ed0dbe1e9abd07caa0a7300f08952647228fb1c822e8b6d9e9b8&amp;scene=21#wechat_redirect">电池盖帽工作原理【篇二】</a></p>
+<p>[17] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483872&amp;idx=1&amp;sn=3f44d5b84c3e3dbcfb1eb67dd8cd1db4&amp;chksm=fdd43c46caa3b55045c858cc1a6760c768bec9698735cb6017f92da31a2532de2fc4e636d4a4&amp;scene=21#wechat_redirect">磷酸铁锂电池原料物化参数对电性能的影响</a> (1)  </p>
+<p>[18] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483885&amp;idx=1&amp;sn=e43a753b2cb99d8f8429d07723f741e1&amp;chksm=fdd43c4bcaa3b55dac105d4c5d506c289cd8488f791d9afb19a26386dcb2f7086fdb0efc14b3&amp;scene=21#wechat_redirect">磷酸铁锂电池原料物化参数对电性能的影响</a> (2)</p>
+<p><strong>--【电池材料测及评估标准】--</strong></p>
+<p>[19] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483895&amp;idx=1&amp;sn=a75dd38995b3bd112f076aa6e7dc5e39&amp;chksm=fdd43c51caa3b5474762e3aa97204292b4c350d1582a2575582e996f5e24033f25c1142830b2&amp;scene=21#wechat_redirect">正极材料的测试方法及标准（续）</a>  </p>
+<p>[20] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483940&amp;idx=1&amp;sn=d80b122be9046731cddc3c3f22f13add&amp;chksm=fdd43f82caa3b6941e52f61f056c95be9a5fec3dc13fe3d6d911eb877f09373ac9dabe6fe29a&amp;scene=21#wechat_redirect">负极材料的测试方法及标准</a>  </p>
+<p>[21] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483985&amp;idx=1&amp;sn=bf08828f240f0888be75beb5b666594d&amp;chksm=fdd43ff7caa3b6e1efbace2551f17ab64d54e101a3ac3899716c3a4c21cf61c76bfb0c11a0e0&amp;scene=21#wechat_redirect">隔膜材料的测试方法及标准</a>  </p>
+<p>[22] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483971&amp;idx=1&amp;sn=dcd4547062b3a464c5acd05704b0941c&amp;chksm=fdd43fe5caa3b6f31d9fb6f18925e9c0426ba9b64901f216bd5b701daa9a8f376590a1f723e6&amp;scene=21#wechat_redirect">【干货】电解液中HF（氢氟酸）测试方法</a></p>
+<p>[23] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484034&amp;idx=1&amp;sn=41ce6487312171c2a12992757a9c6604&amp;chksm=fdd43f24caa3b6323e1066493988c2f2804ad4e2138de365c891b3152639ca34bd12c07a77b3&amp;scene=21#wechat_redirect">NMP的测试方法及标准</a>  </p>
+<p>[24] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484008&amp;idx=1&amp;sn=734ad56effdfcab0e77627d74787d289&amp;chksm=fdd43fcecaa3b6d85bf340778faf73149e3ee965bf53a366b068da8eb1ad548ca89a734c4b94&amp;scene=21#wechat_redirect">电解液材料的测试方法及标准</a>  </p>
+<p>[25] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484086&amp;idx=1&amp;sn=b3b5b09abdbf673424b5703e312bd3bf&amp;chksm=fdd43f10caa3b6068f565835cf135d4049474c574dd92032e2a0fa339d0417ef9ece005f2415&amp;scene=21#wechat_redirect">KS-6的测试方法及标准</a></p>
+<p>[26] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484158&amp;idx=1&amp;sn=eeff14deccac03575ffa0466fc3821a3&amp;chksm=fdd43f58caa3b64efcfc7ab792d31fb4251c35e428e774cf3045909e69156bd120df6040d155&amp;scene=21#wechat_redirect">水性胶的测试方法及标准</a></p>
+<p>[27] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484135&amp;idx=1&amp;sn=333e3e7a375ec1d5016c6cdd4518b2de&amp;chksm=fdd43f41caa3b6570632cdf155d1efd401d92632c31d6ac9372f155b01189b408c3688d03321&amp;scene=21#wechat_redirect">Super-P的测试方法及标准</a></p>
+<p>[28] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484187&amp;idx=1&amp;sn=2e265799ced3e901eb77aaee6045ffe4&amp;chksm=fdd43ebdcaa3b7ab5617e5c9821831272e49d327b03052575d06da6f33325a9c664616809663&amp;scene=21#wechat_redirect">铝箔的测试方法及标准</a>  </p>
+<p>[29] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484171&amp;idx=1&amp;sn=9979c4739773d4b8bdba82df85a7dc0a&amp;chksm=fdd43eadcaa3b7bb886f7e432049093ed0fe25d498e7d800de67e4be0c92cfd33cba2339a47d&amp;scene=21#wechat_redirect">铜箔的测试方法及标准</a></p>
+<p>[30] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484181&amp;idx=1&amp;sn=dd21f505c2efa7fbfa499bed2813fe45&amp;chksm=fdd43eb3caa3b7a5ab2c6da11b7317a843c775c4b96fa0b771bdb5c8760b8e354e81dc6ae3a3&amp;scene=21#wechat_redirect">【干货】电解液水份测试方法</a>  </p>
+<p>[31] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247484207&amp;idx=1&amp;sn=b2eefc2c072faca53d39c2bd183ed23a&amp;chksm=fdd43e89caa3b79f85df8bbab42af092b0e9adb2aea50c6eca3626a21cb89341a9d53fc607c0&amp;scene=21#wechat_redirect">CMC的测试方法及标准</a></p>
+<p>[32] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483774&amp;idx=1&amp;sn=8ed2c39de90ae51e4b221d425ee27522&amp;chksm=fdd43cd8caa3b5ce27430a7110b831f0bc4dc24431860231c37c1cb96fdae13064602d1bb6c6&amp;scene=21#wechat_redirect">【普及】电池电性能测试内容</a>  </p>
+<p>[33] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247483778&amp;idx=1&amp;sn=831c96d787e1abb04eccd4ff885b3aa2&amp;chksm=fdd43c24caa3b53285f2d8f9a27fc120773298de8d6254747d62fc527e9625269eb17dafc64d&amp;scene=21#wechat_redirect">【普及】电池安全性能测试项目</a></p>
+<p><strong>--【电池模型】--</strong></p>
+<p>[34] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487387&amp;idx=1&amp;sn=4c23d5e5625074ca3ed8bd72b0a5fdcb&amp;chksm=fdd4323dcaa3bb2b42a3284fecd4afefe249c53772072aa377675614f3b128096adee49d9926&amp;scene=21#wechat_redirect">实战 | 三元电池仿真教程</a>  </p>
+<p>[35] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487346&amp;idx=1&amp;sn=b435b95a61d24b25c2320a9ddf929c95&amp;chksm=fdd432d4caa3bbc260fde5f06c86bda0ed1cae180d7e140e32bb93c7af60e40e80be73b06131&amp;scene=21#wechat_redirect">精品 | 锂电池二阶RC等效电路参数辨识(改进Thevenin模型)</a>  </p>
+<p>[36] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487339&amp;idx=1&amp;sn=7da03c15023ac68d5bb6720132414382&amp;chksm=fdd432cdcaa3bbdb2e15cac58327ebbc6af524daf1a025c00c5cb3e10ed74687949ca0c0d313&amp;scene=21#wechat_redirect">精品 | 锂电池等效电路参数辨识（Thevenin一阶RC模型）</a>  </p>
+<p>[37] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487327&amp;idx=1&amp;sn=18c7504f2031c740ed0923fd57b77b68&amp;chksm=fdd432f9caa3bbef782f7fe8247530e86da7740bb25680f1a44a126ab57f3291b7e013ea2bbb&amp;scene=21#wechat_redirect">精品 | 基于 Simscape搭建的锂电池模型</a></p>
+<p><strong>--【电池测试】--</strong></p>
+<p>[38] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487809&amp;idx=1&amp;sn=e3e18a07e6f432e55fac994cfbc8187c&amp;chksm=fdd42ce7caa3a5f1effabf7fb477096f115c5f3fe2388eaa6641a32ac40cb96d912589ec7d81&amp;scene=21#wechat_redirect">精品 | 模组配档与串并联设计简介</a>  </p>
+<p>[40] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487788&amp;idx=1&amp;sn=9e9d2e1ce8d3d5d9e4a7057130ee1fcf&amp;chksm=fdd42c8acaa3a59cf78f470d7413b582c3490a2e832dcc154a49c462db0042095d730280aa4f&amp;scene=21#wechat_redirect">精品 | 锂电池分选配组常用方法</a>  </p>
+<p>[41] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487792&amp;idx=1&amp;sn=5e4da6807cda00cdc94ca015c0bac190&amp;chksm=fdd42c96caa3a5806147f288a5807ec9b5f080fbb709dba5aefd9c4eb17e16617f8b0d39445e&amp;scene=21#wechat_redirect">【超干货】锂离子电池测试手册</a>  </p>
+<p>[42] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487788&amp;idx=1&amp;sn=9e9d2e1ce8d3d5d9e4a7057130ee1fcf&amp;chksm=fdd42c8acaa3a59cf78f470d7413b582c3490a2e832dcc154a49c462db0042095d730280aa4f&amp;scene=21#wechat_redirect">精品 | 锂电池分选配组常用方法</a>  </p>
+<p>[43] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487782&amp;idx=1&amp;sn=ed03c2758a08b1b48bb8d05e637b2461&amp;chksm=fdd42c80caa3a596535a4c3f6964541edd8e56bfa836cd5d02b4d68b84394fa762cf7563f3e1&amp;scene=21#wechat_redirect">【干货】电池包EOL通用测试项目</a>  </p>
+<p>[44] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487781&amp;idx=1&amp;sn=1e3829250efb3c18705411bee7ac8f08&amp;chksm=fdd42c83caa3a5957dca806f8ec5129d8b849e0eb333f06201567d82e6d61cf5caf77e2fc82e&amp;scene=21#wechat_redirect">精品 | 动力电池系统设计基本原理</a>  </p>
+<p>[45] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487765&amp;idx=1&amp;sn=d71f13f6772495b5871ab83a25eeaf34&amp;chksm=fdd42cb3caa3a5a545ba62c0d193a0ba58bbb130a8b8985f51349776f69f8f5b7f5a959a1720&amp;scene=21#wechat_redirect">精品 | 新能源电动车常用工况介绍</a>  </p>
+<p>[46] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487540&amp;idx=1&amp;sn=937be0c5dff465027b7a69c42f378384&amp;chksm=fdd42d92caa3a4847f37872c948c49de2529dd8122ea70e7047aa0a95d6d7ed150b4dc48e1fc&amp;scene=21#wechat_redirect">实战案例 | CITT法测量锂电池Li扩散系数</a></p>
+<p>[47] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487524&amp;idx=1&amp;sn=e9d95019233a7d67fdb8e43ab29f18dc&amp;chksm=fdd42d82caa3a4940316406323065e951a7aca43460e4b6ac4d0b582768fcad3b65b691ab08f&amp;scene=21#wechat_redirect">精品 | 锂电池熵热系数测量 | 实战案例</a>  </p>
+<p>[48] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487449&amp;idx=1&amp;sn=fad4c61842a7de2588c0fa0a1fd5d2be&amp;chksm=fdd4327fcaa3bb691a19de12d2de77b35f17e0c1bcfaef3c14104f8efa61119d33ede34ab294&amp;scene=21#wechat_redirect">干货 | HPPC测试方法</a>  </p>
+<p><strong>--【燃料电池】--</strong></p>
+<p>[49] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487425&amp;idx=1&amp;sn=842f0f2331bb0bea4d78252df5516e27&amp;chksm=fdd43267caa3bb7146ee7d24f1af4fc132b05ea7c3357c740b87a4174a6d6bed15d9dbcec35e&amp;scene=21#wechat_redirect">精品 | 燃料电池参数设计</a></p>
+<p>[50] <a href="http://mp.weixin.qq.com/s?__biz=MzU4ODkxNzk2MQ==&amp;mid=2247487426&amp;idx=1&amp;sn=db58d7d1924364ee9fdd4eb1260f3bd1&amp;chksm=fdd43264caa3bb72aea585125a462eac0b062b31537eb2a2d42052aacdc802b136742e51dccf&amp;scene=21#wechat_redirect">精品 | 燃料电池性能测试</a></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>储能黑马逆袭！高压级联从冷门技术变行业标配，凭什么横扫储能市场？</h2>
+    <p><a href="https://mp.weixin.qq.com/s/PYqfMG28vpUA6RFSr2y3Aw">原文链接</a></p>
+    <p><span>寇文龙</span></p>
+  </header>
+  <article><p>储能行业近两年迎来颠覆性变革，在众多技术赛道中，<strong>高压级联技术</strong>完成了一场惊艳逆袭。就在两年前，这项技术还处于行业边缘：多数从业者要么对其一知半解，认为技术过于超前、落地难度大；要么心存顾虑，质疑其运行稳定性，不敢轻易入局。</p>
+<p>但时至2026年，高压级联彻底打破行业偏见，从无人问津的实验室技术，进阶为储能行业的主流选择，更是工商业储能、大型储能项目绕不开的核心方案。它到底有哪些硬核优势？适配哪些应用场景？现阶段还存在哪些发展痛点？本文通俗易懂、深度拆解高压级联储能技术，吃透行业底层逻辑。</p>
+<h1>一、通俗读懂高压级联：原理极简，优势突出</h1>
+<h2>1. 什么是高压级联？</h2>
+<p>用通俗直白的话解释：<strong>高压级联就是将多个储能单元串联堆叠，无需变压器，直接输出高压电</strong>。</p>
+<p>我们可以做一个直观对比：</p>
+<ul>
+<li>
+<p><strong>传统低压储能方案</strong>：先积攒低压电能，再依靠变压器升压，中间多一道转换流程，步骤繁琐；</p>
+</li>
+<li>
+<p><strong>高压级联方案</strong>：储能单元串联叠加，一步到位实现升压，电压可轻松达到1500V，远超传统630V电压标准。</p>
+</li>
+</ul>
+<h2>2. 逆势爆发！三大核心推手揭秘</h2>
+<p>高压级联能够快速占领市场，并非偶然，而是成本、效率、行业趋势三重加持下的必然结果：</p>
+<h3>✅ 推手一：核心器件国产化，成本大幅下探</h3>
+<p>过去高压方案造价高昂，核心原因是功率器件依赖进口。近几年IGBT、碳化硅（SiC）核心器件加速国产化，价格直接腰斩。曾经造价昂贵、投资回本困难的1500V高压方案，如今性价比大幅提升，各大企业均可落地部署。</p>
+<h3>✅ 推手二：减少能量损耗，效率就是纯利润</h3>
+<p>电能每经过一次变压转换，都会产生不可逆损耗。高压级联省去中间变压环节，系统效率直接提升<strong>2-3个百分点</strong>。对于大型储能电站而言，这微小的效率差距，每年能创造数百万元的额外收益，是实打实的净利润。</p>
+<h3>✅ 推手三：适配行业趋势，标准化快速落地</h3>
+<p>储能行业正在告别“现场零散拼装”的粗放模式，朝着“工厂预制、现场组装、快速部署”的标准化模式转型。高压级联天然适配模块化设计，搭建简单、扩展性强，完美契合行业发展方向。</p>
+<p><strong>总结</strong>：更低成本、更高效率、更易部署，三大优势加持，高压级联爆火已成必然。需要注意的是，该技术门槛极高，对BMS电池管理系统、EMS能量管理系统、热管理系统要求严苛，技术壁垒极高；但只要突破技术瓶颈，综合收益远超传统低压方案。</p>
+<h1>二、三大核心应用场景：差异化布局，命运各不相同</h1>
+<p>目前高压级联技术已全面覆盖电源侧、电网侧、用户侧三大储能场景，不同场景下适配性、盈利模式、发展现状差异显著。</p>
+<h2>1. 电源侧：大型共享储能最优解（核心主战场）</h2>
+<p>电源侧是当下高压级联最成熟的应用赛道，尤其适配200MWh以上的大型共享储能项目，经济性、性能优势拉满。</p>
+<h3>📊 真实数据对比：投资成本大幅压缩</h3>
+<p>以100MW/200MWh共享储能电站为例：传统低压方案总投资约3.2亿元，高压级联方案仅需2.8亿元，<strong>初始投资直接节省4000万元</strong>，极大降低投资方准入门槛。</p>
+<h3>⚡ 性能优势：响应速度碾压传统方案</h3>
+<p>在电力调频场景中，高压级联响应速度控制在100毫秒以内，而传统低压方案响应速度普遍超过300毫秒。当前各省电网考核标准日趋严格，超快响应速度直接决定储能项目的盈利能力。</p>
+<h3>⚠️ 现存痛点</h3>
+<p>相较于简易集装箱方案，高压级联造价仍高出30%-40%。目前仅在山东、江苏、广东等电力现货市场成熟、补贴补偿机制完善的省份，能充分兑现经济收益。</p>
+<h2>2. 电网侧：特高压输电稳定器（战略高地）</h2>
+<p>如果说电源侧是商业化主战场，那电网侧就是高压级联的核心战略赛道，也是业内公认最适配该技术的场景。</p>
+<p>我国西电东送特高压直流输电线路，输电容量大，但无法自主调节功率，新能源发电的波动性极易造成电网负荷压力。而高压级联储能系统，相当于为能源运输“高速公路”加装智能巡航控制系统，精准平抑电力波动。</p>
+<h3>🔍 实战案例</h3>
+<p>国内近年投运的多个±800kV特高压配套储能项目，全部采用高压级联方案，配合换流站协同运行，有效稳定电网频率、平衡电压，稳压控波效果显著。</p>
+<h3>⚠️ 现存痛点</h3>
+<p>电网侧项目周期长达2-3年，运维标准严苛，要求设备近乎“零故障、零闪失”，行业准入门槛极高，仅有头部实力派企业能够入局。</p>
+<h2>3. 用户侧：工商业储能新宠儿（最快增长赛道）</h2>
+<h2>用户侧是高压级联增速最快的细分市场，广泛应用于中大型工厂、产业园区，替代传统低压工商业储能已成趋势。</h2>
+<h3>🏭 落地案例</h3>
+<p>深圳某电子厂搭建1MW/2MWh高压级联储能系统，总投资380万元，年均收益可达90万元，<strong>回本周期仅4年出头</strong>。</p>
+<p>企业选择高压方案的两大核心原因：</p>
+<ul>
+<li>
+<p><strong>占地更小</strong>：占地面积仅为传统低压方案的60%，节省厂区空间资源；</p>
+</li>
+<li>
+<p><strong>收益更高</strong>：深圳工商业峰谷价差超0.8元/kWh，系统高效率进一步放大套利收益。</p>
+</li>
+</ul>
+<h3>⚠️ 现存痛点</h3>
+<p>工商业用电场景碎片化严重，不同企业用电负荷、用电时段差异大，难以套用标准化方案；同时高压系统对安防要求极高，需额外投入资金完善隔离、监测、消防设施。</p>
+<h1>三、行业痛点剖析：三大技术瓶颈制约规模化普及</h1>
+<p>高压级联优势突出，但技术短板同样不容忽视。若无法突破核心瓶颈，长期大规模商业化落地将受到严重限制。</p>
+<h2>1. 电池一致性：放大效应引发木桶短板</h2>
+<p>多单元串联的结构，会累加电池簇之间的性能差距，产生<strong>一致性放大效应</strong>。简单来说，整座储能电站的容量、使用寿命，完全取决于性能最差的一节电池，严重影响系统运行效率。</p>
+<h3>✅ 破局思路</h3>
+<p>搭载高精度被动均衡技术，在电池包（PACK）层级加装独立BMS管理系统，实现双层防护；在成本与性能之间寻找最优平衡点，弱化电池不一致带来的负面影响。</p>
+<h2>2. 热管理：高温环境下的极限考验</h2>
+<p>1500V高压系统运行产热量更大，且热失控传播速度更快。实测数据显示，夏季高温时段，电池舱最高温度接近45℃，长期高温运行会加速电池衰减，缩短设备使用寿命。</p>
+<h3>✅ 破局思路</h3>
+<p>行业主流解决方案为“液冷+空调”双重温控，搭配AI智能温控算法，动态调节散热功率；但液冷系统造价偏高，且存在漏液安全隐患。目前相变储能材料、热管散热等新型技术仍处于实验室研发优化阶段。</p>
+<h2>3. 成本下行：降价进入深水区</h2>
+<p>过去三年，储能行业依靠核心部件降价实现成本快速下探。如今IGBT功率器件、液冷设备、高压电缆等核心原材料，降价空间趋近饱和，粗放式降价时代宣告结束。</p>
+<h3>✅ 破局思路</h3>
+<p>行业降本逻辑全面转变：从“部件降价”转向“系统优化”。通过标准化设计、模块化量产、规模化部署压缩综合成本；行业竞争维度也从单纯的价格战，升级为系统可靠性、运维便捷度、全生命周期性价比的综合比拼。</p>
+<h1>四、未来预判：三大清晰趋势，锁定行业风口</h1>
+<p>结合技术现状、市场需求以及行业政策，对高压级联储能未来发展做出三大明确预判：</p>
+<h2>趋势一：中短期成为大型储能绝对主流</h2>
+<p>1500V高压系统现已成为行业标配，2000V高压产品持续迭代成熟。预计到2028年，国内新增大型储能项目中，<strong>高压级联技术占比将突破70%</strong>，彻底替代传统低压方案，霸占电源侧、电网侧主流市场。</p>
+<h2>趋势二：用户侧迎来爆发式增长</h2>
+<p>凭借占地面积小、发电效率高、回本周期短的优势，高压级联将全面渗透工业园区、大型工厂、数据中心等用户侧场景。该市场碎片化特征明显，需求分散，没有企业能够垄断市场，渠道服务能力强的企业将抢占红利。</p>
+<h2>趋势三：技术融合打造智能储能体系</h2>
+<p>高压级联不会单一独立发展，未来将与数字孪生、AI智能调度、云边协同等前沿技术深度融合。储能设备不再是单纯的储放电工具，而是集智能调控、安全监测、自主运维于一体的智能化能源综合体。<strong>实现技术跨界融合的企业，将锁定未来十年行业话语权</strong>。</p>
+<h1>五、文末总结</h1>
+<p>从边缘冷门技术到行业主流标配，高压级联的逆袭，是成本、效率、趋势共同作用的结果。它解决了传统储能效率低、投资高、部署难的痛点，同时也面临电池一致性、高温热管理、成本固化的行业难题。</p>
+<p>放眼未来，高压级联不仅是储能技术的一次迭代升级，更是整个能源行业标准化、智能化、高压化转型的缩影。在行业洗牌阶段，兼具技术研发、系统优化、运维服务能力的企业，终将在储能风口站稳脚跟，瓜分行业红利。</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>高压级联储能：为什么巨头都在布局这条技术路线？</h2>
+    <p><a href="https://mp.weixin.qq.com/s/Nh2BpH30A-YjU58zZ7TieQ">原文链接</a></p>
+    <p><span>储能e家</span></p>
+  </header>
+  <article><p><img class="rich_pages wxw-img" data-s="300,640" data-w="143" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" data-ratio="0.6293706" data-aistatus="1" width="100%" src="https://mmbiz.qpic.cn/mmbiz_png/t25nCTwB91rDFyysqL2q9AIa9zrYvdZiars1LzARia4UBRyj45lm0uxdvWBeyDuzmu9YbWMg0CCCtubIAbmN4VPA/640?wx_fmt=png"></p>
+<p><strong>点击蓝字 关注我们</strong></p>
+<p><img data-ratio="0.8534483" width="100%" data-aistatus="1" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" class="rich_pages wxw-img" data-s="300,640" data-w="116" src="https://mmbiz.qpic.cn/mmbiz_png/t25nCTwB91rDFyysqL2q9AIa9zrYvdZiaIdLRjiaMnMyJSpJXnSKrhF4fZibzuMzdgslia3Rv8icGyKNOoWSac8XibzA/640?wx_fmt=png"></p>
+<p>你好，欢迎来到储能e家！储能知识，我们只讲干货！</p>
+<p><img data-w="640" data-s="300,640" class="rich_pages wxw-img" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" data-aistatus="1" width="100%" data-ratio="0.221875" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/MVPvEL7Qg0GnB0HoAz6et8CCnxyj1ZuTbibLicgffRjlcMdVIdN51jg8QUEWdeDSfJYJ6p3qeJQdGMo4rpVa2jPA/640?wx_fmt=gif"></p>
+<p>本文字数：<strong>2641字</strong></p>
+<p>阅读时间：<strong>8分钟</strong></p>
+<p>一台35kV的储能系统，居然不用变压器？</p>
+<p>去年某头部厂商展出一款高压级联产品，业内人围着拓扑图看了半小时——传统方案里那个占地几吨、损耗不小的工频变压器，真的没了。</p>
+<p>怎么做到的？今天用一张图，把这套技术拆明白。</p>
+<p><img data-aistatus="1" class="rich_pages wxw-img" data-ratio="0.9898148" width="100%" data-s="300,640" data-w="1080" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" src="https://mmbiz.qpic.cn/mmbiz_png/Er2CNPYOllESAH6EUpmHGrmicPLFk2rwfnS4yiaUiaPqJLBSjPDCpvam9p0zBWibhfDibC8ibus9pTdUKWHWoRH9VfmtqyEl8icApQESSU4g15tDE4/640?wx_fmt=png"></p>
+<p>高压级联拓扑图</p>
+<p><strong>01</strong></p>
+<p><strong>先看整体：这是什么电路？</strong></p>
+<p>这是一个典型的 三相级联 H 桥（CHB）拓扑，是工商业高压储能最主流的方案之一。</p>
+<p>它的核心思想是：<strong>用很多个低压小模块，在交流侧 “串联” 起来，直接拼出高压交流电，不用大变压器</strong>。</p>
+<p>你可以把它想象成：</p>
+<p>传统方案：一堆电池 → 1 个大逆变器 → 变压器升压 → 电网</p>
+<p>级联方案：一堆电池分成很多组 → 每组一个小逆变器 → 全部串联 → 直接高压并网</p>
+<p><strong>02</strong></p>
+<p><strong>从左到右，逐部分拆解</strong></p>
+<p><img data-aistatus="1" data-w="1080" data-ratio="0.9916667" data-s="300,640" class="rich_pages wxw-img" width="100%" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" src="https://mmbiz.qpic.cn/mmbiz_png/Er2CNPYOllG0URqobSoZRIFwGorkWrl1dicDQQLYW7NibUYwbJPOEcaDSP0jwvyxDEsjIQoVP1giaYx5aSiclTjDRc8lNGhsE7IebLquKKHdVl0/640?wx_fmt=png"></p>
+<p>三相交流电网</p>
+<ol>
+<li>最上方：三相交流电网（Vsa, Vsb, Vsc）</li>
+</ol>
+<p>这三根线，就是我们要接入的 10kV/35kV 三相交流电网。</p>
+<p>储能系统最终就是要把直流电，转换成和这三根线同频同相的交流电送进去。</p>
+<p><img data-s="300,640" data-w="616" class="rich_pages wxw-img" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" width="100%" data-aistatus="1" data-ratio="0.9772727" src="https://mmbiz.qpic.cn/sz_mmbiz_png/Er2CNPYOllGE3BGp0yqTm6ibDGWiavtbRDibBcB1utV2Lia9vCON3voej9iaEVoJYl4x5Wg0KoUxTIAh2KxlImMnldp2HoVqrGU9AlAAy2ibmwV5s/640?wx_fmt=png"></p>
+<p>滤波电感</p>
+<ol>
+<li>每个相的前端：电感L和电阻R</li>
+</ol>
+<p>每个相都串了一个 L,R，这是滤波电感（也叫网侧电感）。</p>
+<p>作用：</p>
+<p>平滑电流波形，让注入电网的电流更干净；</p>
+<p>抑制电流冲击，保护后面的模块；</p>
+<p>限制故障电流，提升系统稳定性。</p>
+<p><img data-aistatus="1" data-ratio="0.9962963" class="rich_pages wxw-img" data-s="300,640" width="100%" data-w="1080" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;" src="https://mmbiz.qpic.cn/sz_mmbiz_png/Er2CNPYOllFVc6EQj9Cibyg829lEjMQdSOadsVzzLmgyIpsoibz2EJ0MLN0vFxpNVZSg8gkWBkmhccBG2eibA3yWLOUEwduSX8dY8VrvKYnGHM/640?wx_fmt=png"></p>
+<p>H桥模块</p>
+<ol>
+<li>每个相的核心：N 个串联的 H 桥模块</li>
+</ol>
+<p>这是整个拓扑最关键的部分，我们拿 A 相来举例（B、C 相结构完全一样）：</p>
+<p>A 相有 N 个一模一样的模块，从上到下串起来，标了 1、2…N。</p>
+<p>每个模块都是一个 H 桥逆变器 + 电池簇 / 电容。</p>
+<p>单个 H 桥模块是怎么工作的？</p>
+<p>每个 H 桥由 4 个功率管（图里画的 4 个开关符号）组成。</p>
+<p>它的直流侧，接的是电池簇（储能电池），旁边那个小电容是滤波电容，用来稳定电压。</p>
+<p>它的交流侧，可以输出三种电平：+Vdc、0、-Vdc（Vdc 是电池簇的电压，比如几百伏）。</p>
+<p>多个模块串起来，怎么得到高压？</p>
+<p>把每个模块的交流输出端首尾相接，电压是叠加的。</p>
+<p>比如：每个模块输出 ±500V，如果有 10 个模块串联，理论上就能得到 ±5000V 的高压，叠加成接近正弦波的阶梯波。</p>
+<p>这样一来，N 个模块的电压加起来，就可以直接达到 10kV/35kV 的电网电压，不需要工频变压器升压。</p>
+<ol>
+<li>三相输出：Vak, Vbk, Vck</li>
+</ol>
+<p>这三个电压，就是 A、B、C 三相级联模块串联后的输出电压。</p>
+<p>再经过前面的L,R滤波，就能得到标准的三相交流电，直接并入电网。</p>
+<p><strong>03</strong></p>
+<p><strong>一个周期怎么拼出正弦波</strong></p>
+<p>我用一个工频周期（50Hz，20ms）的 4 个关键阶段，给你拆解一下这个高压级联拓扑，是怎么 “拼出” 正弦波的。</p>
+<p>为了好理解，我们只看其中A 相的 N 个串联模块。</p>
+<p>核心原理先记住：</p>
+<p><strong>每个 H 桥模块，能输出三种状态：+Vdc、0、-Vdc</strong>。</p>
+<p>N 个模块串联，就像搭积木，通过不同模块的组合，叠加出一个接近正弦波的阶梯状高压波形。</p>
+<p>下面以 A 相输出正半周为例，带你走完一整个周期。</p>
+<p><strong>阶段 1：正弦波上升沿（从 0 开始爬坡）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压从 0V 开始，慢慢往上增加。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>让第 1 个模块输出+Vdc，其他所有模块都输出0V。</p>
+<p>此时总输出电压 = Vdc。</p>
+<p>随着电压需求增加，我们让第 2 个模块也输出+Vdc，其他模块保持0V。</p>
+<p>此时总输出电压 = Vdc + Vdc = 2Vdc。</p>
+<p>以此类推，每往上加一级电压，就多让一个模块输出+Vdc。</p>
+<ul>
+<li><strong>效果</strong>：电压像上台阶一样，一级一级往上爬，模拟正弦波的上升曲线。</li>
+</ul>
+<p><strong>阶段 2：正弦波正半周峰值附近（平顶阶段）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压达到正半周的最高点，并维持一段时间。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>让所有 N 个模块都输出+Vdc。</p>
+<p>此时总输出电压达到最大值：N × Vdc。</p>
+<p>这个电压要略高于电网峰值电压，这样才能实现能量双向流动。</p>
+<ul>
+<li><strong>效果</strong>：电压波形达到最高点，形成一个平台，对应正弦波的峰值部分。</li>
+</ul>
+<p><strong>阶段 3：正弦波下降沿（从峰值回落）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压从最高点，慢慢降到 0V。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>从第一个模块开始，依次把它们的状态从+Vdc切换到0V。</p>
+<p>比如，关掉第 1 个模块，输出电压就从N×Vdc降到(N-1)×Vdc。</p>
+<p>关掉第 2 个模块，电压再降到(N-2)×Vdc。</p>
+<p>直到所有模块都输出0V，总电压就回到了 0 点。</p>
+<ul>
+<li><strong>效果</strong>：电压像下台阶一样，一级一级往下掉，模拟正弦波的下降曲线。</li>
+</ul>
+<p><strong>阶段 4：正弦波负半周（电压反向）</strong></p>
+<ul>
+<li>
+<p><strong>目标</strong>：输出电压变成负值，完成一个完整的交流周期。</p>
+</li>
+<li>
+<p><strong>怎么实现</strong>：</p>
+</li>
+</ul>
+<p>这个过程和阶段 1、2、3 完全一样，只是把模块的输出状态换成了-Vdc。</p>
+<p>先让一个模块输出-Vdc，电压为-Vdc。</p>
+<p>再让两个模块输出-Vdc，电压为-2Vdc。</p>
+<p>直到所有模块都输出-Vdc，达到负半周峰值，再依次关掉，回到 0 点。</p>
+<ul>
+<li><strong>效果</strong>：完成负半周的阶梯波形，和正半周对称。</li>
+</ul>
+<p><strong>总结一下：为什么要这么做？</strong></p>
+<ol>
+<li>
+<p><strong>波形质量高</strong>：N 个模块越多，阶梯数就越多，拼出来的波形就越像真正的正弦波，谐波非常小，对电网友好。</p>
+</li>
+<li>
+<p><strong>高压直接输出</strong>：不用笨重的工频变压器，靠模块串联就能 “堆” 出 10kV/35kV 高压，效率更高、成本更低。</p>
+</li>
+<li>
+<p><strong>控制灵活</strong>：每个模块都可以独立控制，既能并网发电，也能吸收电能给电池充电，还能参与电网调频调压。</p>
+</li>
+</ol>
+<p><strong>04</strong></p>
+<p><strong>四大技术优势</strong></p>
+<p><strong>原因一：模块化、可扩展性强</strong></p>
+<p>想做更高电压？加几个模块就行。</p>
+<p>容量不够？每个模块的电池扩容就行。</p>
+<p>模块坏了可以旁路，不影响整机工作，可靠性高。</p>
+<p><strong>原因二：输出波形质量高，谐波小</strong></p>
+<p>多个模块叠加出来的阶梯波，和正弦波非常接近，不用复杂的滤波就能满足电网要求。</p>
+<p><strong>原因三：省去了笨重的工频变压器</strong></p>
+<p>直接用模块串联得到高压，省了成本、省了空间、省了损耗。</p>
+<p><strong>原因四：电池簇独立控制，寿命更长</strong></p>
+<p>每个电池簇都有自己的 H 桥，可以单独均衡，减少环流，延长电池寿命。</p>
+<p><strong>05</strong></p>
+<p><strong>行业趋势观察</strong></p>
+<p>技术路线没有绝对的好坏，只有场景适配。</p>
+<p>高压级联的优势在<strong>高压、大功率、模块化场景</strong>；中小功率场景，传统方案依然有其价值。</p>
+<p>关键是——看懂原理，才能选对路线。</p>
+<p>如果这篇对你有用，顺手转发给正在选技术方案的同事。</p>
+<p>原创不易，转载请联系授权。</p>
+<p><strong>END</strong></p>
+<p><strong>（关注我们，获取更多储能破局之道）<br />
+ 原创不易，转载请联系授权</strong></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>储能级联拓扑优势</h2>
+    <p><a href="https://mp.weixin.qq.com/s/QqmLlL5DsYOyFvyq-eH4Xw">原文链接</a></p>
+    <p><span>电力储能站</span></p>
+  </header>
+  <article><p>我们的进步需要您的关注</p>
+<p>在电化学储能规模化发展的进程中，一个隐蔽的痛点正随着运行年限的增长逐渐浮出水面——电池一致性问题带来的有效容量衰减与安全隐患。传统低压储能方案将数千颗电芯通过串并联硬连接成一个“大电池”，直流侧电流动辄数百安培，母线回路的不对称导致不同支路充放电速度分化，越靠近逆变端的电芯承受的应力越大。BMS的均衡能力受限于硬件功率与算法精度，面对海量电芯的微小差异往往力不从心，循环次数越多，短板效应越明显，有效输出容量持续缩水。</p>
+<p>高压直挂储能技术为这一困局提供了系统性的解法。它采用级联H桥拓扑，将每相分解为数十个功率单元，每个单元仅连接一簇电池，直流侧不再需要大规模并联。以一台六兆瓦系统为例，低压方案下单簇直流电流可能高达数百安培，而高压直挂方案中每个功率单元对应的直流电流仅需十几安培，并联需求被大幅压缩甚至消除。这意味着电池包能量密度下降、故障隔离范围缩小、热管理要求从整站级收敛到单簇级。</p>
+<p>更关键的是，高压直挂架构天然支持相内与相间的主动均衡控制。它不再依赖电阻耗散式的被动均衡，而是通过能量转移在电池模块间动态调节SOC差异，从系统层面打破木桶效应的制约。同时，省去升压变压器带来的效率提升超过一点五个百分点，输出电压谐波可控制在百分之三以下，无需额外滤波装置。这套从拓扑层面重构储能系统架构的技术，正在为大容量、高安全、长寿命储能电站提供全新的设计范式。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/A4wWoBrWhyo7UJnIibdRY1HVgAYdsbnBL8hKYGhmvDNfjQLYBKGPbde3CydfYqeURqgaGx1A7LBBRjdDibdib0zGFG280g4eBvrlgAEVuqgcys/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/A4wWoBrWhyoia3Mawzr4OSy8nOlDAO4JUyypFX93H8RickMoV3gml9q9icQNZy19h8nhmGmcbZTxBA073J4DMEiaicdgb76FMv5rrwQzORQhiclJ0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>从工程实践来看，高压直挂储能电站在投入主动均衡控制后，相内与相间SOC偏差显著收窄，日充电电量稳步提升，验证了四级均衡策略对容量利用率的改善效果。在占地方面，十兆瓦级系统采用高压直挂方案较传统低压方案可显著压缩占地面积，同时减少高压侧开关设备数量，降低一次投资。功率单元的冗余设计使得单个电芯故障时仅切除极小功率，更换维护亦无需整簇停运。</p>
+<p>当然，高压直挂储能仍面临功率模块数量多、控制复杂度高、直流侧绝缘配合要求严苛等工程挑战。但随着碳化硅器件普及与数字控制技术成熟，其效率优势与安全红利将进一步释放。当储能系统从“电池制造”的粗放逻辑转向“精细拓扑控制”的系统思维，高压直挂技术无疑代表着大容量电化学储能走向成熟的重要方向。理解它，便是理解下一代储能系统架构演进的核心脉络。</p>
+<p>推荐（点下面蓝字阅读）</p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MzA2Nzg2OA==&amp;mid=2247485180&amp;idx=1&amp;sn=3ad1fc07184d2c45e99dfd2f3aff812c&amp;scene=21#wechat_redirect">风电场、光伏电站一次调频技术方案(含试验方案)</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MzA2Nzg2OA==&amp;mid=2247485209&amp;idx=1&amp;sn=09996d2de29c950dc911bad99f09787f&amp;scene=21#wechat_redirect">光伏并网逆变器的分类及原理</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MzA2Nzg2OA==&amp;mid=2247485724&amp;idx=1&amp;sn=52f20bf67025e8c27d6f9b6f5052543b&amp;scene=21#wechat_redirect">光伏电站日常运维的内容及重点</a>  </p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MzA2Nzg2OA==&amp;mid=2247486264&amp;idx=1&amp;sn=6c24204443e999be8c9b78209f377eda&amp;scene=21#wechat_redirect">光伏系统设计从入门到精通，看这一篇就够了</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=Mzg3MzA2Nzg2OA==&amp;mid=2247485478&amp;idx=1&amp;sn=a5ba42051130fc75c51e7dbb60d8799f&amp;scene=21#wechat_redirect">反孤岛保护的基本原理与检测方法</a></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>级联储能构网控制仿真</h2>
+    <p><a href="https://mp.weixin.qq.com/s/yIrtaJPM8cY-aW5c92uDPA">原文链接</a></p>
+    <p><span>宏新环宇小李子</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmVRWy0HGTKAERXvDIyTZNSPS2Y6RzYhDRcKmE5GgpEftia24BPOS4YTw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmicFOicSGqouVM90RoxwR3VPa7Pic4gzHiaXkHlHaUiaKu12ZttOFB3icYiaSg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmRzr5dqKwPicB8Njz2t8t5vju1ocx5L1LicC93oOr7PxN7W3zm6tRbU8g/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmfibXPEDEKPlKiaW9GdRInAQYxOOYq6YPrOTeMiaon9PVibhsjURvG2DK7A/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmQveNv0TZjENGkDBdFuVPAAwvQrAic4noCzXjahGbWVNxicwzVfTcHcZQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcm0dYquJUlXPgicPfNZMmG5Y2IEOjMexicH1KibVa1hcbDwKxCr96IJRePQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmoIia4icD6b6cdWZdQdzJ1Gm3cGYNia5ey5WnojpZvkrYvo8F3UFmxo1kQ/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmafn1UdicNqrEEaO0ic2McfK13s6GgdJEGaGfusw1N1AAFrzGT6z3iaTIw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmGicehuc6YIjVMrPrT0p4p3riapsAdhsSpXWobWj6CGnZwh6hj0NhRVoQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmsYHXrHOxgaTX9ULpwXichwjZbAq9qGcMGiasvhicHhAiaZacMXaD8K19jA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmdIicwuM2SricSXtaNwqCJdBolMoSZ1I1nrgqCPQSrBdhoZHxAicDkSVdQ/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmrUGq1XXWGFgicgOAc65y0sd4nQicc9KHibnU9QwCdR5Ut7uia4fIwCD1AQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmlzn8hHp5MwFHThfxrbGDKDywgZkiacqQMdPeVb8e4KjjMjkm0KSFaeg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmvoXFkmh3CODicxJYwkLl4EMKFqGicWtpqmYGq1lpECZB3LhmCV1rV9Rw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmxubr6O9mmVPhRbpPTkG0nibDTRKabicIjuIN7vWlcNc6UGTxHuwhH0QQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmibOfWsQCOeTwDyVvQ7KKEE5uibt4nvSibndHpKxFG1CNtVUcLCFy4B8sg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmr1LyZrGeMibecFnP1Uuxp8Jq1gr3gwYIZJt6hdRsmmFtsRz6FA1iblwA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmgZuEYc0WhAZvNfqdRUGJzPQicTtLw9dg9mhtloUElB5PYpN61w4TEFg/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmgr34TDlXibruicxlqedNia0q37libmib1X7P2nRj3ibgicvNSZff48cpyHibUg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmYLQdzQyRxwJ0o5BaHNP4sTiar0LR7rdqPWv8LYvFotMtib6S9272umUQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmdveH6ntcg1EI96us8mZZUBYHTbZSbvjgca6Zo32qA2COJ3fS0tC9KQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmmYpKUwHCd2jL4cxdGYt5pOPPJibw0mjWatrmcxroYzeGqc87ALMqtZQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmMicPOQL4SCl14ns6CIhk0FyBnYBDIdvibVoBgWWcNKeO3Xicib5GichPvCg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmQIaHictq1SwATXft8ErXEsgdMO3qOXTwicDuCxyNxfabYyg8ib04az5Bw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcm4qia0ejBZJFxa84eTUto0sibia51ictmeWvLqw63ib1m73XtRXeZdvTT2og/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmTPoJmDpjcmuQP6rNdQlnxsoTLv6au2DurKQuBsvicTdUwYgyCvLEOHg/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcm64F69pQFtz8wqHot2kiaXWvWSMFnGklajNEPORszvM8riaSwvHsw8DGA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmbB9MmsDf8VfQLzzI6UKL3OHSdKQibichjv20C8MYb2ttFMkXcgxw2G1A/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmhbYibmppUD1C2zjhofP1mxwzI8YYbNeP2eKEnyt3SHazxAxHyxhT2hg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmvk2b0hvia9zDJDuxJa4xv8U3M0cZrbjhlOJtgicQ1WYSSJ0ibpwJeRLEw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmnum9ZJ31cw6JM4oM34wdBVuCn6NgK4UGH57OeLSicUwE7PBVmp7eIkQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmXNWiaQgveLdyDrPad6COib9fz8Z9OqLAjjUxALFPv8yJyVNQ2mcdHpuA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmHtdAWStwB1FwNn0bE6ek1hUZk6XYJg0mo6C8FXIu9t1YuhXZVHvUlA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmWbgEuUTa5TLFhIE6rXURFAVibLqWGUNOnsbbqib5LnbczibicsmvNyBEqA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmBHiap0gtfSJgIj8ib70r2H7WL4yNMIpPo8aqBLEjtFA5mveRI9GjibyBw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmvkAbJafIjsGahib3nlXdIZrmvzF5tlvrgzgxib3iawjfMTiboGO6Xl77hQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/8dwJks9v6HWiahBiaFXOXf2yAicMibqJhBcmThoFEzyFMWWC4L0Gkv7HACjCmofmkG4NZHYNDXpU8f7sEKvxOxY2PA/640?wx_fmt=png&amp;from=appmsg" /></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>全球微电网行业分析</h2>
+    <p><a href="https://mp.weixin.qq.com/s/wy9ROeo69rwmoHgiGN4s0Q">原文链接</a></p>
+    <p><span>王旭君15873965810大圆柱电芯</span></p>
+  </header>
+  <article><p>微电网这个市场，外行看是“光储柴一体”，内行看其实是完全割裂的三类生意。不同区域、不同场景，赚钱逻辑、产品要求、竞争玩家完全不一样，根本不存在一套设备通吃全球的情况。</p>
+<p>整个全球市场说白了就分三类需求：电网套利、保供电韧性、无电区刚需替代柴油。所有厂商的强弱、份额、优缺点，全部围绕这三条逻辑分化。</p>
+<p><strong>一、全球整体市场真实格局</strong></p>
+<p>全球微网现在已经不是高速爆发期，而是结构性高增长、存量替换、场景精细化内卷的阶段。</p>
+<p>1、欧美、澳洲：不是缺电，是太贵、太不稳，靠微网省钱、赚钱、保可靠；</p>
+<p>2、中国：基本是政策+园区韧性+源网荷储任务驱动，市场化赚钱项目不多；</p>
+<p>3、东南亚、非洲、拉美、中东矿区：真没电网、电网很烂，微网是唯一靠谱供电方式，纯替代柴油。</p>
+<p>整体格局：欧美高端被外资电气巨头锁死，全球离网工业、海岛、弱电网被中国厂商吃掉，国内电网项目被南瑞锁死，风电场景被金风锁死。</p>
+<p><strong>二、各大区域真实生意逻辑</strong></p>
+<p><strong><em>1、北美（美国为主）：最贵、门槛最高、最吃资质</em></strong></p>
+<p><strong><em>美国微网根本不是设备生意，是政策+补贴+合规+资产运营的生意。</em></strong></p>
+<p>核心需求不是省钱，是怕停电、要电网韧性、要拿IRA补贴。</p>
+<p>军工、医院、数据中心、社区备用微网最多，客户不怕贵，只怕不稳定、不合规。</p>
+<p>所以施耐德、ABB、GE、伊顿永远占高端市场，国产设备很难打进去。</p>
+<p>国产厂商（华为、阳光、古瑞瓦特）只能做工商业普通光储微网，而且必须墨西哥建厂、本土组装，不然拿不到补贴，根本没法玩。</p>
+<p>特斯拉是特例，不靠设备赚钱，靠VPP聚合、电网服务分成，做社区微网生态。</p>
+<p><strong><em>2、欧洲：软件溢价最高、最吃调度能力</em></strong></p>
+<p><strong><em>欧洲不缺电、不缺设备，缺的是新能源消纳和电网辅助收益。</em></strong></p>
+<p>欧洲微网的核心卖点不是“供电”，是套利、调频、需求响应、VPP分钱。</p>
+<p>所以华为在欧洲微网非常吃香，EMS调度、AI负荷预测、电网适配、远程运维是实打实帮客户赚钱的。</p>
+<p>施耐德、Sonnen赢在本地服务和品牌；阳光、比亚迪赢在硬件稳定；国内纯电网设备厂在欧洲基本没存在感。</p>
+<p>欧洲是全球唯一软件能卖出溢价的微网市场。</p>
+<p><strong><em>3、中国：纯政策与电网规则市场，市场化最难</em></strong></p>
+<p>国内微网基本不靠自发自用赚钱，大部分是：园区配套、整县光伏、源网荷储、多能互补、电网改造任务。</p>
+<p>所以南瑞是绝对老大，别人根本抢不走。</p>
+<p>国内拼的不是设备性能、不是构网能力，是并网合规、继电保护标准、电网关系、验收通过率。</p>
+<p>华为、阳光、金风在国内只能做工业、海岛、风电配套场景，正经电网园区项目基本拿不过南瑞。</p>
+<p>国内市场特点：利润薄、流程严、关系重、纯设备厂商很难赚到高利润。</p>
+<p><strong><em>4、澳洲：极端天气刚需，只认高温稳定性</em></strong></p>
+<p>澳洲微网逻辑很简单：夏天必断电、电价暴涨、政府补贴足。</p>
+<p>客户不看花哨功能，就看一个：高温45℃能不能不停机、不保护、不炸机。</p>
+<p>所以固德威、华为、阳光、比亚迪这种整机自研的品牌强势，杂牌全部死光。</p>
+<p>澳洲是全球产品同质化最严重、拼品控拼可靠性的市场。</p>
+<p><strong><em>5、中东、非洲、拉美、东南亚：纯替代柴油，极致性价比市场</em></strong></p>
+<p>这是中国厂商的基本盘，也是最卷、最落地、最辛苦的市场。</p>
+<p>这些区域没有复杂电网规则、没有VPP高收益，核心需求就两条：</p>
+<p>1、替代昂贵柴油；2、少运维、耐造、便宜。</p>
+<p>矿山、村落、海岛、棕榈园、偏远工厂是绝对主力场景。</p>
+<p>阳光电源在这里最强，因为重载工业负荷、离网故障保护、耐造程度业内第一；</p>
+<p>华为靠无人值守、远程运维吃香；</p>
+<p>施耐德、ABB太贵，完全没有市场。</p>
+<p>统一先说行业共识痛点：微网二次保护分两套逻辑：</p>
+<p>一套是并网时适配大电网的传统继电保护，</p>
+<p>一套是离网孤岛模式下针对光伏、储能这类低短路电流设备的新型故障判别保护；</p>
+<p><strong><em>交直流分层防护、多电源联动、故障隔离重构是拉开各家差距的关键。</em></strong></p>
+<p><strong>下面分开讲每家，先讲真实核心竞争力，再落地二次保护实打实的好坏，最后单独对比华为。</strong></p>
+<p><strong>一、国电南瑞</strong></p>
+<p><strong>核心竞争力</strong></p>
+<p>手里握着国网、南网全套准入资质，这是别家根本抢不走的护城河。国内所有县城综合能源、变电站配套园区微网、政府多能互补项目，招标清单基本默认优先南瑞。整套系统走组态化设计，不用每次新项目从零写控制逻辑，工程标准化程度高。和各地供电局调度系统天然打通，并网验收一次过，业主不用反复整改。客户群体以电网公司、城投、产业园国企为主，靠长期政企渠道锁单，不靠低价内卷。</p>
+<p>短板也很现实：光伏、储能 PCS 基本外购，硬件整合度差，纯离网海岛、海外弱电网市场基本放弃，只守国内电网相关生意。</p>
+<p><strong>二次保护设计优缺点</strong></p>
+<p><strong>优点</strong></p>
+<p>传统继电保护底子业内第一，三段过流、零序、距离保护、母线差动、PT 断线闭锁全配齐，严格对标国内配网标准，带多套自适应定值，并网和孤岛模式可以自动切换参数，故障录波、时序追溯完整，电网专家现场挑不出毛病。</p>
+<p>多能源接入兼容性强，风电、燃气柴油机、储能一套保护系统全部适配，逆功率、低频解列、小电源脱网逻辑成熟，做风光储氢多能园区优势明显。</p>
+<p>保护通信冗余到位，光纤 + 双对时，就算云端 EMS 断网，就地保护装置能独立工作，不会出现故障拒动。</p>
+<p><strong>缺点</strong></p>
+<p>孤岛离网场景硬伤：传统保护靠短路电流判故障，但纯光储微网短路电流很低，南瑞原有算法识别迟钝，很容易出现故障不跳闸，必须额外加装故障电流放大装置，变相增加客户成本。</p>
+<p>直流侧防护几乎是短板，组件级直流拉弧、储能热失控保护全靠逆变器厂家自带，整套系统没有统一联动闭锁，直流起火风险只能靠单台设备自保，无法实现交直流同步断电隔离。</p>
+<p>设备分散，保护装置、PCS、逆变器分属不同硬件，跨设备故障联动需要单独开发 GOOSE 通信逻辑，小型光储微网调试周期大幅拉长。</p>
+<p>没有针对高温、电压剧烈波动的海外弱电网保护策略，走出国内配网场景可靠性直接下滑。</p>
+<p><strong>二、阳光电源</strong></p>
+<p><strong>核心竞争力</strong></p>
+<p>全产业链自产电力电子设备，逆变器、大功率构网 PCS、储能柜体全部自研，做海外矿山、大型离网项目成本控制能力拉满。专攻重型冲击负荷，像矿山球磨机、冶炼设备这种瞬间负荷波动极大的场景，国内厂商里只有阳光适配度最高。主打直流耦合光储架构，光储直连损耗更低，海外矿区总包单基本盘稳固，海外渠道深耕中东、非洲多年，对当地高温、沙尘工况打磨充分。</p>
+<p>短板：软件调度、远程运维能力弱，国内政企电网项目没有资质优势，多能互补配套不完善。</p>
+<p><strong>二次保护设计优缺点</strong></p>
+<p><strong>优点</strong></p>
+<p>专门针对孤岛低短路电流自研故障识别算法，30ms 内就能锁定短路故障，完美解决矿山纯光储离网保护拒动问题，工业重型负荷场景保护可靠性碾压同行。</p>
+<p>交直流一体化分层防护成型，光伏组串级熔断器 + 快速关断，储能 PCS 自带压差、热失控闭锁，交直流故障可以联动跳闸，不用额外采购第三方直流保护设备。</p>
+<p>多台储能并联协同保护成熟，自带环流抑制、变压器合闸冲击限流，矿区多子阵大容量微网不会出现设备频繁损坏。</p>
+<p>出厂预设高低温、宽电压穿越保护策略，海外恶劣工况不用现场改参数，误动率很低。</p>
+<p><strong>缺点</strong></p>
+<p>电网侧标准化继电保护不完善，缺少母线差动、长线路阻抗保护，国内对接供电局配套项目，必须额外搭配南瑞保护装置，两套保护逻辑容易配合冲突，调试麻烦。</p>
+<p>多能源适配差，只把光储保护做透，接入风机、燃气机组后，缺少配套振荡、逆功率保护逻辑，做综合能源园区容易丢单。</p>
+<p>故障处理偏被动，故障隔离完成后，需要人工下发指令恢复供电，没有自动拓扑重构，无人值守海岛运维压力很大。</p>
+<p><strong>三、金风科技</strong></p>
+<p><strong>核心竞争力</strong></p>
+<p>风电赛道独有优势，国内风电基地、北方风光互补海岛项目基本盘稳定。整套系统擅长平抑风机出力波动，解决高风电渗透率带来的电压振荡问题。商业模式不只是卖设备，主推长期能源托管运维，靠存量风电业主导流微网订单，风光一体化项目别家很难竞争。</p>
+<p>短板：光伏、储能硬件全部外购，纯光储无风电场景下竞争力大幅下降。</p>
+<p><strong>二次保护设计优缺点</strong></p>
+<p><strong>优点</strong></p>
+<p>风机专属保护业内独一档，针对风机脱网、变桨震荡做了阻尼保护，高风电占比微网不会出现系统谐振，风机低电压穿越定值可动态调节。</p>
+<p>风光储三者孤岛、逆功率联动逻辑成熟，大风天气发电过剩时分层闭锁逆流，不会单一设备脱网造成整个微网崩溃。</p>
+<p>适配风电基地长架空线路，内置阻抗法故障定位，快速找到断线、单相接地点位。</p>
+<p><strong>缺点</strong></p>
+<p>纯光储场景保护底子薄弱，光伏、储能设备外购，交直流保护、孤岛故障判别依赖第三方设备，整套系统保护配合容易失衡。</p>
+<p>保护联动高度依赖光纤、4G 通信，一旦通信中断，就地保护逻辑大幅简化，孤岛短路故障存在拒动隐患。</p>
+<p>直流安全防护缺失，组件拉弧、储能热失控没有统一联动保护，火灾风险管控是明显短板。</p>
+<p><strong>四、施耐德</strong></p>
+<p><strong>核心竞争力</strong></p>
+<p>全球工业配电老牌玩家，整套柜体、继电保护、EMS 软件全部自研，标准化预制模块，出厂完成大部分调试，现场施工周期短。主攻欧美商业楼宇、机场、军工精密负荷场景，电能质量、工控网络安全是独有卖点。主推能源租赁托管模式，高端客户愿意为稳定性、服务溢价买单。</p>
+<p>短板：新能源适配差，硬件定价极高，发展中国家离网项目性价比极低，不适应国内电网配套规则。</p>
+<p><strong>二次保护设计优缺点</strong></p>
+<p><strong>优点</strong></p>
+<p>工业级继电保护精度拉满，三段反时限过流、电机堵转、变压器差动、三相不平衡、谐波保护全部集成，军工、精密制造这种不能断电的敏感负荷适配性顶尖。</p>
+<p>分母线、馈线、负荷三级分段隔离，单回路故障不会波及重要负荷，供电连续性强。</p>
+<p>自带工控网络安全保护，远程篡改保护定值会自动锁定，符合欧美强制工控安全法规。</p>
+<p>商用、军工两套预制保护模板，现场只需要核对基础参数，交付速度快。</p>
+<p><strong>缺点</strong></p>
+<p>底层架构基于传统大电网设计，对光伏、储能低短路电流孤岛场景优化不足，纯新能源离网项目大概率故障识别失效，只能额外加装构网保护模块，成本大幅上涨。</p>
+<p>整套保护硬件溢价严重，同等容量比国产贵四成以上，预算有限的海外矿区、乡镇项目完全没有竞争力。</p>
+<p>不兼容国内配网主流通信规约，国内政企园区项目验收很难通过。</p>
+<p><strong>五、华为数字能源</strong></p>
+<p><strong>核心竞争力</strong></p>
+<p>不靠硬件低价内卷，靠 ICT 数字化能力形成差异化壁垒。整套 FusionPower 光储微网直流耦合架构，转换损耗比交流耦合方案低 6 到 10 个点。自研 VSM 虚拟同步机，不用柴油机组支撑就能实现 100% 新能源离网稳定运行，光储配比可以做到 2:1，直接砍掉客户大量储能投入。EMS 不止做监控，内置 AI 负荷预测、收益测算、VPP 并网套利功能，能帮客户长期降低柴油消耗、参与电网辅助服务，靠持续运营收益绑定渠道。远程运维体系是别家电力厂商不具备的，全球偏远矿区、海岛不用常驻工程师。渠道模式开放，不跟 EPC 抢总包生意，只输出设备和软件授权，全球合作集成商数量庞大，弱电网、海外离网市场扩张速度最快。</p>
+<p><strong>短板</strong>：不自产电芯，风电、多能联供配套薄弱，国内电网政企项目缺少资源背书，硬件价格低于施耐德但高于阳光。</p>
+<p><strong>二次保护设计优缺点</strong></p>
+<p><strong>优点</strong></p>
+<p>孤岛低短路故障识别算法行业领先，不靠短路电流，通过电压畸变、序分量综合判断，20ms 就能定位短路，同时 PCS 主动限流，避免全网瘫痪，纯光储无柴油海岛、矿区基本不会出现保护拒动，这是南瑞、施耐德最大短板。</p>
+<p>交直流全链路分层协同防护独一无二：组件级快速关断、直流电弧检测、储能四层热失控闭锁、交流侧馈线保护、并网点孤岛解列一套打通，直流故障可以同步切断交直流两侧电源，整套系统火灾防护完整性远超竞品。</p>
+<p>并离网保护定值全自动自适应切换，负荷波动、电源投切时 AI 动态微调阈值，海外无人值守站点不用工程师现场反复整定参数，运维成本大幅降低。</p>
+<p>故障隔离 + 自动拓扑重构一体化，故障支路断开后几百毫秒内重新分配功率，非故障区域快速恢复供电，搭配黑启动满载缓启闭锁，适合数据中心、矿山这种不能长时间断电的高可靠场景。</p>
+<p>ICT 加持远程保护运维，云端随时调取故障录波、在线升级保护逻辑、修改定值，偏远地区不用专人驻场，故障原因远程就能定位处理。</p>
+<p>出厂适配 0\~1.3pu 宽电压穿越，中东、非洲电压剧烈波动地区不用重新优化保护策略，开箱即用。</p>
+<p><strong>缺点</strong></p>
+<p>原生只适配光储系统，风机、燃气轮机没有配套专用保护逻辑，做风光储氢综合园区，必须外购第三方保护装置，额外开发通信联动，调试周期拉长三成以上，对比南瑞、金风天然吃亏。</p>
+<p>软硬件生态偏封闭，EMS 和保护逻辑深度绑定自家逆变器、PCS，外接别家储能、继电设备时，无法原生联动跳闸，需要单独定制协议，增加项目成本和故障风险；南瑞、施耐德系统开放性更强，多品牌混搭项目客户更愿意选。</p>
+<p>高阶电网继电保护有缺失，没有母线差动、长架空线路专用阻抗保护，国内大型配网配套微网，供电局会要求加装南瑞继保，两套保护配合容易出现时差误动，国内电网项目是明显短板。</p>
+<p>整套一体化保护硬件采购价高于阳光电源 8%-15%，只看重一次性设备成本、不在乎长期运维和套利收益的小工商业客户，会直接选择阳光。</p>
+<p>无自有线下调试团队，所有现场保护整定、故障配合调试全部交给合作 EPC，小型海外集成商技术水平参差不齐，容易出现保护逻辑整定出错，项目落地体验不稳定。</p>
+<p><strong>六、五家综合取舍总结</strong></p>
+<p>国内电网配套、多能互补产业园：选南瑞，继电保护合规性、多能源适配无可替代，孤岛和直流防护缺陷可以靠额外设备弥补；</p>
+<p>海外大型矿山、重型工业离网微网：选阳光，大功率孤岛保护、自产电力电子硬件扛冲击负荷能力最强；</p>
+<p>风电占比高的风光海岛、风电基地配套微网：选金风，风机振荡、风光协同保护是独家优势；</p>
+<p>欧美高端商业、军工精密负荷微网：选施耐德，工业配电保护、工控网络安全符合当地法规，供电连续性最优；</p>
+<p>全球弱电网、纯光储海岛、无人值守中小型工商业微网：选华为，低短路孤岛保护、交直流全链路安全、远程数字化运维形成完整壁垒；但但凡涉及风电、国内大型电网配套项目，短板会被无限放大。</p>
+<p><strong>五家厂商二次保护综合横向总结</strong></p>
+<p><img class="raw-image" data-s="300,640" data-ratio="0.8867924528301887" data-w="636" width="100%" data-type="png" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;height: auto !important;" src="https://mmbiz.qpic.cn/mmbiz_png/LZQzCCL89q5moe9V4EpEtvHJhbwF2aKwl9DAbHor3ibOxN2EjVgRHwV8oLJFyMKlsY0qiahX5Oh7Iu3biaoYXeiciblepMvdBzQ4Yxv0RlxEttL4/640?wx_fmt=png"></p>
+<p><strong>五家厂商产品核心竞争力对比</strong></p>
+<p><img data-w="703" width="100%" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;height: auto !important;" data-s="300,640" data-type="png" class="raw-image" data-ratio="1.0725462304409672" src="https://mmbiz.qpic.cn/mmbiz_png/LZQzCCL89q78I841icrY9pLJftCjvAB6QeWJUtrGgln71PKCY0xibUkekew7wibHCul7iaQ2HZV1eic07fslvtDlN1aYXPM8Ag0X4DnqTPcK886Q/640?wx_fmt=png"></p>
+<p><img style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;height: auto !important;" class="raw-image" data-w="703" data-type="png" width="100%" data-ratio="0.7339971550497866" data-s="300,640" src="https://mmbiz.qpic.cn/sz_mmbiz_png/LZQzCCL89q5NqutJyptPOSXibc1ibxt4VIUzmWpibbLibItb5BVpfns1tvyyDAwDuhluwAXGGZiccCkdHNCNbWR0YbRBcIK1mlhZKNAeuOPhuB5w/640?wx_fmt=png"></p>
+<p><img data-ratio="0.5176803394625177" data-w="707" class="raw-image" data-s="300,640" style="vertical-align: middle;max-width: 100%;width: 100%;box-sizing: border-box;height: auto !important;" width="100%" data-type="png" src="https://mmbiz.qpic.cn/mmbiz_png/LZQzCCL89q68TeOmgx0YEh3u8k6GCr6fwc7TvCGagpxJjlnicbb4SJMUKBN6TxVUty0kRuwYeEhzgTnnViczJU3CeEpQRbt5VicsoCVqBHupeE/640?wx_fmt=png"></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>【场景】华为《智能微网解决方案技术白皮书（矿山场景）》</h2>
+    <p><a href="https://mp.weixin.qq.com/s/V1v8INcgRViwKnCKp6WDEw">原文链接</a></p>
+    <p><span>微电网解决方案</span></p>
+  </header>
+  <article><p><a href="https://mp.weixin.qq.com/s?__biz=MzYzODU0Mzk2Mw==&amp;mid=2247491631&amp;idx=1&amp;sn=59fe0fb0bfc28426e04b6e78d1233314&amp;scene=21#wechat_redirect">【场景】微电网有哪些应用场景？</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzYzODU0Mzk2Mw==&amp;mid=2247491648&amp;idx=1&amp;sn=c53d5086fc077d59300916f012ed26e0&amp;scene=21#wechat_redirect">【场景】施耐德《为医院建设有弹性的高效微电网：从设计到融资》</a></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibSYfI98yHVzZUsArGL5pArjsia9JaUz1BL0siaacs8269WlGdwjbKZjqrtSDSID1ktiadV0LUHOR5xTEcUfBHnlUJSsic5D5aQZR4E/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibS5bqVlrSuc58pvPHP4wUUtTSkaPtDtrKtvcoyEzLP2Btib4mwde9MssHjanafshPKicflkhuhiaPQCtuHUMd95xhh0buIEqzic7xQ/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibTibpntsiavvALkicFt5RjUqUMzdg6Anf53pXdxx5gNYW0HmxWYBibAZ227z9PnoeM9mXAbicncW2hIkzWJdIlevYlXia08pl0QU0SyI/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibTjGjXicUsmh2CeZ2icBzALU8kTib93YWQt5ib62qEUXVIJwxACoeCbKt0urORBu7Q9yibCTK0u2sqjlibjXicHPmgAsXS0cZZXjhBOvI/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibQdJjleGxrTolEWqXhaftacN9Cjytdt3noFjmYyHK8d4KqbP4ia9q2np88kKV7JPhianhlDpF45aMy9Vhfz9sF72jEBO9AbM5YrI/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibSttEbxQxJMic5rARaYba1Tdtic0NKAiaDIEWG9NnsRxgicQ8lcUmrUNlibQR9FssEZYwBfrRvryII6mMPKm4E9FPK6pp7Cw0XrwshQ/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibSPFJia0v23rtic4R5SwvcsMEFnN0RbABNqZ3uVjE82RR2sfaXGZ1XpL9g1CZFFMG5Sk38CibCDJbjEpcYy0n7U5icjAxY00977rpQ/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibT4aole5lOlKfFJBeAnqiaM5XicLRibticczH6Rvly1VJBQh6TL6V3UKXPL2rqvdTQz9xkmItNJBTtQNkkxbJ9ibMXGYMPlYXEcfS4E/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibT8KpthPOsOSSu4DNlYLeMVe1jIVugcJ4la2GzXaaZPxrPugZtTkbdHRFBrVLIpnm15pHV7QyUUEyMLY78JtWO2hiaCHsicrdgicw/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibRhgPK0aYgBQa0zicVyka94ucRWxvymkY6wB9VRbAdUjJa4491uX0jDHich8gONBQwXQwJjqHcZp4vw6Ywnu6qGxggAPseQAzvDI/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibR9cRKhPvYW3AQun2AicFgiaalCic71sedXkOKp2mLPfJWhRGSFoRIpEiaVibbtKRQSdqHpVvEbW9sBvxh5VnI5Qov7MlaDv3MAMAps/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibRI5peZtW1LwkPApjl6Dxrv05Ae8GnQIr5VN3pDwkDib2GyySXdoRJX21EkrKpL5Wx7eDL8X6KiaGbiaqY6TOIZvRlXIOlfw17IKo/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibRiaSLSrdhdVdWxOtCu38uyIdHX7y5xkll9zKZd3daRGJOa2N4DsbRd2tNOiaENTF75thThJMgphSKic2ejdQbYibHdpZO5bm0ibfu4/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibRYkicqXq9xjfXP7fbcBdte36TEb4xicuDqJF0Q2wCx8ROOawnPtHC4SRQYk2bbF6ialzQOBVGjfTSAGY4VdRyBozMpfHFdjSnzia0/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibT0zZJNq6tVqOAHcldQGhkJ7BEZRukeqSMRXYzlXppS3VA07qhicNqFGtKCiauykR9iaynrzGkngh5Enc5T8QR7Ufj9pTXNTwthaw/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibS5ibpuogJtBrnJfKibPSDjMM3zsQ1Fic5tXwQy8gqwn0FkMPXHJnA6nFVloSZalXdIIdSCNDUkCib7ZhItpCeaibY0T0CC60EFQx3Y/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibSOHDdqicju5EnWUTb4RjWSACMcpMvs6DBCzvCN0eGXAq9icQB6z6wI3WfCmptCrUfp5mQ0D85iczHJibIHEx1czb0uxic0Z8stJs0I/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibQuRhwZ17rZDToEbgMoj5wYaFK3nfKyo5YIg8nHPFZAkrPbGbZFoQ9iamgvWGb6d9sXqFSiaSKbQJAQyrLeJcI2yTBys1YoZTSys/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_jpg/uo6OFWv92ibR7N51ibWksWDBqZzyc7zkd3iczZm22Bo06g0ibNXUnFNXpcAcbica9ucG8ldEUZcib9pXYIYib2V209FC02RKee3yO1VKxMiaLycf9bE/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/uo6OFWv92ibRsuiaBp0V3WqJPy0oRAMEZngwoPGk6QeLq9fqSQgW7pFXoMpB4bnkC2XVPBoFxZ9Im1W88f2eV54oLPMOjbP4INzjoA1eUeL8U/640?wx_fmt=jpeg&amp;from=appmsg" /></p>
+<p>注：文章为公开场合的公开资料，笔者仅是收集供同行一起学习，促进行业的发展与共同进步。</p>
+<p>下载链接：<a href="">【解决方案】华为智能微网解决方案技术白皮书（矿山场景）.pdf</a></p>
+<p>欢迎免费关注，获取更多微电网方案：</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>分享 |中国工业微电网发展白皮书</h2>
+    <p><a href="https://mp.weixin.qq.com/s/K15LjeqkK08b28y3ekg2_Q">原文链接</a></p>
+    <p><span>泉心.羽翼</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXY5ibX8owdEIBVu2d79PQnfLWQ87SwEFraoMUw0x25LDQoicvfBqSiamWT4MibjAm3dtHUoxZ4NgFplqtZU5CmMDSIxh1t62TEzPp8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXaeibFRLdWmQhNEcTAZ8oPhTicL5eW8EjPv5ABXTkLHoUb5BDlaxy5xtBxN1V0crs9sFLf149iaKTViche1Q7Dp6h1Yph0CUiaP0SHA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZ9eYTicKbV5nKsZ8ibicWt33qib9WUNoSmEaYl5MlMiaCbUoEYFNic94gDDb4G75VTXpTWdvepACiamQmdJ0iaicoictUuso8wjRJEau5lE/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXaJn2fyNITt9T3UrFZMzMHUsMf3Jib2YNrM7mCibkmjntic6f6j2GH4A9vrIB4jlicya3Z29rLOnpKdmNeGjIgNDzl1zuPpcC7EvTI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXaLx1MibpvFibYRs09N3vWOwBRIMD9icJXy84KTxlcpO5QPQOr1Fjxx4WGeL9QKLxc2uMicQZa8fddAG218EJvsFialNTXPGtTnLZyc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZOCpoht19zpXLiceic9Konl6CBeFAAsZYTfnkDtUebdyeDt5mh2sF6NLiaaMOLsDeXB6AI49AkPZcgw89WX6krCuPwOC0Azeef6U/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXbMNpyA0T73SjTBpxF2nibrKAISuQbnDWHTM80nOWBTicHAbic92egJdXC1jYezhzqHQ8PEs79MotygZc0TkO1M5R9Gibez7q7XybQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXbbkQpZUkdBqNkqYJD5aIqPa7W22ZJn2rzq39uIDeMa2yp9dohoKvmEC29acgHPo51kYvnibrnvM0ibeFR4J4apCBAaYCpLgsCkc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZxmPEFytHJf17vnSaMASrL0b45DQaKJXf5VJe9LwC19sKYTocQoOa9TGkjSkDBfibaU5AEpz2XfX8WdsQ8xg3HYMkGp9COga6E/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZHaichPcDakLe9N3SNyKvxxV0ufHI0XWdSMeLp7ZibYtoZGibaRtSJqngYpmMjGI0sjibr1wSq8ic1FgXCmNzWggjI33YD8CyUzI0E/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZRNw3wVeSiauQKib3M93K4DmHzb0yfu67fN67rJwG71b9J1icECmoZCDAZ4fjp4N5icGZaSlo4svjnqtNyFtxupf6A9NOIgFiadnTI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXbibzxfXDlhu3kf9ooGox5kstGkXjPxPfN2aQfNLxtCp5HKGNtPhXWXnFRkYvD0FZbavMQ947RBAOUPC6mA5LZ0cKbvO98Mgk3E/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXawWuX8e06vh7otykdkXYia44jGSzWDNSvxCN7L4ZckXQbMrOUNeweVpgfILC2yicDj4duiaibb8CQgrOzQ0KkLsIN1MLGibNJiaFbzk/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXbjgh3icklbicAs40JXPrH6iczzM4RVF9Ek1KkvKYqc42lJ811jhZsaLItZ1w8OkdiaGMibq09xHiazIebSqIpPsEX6eZMzF00hCEUOE/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXb3Cg1WFsdjQvkL88r5ibGAwZOdE3LFk2J4vT2IIYH8jXTA3vGMlKTsmB2xYUibJBlq3ibo67xdMWhzK23VxjvVMLkNBFp2ic5jWW8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXYpFkhchRDINYlibTNUhr1gWlB6ic0rU92CmT7YJ1HwOFX3t8sFDeVTBL8SFQTZBVMmzCsl3vUW4dbrSvjCatQtupiaVXCxVnNb60/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXYq0Luf45Ow3TAgDFmeMrsa8UHhQibfbAsX4vZNGicDlgXSYHQwf9cdCvGWHJc6v6icr6JSKuywAs00bnSIF77qJTDm3UDo1o1IFg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXba4ibGdGlRJAkl3NHicpRiaFIJlQL23QZ00XM0ickbtqzfEAQWzx9qwXDsp5noOOA2XkOwoZ6eGkV7xFj2DYhG6Sc9mJ8MGic4KeYM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZ3debkficNTcicEQLuF2oeCW7xibiboNKMfKXKWyEmOaSsQXgIM88fTJl2qdQo04J10HJPOumSiaeo38zzosTEMS4CLLxmBvthLicq4/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXY42vn8wpc1RBHH5aA0BaicsaYa31WYta1dSwBL4oI53NuicMFx4Oqy8jx8XIWWqNvGLn3ThNQicoTulMQxR7c6cdpNhUZ57XDsd4/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXbIZoAFXWnsLHS9ictvHwyUBsF3c3ohRA5DVl4RXSx6WV8ZhnicH2zhB0qibvIFialiasb5hBpIXNuWUZicKJPtJUI1e0HN3W68qOxro/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXYXn9BBqic0DQzv8Farw9EyPKCVzibhjybqg1TIzhARBg7RjXI6Z3hM0Vm0xFsx4JGdNhJBPLSpz5q2icjfUxmRUMDIrbID54RE3c/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXbNmRte9rpc1EYyeRn7A87fGWThSbpmE23Xs23Np7BGz7YViaMS0KJRWcPYj0DCj8VWA711dzntm70eF4osJHibAhUN5vY097ziaU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZgh0GCz8gdzObL92AMDUVTvVia4BCqzlrqa0jyaBdnC0JuibOq7CbBL89SIHLS31JoNiaxnGDicBZibHj6ZiahIRbxufz3vSA2UXZno/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZiaIyLPria333Ry8aH9JXOHJrHJ8rbVic4Olem8fC1HVHvdicO7edUL60oicRoyiavEFPM8Y3HSzAgbybay4MLxAyeoNm1BJvaS9VOU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXYF5JxTHT5pusRicwGol4pz9yWfIicyvIv9I2e5SCPSAVicOsCKxSBNVHyCAXK1ZTw8ShnmUbV0saZoXlVN00TUNoYjEN6QbOCZFQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXbUo64EIrsd8gWR7ATcIk5ryqo4WWFLDcDHyRxHdwdYJYJ74gGS7DCW064k2soMD2k3NkQqY7qfXx38YtNRbhV8R565fvyyee8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXas7F8JiccNk1sukGOLaaVT5yAcW2JvrOO5Ima5w7RibNCT0aqicQkzGDVGxcPHQVf2Wo1LZUfoG2meC3pib9BS5K8CGzXWLRhYIwI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXY4EfxEHFdibUjbayfPta1KMIwjSqDtplnT5w2IHnYqRokgY9HtzNtrjrcnHziaw0UavZVevO6EKxmhicUNCKM15UXsEqUdCmWFgk/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXYvfPQkscckicOQEjMRj3Wwy4kCariaBcOZ9HN0unlySRhWcaia34YN1ZoJkc5Nvf0TjGtCe79WWLFt7mBZFl19ttWZahVBlJgRcU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXaQX6KH6UDBiclbOW1RNic5LZNJSMCUVs63ITticselVmgB7BiaZdibw7VHP5EVpREa6IOlu1Fa5GtkyJaVFf6WibkzmnujBSpdM4f5g/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZ8SKnpobrbpydicHwVQEcsicj3FaO337rmQV2iaTIzWGrAGMOfIicXqJlF0bTZem6JN2gbflqwUEJmLcvnEiaA2RcYJSiayVhymdnek/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXYibHogmZmCZWGHdUFjaMX5makhRmXribRnbHZRY8NWQ6IpgdazD3hyzN2zPDElRvtFb1rdhxbtBooo6FGibzqxzKukYTnfXV0mSI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXYpjibNVkQXt1ic3WWibmt0nPtwO3PdVHfq8c07JxqOL6NPBLY60QU3ibg4fj1qKxnrthJibVmx1hmNTzomG4ibkR7yIQqF3WagNacKU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXblsYjtNCRd52oso4HrIfXmCFxJcvgmWCEvRDTLzH6g1oNZ5rpfmNEjSuTc6K4NjxqCqd5enF9iaZ8ib1I7JSqjjJCICbkKErVdg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXaXC9X6rHY4pX3Co0OWo0dSRZibQvcq3oXicke7Quh1jrUC3twqAvBHGSCFUWEwbrPJo8TddeErYpC2KhhZ7icBO6bqpAIdI56Ek8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXbEfxrH5t21ibMgZbc27kxTA2QZErhSL4Amh8tjibApeaFc4A57U9JtcEynM8zlxqL4zGIlqibwaIribjblrEXFnmQKK4oR0TyaibcY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXbEInd6iacFbRILnULneBBQgMeYkcXHAic2oDib9iap70UAVbibH0ibXxuaYBQTBASO8InhpKjWm33oT7oyn5bFdaxve1w2jjlxPoNsc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXYpQlGhOH7pRAZRVd4dLZPYKSp9jLzfQ1w3c0KNib8LLSIGVkpZ8dQqRn4oDkGMd1XVktjaRlJoWNkGbFE1Jc7d6uFJbMPTOOm0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXbPDb3kBbgYJQrK7R8T1fQv3lsbXehkDJk4XJUAO3kxJekjdyDibldibOcoDyOgfdpjeR9RdVWtaSFNfJNksxGu4d8omz6dhNRog/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZibicRz21rpdJPtHK1dFLqO6via4wuRicMfOO0Ujn2k7vFEgUnNzuP6jrM6uhOQcEpr8HOy1yqrOA7WRCXQI0GBxnLrC77BcFVy1s/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXagYwM7wlDaZb6YwKdTmz4yk9gqR3Pq7f0dPoN2bv6HIEdrQTUO5Ftk0ibKAE2xw8iaTLFIIEhn4hdaZ07gWCW0QgBGbEibqaYnnM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZZuFweM3icJa7jgf8VrMQK6TaO9KBibSFqdplPInvGSuBtQIG17rE5CRwSaVChX4ehE2FvHUcD3sUTUazDohWB1P7X2a7lr8IVQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXaZcSnzx0MdUYf6YDvYia89kPqtklbqrSNFokM0BMnxicjib8DXQujY0KyMBlia80m2H4j0d68WezSAiaYia3jOFwOyEY8rCTtcTl0KI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXajWoibV1oa3qIqLUsicGQOuq0iaOEP0WcIDWvLaNC5H6ortf3BzIFPsJMmZyE9NibzMFMybfuXfaFTkuUNVYmDFwaqJqIl3fAusr4/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXawibH4s5xnl2bLCe19l8Ua1LDqgEnCwiaUicnH6W2hZkHINmictbr4IbWUxeV0KiaGv4E1RwLTHWyT8v54d3l23fc1sttPNsoLw5icA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZGac9BbyVKicA6iaHibw8rLQlnib0EYIiclWf3bdBBf4vIKcDDU4SDaf0eRcYmtfrbyfDFSiakkavc0qn7AGBt0QtVfsDOC3tRNAOQs/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZNXD46gW761um38ew0tEtU7ts5tMhJAWBqKIUsfm1qqyUuPykPSNOG9icX9o3EmDetD3LzJuyWuBXD1eZP7d3mqyaAa9Hda4uM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/JNUW9d5xXXZvYiaIqFJhicibJys2WicAIFYWNINriaJS3Y83d4NARKk6ruXbRYwfRRX4sfHiaR0icibicr8iaGJ2SiaJG4wv0ndGVa45Py1QvXZ7rMwK7c/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/JNUW9d5xXXZaDw0WOKulbN4lkYmqTWvZNLw7dzn7eVq3wwhZuP4kHIVnCuYhYm4cIWweicx8uSRo5Ba3pek87WCibBHg9icgMhUUicDianvZLRHo/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>THE END</p>
+<h4>【免责声明】资料来源于网络，仅供参考。</h4></article>
+</section>
+
+<section>
+  <header>
+    <h2>【标准】微电网标准5：GB/T 3624-2018《微电网能量管理系统技术规范》</h2>
+    <p><a href="https://mp.weixin.qq.com/s/K0F1ttSrgm8DOsGC4hwoqA">原文链接</a></p>
+    <p><span>低碳解决方案经理</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibTHIFtHmSdsSjx9ZTHYIh3MIEdicj7nOrZibQHM0hJQxOm5OoC66YB4enywpmMYlQQ2qvleoAq8YwyI8hpwpFEaHu2k8tS5WPJtw/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzYzODU0Mzk2Mw==&amp;mid=2247490599&amp;idx=1&amp;sn=fa727899480907e06fdf3271e4114c84&amp;scene=21#wechat_redirect">【标准】微电网标准1：GBT 42731-2023《微电网技术要求》</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzYzODU0Mzk2Mw==&amp;mid=2247490600&amp;idx=1&amp;sn=e27d59953954e7b161deb1159924943b&amp;scene=21#wechat_redirect">【标准】微电网标准2：IEC62898对应的国内标准</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzYzODU0Mzk2Mw==&amp;mid=2247490647&amp;idx=1&amp;sn=0add944f36983f716b3b07b0fd55e21f&amp;scene=21#wechat_redirect">【标准】微电网标准3：GBT 51341-2025《微电网工程设计标准》</a></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzYzODU0Mzk2Mw==&amp;mid=2247490800&amp;idx=1&amp;sn=d1cadd78fc72d8e1b40f29a88ea332bb&amp;scene=21#wechat_redirect">【标准】微电网标准4：GB/Z 120.305-2026《微电网 第3-5部分：微电网监控及能量系统测试》</a></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibTbk1A7H0iawTItH1MMcpesKJXibZLfLYiciagZic10xk7YgIiaaQkIAp7XfxV2Kp9pV5d6lU3liaQqrOAIxa3iclibHtP4ib7ZjJqI6Yic6w/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibTSkzfP3ibT9SJQcHwx34c3SlQBhSVe8DsicJhS8niaKtQwtCJqKyWrZqpJ6EdIsryTHoU8X5ibuG5ZMjAa5IKXZXUJIMXpBhgCb90/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibSpumXIDTJUGM5WRiaGibrTBUccznbribaEvFvVpQUPufrmsw7eZNUrAjjriaHSFRKWfTDV26ZSe98fibHCHxD7tBa6bAiccaZNXOa4Y/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibReeFZxerCr2fXHKpE1ic3dmicfFx7FwQ73f7K7FNDvvSD1aZCjWf83z3F1NNtc2327Tobo8ltFEEiaNSQCdXWevxaqpFkuCcmLbQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/uo6OFWv92ibSZA6umvnOZicaSXYagcRLbV0jSiadfvET5Ue0RVu1zcHrrSKV9CePwhW9jKA8tTECiakqTSibbiaiaqLytwaKibgcvxxmD3FEgXMw0xI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibSge4ZpelHtF63z5XLFcf3WfIRicp5eJgficOWcGA3ibo3ZEkLFAU2VLtNNZA1hicnZP3roCIsGPXg85ZdzMawtbWu898kWYyeYWrc/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/uo6OFWv92ibTooicxfLDBBDqsefSghAbrLfhJ4yFFbaVC1vQ6c8HcPzJhYBobWicveU9htbzEHqyecicTLqkQo5ORGPNSnKT6kavTZyn3V9V8JU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/uo6OFWv92ibTOBUDoe4eVTFawNCFsfvibsGMz3jpibMz11yUTFQe1UKXtfyhLYewJKwicx9qoLuwY7sIaUFV08MabiaacHiavj2J4llLjBqTKibrzg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>注：文章为公开场合的公开资料，笔者仅是收集供同行一起学习，促进行业的发展与共同进步。</p>
+<p>下载链接：<a href="">GBT 36274-2018《微电网能量管理系统技术规范》.pdf</a></p>
+<p>欢迎免费关注，获取更多微电网方案：</p></article>
+</section>
+
+<section>
+  <header>
+    <h2>最新观察：储能微电网为何成热点？</h2>
+    <p><a href="https://mp.weixin.qq.com/s/QlPO6X2dBdszzH-gPRC4DQ">原文链接</a></p>
+    <p><span>行家说楚欣</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/6TfFib1mwLvursic0rKWn7pLnplicgqibFoODW0u7vcW5dr4FmIh4R0d7xS3Oe4qOW20CRMMlLE6k32JZA5hlTgYBtAHpPIB3TOzQx9P9OL2rac/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/6TfFib1mwLvt3V7f23R0D5aIYrabsibC3kZHoUVlHkicvISfXv36QiaCy0FAhPC0or5YdCw0CSTAibMQficDN7QtVzPkQ76XBhPhstwGbEtuQF6pY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>如果你是一家储能企业的负责人，现在打开世界地图，会发现一个有意思的现象：</p>
+<ul>
+<li>
+<p>在欧洲，客户问你“电费这么高，储能能不能帮我把每一度电的价值都榨出来？”</p>
+</li>
+<li>
+<p>在东南亚和非洲，客户问你“电网说断就断，你的设备能不能让我感觉不到停电？”</p>
+</li>
+<li>
+<p>在中东，客户问你“夏天50多度、沙尘暴说来就来，你的东西还能不能正常工作？”</p>
+</li>
+</ul>
+<p>三个问题，看似不同，指向同一个答案：客户不再满足于买一台孤立的储能设备，他们想要的是一个“不管电网怎么样，不管天气如何，我的关键负载都能稳定运行”的完整系统。</p>
+<p>这个系统，就是微电网。</p>
+<p>市场数据正在印证这一趋势。据Global Market Insights预测，全球微电网市场规模将从2025年的289亿美元增至2035年的1661亿美元，年复合增长率18.30%。美国能源部、澳大利亚政府、阿联酋能源部等近期密集出台微电网支持政策；非洲矿区、东南亚离岛的项目清单正在快速拉长。</p>
+<p>微电网并非新概念，为何沉寂多年后突然爆发？它的技术核心是什么？微电网场景的主流解决方案有哪些？以下，我们从市场驱动力、技术关键环节与主流技术路线三个维度展开观察。  </p>
+<p><strong>**01</strong></p>
+<p><strong>微电网</strong></p>
+<p><strong>为何突然走红？</strong>**</p>
+<p>过去十年，微电网更多扮演“特殊场景的备选方案”，集中于偏远离网供电、海岛项目和军方应用。如今，市场格局已发生根本性转变：亚太、北美、欧洲三极主导全球市场，中东非与拉美虽基数较小，但受矿业开发、新能源转型及偏远电气化驱动，增速均达10%以上，正成为新的增长极。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/6TfFib1mwLvu0sZnwibFpgmibeFlR1icxBUajDOSpZNFDoicBOR0C7PEAVV6nGWuAtodq7W2ib0g7KhAzvJDguic8hNSZ9u9NNiaJcpNV5G6rsPAr28/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>图为：全球各大区域微电网市场空间</p>
+<p>全球区域的分化背后，是三类截然不同的市场痛点正在集中爆发，将储能微电网推向了能源舞台的中心：</p>
+<ul>
+<li>
+<p><strong>第一类是</strong><strong>高电价市场的经济性驱动</strong>：以欧洲为代表，工业电价长期居高不下。对于工商业用户而言，传统的光伏自发自用已无法解决“日落之后”的用电成本问题。他们需要的是一个能精确调度光伏、储能和负载的“能源管家”——在光伏大发时消纳，在电价尖峰时释放，在电网波动时孤岛运行。微电网的“自平衡”能力，正在成为应对高电价的标准答案。</p>
+</li>
+<li>
+<p><strong>第</strong><strong>二类</strong><strong>是</strong><strong>电力薄弱市场的安全驱动</strong>：在东南亚、非洲、拉美部分地区，电网基础设施薄弱，停电是日常挑战。柴油发电机虽然普及，但燃油成本高、噪音大、维护繁琐，且无法与可再生能源有效融合。这些地区的用户第一诉求不是“省钱”，而是“不停电”。微电网能够无缝切换并网与离网模式，在电网断电时毫秒级响应，保障关键负荷持续运行——这是任何单一储能设备无法独立实现的能力。</p>
+</li>
+<li>
+<p><strong>第</strong><strong>三类</strong><strong>是</strong><strong>新型市场的政策与增长驱动</strong>：从阿联酋宣布全国推广微电网系统，到澳大利亚区域微电网计划进入实质采购阶段，再到美国DOE针对偏远和工业地区推出新的资助机会，政策端的密集发力正在催生确定性市场增量。与此同时，全球清洁能源投资持续加码，微电网作为分布式可再生能源的核心载体，正在获得越来越多的政策倾斜。</p>
+</li>
+</ul>
+<p>三类市场，三种逻辑，但结论殊途同归：微电网正从电网的“备胎”，升级为新型电力系统中不可或缺的“刚性需求”。</p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_png/6TfFib1mwLvsyZCzX34icic5JskOFYdgf8q9BhRB1515fDIdBeHmJJCMfwG8jrTIKIE3ap2eT2vZQcCKib0Gg7d253t63jiaTgZvKDJic4Kib3rPR8/640?wx_fmt=png&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=4" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_png/6TfFib1mwLvvMnZbMpLMy0cOicfTr5l4IG2LwyviafIvcxQZ8aGBadPCgOkXZRdI2pSuPrZmBBGf6PrYiagaK69QBiauibtVdUqiab6keBibu7KcuicM/640?wx_fmt=png&amp;from=appmsg&amp;wxfrom=5&amp;wx_lazy=1&amp;tp=webp#imgIndex=1" /></p>
+<p><strong>**02</strong></p>
+<p><strong>微电网的复杂性</strong></p>
+<p><strong>为什么不是谁都能做？</strong>**</p>
+<p>早期的微电网主要作为偏远地区的离网供电系统，侧重于基本的电力可及性。而当前的微电网已演变为具备高度智能的“能源细胞”，既可并网运行参与电力市场辅助服务（调频、调峰），又可在电网故障时无缝切换至孤岛模式，保障关键负荷的连续性。这种双重身份的切换，离不开PCS。PCS在微电网中，主要承担电池与电网间双向电能转换、功率调节、安全保障三大关键作用，直接决定系统运行效率、收益能力与供电可靠性。</p>
+<p>在微电网的运行架构中，PCS不仅是能量的搬运工，更是电压、频率与波形质量的塑造者。PCS在并网模式下根据EMS调度指令执行充放电（整流/逆变），参与峰谷套利，并可响应AGC/AVC调度；离网模式下快速脱离电网，自主建立稳定的本地微电网，切换时间要在≤20ms，以保障工厂生产设备不间断运营。在一些复杂的微电网系统中，PCS需要能够在并网和离网模式之间进行智能、平滑的切换。这种混合模式要求PCS具备快速检测电网状态的能力，并在毫秒级时间内完成运行模式的转换，确保对关键负荷的供电不中断。 </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/6TfFib1mwLvsAFVrtnuu1pcBM3oq2REzicUiclsqGdgTsA1AwekNTVHYLkxlOdPwtSaZXn1fRm8heKmkq1DibXbVpkPsxSXiccxJ3ZDQbH6t4kzk/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>图为：微电网各技术类型发展对PCS的要求</p>
+<p>微电网对PCS的要求因应用场景而异，呈现明显的分层特征：</p>
+<ul>
+<li>
+<p>在大型工商业园区、离网海岛、矿区等高可靠性场景中，PCS需具备模块化可扩展能力、多机并联冗余机制以及长期稳定的系统韧性。这类项目常需根据负载动态扩容，且不容许单点故障导致系统停摆，因此对PCS的配置灵活性、维护便捷性和可靠性提出了更高要求。</p>
+</li>
+<li>
+<p>在中小型工商业、户用及标准化微电网场景中，用户更关注部署速度、安装便捷性和综合成本控制。这要求PCS实现高度集成化，将光伏逆变、储能变流、并离网切换等功能融合于一体，同时做到体积小、重量轻、即插即用，以降低现场调试难度和对安装商的技术门槛。</p>
+</li>
+<li>
+<p>在离网及极端环境场景（如偏远矿区、海岛）中，PCS还需具备电压源特性（离网建压、黑启动）、大容量冲击负载耐受能力（电机启动、重载起吊），以及针对高温、沙尘、盐雾等恶劣工况的防护等级。</p>
+</li>
+</ul>
+<p>正因如此，在微电网赛道上，PCS企业正在被重新定义——它们不再是单纯的设备供应商，而是微电网能力的核心构建者。而能否针对不同场景精准定义PCS的能力边界，并实现从硬件到系统的完整交付，正是微电网“为什么不是谁都能做”的根本原因。</p>
+<p><strong>**03</strong></p>
+<p><strong>微电网PCS的两大技术路线</strong></p>
+<p><strong>模块化vs 混逆一体机并行</strong>**</p>
+<p>为满足微电网不同场景对PCS的差异化要求，当前业内已形成两种主流解决方案：</p>
+<p><strong>第一种</strong>：<strong>模块化PCS，</strong>该方案采用独立的PCS功率模块，通过直流母线或交流母线，可与微电网中的光伏、风电、储能电池等多种能源设备无缝集成。其优势体现在配置灵活，可根据项目需求自由组合功率与容量；维护与扩容便捷，单模块故障不影响系统整体运行；系统稳定性强，经大量实际项目长期验证。特别适用于大型工商业、矿区、海岛等对可靠性要求极高的场景。亿兰科、盛弘股份是该路线的主要玩家。</p>
+<p><strong>第</strong><strong>二</strong><strong>种：光储混合逆变器一体机</strong>，该方案集成了光伏逆变和储能变流两大功能，通常具备并网和离网双模式，并能无缝切换，保障关键负载不断电，近年来在中小型工商业、户用及标准化微电网项目中快速普及。其核心优势在于部署简单、即插即用，现场安装与调试工作量大幅降低；同时集成度高，系统占地面积小，对安装商的技术门槛要求较低，非常适合标准化、可快速复制的项目场景。锦浪科技、亿兰科是该路线的代表性企业。 </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/6TfFib1mwLvt7VEczXcQrRBbvgO02hZ7B4icibgo44MHECLFU6zK5u41N2JlIQKxp3PwYicUw0C3VbxM03gHmXibTC6YnKrRe87rvnfahkRoM3rA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>图为：模块化PCS与混合逆变器的主要差异</p>
+<p>据行家说储能观察，这两种方案并非对立关系，而是面向不同场景的差异化选择。对于中小型项目、安装条件受限的场景，混逆一体机正在快速渗透；对于大型园区、离网海岛、极端环境项目，模块化PCS的稳定性和灵活性仍不可替代。越来越多的PCS企业正在同时布局两条路线，以覆盖更广的市场需求。</p>
+<p>如亿兰科推出的Monet系列模块化PCS，成为攻克50kW-2MW复杂定制场景的“万能积木”，跻身中国工商储PCS（100-125kW）出货量前列。在保有模块化PCS优势的同时，亿兰科于2026年正式发布全新一代光储柴混合逆变器——海明威HMiWay系列。该系列聚焦微电网极简体验，围绕高效、可靠、灵活及智能，选型难、运输难、调试长、兼容差等集成商长期未解的痛点：</p>
+<p>轻量化与高效：搭载碳化硅技术，125kW机型仅120kg，适配山地、海岛等运输困难场景；配备10路独立MPPT及200%光伏超配，显著延长弱光时段发电收益。</p>
+<p>供电安全与环境韧性：实现＜10ms无感切换，保障关键负荷不间断；具备150%过载10秒及150%峰值浪涌能力，从容应对重载冲击；IP66防护等级，无惧风沙、盐雾、高湿等恶劣环境。</p>
+<p>灵活兼容：双路160A独立设计，224-950V超宽电压范围，兼容多代电芯；主动适配不同厂家BMS协议，不挑电池、不挑厂家，降低存量资产复用门槛。</p>
+<p>智能管理：标配APP与云平台，远程监控与故障排查；内置标准化EMS，实现并网优化、光储柴协同等多元功能。</p>
+<p>不过，适配的产品只是入场券。针对海外微电网市场，中国企业要想真正站稳脚跟，还需构建一套完整的“能力输出”体系。这至少包括三个层面：</p>
+<ul>
+<li>
+<p>出口与合规能力——覆盖目标市场的国际权威认证（如VDE、EN、IEC等）已成为企业进入全球市场的重要准入门槛。以亿兰科为例，其产品已获得涵盖VDE、EN、IEC、REACH、RoHS等标准的100余项海内外认证，为其业务覆盖全球 60 多个国家和地区提供了坚实的合规保障。  </p>
+</li>
+<li>
+<p>本地化服务能力——在重点区域设立技术支持与备件网点，缩短响应周期。如亿兰科已在尼日利亚、南非、保加利亚、荷兰、泰国等地建立服务点，覆盖亚非欧三大洲。</p>
+</li>
+<li>
+<p>客户信任能力——海外客户不仅看参数，更看重实际运行表现与长期可靠性。亿兰科海外出货占比超七成，产品落地全球60余国——这组数据背后，是客户用订单投出的信任票。</p>
+</li>
+</ul>
+<p><strong>**行家说储能总结</strong> </p>
+<p><strong>微电网这一轮热度攀升，并非偶然。高电价、弱电网、低碳转型三股力量交汇，将这个曾经“叫好不叫座”的技术方案推向了全球能源转型的焦点。</strong>**</p>
+<p>过去，储能企业比拼的是单体设备的参数与价格；今天，微电网赛道要求的是对复杂系统的理解能力——从直流/交流耦合到多能源协同，从并离网无缝切换到黑启动，每一个技术细节都考验着系统集成的功底。而在这一架构中，PCS不再只是“功率器件”，而是决定微电网可靠性、收益能力与可扩展性的核心引擎。</p>
+<p>针对微电网，模块化PCS与混合逆变一体机各有适用场所，二者并行发展，互为补充。能够同时布局两条路线、以全场景覆盖能力响应多元需求的企业，正在占据竞争的有利身位。</p>
+<p>而微电网出海是一场持久战。认证合规、本地化服务、客户信任——每一项都需要真金白银的投入和长期主义的耐心。那些真正将产品输出升级为“能力输出”的企业，才有可能在海外市场赢得长期席位。</p>
+<p>微电网的窗口期已经打开。这场竞赛，拼的不只是产品迭代的速度，更是对复杂系统的理解深度，以及将这种理解转化为全球服务网络的能力。一切才刚刚开始。</p>
+<p>那么，亿兰科又将如何在这场持久战中持续领跑？6月3日-5日，亿兰科将携海明威HMiWay系列和Monet系统PCS产品亮相上海SNEC展，向全球客户展示其针对微电网系统的实力答卷。</p>
+<p><strong><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/LltKibFDcTN8YHqrRq5Yc7CwK0HJfibDusOZM7nNfLQfnicWJiaRTvMZzNY7QVWGbeNvq42jeHyq5icwAyrd8lUNiaMg/640?wx_fmt=png&amp;from=appmsg" /></strong></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/6TfFib1mwLvsQzNzEib5n9m5Z8ztLvBBwOQa133vd3xcIYbC4Y5KyrnJzzxWcmicbztzpIzuULVCrfsbicPYfSkQgFZ83tmRUFhSY0gaFe4OYao/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><strong><em>*往期精选</em></strong><em>：</em>***</p>
+<ul>
+<li>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0OTcxMDM2NA==&amp;mid=2247510252&amp;idx=1&amp;sn=9f0a20ff18ca75786742e897c56146bf&amp;scene=21#wechat_redirect">宁德时代、海博思创领衔，6MWh+储能系统进入项目实证关键期</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0OTcxMDM2NA==&amp;mid=2247510202&amp;idx=1&amp;sn=3688382530375e61ec9b90258315dd34&amp;scene=21#wechat_redirect">7GWh储能大单！宁德时代等8企瓜分</a></p>
+</li>
+<li>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzU0OTcxMDM2NA==&amp;mid=2247510170&amp;idx=1&amp;sn=c634fd0b6c6ff005104b85ac1089a8ac&amp;scene=21#wechat_redirect">站在2026年中：储能行业正集体回答一个本质问题</a></p>
+</li>
+</ul>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/LltKibFDcTN8YHqrRq5Yc7CwK0HJfibDusaAH6IRHXOnUyn9oer6ibJ8bZbfY88VXupTG8ic3MAFD2XH5lJEiaJKaFA/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=8" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/LltKibFDcTN8YHqrRq5Yc7CwK0HJfibDus7DmustCSAh8ozfl8jW1yQlnlwdrBIkWS9nJ03dDxOibslF2RibBoDrJw/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=9" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/LltKibFDcTN8YHqrRq5Yc7CwK0HJfibDusQIZk8bFTZ6v9w7PAEd2x2Zp5I7ArJX5su7ico3vERG3OlY6vsAhl4iaQ/640?wx_fmt=gif&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=10" /></p>
+<p><strong>让更多人看到有价值的信息!</strong></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>国家电网：面向配电网台区的储能系统架构及应用.pdf</h2>
+    <p><a href="https://mp.weixin.qq.com/s/IQKn54OAm9Q16Yugzfdd_A">原文链接</a></p>
+    <p><span>储能技术派</span></p>
+  </header>
+  <article><p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24jG9furs2WpusvVxplpbNrBs0kiaxPiaXeyPXIiccHzbPO1Yppw7otCWibPVfNWzcoVU1icU3L2jiaMp1bJupoykVfGsuqZxdyEZ5USQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24gNQ60a8HSiciagCIZAt8QWfiapO1JYtrU0Vs4u34oPnSDhibnPNcDTHAlsaiajDMkCVDa3ZP50tMwFsNrq4sNo5iarELmyI0FlLiavhU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24hRVZBia7OeyUPLk1RcSl9gLQJsnXyLNRxNiaEZQaGyEVexzIiaVfBF0bicqB9ukqpiclR9yyL7m9Rg1rL8Tb5FTWvkdribK5kZCe4EM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24gPBa6RF2OK8XUryOlzuOQ3SGjswqhYR2adEgUTK5ibAPnjYaliaFl1XXNfRBn8gbfTvee5nz9icBZkLicEQ28ld3Pp3EAuKt7LyMU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24haZcTnJYrE3GKiaxmNCXsQOyFnWMglP9ibutT5YkBsfTb5iaMYvWJgricAuDHiabWXmjC17Kbr5VR8cpicpiaQjA1wzhib1F1Rfibzxc6s/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24ialNo7KtP0XUXBuL62J82ibPTssaONrPZSAaYThW9wHQNm6cdMV23kMcVtSiavQ35JZnKZ4uGBpws0N30CTibKVRJXhRogfn1UBV0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24iaUuuhteXzEQs11mEQnGWUcVDWDtKj56WKmUUZIt9HUWTjr3njChJXB2oGYmybDj6tng0icCtnKQNOotVYsFnD2RNOnzmuAANQI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24hFvW0ic73gxqobPiaPvPBu7CUPfjZMJgPpfNSEbbPicx48SSNITDBwGznAZyAkXhDuLqOFC3yhgQYCwBMxAxQZd2eQSW8RQ2pVs8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24jS3ZFy5takbaHSNtPqahKghPWgPL0uj3GF1Ru2lEib3Z1Lv2eFYJh0t2qM0U9icJ7BQNiaRV36yZNg9Tq4zSiaWLlo77nQa5afDgo/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24gTedTsVT8cNarNRCcwxFMZiarjia7UZPUA9U6Umg0yDyMo4tV5qjSbQr3ueqiaMu0XNnicbv9MS4ibIEyUetRJHv9YmgPylZh2fHdQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24hVQqwKaaAYBaNjDsy1ESLh1ib6REB4ZNNX7c8oYO8xrd1UUsDIAsGstCP0eDDSlhtsibaH0hagf3pvqLGyTcZrW7MUF4PfOdnhk/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24iaO1oAnhayiaNIlO7UuibEPX6F8QohXtumKorJbWnS3uwpWKGPyZx96mbKtJ1Z0sHM5wSoV6rMMPL37iaUoxwIfMtbP9BJrliafibGs/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24jibkJVZGLGzd1uHbw7ym4HfdI0GibA0hZjv14R5I6QTKmkdHa0gIBQaWFyKY8Eg1bJ1qZQCc8XYohCKme1AZl40YVEHQOnPibE1Y/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24iaSIib2OyUR5lzoHm0BxCT1yf8ZQ10EJbEfyc28FUPO3j4JS6m49hUUTxwJ8YDFcVHwrygP0xFMicaCcC8TCbHjiaht1oA6IcFWZU/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24iat7ycLaPA2M5AtHLAzTvyfThSvSP8JjY5LSyyJynic2ecAHbGV6kMNHRkGZLicVknh9u7V2nAMcCcxOjAbMdfkHNuOXUCm7YgKI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24iabYygEedz8hcEmVRPBy4d8HqPSGSZZxLJX2vQicQWErYydDicu54tlbswzcAzLZFyqO0D1IdjqIhXnc1F08jyo9jy5by53iaHs5U/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24hrDico53lWgMPseRDVMdqQr5CYPqZPWJPia3Ge0IZmMvShMav9OdsMgVF4iaZSqOp7AGAqNzkjyqmjGSWqsTgpFhEM1jhqaRrAw4/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24iaJyqicJz7ERSsCricRlJ91sBnxTbXCXOvHuyh2FvOO7ADQMvuA6FOjaMhOmPhKa0EurRHJJt0JdUFxubcLbcwGicdbLlUYGaqNo8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24iahiam7oCPITqBIRHXyOeXavVGq9HHFYAjnGsRibu7jar4P3z2PFGLu3C2icnP6fZOnhjDQOmVlVgBcw17lmEAC4VOiaQukwriaV36k/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24huicnqjK9voiazr43daOYvgVic5BRASAa7vjDyysNkM6oNAB0iaQojFefuhuIyRDFmf2dB82taHiavWtCbo2A46mFSp38XUKswQQ9c/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24hoyRWZJtqY5yhMuBTuEoGcegeQmamsrt3lCu4dnzfdee3eFv4vd6X6YCy12gw6Kiaiatna5guibqYtibmYow8jp02PicApYOzH0LLA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24ghSyeg7hial5cGQd1TzJph6aic7B5stFypuvW7icTKAibSDQViaLxE8AeBSeeE7pjrA0u3ClOLNQGFBOYnibjHLR43kPlCrvsCVb4LM/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24j4tPy1oZms0t5jsic0MHXWv0xiam36KtTCOiay7BRa6icI8lQOw2licBm6ebibYFgBgeCGpbgYLSarib0iaF5frjBlrYeuadFqsLAXSe8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24gz8KdomokdVevy21n9zQHIwp8uL9ShVwaJTazHmWdsrdvExm2hdTBaGybO7PLSvaVSJx1krzULc0zk7JqibAzkAsEBkKHtfssg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24jTSPQohOUhibBu16ghv3PCQ4jkrnzZyLIlVCQQaiatNkiaVqCBRkqw4q43oRkfzZXt3Mve8CmRWDuIia9uibJoBH37pZpibUWKAYEaA/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24gcdTKBlSdhSgtAjibKzia8ytFcAwtWeNohLxyT1hy9XjUXAQ1cw9EJHfrrkOWvBffmH1ibw8Ffia4lnlRhA6jtTO3JG8z6ru82ia0A/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/yVtqJWfa24g4LrjFyia8ScclsqXj6J0Py4ET7h3hxRxrAoqFbqkVTItKNK6iamvDhjEqgxBqzQwBgiaYWuUmTxiaibygyWv0n8xv01ocibntJH2E8/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24jlRZWLn0AsXCfbRpYWqYvKdzHgicWJZPmia8RREeJCWcHUxkzMcuibZhmOwgpxSr6LWzpHL467icGy6FHjcfjsNeR5zvaYwLsOnOQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/yVtqJWfa24j7q28XaywFV6C1CqORsJGrYiaIQR4sA4C7boI7qFSjbO8pIBfq8eQpgVXhQwlWSl0EpT0ze6H6KyjTxwj7qdgDXB36BtwhEaNE/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h3>扫码加入星球会员即可下载使用，只需0.81元/天，每天更新5份行业资料（图纸、项目方案、专家PPT、行业报告等）</h3>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_jpg/WVZtkzSOabribicVyiaibPxJI3xtDicfCaCegkYGHuEwjtjINiaR4Hibxp6Jp9nXldBOibh1dkriaNS3xBhGmgSJn4qg3jA/640?wx_fmt=jpeg&amp;from=appmsg&amp;wxfrom=13&amp;tp=wxpic#imgIndex=30" /></p>
+<p><img alt="图片" src="https://mmbiz.qpic.cn/mmbiz_gif/WVZtkzSOabphKjZciapUQkhV2cmWjVU8KOicRSw1fqM5IiaqSuLPGrZPMm5EH2jSgiaASSxRD9mElWtLfMzIT4SgAg/640?wx_fmt=gif&amp;wxfrom=13&amp;tp=wxpic#imgIndex=31" /></p></article>
+</section>
+
+<section>
+  <header>
+    <h2>告别“限电”困扰！90%消纳率+70%更低成本+3天投运：台区储能如何补齐配网最后一公里短板</h2>
+    <p><a href="https://mp.weixin.qq.com/s/GpgVdm-pQB1OMkEcrNwhXw">原文链接</a></p>
+    <p><span>小储</span></p>
+  </header>
+  <article><p><img alt="图片" src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/FyDH7ichhJXvMSgYQppRHfG6OlYXLzBmwJYKBqQk44mfYKHswtm7DRHicfTGMZuuEAEWaD5v9yaqxTw8RztFICs5FSOqh0TFSu3gXothSAWjc/640?wx_fmt=jpeg&amp;from=appmsg&amp;tp=webp&amp;wxfrom=5&amp;wx_lazy=1#imgIndex=0" /></p>
+<p>在四川成都新津区，30套台区分布式储能装置组成的“电力矩阵”每天都在动态运行。这套装置输出的电量，填补了中午12点至14点、傍晚17点至19点的高峰用电负荷需求，让周围五个街区的居民再也不用担心在盛夏空调满负荷运转时突然跳闸。</p>
+<p>项目负责人打了个形象的比方：就像给配电网装了‘应急充电宝’，低谷时‘吃进去’的是低价电，高峰时‘吐出来’的是民生保障。</p>
+<p>这绝非孤例。自2025年起，从安徽金寨到河北邯郸，从山东蒙阴到陕西榆林，一场以台区储能为核心的“配网短板补全计划”正在全国各地密集铺开，切切实实解决着老百姓“限电烦、电压低、空调不转、工厂停产”的用电之痛。</p>
+<p>01  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/akHOcBuFmzMfSdzf9keGOkiaDHicW0ibib578FjSrGOo0Nr7pfShD1kM1hP2KicLZ1G015CjiaDibSx73kx8k5kFj2DNA/640?from=appmsg" /></p>
+<p>唐山经验：85个微储台区，反向负载率直降30%，电压合格率站稳98%以上  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/z95Ha4f8PAValkW9sIqvicaLYrBgJJB8iaj9V2k1TIOOQRjb2rBpDVyHrnGxicF4B2cnBJiaTOaRyAnWLPbLteWlYg/640?from=appmsg" /></p>
+<p>在河北邯郸，国网邯郸供电公司自2025年1月起开展专项调研，结合本地实际创新实施“分布式光伏+储能”台区治理方案，通过在光伏集中并网的台区配置储能设备，构建能够灵活调节电能的“海绵台区”。</p>
+<p>邯郸供电公司设备部负责人刘靖峰介绍：储能设备就像给乡村电网装上了智能‘充电宝’，它在光伏发电高峰时充电，在用电高峰或阴雨天放电，能有效稳定电压，直接惠及百姓用电。</p>
+<p>成效是立竿见影的。截至目前，邯郸供电公司已在全市建成投运首批85台光伏微储台区。数据显示，改造后台区运行指标全面提升：光伏发电并网更加平稳，最大反向负载率降低约30%，电压合格率稳定在98%以上。养殖户陈小竹对前来回访的供电公司工作人员连声道谢：“多亏了你们给咱村电网台区装的这套‘充电宝’，现在电压稳了，我的鱼也能安心生长了！”</p>
+<p>02  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/akHOcBuFmzMfSdzf9keGOkiaDHicW0ibib578FjSrGOo0Nr7pfShD1kM1hP2KicLZ1G015CjiaDibSx73kx8k5kFj2DNA/640?from=appmsg" /></p>
+<p>蒙阴解题：100kW储能装置架起构网型智慧微电网，电压合格率从91.22%飙升至99.76%  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/z95Ha4f8PAValkW9sIqvicaLYrBgJJB8iaj9V2k1TIOOQRjb2rBpDVyHrnGxicF4B2cnBJiaTOaRyAnWLPbLteWlYg/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/FyDH7ichhJXvicIx81ibrXLm5icsuSKB2VNVLwt1480b5k0g9gYRiasuW9seHDbcicPib260xG7xB9DbBejPXroGbsNyRtXMx27zBIAQwWq6II5Elo/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>山东蒙阴县垛庄镇东长明村的处境更具典型性。该村有桃子种植与育苗基地600余亩，分布式光伏发电装机容量146.56千瓦，光伏渗透率高达73.28%。加上动力负荷集中在果树灌溉期间，用电峰谷差异大，三相负荷不平衡率最高达40%，季节性低电压问题时有发生。</p>
+<p>解决方案是一台100千瓦/215千瓦时的储能装置，配合光伏汇流专线和16台智能断路器，构建起一个具备全景感知和智能决策能力的构网型智慧微电网。依托台区智能融合终端，系统以分钟级频次采集光伏客户、动力客户、储能设备及居民客户的运行数据。当台区电压或负载出现异常波动时，系统自动进行综合研判：光伏高峰时段将富余电量储存至储能设备，夜晚用电高峰释放电量，实现清洁能源削峰填谷。</p>
+<p>数据证明一切——改造后，全天电压合格率由91.22%提升至99.76%。与此同时，当10千伏线路发生故障时，系统能在不到一分钟内实现孤岛运行，优先保障居民生活、种植灌溉等重要负荷用电，实现了“失电构网、零感知复电” 。</p>
+<p>03  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/akHOcBuFmzMfSdzf9keGOkiaDHicW0ibib578FjSrGOo0Nr7pfShD1kM1hP2KicLZ1G015CjiaDibSx73kx8k5kFj2DNA/640?from=appmsg" /></p>
+<p>张家口创新：19个台区储能覆盖张北、沽源、崇礼，1000余户用电难题彻底解决  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/z95Ha4f8PAValkW9sIqvicaLYrBgJJB8iaj9V2k1TIOOQRjb2rBpDVyHrnGxicF4B2cnBJiaTOaRyAnWLPbLteWlYg/640?from=appmsg" /></p>
+<p>张家口的情况更加立体。这里的19个台区储能项目分布于配电网基础薄弱、季节性用电负荷波动大、分布式光伏消纳难的张北县、沽源县及崇礼区，覆盖1000多个用电户。</p>
+<p>国网张家口供电公司针对不同台区采用了差异化的技术方案：</p>
+<ul>
+<li>
+<p>针对张北县农灌期末端低电压问题，采用“交直流混联+动态电压补偿”技术路径，实时跟踪三相电压波动并自动切换满功率补偿模式，有效提升用户末端电压合格率 。</p>
+</li>
+<li>
+<p>针对沽源县夏季旅游期台变重过载问题，采用“模块化储能+随动顶峰”策略，通过“夜间涓流补电、过载时段随动顶峰、三相分相调节”的智能化调控，将变压器负载功率从148千瓦降至100千瓦，彻底消除过载风险 。</p>
+</li>
+<li>
+<p>针对崇礼区冬季滑雪期高可靠保电需求及单机治理短板，创新应用“双机组群协同+三相动态平衡”模式，变压器温升下降约15℃，有效延长了设备使用寿命 。</p>
+</li>
+</ul>
+<p>创新同样体现在商业模式上。张家口供电公司试点推行“产业单位投资建设、供电公司购买服务、储能电池移动共享”的BaaS（电池即服务）模式，将资本性支出转化为第三方服务，实现储能模块跨区域跨季节复用，设备综合利用率提升至68%以上，三年服务期内年均成本下降。</p>
+<p>04  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/akHOcBuFmzMfSdzf9keGOkiaDHicW0ibib578FjSrGOo0Nr7pfShD1kM1hP2KicLZ1G015CjiaDibSx73kx8k5kFj2DNA/640?from=appmsg" /></p>
+<p>淮南突破：国内首个水系钠离子电池储能台区，安全性与实用性的双重跨越  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/z95Ha4f8PAValkW9sIqvicaLYrBgJJB8iaj9V2k1TIOOQRjb2rBpDVyHrnGxicF4B2cnBJiaTOaRyAnWLPbLteWlYg/640?from=appmsg" /></p>
+<p>在安徽淮南潘集区瓦房村，国内首个60kWh水系钠离子电池分布式安全储能台区已正式运行。该项目最大的突破在于安全性。相对于锂电池等有机电解质，水系钠离子电池具备遇明火不燃、无毒无腐蚀、电解液可绿色回收、循环寿命超长等本质安全特性，还可实现并离网无缝切换，在主网故障时保障关键负荷不间断供电 。</p>
+<p>该技术的落地经过了长期攻关。2023年，国网淮南供电公司联合中国科学技术大学、复旦大学、江苏理工学院和北京益源伏安电源科技有限公司共建水系离子联合实验室，把高校的基础研究能力、企业的工程化经验和电网的实际应用场景拧成一股绳 。项目投运后，瓦房村2号台区电压越限、反向重过载、光伏消纳不足三大难题得到有效解决 。</p>
+<p>05  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/akHOcBuFmzMfSdzf9keGOkiaDHicW0ibib578FjSrGOo0Nr7pfShD1kM1hP2KicLZ1G015CjiaDibSx73kx8k5kFj2DNA/640?from=appmsg" /></p>
+<p>太湖方案：山区台区柔性互联，680户居民获2小时应急供电  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/z95Ha4f8PAValkW9sIqvicaLYrBgJJB8iaj9V2k1TIOOQRjb2rBpDVyHrnGxicF4B2cnBJiaTOaRyAnWLPbLteWlYg/640?from=appmsg" /></p>
+<p>在安徽太湖县刘畈乡，山区低碳台区柔性互联示范项目成功落地。该项目以“柔直互联+储能+智能终端”协同运行体系为核心，破解山区配电网运行难题。面对地理环境复杂、负荷季节性波动明显、分布式光伏渗透率持续提升等多重挑战，该项目搭建了“终端感知-边缘决策-协同控制”三层架构。</p>
+<p>在“平时”运行中，储能模块通过动态平衡台区间负载能量，有效缓解变压器阶段性重过载压力，同时大幅提升分布式光伏消纳能力。而当电网遭遇故障“战时”，项目“防孤岛+保电”双模式切换机制迅速启动，可为三个台区的680户居民提供不少于2小时的应急供电，故障影响范围缩减80%以上，实现应急保供“不掉链” 。</p>
+<p>从邯郸85个微储台区反向负载率降低30%，到蒙阴100kW储能装置电压合格率从91.22%跃升至99.76%，从张家口19个台区覆盖1000余用户，到淮南水系钠离子电池实现本质安全——台区储能的“补短板”能力已被大量实战反复验证。它让冬季无需再限电，让夏季空调可以随意开，让鱼塘养殖不再因电压不稳而亏损，让乡村光伏不再“晒太阳”却白白浪费。3天内投运、成本仅为传统改造的三成、电压合格率突破98%——这就是台区储能给出的答案。</p>
+<p>免责声明：本文所用的视频、图片、文字如涉及作品版权问题，请第一时间告知，我们将立即删除，无任何商业用途！</p></article>
+</section>
+
+  </main>
+</body>
+</html>

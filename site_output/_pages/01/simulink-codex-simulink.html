@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulink工具篇（一）——利用Codex智能体自动生成微电网Simulink模型（内含详细操作步骤和操作提示词）</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/tYjByGTqEyB7mVdr-cyavg">原文链接</a></p>
+      <h1>Simulink工具篇（一）——利用Codex智能体自动生成微电网Simulink模型（内含详细操作步骤和操作提示词）</h1>
+      <p>慕斯蛋糕</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/BxeibGiauLOmnvNNjN4vynCsC2TB8CUPyiatZTla1CFwxTYuqniauUv4hMLE8OEzibSXboj5suIXZRN9ec3rfQGicsrlcHw107KAdCiaGDibvunW4mI/0?wx_fmt=jpeg" alt="Simulink工具篇（一）——利用Codex智能体自动生成微电网Simulink模型（内含详细操作步骤和操作提示词） cover">
+    </header>
+    <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/PWsH3LBNy3WOFj0KzgYGKvRsI2oQyUkW6wg2GGwuXRDuQjVLFhmv5b469myObH4Y4ibwnXISrq9AtQfLicQHfiayTibCia2DXFL6grvGIYsJjbvU/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/PWsH3LBNy3UlPgO9zhaYrkxeuCEBLl75rUIG2icEKMTql9aVEeUnJfFyo7BrlthqV5azTnDd2X3xwcFNfgWNPiaet6PO2xibO3J3oNKj5s5Tvo/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/PWsH3LBNy3Xoib5icgcaDrogmibsjL7PicBtJ160ztib7gCeKIJ261zocmZjYJJ07BDI6miacddLV7KxvBMyMEFzEyibgHR7SpxJlvQzyPHMiaabySg/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3VFS8NwDxWI3tj3Ql2oWuF6IlGRGJ69n34T4f56ngaWzrJwBv4US5NfusYW85sh7vFibdwZ9yvmCfHibq53jqNx3XNmjTgGesBt8/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3VFS8NwDxWI3tj3Ql2oWuF6IlGRGJ69n34T4f56ngaWzrJwBv4US5NfusYW85sh7vFibdwZ9yvmCfHibq53jqNx3XNmjTgGesBt8/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3XncCe0FyxmGGHw6OBwGHma8GQFXKEs58c8G78iaNUdQKYTZJetV35xZJJJh9At0cIepFgkfG9x1UbLicRF1Fw1yibNrwBqg2mtpg/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3VFS8NwDxWI3tj3Ql2oWuF6IlGRGJ69n34T4f56ngaWzrJwBv4US5NfusYW85sh7vFibdwZ9yvmCfHibq53jqNx3XNmjTgGesBt8/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/PWsH3LBNy3W9kWAbahSeub6zxuLSdDv5XicMA6lCEKLurpCibG2PuEmYWHSqtqacYBtQjoiafzZlOGcY6nMGFibORM8zFoiaeH6H9mchaSNf3Wb4/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3WjbrQH7VKzq97VibHM2QssuKI2cATFecR5xI3jxKFIUo9MS7IqM0XOaXyP20ziaO0d5h2zUych0bnZAaXJoAMmNkib1E7dkebboY/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3WzBcZKOkiaaPKEVVcheiciaUdV4W5lZnIMwUPqOMicOICseAT8tmXcnNLNPRJjCHP13xVfcaAdZHuwVTfxsluqHbaic0dkEKGdDRibs/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/PWsH3LBNy3VFnqmuicrxzApmFMKdibBVCGmPvRbJxRnnpa4UqPwIQY6duKL7Okmv5EFdfL1bfZEGebYZjNxMhASxb0f9gEnqCibqpn6Quvulvg/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3VwpzDpYS3ugXe87WRq0UI8FmibibWK01ePkDgd7TJSkv355qaos9VJoCnfKeibNibbrUPln7DqXzF9Gcjhrb9z7PZouHEMDhBSE0w/640?from=appmsg" /></p>
+<p><strong>基于Codex智能</strong></p>
+<p><strong>微电网Simulink模型</strong></p>
+<p><strong>含详细操作步骤与提示词</strong></p>
+<p>最近AI大模型与各类软件结合发展迅速，结合网上各位大佬的探索，本期我们利用<strong>GPT5.5中的Codex进行Simulink模型的智能生成</strong>，看看AI模型在Simulink模块应用情况，同时后期我们也将尝试各类国内AI大模型与Simulink结合，看看哪种效果比较好，<strong>有兴趣的小伙伴点赞＋关注支持下哦</strong>。</p>
+<p><strong><em>0</em></strong><em>1</em>**</p>
+<p><img data-w="640" data-width="100%" data-ratio="1" style="width: 100%;display: block;margin-top: -15px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" width="100%" data-aistatus="1" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>准备阶段环境配置</p>
+<p><img width="100%" data-ratio="1" data-w="640" data-width="100%" style="width: 100%;display: block;margin-top: -17px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>1）<strong>Codex</strong></p>
+<p>2）<strong>MATLAB MCP</strong></p>
+<p>3）<strong>Skill</strong></p>
+<p>4）MATLAB R2025a</p>
+<p>（由于官方MATLAB MCP要求版本在<strong>2023a以上</strong>）</p>
+<p><strong><em>0</em></strong><em>2</em>**</p>
+<p><img data-w="640" data-ratio="1" width="100%" style="width: 100%;display: block;margin-top: -15px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" data-width="100%" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>Codex是什么？</p>
+<p><img data-w="640" data-width="100%" style="width: 100%;display: block;margin-top: -17px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" width="100%" data-ratio="1" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>Codex是OpenAI开发的AI编程模型/智能体，是专门用于编程开发方面，可以实现代码生成、代码理解和代码操作，我们<strong>可以直接通过GPT官网下载，按其提示步骤来就行</strong>。（因为我自己有账号，所以就可以直接通过这个方式，也是最简单方法。如果没有账号的话，网上还有其他方法，这里因为核心不是这个，所以不细讲。）</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/BxeibGiauLOmnjaMUibJYmCRKC8lG7JTkeu8OZ3nZN5OunVbcia2HoEnqeg9ib9QA6PwJJhqiaEQOmAQ6FBSiauiaPiaQLl6lSDOS7OMEPbNQLVfbK50/640?from=appmsg" /></p>
+<p><strong><em>0</em></strong><em>3</em>**</p>
+<p><img data-w="640" width="100%" style="width: 100%;display: block;margin-top: -15px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" data-width="100%" data-ratio="1" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>MATLAB MCP是什么？</p>
+<p><img data-w="640" width="100%" data-ratio="1" style="width: 100%;display: block;margin-top: -17px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" data-width="100%" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>MATLAB MCP是Model Context Protocol（<strong>模型上下文协议</strong>）在MATLAB环境中的实现，是Math Works官方推出的开源工具，简单来说<strong>就是接口，负责Codex与Simulink对接。</strong></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/BxeibGiauLOmmibzPnMdvlVZniblDpHeqnRZCAyvwTgb7xQtECz12To3CNYCK2NvQfV91zHJUYqRe4iaYkVVGc6fWSKrYSFqG7SS7pKicOSGSsAUU/640?from=appmsg" /></p>
+<p>这里附上官方的github链接：</p>
+<p>https://github.com/matlab/simulink-agentic-toolkit</p>
+<p><strong><em>0</em></strong><em>4</em>**</p>
+<p><img style="width: 100%;display: block;margin-top: -15px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" width="100%" data-width="100%" data-w="640" data-ratio="1" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>实验环节</p>
+<p><img data-ratio="1" data-w="640" style="width: 100%;display: block;margin-top: -17px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" data-width="100%" width="100%" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p><strong>1）</strong>确认是否安装成功****</p>
+<p>首先登录<strong>Codex软件</strong>，确认MATLAB MCP是否安装成功，这时候可以询问codex</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/BxeibGiauLOmlxfzOSIUmB4HUSc87vZoxrhNdL9d8DnwC2sBqKMjYeSwJGVEHNHz9ibotuIAg7wKY3tia2yNrakzSmT2CuAmIYljCdRiafoS8bHk/640?from=appmsg" /></p>
+<p><strong>2）生成个人skill（也可以用别人的）</strong></p>
+<blockquote>
+<p><strong>提示词</strong>：基于这个仓库的内容https://github.com/matlab/simulink-agentic-toolkit 帮我生成一个能够调用MATLAB mcp能力的skill</p>
+</blockquote>
+<p>（用别人的就用别人分享链接，在跟Codex说即可）</p>
+<p><strong>3）启动mcp</strong></p>
+<p>进入MATLAB软件后，我们发送指令添加临时路径和启动环境，<strong>这个要根据自己地址修改，也可以看前面给的官网</strong></p>
+<blockquote>
+<p>addpath("/.matlab/agentictoolkits/simulink")</p>
+<p>satk_initialize</p>
+</blockquote>
+<p>4）发送提示词实现自动操作</p>
+<p><strong>这时候我们给Codex发送提示词</strong>（提示词是参考小红书博主下一岸在哪）：</p>
+<blockquote>
+<p>请你在当前路径下创建一个名为Demo的文件夹，并且在下面创建一个Simulink请你帮我调用simulink-power-electronics这个skill，帮我再Simulink里面搭建一个简易的微电网模型，包括如下需求:</p>
+<p>1、包含两组锂电池/锂电池双向变换器，锂电池直接用Simulink自带模型不要自建</p>
+<p>2、包含超级电容，超级电容跨接在母线上</p>
+<p>3、包含一个可变电阻作为模拟负载，仿真时间10s，负载在5s的时候投切</p>
+<p>4、两组锂电池之间使用下垂控制来控制两者为2:1的功率输出，两个电池连接到母线上的线路电阻略有不同来验证下垂的控制效果</p>
+<p>5、引出必要的信号测量点和scope，注明scope中的信号的label</p>
+</blockquote>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/BxeibGiauLOmmZ5Fb0qfrr7Q2icw0bhagy1f8hBPdPyLFwmYhianWCO48vEhZLNz1AOx4W2xUR8YIhM5bbf3fZ66z2w6eh23DasJ95zB9AgyQnQ/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/BxeibGiauLOmmhNAdSrW7qW0pcxd5yR0nPBBwxdccYjgu01eE1Nl3rxrJTlmSj7YeicjbK05BnA1H8BxfOkP7UhMzud60qeZHtoyb9ggRK1xXo/640?from=appmsg" /></p>
+<p><strong><em>0</em></strong><em>5</em>**</p>
+<p><img data-width="100%" data-ratio="1" data-w="640" width="100%" style="width: 100%;display: block;margin-top: -15px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>实验结果</p>
+<p><img width="100%" style="width: 100%;display: block;margin-top: -17px;margin-left: -2px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" data-ratio="1" data-w="640" data-width="100%" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg"></p>
+<p>可以看出在<strong>codex与simulink模型目前是可以实现并且能够跑通</strong>，其结果跟我们要求也是一致，说明做法是可行。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/BxeibGiauLOmnjzBr6hx0bvcHBu3NQHrwXicupva4jjhgtsUOJ6W6RG0LKLKNsDqr2AAia7FWrVxvp6PK60HMhPgde25VvLAJXgYTS4JQsuEeO4/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3UCCQtpTjDxTL5R4RMjfIk1YTOPUuEicARWmicQ6F0YOvdQntQmVvUDJy2j8hNtTX0CG9fB1Snevt0icYK8BSz2Id7elvSibADJ8o0/640?from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/BxeibGiauLOmkdO0GicL76AVcvOFQFvaHOVSsM9HL3WMYgOJiadGA07ljpjMgibpzXskKjiaHw1fv67w0HiarQXmgv5DghD6EAqkExQ5vv6BReJhuU/640?from=appmsg" /></p>
+<p><strong>个人建议</strong></p>
+<ul>
+<li>
+<p><strong>建议开一个plus会员</strong>，因为普通版的token点仅够一次模型生成，每个月才更新一次token点，对于我们想跑模型而言非常不友好。</p>
+</li>
+<li>
+<p>目前<strong>Codex仅能支持简单Simulink模型要求</strong>，太复杂的会出现理解错误现象。</p>
+</li>
+<li>
+<p>这个安装步骤和过程我这里省略了很多，是因为我觉得安<strong>装方面有问题就可以问codex就行</strong>，其回答比较精准且细致。</p>
+</li>
+<li>
+<p>另外这个codex跑的过程需要花费很多时间，<strong>光我这个简单模型就跑了4个小时才跑出来</strong>。（因为我没开会员，用赠送的token）</p>
+</li>
+</ul>
+<p><img data-ratio="1.2857142857142858" data-width="100%" width="100%" data-w="189" style="width: 100%;display: block;margin-left: -1px;margin-bottom: 1px;vertical-align:baseline;box-sizing:border-box;max-width:100% !important;" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/PWsH3LBNy3VwpzDpYS3ugXe87WRq0UI8FmibibWK01ePkDgd7TJSkv355qaos9VJoCnfKeibNibbrUPln7DqXzF9Gcjhrb9z7PZouHEMDhBSE0w/640?from=appmsg"></p>
+<p>END</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_gif/Nr7HNB9ibcbplF9ic9VvHiapd79C0VF2E5fmDrxicQw8vdnFNEphNtZwMmpMvGvWfjanY1pqvVLd5tKpjBULYb1FG2wMgHH7ORIypEMjww6CDm4/640?from=appmsg" /></p>
+<p><strong>点点赞</strong></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/Nr7HNB9ibcbp3EEPAXxAeFrx6ZXBf3Tl3X1v2wSncp9zuCjmTttnLHolKria3Hk5ZUXcj43zqIP4LrGBqZGTNfkN7ugicVW8eia9IYDPv1PcryI/640?from=appmsg" /></p>
+<p><strong>点分享</strong></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/ibzGkWJ5PL4Y2PLvn9g9ibjNkGYd4eWJSzbWWYgT1UwhWJs4ryicJoVoAyF1kdynekcv7HtIeronpawPZx0qOMNdiaHjPFLcP0QicIh6IJwH7EBc/640?from=appmsg" /></p>
+<p><strong>点喜欢</strong></p></article>
+  </main>
+</body>
+</html>

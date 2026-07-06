@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>【知识学堂】数据中心BBU应用：何谓ORV3</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/MVtmBLf96SBcuyyseyHfeg">原文链接</a></p>
+      <h1>【知识学堂】数据中心BBU应用：何谓ORV3</h1>
+      <p>艾科微电子</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/mmbiz_jpg/U2blXU0typNSpswEsMQJiaBo4zGAEv3iaicia4bhkNMcZjeynqCOt4Wg7pgIKBficichbwgZj2kZpspY1oqaNU8KHmrbRBcWaLqDx7X00ORZVeFbA/0?wx_fmt=jpeg" alt="【知识学堂】数据中心BBU应用：何谓ORV3 cover">
+    </header>
+    <article><p><strong>要了解ORV3, 那就不得不先知道何谓OCP?</strong></p>
+<p>OCP（Open Compute Project）是由Meta发起的开源硬件标准组织， 是一个协作社区, 致力于重新规范硬件技术使其能有效率地支持数据中心在基础设施日益增长的需求。而ORV3则是OCP组织推出的第三代机架式服务器电源标准，全称为Open Rack Version 3， 专为高密度、高能效数据中心设计。</p>
+<p>此组织还定义过开放加速模块规范，NVMe Cloud SSD规范, 开放液冷标准&amp;开放机架安全标准等等...</p>
+<p>*以上取自OCP官网: https://www.opencompute.org/</p>
+<p>ORv3（Open Rack Version 3）是OCP（开放计算项目）为满足AI算力中心高功率密度、高动态负载需求而制定的的第三代标准化BBU（电池备份单元）方案，是Open Rack规范在备电领域的延伸与升级。它并非独立硬件产品，而是一套包含标准化接口、模块化设计与智能管理的BBU整体解决方案，主要解决传统BBU在Open Rack架构下，兼容性差、部署效率低、管理复杂度高的痛点。</p>
+<p>适用场景：ORv3标准主要适用于高功率密度的AI算力中心（如NVIDIA H100、GB200等AI服务器集群），旨在解决高动态负载、高功率密度带来的供电与散热挑战。</p>
+<p><strong>ORV3 在BBU(Battery Backup Unit)标准的核心规范与架构如下：</strong></p>
+<p><strong>一、核心规范</strong></p>
+<p><img alt="image.png" src="https://mmbiz.qpic.cn/mmbiz_png/U2blXU0typOpqXdRRPokEiaicsicqRVVqjYq5kvKDP8bnRDaDk7f5SHs5Gj0exXlbJSDJ6embOibCk4BnemgjfEEZ8vLkqf5vjYcbPadDJ4A4Ko/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>（ORV3 spec核心规范类别）</p>
+<p><strong>二、架构</strong></p>
+<p><strong>1. 硬件架构：</strong>ORV3 BBU硬件架构主要由带BMS的电池包、充电/放电电路、双向电源转换器、板载设计系统主机微控制器、风扇模块等组成，具体如下：</p>
+<ul>
+<li>
+<p>电池包：采用锂离子18650型电芯，配置为11S6P（6个串联组合并联在一起，每个串联组合由11个电芯串联而成），电池容量至少为1.5 AH，连续额定放电电流为30 A，提供15 kW功率输出，维持系统运行4分钟。</p>
+</li>
+<li>
+<p>充电/放电电路：采用双向电源转换器，实现充电和放电操作的高效转换，通过单一电路专门进行充电和放电操作，提高系统的效率和可靠性。</p>
+</li>
+<li>
+<p>板载设计系统主机微控制器：负责整个系统的运行和管理，包括电池充电/放电算法、保护、控制信号和通信接口等功能的实现，以及与上游机架监视器的通信，实时上报模块状态和参数。</p>
+</li>
+<li>
+<p>风扇模块：用于在充电和放电操作期间执行系统散热功能，保证系统在正常工作温度范围内运行，提高系统的可靠性和稳定性。</p>
+</li>
+</ul>
+<p><strong>2. 软件架构：</strong>ORV3 BBU软件架构主要由电池管理系统(BMS)软件、板载设计系统主机微控制器固件、GUI支持软件等组成，具体如下：</p>
+<ul>
+<li>
+<p>电池管理系统(BMS)软件：实现电池充电/放电算法、保护、控制信号和通信接口等功能，包括电池过充、过放、过流、过热等保护功能，电池状态监测和控制，以及与板载设计系统主机微控制器的通信。</p>
+</li>
+<li>
+<p>板载设计系统主机微控制器固件：负责整个系统的运行和管理，包括电池充电/放电算法的执行，系统状态的监测和控制，以及与上游机架监视器的通信，实时上报模块状态和参数。</p>
+</li>
+<li>
+<p>GUI支持软件：提供图形用户界面，方便用户进行系统配置、状态监测和管理操作，提高系统的易用性和可维护性。</p>
+</li>
+</ul>
+<p><img alt="image.png" src="https://mmbiz.qpic.cn/mmbiz_png/U2blXU0typOWwds4gAzGEibicoKRENRMIMc20lG5mY44BibS2xia8g4pjBq5dzpzjnic5R8t211ibvvIpmiagm7akFfHpe2mymhDYibrzINFyfvgFuE/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>（ORV3 spec参数类别）</p>
+<p>目前ORV3已经成为Open Rack架构下BBU的主流标准，国内比如维谛、华为、中兴等厂商的新一代模块化BBU产品都已经符合ORV3规范，主要应用于运营商IDC、金融数据中心、大型互联网企业自建数据中心的Open Rack架构场景，替代传统的定制化BBU产品，配合Open Rack机柜的标准化部署，进一步提升数据中心的整体运营效率与可靠性。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_gif/JaFvPvvA2J3tZgxejic9Ph7Kvbqw7cx4nBt1DnSicGszKfNYFZuzbicnga6icNR0VQXdM8pyNuCaFY5oN1AicsoPddg/640?wx_fmt=gif" /></p>
+<p><strong>联络我们
+==========</strong></p>
+<p>ArkSemi. 艾科微电子专注于高功率密度半导体整体解决方案，以系统架构为导向，结合自研高效能功率器件、高精度模拟IP、数字动态控制，以及高导热封装与模块技术，持续突破效率与功率密度极限。</p>
+<p>如需样品及开发板支持，请关注我司公众号。</p>
+<p>更多产品信息与技术资料，敬请访问www.ark-semi.com</p></article>
+  </main>
+</body>
+</html>

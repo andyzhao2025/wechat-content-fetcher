@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>800V HVDC架构的“双路径共生”：工频降压整流 vs 固态变压器</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/1tsO_zO3h1AvrZFj4iiSpg">原文链接</a></p>
+      <h1>800V HVDC架构的“双路径共生”：工频降压整流 vs 固态变压器</h1>
+      <p>JANIX</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/mmbiz_jpg/ZXrBSBL6PTzhAfb73EQvib7KFVafeLuJ4JGeDOmkPEbyLyvxE4yf1J9q9icvq0ia7eSR0jl2t47v219gBgiaHVm6rSXdSUEoZrlpahNT87ibibhMo/0?wx_fmt=jpeg" alt="800V HVDC架构的“双路径共生”：工频降压整流 vs 固态变压器 cover">
+    </header>
+    <article><p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/ZXrBSBL6PTxSmmp9oYjJ5dwXjiaXWFgCh2sn9xfRb3Ex7MvNuXdu6RER5jOgUo4mj7o46MCqQ3acB1VTr72XlNX0U1icCzwQml04kibmoISficY/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h3>在数据中心800V HVDC架构演进中，“工频变压器+PFC整流”与“固态变压器（SST）”并非“渐进派与颠覆派”的路线对立，而是同一目标下基于不同集成度与转换级数的双路径共生方案。</h3>
+<h4>一、技术路径分歧</h4>
+<p><strong>路径一：工频降压+PFC整流（分立式低频隔离）</strong></p>
+<ul>
+<li>
+<p><strong>原理</strong>：市电（10kV/35kV）经工频变压器降至低压交流（如480V AC），再由PFC电路整流为800V DC母线。</p>
+</li>
+<li>
+<p><strong>特征</strong>：采用传统工频铁芯实现电气隔离，PFC电路分立构建。供应链极度成熟，初始投资低，且沿用传统低压接入规范，电网审批快。但在MW级系统中，多一级转换带来的累积损耗较高，且动态响应慢，难以平抑AI负载的毫秒级波动。</p>
+</li>
+</ul>
+<p><strong>路径二：固态变压器SST（集成式高频隔离）</strong></p>
+<ul>
+<li>
+<p><strong>原理</strong>：通过高频功率半导体器件（如SiC）直接将中压交流转换为800V DC，省去工频降压环节。</p>
+</li>
+<li>
+<p><strong>特征</strong>：单级/少级直转，系统效率大幅提升；高频磁性元件取代工频铁芯，体积缩减60%-90%；具备强智能调控能力，可实现潮流控制与直流直连。但拓扑复杂，含大量有源器件，长期高压大功率可靠性仍需规模化验证。</p>
+</li>
+</ul>
+<h4>二、双路径核心维度对比</h4>
+<p>|    维度    |     工频变压器+PFC整流      |     SST固态变压器      |
+|----------|----------------------|-------------------|
+|<strong>拓扑复杂度</strong> |    多级转换（AC→AC→DC）    |单级/少级直转（中压→800V DC）|
+| <strong>系统效率</strong> |\~92-95%（变压器单机97%-99%）|      \~98%+       |
+| <strong>成本评估</strong> |    \~0.15-0.2元/W     |\~0.6元/W（约为传统的3-4倍）|
+| <strong>体积重量</strong> |      庞大（依赖工频铁芯）      |   小巧（采用高频磁性元件）    |
+|<strong>可靠性/寿命</strong>|    极高，寿命可达30-40年     |    长期可靠性待规模化验证    |
+| <strong>智能调控</strong> |       弱，动态响应慢        |  强，支持毫秒级响应与辅助服务   |</p>
+<h4>三、产业共生演进与时间表</h4>
+<p>主流厂商并未在两条路径上非此即彼，而是根据商业化节奏进行分阶段布局，实现平稳过渡：</p>
+<ul>
+<li>
+<p><strong>2026-2027年（过渡期）</strong>：以Sidecar+800V HVDC（工频降压或简单整流方案）为主。施耐德、维谛、伊顿等均推出此类过渡方案，利用成熟供应链快速响应AI算力爆发需求。</p>
+</li>
+<li>
+<p><strong>2028-2029年（规模化期）</strong>：SST进入规模化商用。台达（已有840-3360kVA产品）、华为数字能源等押注SST的厂商开始放量，单级转换的高效率与空间优势在新建超大规模AIDC中显现。</p>
+</li>
+<li>
+<p><strong>2030年及以后（终局期）</strong>：SST成为主流架构，工频降压方案退居存量改造及特定低压场景。</p>
+</li>
+</ul>
+<h4>四、适用场景定位</h4>
+<ul>
+<li>
+<p><strong>工频变压器+PFC方案</strong>：适合存量机房改造、对初始CAPEX敏感的项目、电网稳定性较好的区域。无需重构运维体系，部署落地快。</p>
+</li>
+<li>
+<p><strong>SST方案</strong>：适合新建超大规模AIDC、单机柜功率≥200kW、土地资源紧张的一线城市。其毫秒级响应与高效率能更好地承接未来GPU极化波动的负载需求，并参与电网调峰套利。</p>
+</li>
+</ul>
+<h4>最后一句话总结</h4>
+<p>双路径共生的本质是“当下的确定性交付”与“未来的极致能效”之间的平衡。在AI算力需求倒逼电源架构升级的紧迫窗口期，工频降压方案守住底盘，SST方案开辟上限，两者共同推动数据中心向800V HVDC时代平稳演进，并最终向全高频化、储算一体的高阶形态收敛。</p>
+<ol>
+<li>
+<p><strong>SST模块化与成本下探</strong>：随着高频磁性材料与高压SiC器件工艺成熟，SST将从定制化工程走向标准化模块（如MW级插拔模组），预计2030年前后成本有望降至目前的50%-60%，彻底打破价格壁垒。</p>
+</li>
+<li>
+<p><strong>“储算一体”深度耦合</strong>：针对AI算力毫秒级负载波动，SST的强控能力将推动数据中心从单一“用电负荷”向“虚拟电厂（VPP）”演进。光储充算一体化中，SST将作为核心能量路由器，实现峰谷套利与电网辅助服务。</p>
+</li>
+<li>
+<p><strong>国产高压SiC驱动供应链重塑</strong>：国内厂商在1200V及以上SiC MOSFET的突破（如斯达半导等），将大幅降低SST的核心物料成本。国内厂商有望凭借SiC供应链优势，在SST规模化阶段实现从跟随到并跑的弯道超车。</p>
+</li>
+<li>
+<p><strong>工频方案逐步退居备份与隔离</strong>：在2030年后的新建超大规模智算中心中，工频变压器或将仅作为极端工况下的物理隔离备份设备存在，主供电回路全面交由高频集成的SST接管。</p>
+</li>
+</ol></article>
+  </main>
+</body>
+</html>

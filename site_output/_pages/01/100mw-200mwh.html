@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>大型储能电站（100MW/200MWh为例）系统一、二次组网设计解析</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/vNCP-gZJ-uu8nBadHQDwdg">原文链接</a></p>
+      <h1>大型储能电站（100MW/200MWh为例）系统一、二次组网设计解析</h1>
+      <p>Jin</p>
+      <time></time>
+      <img src="https://mmbiz.qpic.cn/sz_mmbiz_jpg/wuyqV0OJIKA2MkRvA6f8tl59npxZLl9SQUKPgUh4eq0roIKBOvGKnR6YFmC92X2uW6KWHTkp0TNBvMj41E4LOypV4AcokznTr4d3q7s3sm4/0?wx_fmt=jpeg" alt="大型储能电站（100MW/200MWh为例）系统一、二次组网设计解析 cover">
+    </header>
+    <article><p>对于一个大型储能电站来说，组网是贯穿电能传输、设备控制、安全保护、电网调度全流程的系统工程 —— 它既是电能双向流动的 “主动脉血管”，也是控制指令、状态采集的“神经网络”。一个设计合理的组网方案，能让电站长期稳定运行。 一次动力组网（电能传输脉络）和二次通讯组网（控制管理神经） 两大核心板块，两者相辅相成，缺一不可。</p>
+<p>在常规的通讯组网中，工业以太网星型结构单交换机下联节点通常建议控制在<strong>32 台以内</strong>，工业环网单环设备数量宜控制不宜超过 64 台，传统串口总线组网节点一般不超过 16～32 台；若单网接入设备数量过多，会造成网络带宽拥堵、数据报文冲突、传输时延增大与丢包频发，导致二次系统遥测遥信失真、控制指令响应滞后，同时故障点定位困难、单点异常易引发全网瘫痪，若数量过少则会造成网络设备与端口资源闲置浪费，增加组网层级与接线复杂度，提升建设与运维成本，还会让分区控制逻辑过于零散，不利于一二次系统协同调度与高效管理。</p>
+<p>本文以常见的<strong>100MW/200MWh 储能电站</strong>为例，介绍下系统电站的组网设计。</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/mmbiz_png/wuyqV0OJIKA42IojLHFv0VVxYewOsIWHdiblk8QHA3xYlXNicscHTZ3pTWTzStDBrGoYfXiacLiccgbEUet8O44WDuMoykFO499vtuvILX8GvLI/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>一、一次系统组网架构</h2>
+<p>本文解析的 100MW/200MWh 储能电站，采用行业通用的模块化单元设计，也是当前大型储能项目的主流方案，核心配置如下：</p>
+<ul>
+<li>
+<p>总规模：100MW/200MWh，0.5CP倍率，适配电网调峰调频、峰谷套利等核心场景；</p>
+</li>
+<li>
+<p>最小储能单元：共 20 个5MW/10MWh独立储能单元，<strong>每个单元包含 1 台 5MW变流升压一体机 + 2 台 5MWh 液冷电池集装箱</strong>；</p>
+</li>
+</ul>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKDdg5zSl1koK2HDaLoY6Ss8KeC6B49oDa0k0PsWibwn2KUMo5PmvzAGHPZicic3F5dia88mzLianxIF9icFDKBMJgtucfmyNkibTLboZg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<ul>
+<li>储能子系统：每个储能子系统包含5个储能单元，5 台升压一体机在变压器高压侧并联接入 1 回 35kV 集电线路。</li>
+</ul>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKAiaylibOpYm96iaRJYqfWG2C9uN4bGibEEMHLuq9gJlwK2raTOyPvsSMt9w6oRlDGGhDp1Te7AsKmBWNzaZ4iaWzEm9iaV9RSRyvHb0/640?wx_fmt=png&amp;from=appmsg" /></p>
+<ul>
+<li>电站架构：全站分为 4 个独立的25MW/50MWh储能子系统，每个子系统包含 5 个储能单元，全站共 4 回 35kV 线路接入站内35kV母线后经升压后送出电站至公用电网。</li>
+</ul>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKAkvxsp49jnMDcXtAnJwB9NdkWeDxygaFsqPRNgRtUYBLC3GsXWvg6nB1WgyqTQw57EVzdXeDkrpyKxmu36Do72TVicga0q3b0Y/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>三、二次通讯组网</h2>
+<p>对于储能电站的二次通讯组网来说，所有核心链路均采用<strong>A/B 双网物理冗余</strong>设计，单网故障时自动无缝切换，杜绝单点故障导致的系统失控。整个二次系统的组网以一次分系统设计为依据进行分区组网，整站分为4个子系统进行组网，子系统内采用串口/以太网进行组网，系统与EMS间的信息传输采用光纤组网。系统组网主要分为三部分：BMS、PCS与EMS的组网；消防系统组网、视频监控组网。</p>
+<h3>1. 核心控制组网：BMS、PCS与EMS的组网架构</h3>
+<p>这是整个通讯系统的核心，直接决定了储能系统的充放电控制精度与安全保护能力，行业主流分为<strong>独立组网</strong>与<strong>合并组网</strong>两种形式。系统内采用Modbus TCP/61850通讯协议。</p>
+<h4>（1）两种主流组网形式</h4>
+<p>|    组网形式    |                    核心设计                    |                         优劣势分析                         |
+|------------|--------------------------------------------|-------------------------------------------------------|
+|PCS/BMS 独立组网| 每个子系统内BMS与PCS独立组网，各自独立组网（AB网冗余，信息与控制分开组网）  |优势：链路互不干扰，可靠性高，故障影响范围极小，调度灵活性强；劣势：交换机、光缆用量大，施工复杂度高，成本更高|
+|PCS/BMS 合并组网|每个子系统内PCS 与 BMS 混合接入同一个光纤环网，（AB冗余，信息与控制分开组网）|  优势：布线简洁，光缆与交换机用量少，施工快，成本低；劣势：链路耦合，单设备故障影响范围大，调度灵活性差  |</p>
+<p>一个子系统的独立组网如下图：</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKD8RhaicFNj3PSJIIMn3PfickU9CiaMibgZC24Qic3zlK44r7APia7icL6MD9dMTpKbL8GKNpycVeUVAj3EtwuibYUwicQRSRGUUTuJREYk/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p>一个子系统的合并组网如下图：</p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKDXo87T4SV5l225VQPfuOzhCnta4LWibQRfp9AUdicicLOInibyCYNEQHia0MrqHgXneTvUp7cYmNpgfSPp2gLVY1ctf4qx2PcZLlYo/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h3>2.2 消防系统组网</h3>
+<p><strong>组网形式</strong></p>
+<ul>
+<li>
+<p>舱级：每个电池舱的消防控制器对舱内的舱级+PACK各类探测器、气体灭火装置、刺破阀、PCS的烟温感等进行集中控制（舱内相关之前有讲，有需要可参考<a href="https://mp.weixin.qq.com/s?__biz=MzYzNTgwNzkyOQ==&amp;mid=2247484085&amp;idx=1&amp;sn=b169b3778d35cfcbf630326de8bf4016&amp;scene=21#wechat_redirect">储能气体消防系统全解析</a>，这里就不过多赘述）</p>
+</li>
+<li>
+<p>储能子系统：每个子系统内的10台消防控制器各自通过 CAN 光纤转换器送出电池舱后，采用单模光缆进行环形组网接入 CAN 光纤转换器后，通过CAN接入消防总机，双链路冗余设计；</p>
+</li>
+<li>
+<p>站级：站内四个消防分区，分别接入一个CAN 光纤转换器后接入消防总机的4个独立的CAN口</p>
+</li>
+</ul>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKBnN6YGJ7bbYOLicEmwv6RCa1wDYdJcibaYkicAFRia33ROd5c8NCweeDkTfG5k5M6TFkuhKdYdNJlgZzkFzlRTHfHKkYiaYEfxGyMg/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h3>2.3 视频监控系统组网</h3>
+<p><strong>组网形式</strong></p>
+<ul>
+<li>
+<p>单元组网：视频监控的组网，主要是各舱内的摄像头，每个储能单元（1个PCS一体机+2个电池舱）内的所有摄像头接入同一台交换机；</p>
+</li>
+<li>
+<p>子系统组网：每个子系统内的5个储能单元的视频交换机经光纤熔接盒输出后，进行环网，经光纤传输后接入电站视频接口系统的一个接口。</p>
+</li>
+<li>
+<p>站级：4个子系统分别以一个光纤环网接入站级视频监控主机。</p>
+</li>
+</ul>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKCOoApzkVtNiauquEgc2wZyrDRWu35btUSWQicx1FFMaFXhamnZ77JicJ3jAgAwhTZtKp2OKawUp6QyPNPYZniabvwHmvcvV9dJhCQ/640?wx_fmt=png&amp;from=appmsg" /></p>
+<h2>三、大型储能电站组网设计原则</h2>
+<h3>1. 组网设计必须坚守的 6 大核心原则</h3>
+<ul>
+<li><strong>安全冗余原则</strong></li>
+</ul>
+<p>核心控制链路双网双冗余，消防、急停、停机等安全保护必须配置独立硬接点回路，杜绝单点故障导致系统失控；</p>
+<ul>
+<li><strong>分层隔离原则</strong></li>
+</ul>
+<p>控制网、信息网、调度网、视频网分层分区、物理隔离，避免电磁干扰与网络安全风险；</p>
+<ul>
+<li><strong>独立分区原则</strong></li>
+</ul>
+<p>每个储能单元、每个支路独立组网、独立调度，故障可快速隔离，不影响其他单元正常运行；</p>
+<ul>
+<li><strong>并网合规原则</strong></li>
+</ul>
+<p>调度组网必须严格遵循电网要求，采用标准规约，满足电力监控系统安全防护规定；</p>
+<ul>
+<li><strong>抗干扰原则</strong></li>
+</ul>
+<p>强弱电严格分开敷设，通讯线缆采用屏蔽型，做好接地、浪涌防护，避免强电磁干扰导致的信号失真、误动作；</p>
+<ul>
+<li><strong>可扩展原则</strong></li>
+</ul>
+<p>所有链路预留端口、纤芯、带宽，方便后期运维、设备更换与容量扩容。</p>
+<h2>四、总结</h2>
+<p>好的组网方案，是一次动力组网与二次通讯组网的完美结合 —— 既要让电能的 “主动脉” 畅通无阻，实现能量的双向平稳流动；也要让控制的 “神经网络” 灵敏可靠，实现毫秒级的采集、控制与保护。</p>
+<p>---</p>
+<p>欢迎关注、点赞、收藏！知识星球技术资料每日持续更新中,欢迎加入深入学习了解更多储能专业知识，加入即可全部下载！（已超500+，每日更新10+）  </p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKCoqiboycv2KUQGGXhJQPHg2HZ7GJul4gWkVficgbxNqB3q6fCh4mFSl8iaXSrHNORhicmQ6SGiakav3FXApNhz9FfgXvLibzvD2OC6o/640?wx_fmt=png&amp;from=appmsg" /></p>
+<p><img alt="" src="https://mmbiz.qpic.cn/sz_mmbiz_png/wuyqV0OJIKAqUY0Qx8eicvMxqg9F9b5IHNVkCgckJvxxUNlznlsqCnGB53kPG7Z8zAVbS9ObhSr7GNkZBfP4HyoS2wAlOpyLsay8z6AnKTXk/640?wx_fmt=png&amp;from=appmsg" /></p></article>
+  </main>
+</body>
+</html>
