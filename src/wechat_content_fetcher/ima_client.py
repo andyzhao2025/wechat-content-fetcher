@@ -10,9 +10,10 @@ from wechat_content_fetcher.models import SourceArticle
 
 
 class IMAApiError(RuntimeError):
-    def __init__(self, code: int, message: str):
+    def __init__(self, code: int, message: str, partial_articles: list[SourceArticle] | None = None):
         super().__init__(message)
         self.code = code
+        self.partial_articles = list(partial_articles or [])
 
     @property
     def is_quota_exhausted(self) -> bool:
@@ -130,13 +131,18 @@ class IMAKnowledgeBaseClient:
     def list_folder_articles(self, knowledge_base_id: str, folder_id: str) -> list[SourceArticle]:
         articles: list[SourceArticle] = []
         visited_folders: set[str] = set()
-        self._collect_folder_articles(
-            knowledge_base_id=knowledge_base_id,
-            folder_id=folder_id,
-            articles=articles,
-            visited_folders=visited_folders,
-            path_segments=(),
-        )
+        try:
+            self._collect_folder_articles(
+                knowledge_base_id=knowledge_base_id,
+                folder_id=folder_id,
+                articles=articles,
+                visited_folders=visited_folders,
+                path_segments=(),
+            )
+        except IMAApiError as exc:
+            if exc.is_quota_exhausted:
+                raise IMAApiError(exc.code, str(exc), partial_articles=articles) from exc
+            raise
         return articles
 
     def _collect_folder_articles(

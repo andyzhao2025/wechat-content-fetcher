@@ -125,10 +125,45 @@ def run_ima_sync(
     for target in config.targets:
         previous_state = state.get(target.target_key)
         fingerprint_before[target.target_key] = (previous_state.last_successful_fingerprint if previous_state else "")
-        source_articles = dependencies.ima_client.list_folder_articles(
-            target.knowledge_base_id,
-            target.folder_id,
-        )
+        try:
+            source_articles = dependencies.ima_client.list_folder_articles(
+                target.knowledge_base_id,
+                target.folder_id,
+            )
+        except IMAApiError as exc:
+            if not exc.is_quota_exhausted:
+                raise
+
+            source_articles = list(exc.partial_articles)
+            quota_exhausted = True
+            targets_partial += 1
+            status = "partial"
+            error_summary = "IMA quota exhausted"
+            current_fingerprint = _compute_fingerprint(source_articles)
+            fingerprint_after[target.target_key] = current_fingerprint
+            articles_added[target.target_key] = []
+            articles_removed[target.target_key] = []
+            articles_fetched[target.target_key] = []
+            articles_failed[target.target_key] = []
+            pending_map[target.target_key] = list(previous_state.pending_article_ids) if previous_state else []
+            state[target.target_key] = _build_target_state(
+                target_key=target.target_key,
+                folder_slug=slugify(target.folder_name, fallback_prefix="folder"),
+                source_articles=source_articles,
+                rendered_articles=[],
+                pending_article_ids=list(previous_state.pending_article_ids) if previous_state else [],
+                sync_status="partial",
+                last_run_reason=reason,
+                last_run_status="partial",
+                last_seen_fingerprint=current_fingerprint,
+                last_successful_fingerprint=(previous_state.last_successful_fingerprint if previous_state else ""),
+                previous_state=previous_state,
+                last_error="IMA quota exhausted",
+                quota_exhausted=True,
+                full_rescan=full_rescan or reason == "monthly_audit",
+            )
+            continue
+
         current_fingerprint = _compute_fingerprint(source_articles)
         fingerprint_after[target.target_key] = current_fingerprint
 

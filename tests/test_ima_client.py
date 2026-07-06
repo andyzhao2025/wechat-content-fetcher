@@ -57,6 +57,7 @@ def test_ima_knowledge_base_client_raises_when_media_quota_is_exhausted():
         client.list_folder_articles("kb-1", "folder-1")
 
     assert exc_info.value.code == 220021
+    assert [article.article_id for article in exc_info.value.partial_articles] == []
 
 
 def test_ima_api_error_exposes_quota_exhaustion_helper():

@@ -32,6 +32,10 @@ class QuotaAwareIMAClient(FakeIMAClient):
 
         return IMAApiError(220021, self.quota_message)
 
+    def list_folder_articles(self, knowledge_base_id: str, folder_id: str):
+        self.calls.append((knowledge_base_id, folder_id))
+        raise self.quota_error()
+
 
 class FakeWechatFetcher:
     def __init__(self):
@@ -312,6 +316,36 @@ def test_run_ima_sync_records_partial_state_when_quota_is_exhausted_during_fetch
     target_state = state["kb-1:folder-1"]
     assert target_state.sync_status == "partial"
     assert target_state.pending_article_ids == ["media-2"]
+    assert target_state.last_quota_exhausted_at
+
+    run_log = load_run_log(config.state_file.with_name("state.runs.jsonl"))
+    assert run_log[-1].status == "partial"
+    assert run_log[-1].quota_exhausted is True
+
+
+def test_run_ima_sync_marks_run_partial_when_folder_listing_hits_quota_limit(tmp_path: Path):
+    config = build_config(tmp_path)
+    summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=QuotaAwareIMAClient(),
+            wechat_fetcher=FakeWechatFetcher(),
+        ),
+        reason="scheduled_daily",
+    )
+
+    assert summary.status == "partial"
+    assert summary.targets_processed == 1
+    assert summary.targets_partial == 1
+    assert summary.rendered_pages == 0
+    assert summary.error_summary == "IMA quota exhausted"
+    assert summary.quota_exhausted is True
+
+    state = load_state(config.state_file)
+    target_state = state["kb-1:folder-1"]
+    assert target_state.sync_status == "partial"
+    assert target_state.pending_article_ids == []
+    assert target_state.last_error == "IMA quota exhausted"
     assert target_state.last_quota_exhausted_at
 
     run_log = load_run_log(config.state_file.with_name("state.runs.jsonl"))
