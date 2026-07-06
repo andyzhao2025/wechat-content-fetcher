@@ -3,10 +3,18 @@ from __future__ import annotations
 from filecmp import cmpfiles
 from filecmp import dircmp
 from pathlib import Path
+import shutil
 
 
 def build_commit_message(date_text: str) -> str:
     return f"chore: daily sync {date_text}"
+
+
+def mirror_directory(source_dir: Path, destination_dir: Path) -> None:
+    destination_dir.parent.mkdir(parents=True, exist_ok=True)
+    if destination_dir.exists():
+        shutil.rmtree(destination_dir)
+    shutil.copytree(source_dir, destination_dir)
 
 
 def site_has_changes(previous_dir: Path, current_dir: Path) -> bool:

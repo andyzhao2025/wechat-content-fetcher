@@ -2,7 +2,7 @@ from pathlib import Path
 
 from wechat_content_fetcher.config import SiteConfig
 from wechat_content_fetcher.pages import prepare_github_pages_artifact
-from wechat_content_fetcher.publish import build_commit_message, site_has_changes
+from wechat_content_fetcher.publish import build_commit_message, mirror_directory, site_has_changes
 
 
 def test_prepare_github_pages_artifact_copies_site_and_adds_nojekyll(tmp_path: Path):
@@ -80,3 +80,32 @@ def test_build_commit_message_is_windows_safe():
 
     assert message == "chore: daily sync 2026-07-06"
     assert "$(" not in message
+
+
+def test_mirror_directory_replaces_existing_destination_tree(tmp_path: Path):
+    source_dir = tmp_path / "source"
+    destination_dir = tmp_path / "destination"
+    source_dir.mkdir()
+    destination_dir.mkdir()
+    (source_dir / "index.html").write_text("<html>fresh</html>", encoding="utf-8")
+    (source_dir / "nested").mkdir()
+    (source_dir / "nested" / "page.html").write_text("<html>nested</html>", encoding="utf-8")
+    (destination_dir / "stale.txt").write_text("old", encoding="utf-8")
+
+    mirror_directory(source_dir, destination_dir)
+
+    assert (destination_dir / "index.html").read_text(encoding="utf-8") == "<html>fresh</html>"
+    assert (destination_dir / "nested" / "page.html").read_text(encoding="utf-8") == "<html>nested</html>"
+    assert not (destination_dir / "stale.txt").exists()
+
+
+def test_mirror_directory_creates_missing_parent_directories(tmp_path: Path):
+    source_dir = tmp_path / "source"
+    destination_dir = tmp_path / "publish" / "site_output" / "_pages"
+    source_dir.mkdir()
+    (source_dir / "index.html").write_text("<html>ok</html>", encoding="utf-8")
+
+    mirror_directory(source_dir, destination_dir)
+
+    assert destination_dir.exists()
+    assert (destination_dir / "index.html").read_text(encoding="utf-8") == "<html>ok</html>"
