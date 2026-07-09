@@ -5,7 +5,7 @@ from pathlib import Path
 from wechat_content_fetcher.config import SiteConfig
 from wechat_content_fetcher.models import SourceArticle, SyncDependencies, TargetConfig, WechatArticle
 from wechat_content_fetcher.sync import run_ima_sync
-from wechat_content_fetcher.storage import load_run_log, load_state
+from wechat_content_fetcher.storage import load_run_log, load_state, save_state
 from wechat_content_fetcher.wechat_fetcher import WechatFetchError
 
 
@@ -35,6 +35,18 @@ class QuotaAwareIMAClient(FakeIMAClient):
     def list_folder_articles(self, knowledge_base_id: str, folder_id: str):
         self.calls.append((knowledge_base_id, folder_id))
         raise self.quota_error()
+
+
+class PartialQuotaAwareIMAClient(FakeIMAClient):
+    def __init__(self, partial_articles: list[SourceArticle], quota_message: str = "quota exhausted"):
+        super().__init__(articles=partial_articles)
+        self.quota_message = quota_message
+
+    def list_folder_articles(self, knowledge_base_id: str, folder_id: str):
+        from wechat_content_fetcher.ima_client import IMAApiError
+
+        self.calls.append((knowledge_base_id, folder_id))
+        raise IMAApiError(220021, self.quota_message, partial_articles=self.articles)
 
 
 class FakeWechatFetcher:
@@ -353,6 +365,103 @@ def test_run_ima_sync_marks_run_partial_when_folder_listing_hits_quota_limit(tmp
     assert run_log[-1].quota_exhausted is True
 
 
+def test_run_ima_sync_renders_partial_articles_when_listing_quota_hits_after_some_results(tmp_path: Path):
+    config = build_config(tmp_path)
+    partial_articles = [
+        SourceArticle(article_id="media-1", title="Alpha Article", source_url="https://mp.weixin.qq.com/s/alpha"),
+        SourceArticle(article_id="media-2", title="Beta Article", source_url="https://mp.weixin.qq.com/s/beta"),
+    ]
+    wechat_fetcher = FakeWechatFetcher()
+
+    summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=PartialQuotaAwareIMAClient(partial_articles),
+            wechat_fetcher=wechat_fetcher,
+        ),
+        reason="scheduled_daily",
+    )
+
+    assert summary.status == "partial"
+    assert summary.targets_partial == 1
+    assert summary.rendered_pages == 2
+    assert summary.updated_indexes == 1
+    assert summary.error_summary == "IMA quota exhausted"
+    assert summary.quota_exhausted is True
+    assert wechat_fetcher.urls == [
+        "https://mp.weixin.qq.com/s/alpha",
+        "https://mp.weixin.qq.com/s/beta",
+    ]
+
+    folder_dir = config.output_dir / "favorites"
+    assert (folder_dir / "title-alpha.html").exists()
+    assert (folder_dir / "title-beta.html").exists()
+    assert (folder_dir / "index.html").exists()
+
+    state = load_state(config.state_file)
+    target_state = state["kb-1:folder-1"]
+    assert target_state.sync_status == "partial"
+    assert target_state.article_pages["media-1"] == "favorites/title-alpha.html"
+    assert target_state.article_pages["media-2"] == "favorites/title-beta.html"
+    assert target_state.last_successful_fingerprint == ""
+    assert target_state.last_error == "IMA quota exhausted"
+
+    run_log = load_run_log(config.state_file.with_name("state.runs.jsonl"))
+    assert run_log[-1].status == "partial"
+    assert run_log[-1].articles_fetched["kb-1:folder-1"] == ["media-1", "media-2"]
+    assert run_log[-1].quota_exhausted is True
+
+
+def test_run_ima_sync_repairs_previously_poisoned_partial_listing_state(tmp_path: Path):
+    config = build_config(tmp_path)
+    partial_articles = [
+        SourceArticle(article_id="media-1", title="Alpha Article", source_url="https://mp.weixin.qq.com/s/alpha"),
+        SourceArticle(article_id="media-2", title="Beta Article", source_url="https://mp.weixin.qq.com/s/beta"),
+    ]
+    from wechat_content_fetcher.models import TargetSyncState
+
+    save_state(
+        config.state_file,
+        {
+            "kb-1:folder-1": TargetSyncState(
+                target_key="kb-1:folder-1",
+                sync_status="partial",
+                known_article_ids=[article.article_id for article in partial_articles],
+                pending_article_ids=[],
+                article_pages={},
+                article_groups={},
+                last_seen_fingerprint="partial-fingerprint",
+                last_successful_fingerprint="",
+                last_run_reason="scheduled_daily",
+                last_run_status="partial",
+                last_error="IMA quota exhausted",
+            )
+        },
+    )
+    wechat_fetcher = FakeWechatFetcher()
+
+    summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=PartialQuotaAwareIMAClient(partial_articles),
+            wechat_fetcher=wechat_fetcher,
+        ),
+        reason="scheduled_daily",
+    )
+
+    assert summary.status == "partial"
+    assert summary.rendered_pages == 2
+    assert wechat_fetcher.urls == [
+        "https://mp.weixin.qq.com/s/alpha",
+        "https://mp.weixin.qq.com/s/beta",
+    ]
+
+    state = load_state(config.state_file)
+    target_state = state["kb-1:folder-1"]
+    assert target_state.article_pages["media-1"] == "favorites/title-alpha.html"
+    assert target_state.article_pages["media-2"] == "favorites/title-beta.html"
+
+
 def test_run_ima_sync_resumes_pending_articles_on_next_run(tmp_path: Path):
     config = build_config(tmp_path)
     partial_summary = run_ima_sync(
@@ -377,6 +486,93 @@ def test_run_ima_sync_resumes_pending_articles_on_next_run(tmp_path: Path):
 
     assert recovery_summary.status == "success"
     assert "https://mp.weixin.qq.com/s/beta" in recovery_fetcher.urls
+
+    state = load_state(config.state_file)
+    target_state = state["kb-1:folder-1"]
+    assert target_state.sync_status == "complete"
+    assert target_state.pending_article_ids == []
+
+
+def test_run_ima_sync_scheduled_daily_prioritizes_existing_pending_backlog(tmp_path: Path):
+    config = build_config(tmp_path)
+    partial_summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=FakeIMAClient(),
+            wechat_fetcher=QuotaFailingWechatFetcher("beta"),
+        ),
+        reason="scheduled_daily",
+    )
+    assert partial_summary.status == "partial"
+
+    backlog_plus_new_articles = [
+        SourceArticle(article_id="media-1", title="Alpha Article", source_url="https://mp.weixin.qq.com/s/alpha"),
+        SourceArticle(article_id="media-2", title="Beta Article", source_url="https://mp.weixin.qq.com/s/beta"),
+        SourceArticle(article_id="media-3", title="Gamma Article", source_url="https://mp.weixin.qq.com/s/gamma"),
+    ]
+    recovery_fetcher = FakeWechatFetcher()
+    recovery_summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=FakeIMAClient(articles=backlog_plus_new_articles),
+            wechat_fetcher=recovery_fetcher,
+        ),
+        reason="scheduled_daily",
+    )
+
+    assert recovery_summary.status == "partial"
+    assert recovery_fetcher.urls == ["https://mp.weixin.qq.com/s/beta"]
+
+    state = load_state(config.state_file)
+    target_state = state["kb-1:folder-1"]
+    assert target_state.sync_status == "partial"
+    assert target_state.pending_article_ids == ["media-3"]
+    assert "media-3" in target_state.known_article_ids
+
+
+def test_run_ima_sync_fetches_deferred_new_articles_after_backlog_clears(tmp_path: Path):
+    config = build_config(tmp_path)
+    first_run_articles = [
+        SourceArticle(article_id="media-1", title="Alpha Article", source_url="https://mp.weixin.qq.com/s/alpha"),
+        SourceArticle(article_id="media-2", title="Beta Article", source_url="https://mp.weixin.qq.com/s/beta"),
+    ]
+    later_articles = [
+        SourceArticle(article_id="media-1", title="Alpha Article", source_url="https://mp.weixin.qq.com/s/alpha"),
+        SourceArticle(article_id="media-2", title="Beta Article", source_url="https://mp.weixin.qq.com/s/beta"),
+        SourceArticle(article_id="media-3", title="Gamma Article", source_url="https://mp.weixin.qq.com/s/gamma"),
+    ]
+    first_summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=FakeIMAClient(articles=first_run_articles),
+            wechat_fetcher=QuotaFailingWechatFetcher("beta"),
+        ),
+        reason="scheduled_daily",
+    )
+    assert first_summary.status == "partial"
+
+    second_summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=FakeIMAClient(articles=later_articles),
+            wechat_fetcher=FakeWechatFetcher(),
+        ),
+        reason="scheduled_daily",
+    )
+    assert second_summary.status == "partial"
+
+    final_fetcher = FakeWechatFetcher()
+    final_summary = run_ima_sync(
+        config,
+        dependencies=SyncDependencies(
+            ima_client=FakeIMAClient(articles=later_articles),
+            wechat_fetcher=final_fetcher,
+        ),
+        reason="scheduled_daily",
+    )
+
+    assert final_summary.status == "success"
+    assert final_fetcher.urls == ["https://mp.weixin.qq.com/s/gamma"]
 
     state = load_state(config.state_file)
     target_state = state["kb-1:folder-1"]

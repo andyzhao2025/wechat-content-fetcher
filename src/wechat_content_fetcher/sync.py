@@ -51,6 +51,12 @@ class TargetRenderResult:
     quota_exhausted: bool
 
 
+@dataclass(frozen=True)
+class FetchPlan:
+    active_ids: list[str]
+    deferred_ids: list[str]
+
+
 def run_fixture_sync(config: SiteConfig) -> SyncSummary:
     fixture_articles = build_fixture_articles()
     state = load_state(config.state_file)
@@ -125,6 +131,7 @@ def run_ima_sync(
     for target in config.targets:
         previous_state = state.get(target.target_key)
         fingerprint_before[target.target_key] = (previous_state.last_successful_fingerprint if previous_state else "")
+        listing_quota_exhausted = False
         try:
             source_articles = dependencies.ima_client.list_folder_articles(
                 target.knowledge_base_id,
@@ -136,38 +143,16 @@ def run_ima_sync(
 
             source_articles = list(exc.partial_articles)
             quota_exhausted = True
-            targets_partial += 1
             status = "partial"
             error_summary = "IMA quota exhausted"
+            listing_quota_exhausted = True
             current_fingerprint = _compute_fingerprint(source_articles)
             fingerprint_after[target.target_key] = current_fingerprint
-            articles_added[target.target_key] = []
-            articles_removed[target.target_key] = []
-            articles_fetched[target.target_key] = []
-            articles_failed[target.target_key] = []
-            pending_map[target.target_key] = list(previous_state.pending_article_ids) if previous_state else []
-            state[target.target_key] = _build_target_state(
-                target_key=target.target_key,
-                folder_slug=slugify(target.folder_name, fallback_prefix="folder"),
-                source_articles=source_articles,
-                rendered_articles=[],
-                pending_article_ids=list(previous_state.pending_article_ids) if previous_state else [],
-                sync_status="partial",
-                last_run_reason=reason,
-                last_run_status="partial",
-                last_seen_fingerprint=current_fingerprint,
-                last_successful_fingerprint=(previous_state.last_successful_fingerprint if previous_state else ""),
-                previous_state=previous_state,
-                last_error="IMA quota exhausted",
-                quota_exhausted=True,
-                full_rescan=full_rescan or reason == "monthly_audit",
-            )
-            continue
 
         current_fingerprint = _compute_fingerprint(source_articles)
         fingerprint_after[target.target_key] = current_fingerprint
 
-        if not source_articles and previous_state is not None:
+        if not source_articles and previous_state is not None and not listing_quota_exhausted:
             targets_skipped += 1
             articles_added[target.target_key] = []
             articles_removed[target.target_key] = []
@@ -198,8 +183,14 @@ def run_ima_sync(
             pending_map[target.target_key] = []
             continue
 
-        queue_ids = _build_fetch_queue(previous_state, source_articles, reason=reason, force=force, full_rescan=full_rescan)
-        queued_articles = [article for article in source_articles if article.article_id in queue_ids]
+        fetch_plan = _build_fetch_plan(
+            previous_state,
+            source_articles,
+            reason=reason,
+            force=force,
+            full_rescan=full_rescan,
+        )
+        queued_articles = [article for article in source_articles if article.article_id in fetch_plan.active_ids]
 
         result = _render_target(
             config=config,
@@ -212,30 +203,27 @@ def run_ima_sync(
         updated_indexes += result.updated_indexes
         articles_fetched[target.target_key] = [article.article_id for article in result.rendered_articles]
         articles_failed[target.target_key] = list(result.failed_article_ids)
-        pending_map[target.target_key] = list(result.pending_article_ids)
-
-        if result.quota_exhausted:
-            quota_exhausted = True
-            targets_partial += 1
-            status = "partial"
-            if not error_summary:
-                error_summary = "IMA quota exhausted"
-        elif result.status == "partial":
-            targets_partial += 1
-            if status != "partial":
-                status = "partial"
-
         merged_state = _merge_target_state(
             previous_state=previous_state,
             target_key=target.target_key,
             folder_slug=slugify(target.folder_name, fallback_prefix="folder"),
             source_articles=source_articles,
             result=result,
+            deferred_article_ids=fetch_plan.deferred_ids,
             reason=reason,
             current_fingerprint=current_fingerprint,
             full_rescan=full_rescan,
+            listing_quota_exhausted=listing_quota_exhausted,
         )
         state[target.target_key] = merged_state
+        pending_map[target.target_key] = list(merged_state.pending_article_ids)
+        if merged_state.sync_status == "partial":
+            targets_partial += 1
+            status = "partial"
+        if result.quota_exhausted or listing_quota_exhausted:
+            quota_exhausted = True
+            if not error_summary:
+                error_summary = "IMA quota exhausted"
         _write_bundles_if_enabled(config, target, result, previous_state)
 
     save_state(config.state_file, state)
@@ -477,23 +465,44 @@ def _compute_fingerprint(source_articles: list[SourceArticle]) -> str:
     return sha256(normalized.encode("utf-8")).hexdigest()
 
 
-def _build_fetch_queue(
+def _build_fetch_plan(
     previous_state: TargetSyncState | None,
     source_articles: list[SourceArticle],
     reason: str,
     force: bool,
     full_rescan: bool,
-) -> list[str]:
+) -> FetchPlan:
     if full_rescan or reason == "monthly_audit" or force or previous_state is None:
-        return [article.article_id for article in source_articles]
+        return FetchPlan(
+            active_ids=[article.article_id for article in source_articles],
+            deferred_ids=[],
+        )
 
     delta = compute_folder_delta(previous_state.as_folder_snapshot(), [article.article_id for article in source_articles])
-    queue = list(previous_state.pending_article_ids) + list(delta.added)
     source_group_map = {article.article_id: article.group_name for article in source_articles}
+    regrouped_ids: list[str] = []
     for article_id in delta.unchanged:
         if source_group_map.get(article_id, "") != previous_state.article_groups.get(article_id, ""):
-            queue.append(article_id)
-    return _dedupe_list(queue)
+            regrouped_ids.append(article_id)
+
+    current_ids = {article.article_id for article in source_articles}
+    missing_page_ids = [
+        article.article_id
+        for article in source_articles
+        if article.article_id in previous_state.known_article_ids and article.article_id not in previous_state.article_pages
+    ]
+    surviving_pending = [article_id for article_id in previous_state.pending_article_ids if article_id in current_ids]
+    if reason == "scheduled_daily" and surviving_pending:
+        return FetchPlan(
+            active_ids=_dedupe_list(surviving_pending + missing_page_ids),
+            deferred_ids=_dedupe_list(list(delta.added) + regrouped_ids),
+        )
+
+    queue = list(previous_state.pending_article_ids) + missing_page_ids + list(delta.added) + regrouped_ids
+    return FetchPlan(
+        active_ids=_dedupe_list(queue),
+        deferred_ids=[],
+    )
 
 
 def _build_target_state(
@@ -544,25 +553,29 @@ def _merge_target_state(
     folder_slug: str,
     source_articles: list[SourceArticle],
     result: TargetRenderResult,
+    deferred_article_ids: list[str],
     reason: str,
     current_fingerprint: str,
     full_rescan: bool,
+    listing_quota_exhausted: bool = False,
 ) -> TargetSyncState:
-    sync_status = "complete" if not result.pending_article_ids else "partial"
+    pending_article_ids = _dedupe_list(list(result.pending_article_ids) + list(deferred_article_ids))
+    sync_status = "complete" if not pending_article_ids and not listing_quota_exhausted else "partial"
+    last_run_status = "partial" if sync_status == "partial" else result.status
     return _build_target_state(
         target_key=target_key,
         folder_slug=folder_slug,
         source_articles=source_articles,
         rendered_articles=result.rendered_articles,
-        pending_article_ids=result.pending_article_ids,
+        pending_article_ids=pending_article_ids,
         sync_status=sync_status,
         last_run_reason=reason,
-        last_run_status=result.status,
+        last_run_status=last_run_status,
         last_seen_fingerprint=current_fingerprint,
         last_successful_fingerprint=current_fingerprint if sync_status == "complete" else (previous_state.last_successful_fingerprint if previous_state else ""),
         previous_state=previous_state,
-        last_error="IMA quota exhausted" if result.quota_exhausted else "",
-        quota_exhausted=result.quota_exhausted,
+        last_error="IMA quota exhausted" if (result.quota_exhausted or listing_quota_exhausted) else "",
+        quota_exhausted=(result.quota_exhausted or listing_quota_exhausted),
         full_rescan=full_rescan or reason == "monthly_audit",
     )
 
