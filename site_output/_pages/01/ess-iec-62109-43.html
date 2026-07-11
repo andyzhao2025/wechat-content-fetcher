@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESS·实战｜从IEC 62109报告看华为逆变器如何通过43项故障测试</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/e4X0O90jyvl56R559ptwFQ">原文链接</a></p>
+      <h1>ESS·实战｜从IEC 62109报告看华为逆变器如何通过43项故障测试</h1>
+      <p>标准阁主陈工</p>
+      <time></time>
+      <img src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/4fc6b4d551c6c0ab.jpg" alt="ESS·实战｜从IEC 62109报告看华为逆变器如何通过43项故障测试 cover">
+    </header>
+    <article><p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/9b76d8496ee6cd2b.jpg" /></p>
+<p><strong>这几天在了解微电网认证的海外标准，朋友也分享了 一份2019年的逆变器测试报告，IEC 62109-1:2010</strong> 目前仍是现行有效版本</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/316739e6050c54c4.png" /></p>
+<h2>为什么这份报告值得逐页看</h2>
+<p>SÜD上海实验室收到一台84kg的逆变器。</p>
+<p>15天后，报告签发，74页，覆盖IEC 62109-1:2010全部条款，从通用测试要求到43项单一故障条件测试，verdict全部为P。</p>
+<p>这不是一份"抽检合格"的报告。它回答了一个问题：当逆变器内部发生<strong>任何单一元器件故障</strong>时，设备会不会变成危险源？</p>
+<p>受测对象：SUN2000-175KTL，额定功率175kW。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/b496ec146515b445.png" /></p>
+<h2>IEC 62109-1的测试逻辑：先正常，再故障，再极端</h2>
+<p>标准第4章的测试顺序是固定的，不能跳：</p>
+<p>Clause 4.3 热测试 → Clause 4.4 单一故障测试 → Clause 4.5 湿度预处理 → Clause 4.6 反灌电压保护 → Clause 4.7 电气额定值测试</p>
+<p>华为这台逆变器的热测试做了<strong>四组工况</strong>，每组持续410-425分钟（约7小时）：</p>
+<p>|工况 |PV输入电压|AC输出电压| 输出功率  |环境温度|    测试目的    |
+|:--|:-----|:-----|:------|:---|:-----------|
+| 1 | 880V | 720V |171.1kW|40°C|最低满载MPP电压，壁挂|
+| 2 | 880V | 880V |177.2kW|40°C|最低满载MPP电压，平躺|
+| 3 |1300V | 720V |140.2kW|40°C|最高满载MPP电压，平躺|
+| 4 | 880V | 720V |168.3kW|40°C|验证最大直流/交流电流 |</p>
+<p>数据来源：Report Page 55-56, Table 4.3</p>
+<p>关键发现：</p>
+<p>IGBT模块（Phase A）最高温度88.3°C，限值130°C，裕度32%。电感线圈最高118.3°C，限值150°C，裕度21%。这意味着即使在40°C环境温度下满载运行7小时，关键器件温度仍在安全区。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/afd0569dcbaf99e2.png" /></p>
+<h2>43项单一故障测试，不是14项</h2>
+<p>报告Page 64-66的Table 4.4列出了<strong>43项具体故障测试</strong>，远超标准Clause 4.4.4列出的14项通用类别。华为对每一类故障都拆解到了具体元器件。</p>
+<h3>表1：故障测试分类与核心结果</h3>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/7755d153e1051d82.jpg" /></p>
+<p>数据来源：Report Page 64-66, Table 4.4</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/fbba626e0ebc2e13.png" /></p>
+<h2>五个值得细看的测试细节</h2>
+<h3>4.1 输出短路：immediately是关键词</h3>
+<p>测试条件：L1-L2短路，1080Vdc/800Vac，10分钟。</p>
+<p>结果："PV inverter disconnected from grid <strong>immediately</strong>. No components damage, no hazard."</p>
+<p>不是"5秒后脱网"，不是"温度升高后保护"，是immediately。这背后是输出继电器+IGBT驱动保护的硬件联动，不是软件延时。</p>
+<h3>4.2 直流反接：新手安装的保护网</h3>
+<p>测试条件：DC+和DC-反接。</p>
+<p>结果："PV inverter could not start up. AC relays in open state. indicate String Reversed Fault. No components damage, no hazard."</p>
+<p>逆变器拒绝启动，交流继电器保持断开，同时上报"组串反接故障"。这意味着即使安装人员接反了极性，设备不会上电，不会损坏，也不会向电网反送电。</p>
+<h3>4.3 冷却系统故障：风扇全锁死，温度还能扛住吗</h3>
+<p>Clause 4.4.4.8要求模拟冷却系统失效。华为做了四组：</p>
+<ul>
+<li>
+<p>左侧内部风扇锁死 @40°C（Lie down）</p>
+</li>
+<li>
+<p>右侧内部风扇锁死 @40°C（Lie down）</p>
+</li>
+<li>
+<p>全部外部风扇锁死 @40°C（Lie down）</p>
+</li>
+<li>
+<p>单个外部风扇锁死 @40°C（Lie down）</p>
+</li>
+</ul>
+<p>结果：Page 57-58 Table 4.3显示，INV IGBT模块最高88.3°C（限值130°C），Boost电感线圈最高118.3°C（限值150°C）。全部在安全裕度内。</p>
+<p>这意味着即使风扇全部失效，逆变器也不会在10分钟内因过热而损坏。用户有足够时间收到故障报警并安排维护。</p>
+<h3>4.4 RCD检测电路故障：不是"有没有RCD"，而是"RCD坏了知不知道"</h3>
+<p>测试项16-20覆盖了RCD检测电路的5种单一故障：</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/cc4b05f1494fd351.jpg" /></p>
+<p>数据来源：Report Page 65-66</p>
+<p>5种故障中，4种导致逆变器拒启动并明确上报故障代码。这是Clause 4.4.4.15.1（残余电流监测容错性）的具体实现——RCD电路本身故障时，设备必须知道、必须停机、必须指示。</p>
+<h3>4.5 继电器控制故障：并网安全的最后一道门</h3>
+<p>测试项38-43覆盖继电器控制电路：</p>
+<ul>
+<li>
+<p>C339电容短路 → 拒启动，上报grid relay fault</p>
+</li>
+<li>
+<p>Q30/Q35三极管短路 → 拒启动</p>
+</li>
+<li>
+<p>R1090电阻开路 → 拒启动</p>
+</li>
+<li>
+<p>K12继电器触点开路/短路 → 拒启动，上报grid relay fault</p>
+</li>
+</ul>
+<p>这意味着即使继电器控制电路的任何一个元器件失效，逆变器都不会在继电器状态不确定的情况下并网。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/ed5e607b54958c50.png" /></p>
+<h2>绝缘距离：海拔4000m的硬指标</h2>
+<p>Page 68-73的Table 7.3.7是这份报告最技术密集的部分。华为175kW逆变器的关键绝缘数据：</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/9ac6b9e246b9c374.png" /></p>
+<p>数据来源：Report Page 70-72</p>
+<p>所有数据已按<strong>海拔4000m修正</strong>。如果你的逆变器只标了2000m，想进西藏、青海或南美安第斯山脉，绝缘距离需要重新设计。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/db0bd8edec2f3dbd.png" /></p>
+<h2>绝缘穿透距离：三层绝缘片+三重绝缘绕组</h2>
+<p>Page 73的Table 7.3.7 distance through insulation：</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/9303b308b15ffc95.jpg" /></p>
+<p>数据来源：Report Page 73</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/e1c75c9f5ac2f5fe.png" /></p>
+<h2>触摸电流：超过3.5mA的应对</h2>
+<p>Page 67-68的Table 7.3.6.3.7显示，最大触摸电流14.0mA，超过3.5mA限值。</p>
+<p>华为采取了Clause 7.3.6.3.7规定的措施a)：永久连接布线，且保护接地导体截面积至少S/2=25mm²。同时在外壳上提供了<strong>第二个保护接地端子</strong>（通过锁紧垫圈、螺母、隔离垫圈和UL认证环形端子连接）。</p>
+<p>这意味着安装时必须使用至少25mm²的接地线，且建议同时连接两个接地端子。用户手册中已明确说明。</p>
+<hr />
+<p>给你的工厂一个自检清单</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-473b926fdde273f57b3c86d5e010599d/f171cfc00512ee11.png" /></p>
+<p>关于62109：</p>
+<p><strong>澳大利亚/新西兰</strong>已率先行动：AS/NZS 62109.1:2026和AS/NZS 62109.2:2026已于2026年1月30日发布，为IEC 62109-1:2010和IEC 62109-2:2011的修改采用版。</p>
+<p><strong>未来趋势</strong>：ED2版本预计将强化与储能系统的兼容性要求、更新绝缘配合条款以适配更高电压等级（如1500V以上），并可能纳入网络安全相关引用。对于出口欧盟的厂商，需密切关注2026年ED2发布后的过渡窗口期。</p>
+<hr />
+<h2>本文参考文献：</h2>
+<ul>
+<li>
+<p>标准：IEC 62109-1:2010 (First Edition), IEC 62109-2:2011 (First Edition)</p>
+</li>
+<li>
+<p>检测机构：TÜV SÜD Certification and Testing (China) Co., Ltd. Shanghai Branch</p>
+</li>
+<li>
+<p>测试报告</p>
+</li>
+</ul></article>
+  </main>
+</body>
+</html>

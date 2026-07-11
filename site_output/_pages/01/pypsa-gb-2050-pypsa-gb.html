@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>【英国电力系统开源模型|PyPSA-GB】从真实电网到2050情景：PyPSA-GB如何支撑英国能源转型研究？</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/UUVtsht6Wag6_UWdPe15UA">原文链接</a></p>
+      <h1>【英国电力系统开源模型|PyPSA-GB】从真实电网到2050情景：PyPSA-GB如何支撑英国能源转型研究？</h1>
+      <p>智慧交通与能源</p>
+      <time></time>
+      <img src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/b37c6f422ab23003.jpg" alt="【英国电力系统开源模型|PyPSA-GB】从真实电网到2050情景：PyPSA-GB如何支撑英国能源转型研究？ cover">
+    </header>
+    <article><p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/f773fbd765c9afaf.png" /></p>
+<p><strong>点击蓝字｜关注我们</strong></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/ef8d16042136163f.png" /></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/3eba5989072fc4c3.png" /></p>
+<p><strong>温馨提示</strong></p>
+<p><strong>关注公众号</strong>，查看往期更多资讯</p>
+<p>联系小编：<strong>Fightingforall23</strong>（注明来意）</p>
+<p>详细内容，请点击本帖底部 <strong>阅读原文</strong></p>
+<p><strong>往期群聊</strong><strong>：</strong>回复本公众号<strong>：专刊，互助，岗位</strong> 等进入群聊</p>
+<p>公众号从未参与任何广告中介、文章代写、付费代码、文章走后门代发等活动，一切打着公众号名义的金钱和利益交易均为诈骗，请谨慎！</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/d06a958ca4df81cb.gif" /></p>
+<p><strong>【正文】</strong></p>
+<p>在能源系统研究中，<strong>“有没有一个可信、可复现、可扩展的系统级模型”</strong>，往往决定了一项工作的上限。<br />
+今天想和大家介绍一个近年来在欧洲能源系统研究中<strong>频繁被使用的开源模型</strong>——<strong>PyPSA-GB</strong>。</p>
+<p>它不仅是一个“能跑潮流、能做优化”的模型，更是一个<strong>面向能源转型的研究基础设施</strong>。</p>
+<hr />
+<hr />
+<h2>🔍 PyPSA-GB 是什么？</h2>
+<p><strong>PyPSA-GB</strong> 是一个基于 PyPSA（Python for Power System Analysis）的 <strong>英国电力系统开源模型</strong>，由爱丁堡大学能源系统研究团队长期维护。</p>
+<p>一句话概括：<br />
+👉 <strong>它把英国电力系统“从数据 → 网络 → 场景 → 优化”完整地搬进了 Python。</strong></p>
+<p>该模型覆盖了：</p>
+<ul>
+<li>
+<p>🇬🇧 <strong>真实的英国输电网络拓扑</strong></p>
+</li>
+<li>
+<p>⚡ <strong>多类型发电与储能技术</strong></p>
+</li>
+<li>
+<p>🕒 <strong>高时间分辨率运行模拟</strong></p>
+</li>
+<li>
+<p>📈 <strong>面向 2050 的未来情景分析</strong></p>
+</li>
+</ul>
+<p>模型文档和代码均完全开源，采用 <strong>MIT License</strong>，对科研工作者非常友好。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/0384345b992fce25.png" /></p>
+<hr />
+<hr />
+<h2>🧠 它解决的不是“算不算”，而是“怎么研究”</h2>
+<p>和很多“教学级”模型不同，PyPSA-GB 的设计目标非常明确：<br />
+<strong>服务于真实能源转型问题的定量研究。</strong></p>
+<h3>✨ 1️⃣ 多层级网络建模</h3>
+<p>模型同时提供三种尺度：</p>
+<ul>
+<li>
+<p>🧩 <strong>全网络模型</strong>（2000+ 母线，基于 ETYS）</p>
+</li>
+<li>
+<p>🔹 <strong>缩减模型</strong>（32 母线）</p>
+</li>
+<li>
+<p>🗺 <strong>区域模型</strong>（17 个 Zone）</p>
+</li>
+</ul>
+<p>👉 这让研究者可以在 <strong>计算效率 vs 物理精度</strong> 之间自由权衡。</p>
+<hr />
+<h3>⏱ 2️⃣ 高时间分辨率运行模拟</h3>
+<ul>
+<li>
+<p>支持 <strong>半小时 / 小时级</strong>时间步长</p>
+</li>
+<li>
+<p>可进行 <strong>年度级运行优化</strong></p>
+</li>
+</ul>
+<p>这对于研究 <strong>风电消纳、储能调度、系统灵活性</strong> 等问题非常关键。</p>
+<hr />
+<h3>📊 3️⃣ 数据来源高度“可追溯”</h3>
+<p>模型并不是“拍脑袋设参数”，而是系统性整合了英国官方数据源：</p>
+<ul>
+<li>
+<p>电力统计（DUKES）</p>
+</li>
+<li>
+<p>可再生能源项目数据库（REPD）</p>
+</li>
+<li>
+<p>国家能源系统运营方（NESO）的 <strong>Future Energy Scenarios</strong></p>
+</li>
+</ul>
+<p>👉 <strong>每一条数据都能追溯来源</strong>，非常适合论文审稿环境。</p>
+<hr />
+<hr />
+<h2>🧪 PyPSA-GB 常被用来研究什么？</h2>
+<p>从已发表文献来看，PyPSA-GB 常被用于：</p>
+<ul>
+<li>
+<p>⚡ <strong>电力系统安全性与可靠性分析</strong></p>
+</li>
+<li>
+<p>🌬 <strong>高比例风电下的系统调度</strong></p>
+</li>
+<li>
+<p>🔌 <strong>区位电价（LMP）影响评估</strong></p>
+</li>
+<li>
+<p>🔥 <strong>电-热-氢多能系统耦合</strong></p>
+</li>
+<li>
+<p>🧊 <strong>灵活负荷与需求响应机制</strong></p>
+</li>
+</ul>
+<p>不少研究已经发表在 <em>Applied Energy</em>、<em>Energy Policy</em>、<em>Energy Conversion and Management</em> 等主流期刊上。</p>
+<hr />
+<hr />
+<h2>🛠 对科研人员来说，它最大的价值是什么？</h2>
+<p>如果你做的是：</p>
+<ul>
+<li>
+<p>能源系统优化</p>
+</li>
+<li>
+<p>电力系统规划</p>
+</li>
+<li>
+<p>多能系统 / 氢能 / 电气化</p>
+</li>
+<li>
+<p>情景分析（Scenario-based study）</p>
+</li>
+</ul>
+<p>那么 PyPSA-GB 的核心价值在于三点：</p>
+<h3>✅ 可复现（Reproducible）</h3>
+<ul>
+<li>
+<p>Snakemake 工作流</p>
+</li>
+<li>
+<p>统一的数据-模型-求解流程</p>
+</li>
+</ul>
+<h3>✅ 可扩展（Extensible）</h3>
+<ul>
+<li>
+<p>Python 原生</p>
+</li>
+<li>
+<p>可无缝加入 <strong>氢能网络、热网、交通负荷</strong></p>
+</li>
+</ul>
+<h3>✅ 可对话（Community-driven）</h3>
+<ul>
+<li>
+<p>GitHub 持续维护</p>
+</li>
+<li>
+<p>文档、教程、示例齐全</p>
+</li>
+</ul>
+<hr />
+<hr />
+<h2>🚀 写在最后</h2>
+<p>在“模型越来越复杂、审稿越来越严格”的今天，<br />
+<strong>一个成熟的开源系统模型，往往比一个“从零写起的 toy model”更有科研生命力。</strong></p>
+<p>如果你正在寻找一个：</p>
+<ul>
+<li>
+<p>能支撑 <strong>顶刊研究</strong></p>
+</li>
+<li>
+<p>又方便 <strong>方法创新与扩展</strong></p>
+</li>
+<li>
+<p>同时 <strong>数据可信、代码透明</strong></p>
+</li>
+</ul>
+<p>👉 那么 <strong>PyPSA-GB 非常值得认真研究一次。</strong></p>
+<p>代码开源：https://pypsa-gb.readthedocs.io/en/latest/  </p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/9357d2bcb20b38b2.png" /></p>
+<p><strong>注</strong>：素材来源于网上公开开源内容。如有侵权，随时可删。本文编辑过程借助ChatGPT润色。如需了解更多内容，请访问（<strong>点击阅读原文</strong>）：https://pypsa-gb.readthedocs.io/en/latest/</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/34ec0a2ef5e20701.png" /></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/58345fa6cb69337c.gif" /></p>
+<p><strong>END</strong></p>
+<p><strong>扫码关注！</strong></p>
+<p><strong>一个智慧交通与能源前沿动态与科研资源平台</strong></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/a07cf822c33e6136.jpg" /></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/1f6f3e36dc9ab1e0.png" /></p>
+<p><strong>智慧交通与能源</strong></p>
+<p><strong>论文分享</strong> | <strong>期刊投稿</strong></p>
+<p><strong>科研汇报</strong> | <strong>学术招聘</strong></p>
+<p><strong><em>点亮在看，你最好看！</em></strong></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/5a843b75a0d5fbf0.png" /></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/b25717460ab33a6a.png" /></p>
+<p><strong>往期回顾</strong></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-9070eaff7d99835195cc0e44467200ae/b25717460ab33a6a.png" /></p>
+<p>1.<a href="http://mp.weixin.qq.com/s?__biz=MzI2OTIwMjU4Nw==&amp;mid=2649243309&amp;idx=1&amp;sn=eb03b3a732b5c6a3d852b750fd4ea057&amp;chksm=f2ff7b59c588f24fce7e60b7334c2b4554227bf26da9764fafedb56427b772d8a20c645441bb&amp;scene=21#wechat_redirect">【MESPO|2024招生】MESPO团队2024年博士及RA招生现状（更多请关注公众号）</a></p>
+<p>2.<a href="https://mp.weixin.qq.com/s?__biz=MzI2OTIwMjU4Nw==&amp;mid=2649257279&amp;idx=1&amp;sn=4ce639f7014393f9a163a9ae916cee3b&amp;scene=21#wechat_redirect">【TSG好文|船舶+天气航线】芬兰阿尔托大学 费志能，李正茂等：基于天气航线的多能船舶微电网运行方法：一种风险规避的随机优化方法</a>  </p>
+<p>3. <a href="https://mp.weixin.qq.com/s?__biz=MzI2OTIwMjU4Nw==&amp;mid=2649253577&amp;idx=1&amp;sn=beef97795badcce86131c92e0fb526a4&amp;scene=21#wechat_redirect">【群聊邀请|一网打尽】25年公众号最全群聊邀请，海量帮助+科研探讨+同行交流，等你来！广告勿入！</a></p>
+<p>4.<a href="http://mp.weixin.qq.com/s?__biz=MzI2OTIwMjU4Nw==&amp;mid=2649244706&amp;idx=1&amp;sn=6803d2a846a5f38c147176d2e0ecd9d4&amp;chksm=f2ff01d6c58888c07c24a40e53b671bbc3265eea151aa87c759022257eb8023d00566ea47453&amp;scene=21#wechat_redirect">【SCI征稿|影响因子6.4】2025年7月31！MDPI 六大期刊“采用新能源及其他设备实现智能电网灵活高效运行”专题征稿！</a></p>
+<p>5.<a href="http://mp.weixin.qq.com/s?__biz=MzI2OTIwMjU4Nw==&amp;mid=2649249177&amp;idx=1&amp;sn=088b62be6940c7acbf6f6f34fdb38589&amp;chksm=f2ff106dc588997b31be9d0e460d2f4f153154b2c4172f7a153068f76e1254ac28cee5dabaea&amp;scene=21#wechat_redirect">【团队介绍|芬兰MESPO】芬兰阿尔托大学李正茂教授“AI/优化+综合能源系统（冷热电氢水等）规划和运行”团队介绍+互助群聊邀请</a></p></article>
+  </main>
+</body>
+</html>

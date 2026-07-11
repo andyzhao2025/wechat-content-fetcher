@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>基于Icepak的断路器开关柜之散热仿真教程</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/pSit7E9BSNGwDgjNRBDcug">原文链接</a></p>
+      <h1>基于Icepak的断路器开关柜之散热仿真教程</h1>
+      <p>Jason结构热设计</p>
+      <time></time>
+      <img src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/4a3068ec751127b7.jpg" alt="基于Icepak的断路器开关柜之散热仿真教程 cover">
+    </header>
+    <article><h1><strong>一、</strong><strong>设计目标</strong></h1>
+<p>对于断路器开关柜类产品，器件和铜排运行大电流，发热量巨大，器件工作温度高，需通过热仿真进行评估，并基于仿真结果优化设计方案，保证产品设计及运行可靠性。</p>
+<p>断路器柜外部环境温度为+45℃，采用强制风冷散热方案，保证柜内空气平均温度不超过+55℃，实际运行环境有可能出现异常高温现象，故在设计时需要控制柜内温度留有一定的设计余量以应对异常高温现象。</p>
+<h1><strong>二、热仿真</strong><strong>边界条件</strong></h1>
+<p>断路器柜热设计边界条件，尺寸、发热功率、温度等参数，如下表所示：</p>
+<p>表1 断路器柜热设计边界</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/9af9de2732bf893e.png" /></p>
+<p>散热风扇，PQ曲线如下：</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/8fab557380315dc6.png" /></p>
+<h1><strong>三、</strong><strong>强制</strong><strong>风冷</strong><strong>机柜</strong><strong>热</strong><strong>设计</strong></h1>
+<h2><strong>3.1 风机</strong><strong>选型</strong></h2>
+<p>根据电气输入柜内总损耗961.38W，环境温度45℃，出口空气温升不超过5℃，则理论计算总风量需求≮577m³/h。通过系统风扇鼓风的方式，将机柜内产生的热量转移至机柜之外，系统风扇、出风口位置如图1所示。其中，出风口共有3个，其余两个分别位于图示出口的背面和底面。断路器柜内散热路径如图2所示。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/212e4d3f354f5022.png" /></p>
+<p>图2 机柜内空气流动方向</p>
+<h2><strong>3.2 强制风冷散热仿真</strong></h2>
+<p>根据仿真结果，确定系统风扇的工作点为：风量666m<sup style="font-family: 宋体;font-size: 11pt;"><font face="Times New Roman"><span leaf="" style="font-family: 宋体;font-size: 11pt;"><span style="font-size: 18px;" textstyle="">3</span></span></font></sup>/h，工作压损160Pa。断路器柜内空气流动轨迹仿真结果如图3所示。增加挡风板后，气流组织在断路器柜内无流动死角。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/bf3ced9af7190052.png" /></p>
+<p>图3  断路器柜内空气流动轨迹</p>
+<p>Z-1、Z-2两个截面上（截面位置如图4所示），空气流动轨迹如图5-8所示。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/ad62f855d04024de.png" /></p>
+<p>图4 Z-1、Z-2截面位置示意图</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/f6f1540d6985f0bb.png" /></p>
+<p>图5 Z-1截面上空气流动轨迹</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/6bedf63befd96cca.png" /></p>
+<p>图6 Z-1截面上空气速度云图</p>
+<p>|   |
+|---|</p>
+<p>|
+|</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/7b1a450aae21eb4f.png" /></p>
+<p>图7 Z-2截面上空气流动轨迹</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/a479ed56053e2e03.png" /></p>
+<p>图8 Z-2截面上空气速度云图</p>
+<p>铜排温度云图如图9所示。其中，铜排表面最高温度为92.7℃。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/66d9781e74e3852d.png" /></p>
+<p>图9 排温度云图</p>
+<p>X-1、Y-1截面上（截面位置如图10、图12所示），元件的温度云图如图11、图13所示。其中，在此截面上铜排内部的最高温度为92.4℃。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/8dc03b4d48d1988f.png" /></p>
+<p>图10 X-1截面位置示意图</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/0b57d011a4091a78.png" /></p>
+<p>图11 X-1截面上，断路器、铜排温度云图</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/5e1164a1c8cc41f0.png" /></p>
+<p>图12 Y-1截面位置示意图</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/24f9171065f40282.png" /></p>
+<p>图13Y-1截面上，铜排温度云图</p>
+<p>断路器柜三个排风口空气温度云图如图12-14所示。出口空气最低温度为46.8℃，最高温度为50.1℃。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/59f1fd1ad9a7cfdf.png" /></p>
+<p>图12 百叶窗出风口-1空气温度云图</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/2a22865440e6c0c7.png" /></p>
+<p>图13 百叶窗出风口-2空气温度云图</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/b458fff1d1031f9a.png" /></p>
+<p>图14 钣金百叶窗出风口空气温度云图</p>
+<h2><strong>4 结论</strong></h2>
+<p>根据上述仿真结果，可得出如下结论：</p>
+<p>a. 柜内空气流动无死角，整机流速分配合理；</p>
+<p>b. 柜外环温为45℃时，出风口平均温度为48.9℃，温升3.9℃，满足温升的设计要求；</p>
+<p>c. 铜排内部最高温度为92.4℃，满足不高于105℃的设计要求。</p>
+<p>综上，此散热方案能够满足断路器柜的散热需求。</p>
+<p>----------------------------END--------------------------------------</p>
+<p>声明：欢迎分享，请在评论区探讨交流，指正错误，并分享经验。本文为作者原创，著作权归作者所有。未经授权，禁止以任何形式转载或复制。</p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-e7bfa00c41641d8b0fd422fa1ae86d4f/41c0a4fdae451849.png" /></p></article>
+  </main>
+</body>
+</html>
