@@ -119,6 +119,41 @@ python run_fetcher.py --config config.ima.json --mode pages
 
 The generated `notebooklm-urls.txt` will then contain public GitHub Pages URLs.
 
+## Raspberry Pi / Linux Deployment
+
+For a Raspberry Pi OpenClaw host, make sure these runtime pieces exist:
+
+- Python virtualenv under the repo: `.venv`
+- `url-md` on `PATH` (for arm64, build from source with Cargo)
+- `ima_api.cjs` from the local `ima-skill`
+- IMA credentials under `~/.config/ima/client_id` and `~/.config/ima/api_key`
+- Node 22 binary from the local OpenClaw runtime
+
+The included Linux helper script wires those together:
+
+```bash
+scripts/nightly_sync.sh scheduled_daily
+scripts/nightly_sync.sh monthly_audit
+```
+
+The script does all of the following:
+
+1. exports proxy variables for the Pi environment
+2. exports `NODE_USE_ENV_PROXY=1` so the IMA bridge can call `fetch()` through the proxy
+3. points `WECHAT_FETCHER_NODE_BIN` at the OpenClaw Node 22 runtime
+4. runs IMA sync
+5. runs `pages` mode
+6. commits `site_output/_pages/` back to `main` only when publish output changed
+
+Recommended cron entries on the Pi:
+
+```cron
+10 2 * * * cd /home/andrey/.openclaw-ima/workspace/skills/wechat-content-fetcher && /bin/bash scripts/nightly_sync.sh scheduled_daily >> /home/andrey/.openclaw-ima/logs/wechat-content-fetcher-daily.log 2>&1
+20 3 1 * * cd /home/andrey/.openclaw-ima/workspace/skills/wechat-content-fetcher && /bin/bash scripts/nightly_sync.sh monthly_audit >> /home/andrey/.openclaw-ima/logs/wechat-content-fetcher-monthly.log 2>&1
+```
+
+If IMA daily quota is exhausted, the sync exits as `partial`. The script still publishes when indexes changed, but skips the publish commit when the quota block produced no page or index changes.
+
 ## Config Fields
 
 ```json
