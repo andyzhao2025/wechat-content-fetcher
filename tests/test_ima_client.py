@@ -25,6 +25,22 @@ def test_ima_api_runner_uses_explicit_node_heap_limit(monkeypatch):
     assert captured["command"][:2] == ["node", "--max-old-space-size=4096"]
 
 
+def test_ima_api_runner_uses_configured_node_binary(monkeypatch):
+    captured: dict[str, object] = {}
+
+    def fake_run(command, **kwargs):
+        captured["command"] = command
+        return subprocess.CompletedProcess(command, 0, stdout='{"code":0,"data":{}}', stderr="")
+
+    monkeypatch.setattr(subprocess, "run", fake_run)
+    monkeypatch.setenv("WECHAT_FETCHER_NODE_BIN", "/opt/openclaw/node")
+
+    runner = IMAApiRunner(Path("/tmp/ima_api.cjs"))
+    runner.call("openapi/wiki/v1/get_knowledge_list", {"limit": 1})
+
+    assert captured["command"][:2] == ["/opt/openclaw/node", "--max-old-space-size=4096"]
+
+
 class QuotaExceededRunner:
     def call(self, api_path: str, body: dict):
         if api_path == "openapi/wiki/v1/get_knowledge_list":

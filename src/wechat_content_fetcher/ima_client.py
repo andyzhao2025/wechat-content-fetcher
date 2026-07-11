@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
@@ -99,8 +100,9 @@ class IMAApiRunner:
         self.script_path = script_path
 
     def call(self, api_path: str, body: dict[str, Any]) -> str:
+        node_binary = os.environ.get("WECHAT_FETCHER_NODE_BIN", "node")
         command = [
-            "node",
+            node_binary,
             "--max-old-space-size=4096",
             str(self.script_path),
             api_path,
