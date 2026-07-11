@@ -44,6 +44,9 @@ echo "date: ${today}"
 echo "reason: ${reason}"
 
 cd "${repo}"
+echo "== sync repo =="
+git fetch origin
+git reset --hard origin/main
 . .venv/bin/activate
 
 echo "== ima sync =="
@@ -80,7 +83,7 @@ if [ ! -d "${pages_artifact_dir}" ]; then
 fi
 
 echo "== prepare publish worktree =="
-git worktree add --detach "${worktree_dir}" HEAD
+git worktree add --detach "${worktree_dir}" origin/main
 
 reset_directory "${staging_dir}"
 cp -a "${pages_artifact_dir}/." "${staging_dir}/"
