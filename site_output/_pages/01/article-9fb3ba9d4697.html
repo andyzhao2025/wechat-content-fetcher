@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>储能系统必须装浪涌保护器吗？装在哪？</title>
+</head>
+<body>
+  <main>
+    <header>
+      <p><a href="https://mp.weixin.qq.com/s/_luOluUKr48lUVLQL7ny8g">原文链接</a></p>
+      <h1>储能系统必须装浪涌保护器吗？装在哪？</h1>
+      <p>光伏和储能课代表</p>
+      <time></time>
+      <img src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-73da9cd4c16a25c646d3309564e169a3/55ab9082b9109a69.jpg" alt="储能系统必须装浪涌保护器吗？装在哪？ cover">
+    </header>
+    <article><p><strong>推荐：</strong><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3766581569205108740#wechat_redirect">储能技术</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3811315973213978627#wechat_redirect">光伏发电</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3785161150832902148#wechat_redirect">家庭储能</a></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-73da9cd4c16a25c646d3309564e169a3/79875d1d5896452d.png" /></p>
+<p>做储能项目、装户用/工商业储能，大家最关注电池、PCS、容量和收益，却很容易忽略一个不起眼但决定系统安全和使用寿命的小配件：浪涌保护器（SPD）。</p>
+<p>很多人抱着省钱的心态省略不装，最后遭遇雷击、电网扰动，出现PCS烧毁、BMS失联、电池告警停机等问题，维修成本远超省下的配件钱。今天就用工程实操经验，讲清楚浪涌保护器是什么、储能到底需不需要装、以及核心安装点位，看完避开所有防雷误区。</p>
+<p>一、浪涌保护器是什么？储能的“瞬时高压盾牌”</p>
+<p>通俗来说，浪涌保护器（俗称防雷器、电涌保护器），就是电气设备的瞬时过压保护装置。</p>
+<p>日常用电中，雷雨天气的雷电感应、电网合闸、大功率设备启停，都会产生瞬间的尖峰高压，这就是“电涌/浪涌”。这种高压持续时间极短，但冲击力极强，足以击穿精密电路板、烧毁设备模块。</p>
+<p>而浪涌保护器常态下处于绝缘状态，完全不影响储能系统正常运行。一旦检测到线路超标浪涌，会在纳秒级快速导通，把冲击电流导入大地泄放，同时将电压钳位在设备安全承受范围内，守住设备安全底线。</p>
+<p>工程上常用三级防护，分工明确：</p>
+<p>一级T1：抵御直击雷大电流，用作整体进线第一道防护；</p>
+<p>二级T2：最常用主力型号，拦截感应雷、电网操作浪涌；</p>
+<p>三级T3：精细防护，保护通讯、监控等弱电精密设备。</p>
+<p>二、储能系统能省掉SPD吗？答案：绝对不能</p>
+<p>不少小型储能项目为压缩成本省去浪涌保护，这是典型的“捡小便宜、吃大亏”。</p>
+<p>从规范层面：依据《建筑物防雷设计规范》《储能电站防雷接地技术要求》，户储、工商储、大型储能电站，交直流主回路、信号通讯回路，必须配置分级浪涌保护，这是项目验收、合规并网的硬性要求。</p>
+<p>从实际工况层面：储能系统多为750V\~1500V高压直流，设备多露天布置、线缆敷设距离长，极易感应雷电电压。而且电池模组、PCS变流器、BMS主板都是高精度电力电子器件，耐压余量极低，一次无防护的浪涌冲击，就会造成不可逆损坏，严重时还会引发电池热失控，滋生安全隐患。</p>
+<p>直白总结：SPD不是可选配件，是储能系统的标配安全装置，无论大小储能项目，都严禁省略。</p>
+<p>三、储能SPD精准安装点位</p>
+<p>很多项目不是没装，而是装错位置、装错型号，导致防护完全失效。三个核心安装位置，直接对照施工即可。</p>
+<ol>
+<li>交流并网侧：系统第一道防线</li>
+</ol>
+<p>安装位置：并网配电柜、箱变低压出线柜进线端</p>
+<p>选型建议：T1+T2复合型交流SPD，三相四线全极防护</p>
+<p>主要用于抵御电网侧雷电浪涌、合闸过电压，保护PCS交流端口和整套交流配电系统，隔绝外部电网带来的电压冲击。</p>
+<ol>
+<li>直流侧：储能核心防护（重中之重）</li>
+</ol>
+<p>直流回路是储能的核心，也是浪涌高发、损坏率最高的区域，分两处布设：</p>
+<p>①电池簇直流输出端：紧贴电池柜出线口安装，线缆长度超30米必须加装，防止浪涌倒灌损坏BMS采集板和电芯；</p>
+<p>② PCS直流输入端：绝大多数厂家将此处SPD纳入保修条件，缺失会直接脱保，可有效拦截直流线缆感应过压，保护变流器功率模块。</p>
+<p>关键提醒：直流回路必须用专用直流SPD，严禁交流、直流防雷器混用，否则会直接失效甚至引发故障。</p>
+<ol>
+<li>弱电信号侧：最容易被忽略的细节</li>
+</ol>
+<p>安装位置：BMS通讯线、485总线、以太网、环境传感器接线端</p>
+<p>雷电干扰不仅会冲击强电，还会干扰弱电信号，造成通讯乱码、电池压差误报、后台失联、系统无故停机。看似没有硬件烧毁，却会频繁影响储能正常运行，是运维高频问题源头。</p>
+<p>四、安装红线：装错等于白装，务必避开</p>
+<ol>
+<li>
+<p>接线短、直、粗：接地引线尽量控制在0.5米以内，不绕线、不迂回，保证浪涌电流快速泄放；</p>
+</li>
+<li>
+<p>整体等电位接地：电池架、机柜、PCS外壳统一接地，接地电阻控制在4Ω以内；</p>
+</li>
+<li>
+<p>多级防护匹配：一、二、三级SPD保留合理间距，做好能量配合，避免后级器件被击穿烧毁；</p>
+</li>
+<li>
+<p>配套保护齐全：SPD前端必须搭配熔断器或空开，器件老化短路时可及时断电，杜绝起火风险。</p>
+</li>
+</ol>
+<p>结语</p>
+<p>储能运维和安全，从来都不靠“运气”。浪涌保护器单价不高，却是性价比最高的防护手段。省去一个SPD，省下的是小钱；一旦遭遇浪涌冲击，面临的是设备报废、停机亏损、安全隐患三重损失。</p>
+<p>规范配置、精准安装浪涌保护器，既是满足并网验收的基本要求，也是守护储能系统长期稳定、安全运行的关键保障。</p>
+<p><strong>推荐：</strong><a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3766581569205108740#wechat_redirect">储能技术科普</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3812865494149496836#wechat_redirect">储能</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3811315973213978627#wechat_redirect">光伏发电</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3876756638878842888#wechat_redirect">光伏并网系统</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3804036679279378433#wechat_redirect">光伏</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3800654237478748174#wechat_redirect">锂离子电池</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3797823755363876869#wechat_redirect">储能结构设计</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3811281121852850178#wechat_redirect">光伏组串</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3797823755162550279#wechat_redirect">工商储能</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3803664477983932419#wechat_redirect">锂电池</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3796305084825010186#wechat_redirect">电池</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3785161150832902148#wechat_redirect">家庭储能</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3777478588245278723#wechat_redirect">储能案例分享</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3862045390698364937#wechat_redirect">分布式光伏发电系统</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3782405524092420101#wechat_redirect">逆变器</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3811281116584804352#wechat_redirect">太阳能电池板计算</a> <a href="https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk1NzUzODAwMw==&amp;action=getalbum&amp;album_id=3811281117373333509#wechat_redirect">太阳能板</a></p>
+<p><strong>END</strong></p>
+<hr />
+<p>免责声明：本文为本人基于多年从业经验独立创作的原创内容，部分公开数据借助工具辅助检索核对，内容仅供参考，不构成专业指导或实操依据。本号所用的部分网络素材如涉及作品版权问题，请联系小编删除，无任何商业用途！</p>
+<p><strong>温馨提示</strong></p>
+<p><strong>亲</strong><strong>爱的读者朋友，</strong>受公众号推送排序规则影响，建议将本号设为星标⭐️，这样每天就能自动收到推送啦！****</p>
+<p><img alt="手机-ok.png" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-73da9cd4c16a25c646d3309564e169a3/78cd7c79e4bd4f25.png" /></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-73da9cd4c16a25c646d3309564e169a3/de17003d1cdbb303.gif" /></p>
+<p><img alt="" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-73da9cd4c16a25c646d3309564e169a3/0078888b34b9f155.gif" title="undefined" /></p>
+<p><strong><img alt="二维码合并.png" src="../assets/wechatarticle-1447a9a45bff974bbf73bf04fdc1fd29-73da9cd4c16a25c646d3309564e169a3/500ce2cb5aa6d814.jpg" /></strong></p>
+<p><strong>☝</strong>关注公众号，持续分享行业干货！</p>
+<p>更多储能知识，欢迎点击[<strong><a href="https://mp.weixin.qq.com/mp/appmsgalbum?action=getalbum&amp;__biz=Mzk1NzUzODAwMw==&amp;scene=1&amp;album_id=3766581569205108740&amp;count=3#wechat_redirect">储能技术科普</a></strong>]查阅</p>
+<p><strong>储能技术交流，公众号对话框回复【</strong><strong>技术交流</strong><strong>】<br />
+和群友一起分享行业心得。</strong></p>
+<p><strong>收藏留存干货，持续跟随</strong><strong>储能总工</strong><strong>一起充电</strong><strong><img width="16" alt="640.gif" data-type="gif" class="rich_pages wxw-img" data-ratio="3" data-w="300" style="vertical-align: baseline;font-size: 14px;width: 16px;" data-width="16px" data-imgfileid="100006024" data-aistatus="1" src="https://mmbiz.qpic.cn/mmbiz_gif/wVK290D982ToRCpNFeoAxljpPF1QxicGve3Mdj3EIrPSyYgIFczJcvhKtkPUUGKFErnIJ8z5nFiaIXlqnoZXEzmA/640?wx_fmt=gif&amp;from=appmsg"></strong></p></article>
+  </main>
+</body>
+</html>

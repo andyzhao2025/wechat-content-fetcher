@@ -1,6 +1,154 @@
 {
   "target_key": "qlRg6iKAYt3T2XBkH-T7Wl72UbYdcLN3B_AzJl5AxEg=:folder_7402509031189406",
   "target_name": "01储能系统设计",
-  "generated_at": "2026-07-11T18:20:38.746452+00:00",
-  "groups": {}
+  "generated_at": "2026-07-16T18:15:43.989441+00:00",
+  "groups": {
+    "02 交流侧": {
+      "group_name": "02 交流侧",
+      "group_slug": "02",
+      "bundle_files": [
+        "02-part-001.html"
+      ],
+      "bundle_urls": [
+        "https://andyzhao2025.github.io/wechat-content-fetcher/notebooklm/01/02-part-001.html"
+      ],
+      "article_ids": [
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_473b926fdde273f57b3c86d5e010599d",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_849d1f77d8de0589dc3249ad67d2c905",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_90571b03dfe24c2d34c793d96d1b50c0",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_af89d76779a5a60729d93f3ed6366c74",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_b0533dc6b41ced378ce5ab942fd39b2c",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_c0868dc2d69439215c82c7a272d9985a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_d5f1ff56a1cda38d18b8ba2fd0a27e6a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_e006a1e1fa99a8590bffdb3bc4f1dbec",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_e1abf634ef2b9f1c59a4aafa48da1cf7",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_e3fc2e93f6c9e3e8194cc71e572bf639",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_f28b830130253287c520bbe2c8b71e0f"
+      ],
+      "article_count": 11,
+      "word_count": 16553
+    },
+    "03 应用场景": {
+      "group_name": "03 应用场景",
+      "group_slug": "03",
+      "bundle_files": [
+        "03-part-001.html",
+        "03-part-002.html"
+      ],
+      "bundle_urls": [
+        "https://andyzhao2025.github.io/wechat-content-fetcher/notebooklm/01/03-part-001.html",
+        "https://andyzhao2025.github.io/wechat-content-fetcher/notebooklm/01/03-part-002.html"
+      ],
+      "article_ids": [
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_0524dce402a5c7115d18a2bc633ab56f",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_10beccf5f7e7110ed597cb9d5831e47d",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_129ca37abbf34e84770160781890fcb3",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_1a49cc7893330596ffeb615651889a6a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_1fcb0687c218109d43ffa43f10d97bb0",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_2322013450a3ec55a832f91e1264af7e",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_26d6db096a1954f95c0dd373ef745a90",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_26f4d930fef5437eaaf0c47e5e5c308a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_2856e634679f5241c3d63fa87a6d4b50",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_29159e3b8c7b633c5cf8b857a0ed2be9",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_3012fc3b9ea0a9a8b6178dec7341e008",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_4348f39cd510588f24d3f87b3f07d1f8",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_44ebe7a04096c533c668913846722e67",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_470888440d773e298317713311f13af2",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_47baf590900019e54140e01e3473734e",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_4d16f3a8aca554a431a5a6e592406056",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_52db3ca3097cd471755e475014372f14",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_565ded4084aaf7e4a565c9e5d66fe9bb",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_5714b7192027d0c66c46d35e75c8a00b",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_6d2e43e1509b39753512af3c13917398",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_6d3c2ec9cf521f582e168cb68a647ded",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_7a85d7295963e693c15299bf53603d0f",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_7e98d9ead006eb06af75dc384584397e",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_7ff5d372fc6218a954ef171801e15bf7",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_8538de05fa270a6b34923afaba943639",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_8e2e9397a1bb59dbeb19d07feb7535ba",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_8ffb97cedb34830ea27c31c20ef6cd1d",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_91d72dfce1fc67fec16e90ac3201ee9f",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_93f6d3c9b40cb45cbc9817c0f9d6c387",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_9d9682e85354fdf1a3b88c90aaf99bbf",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_9f30b5aa282b1ae6368aab5c828c97ba",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_ace641a3b8c54c80880fb7b36912397e",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_adc9e5362b27578cff91437b5fe13bdd",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_ae1df58f96b62d0d19d59be9c894f9e5",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_b2a100b9272e0c1ca4c68f62e0c664a2",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_ba76ae32830f4cd666c58a9951f39191",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_bad2e3a74936b3cd7df207c6cc20c002",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_bea6e565fb2a7bbf99a61654978356c3",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_c0bc47499d26c6a0676f209bea955e3b",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_c150377b0f2ea840a8c9d8c4230de0b8",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_c82e0bed56b27720c31cea99eb3045ca",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_dcb77e51785cab8c8d07314a5f7e3c11",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_e99239d93fa5543cdd3fdd816911ef37",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_f048556866f6605f2bcfbc0d4b7d73e3",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_f382cc891bbd0493a052741e8389b7e0",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_f53f48ef6c7bc7a3c5def142cdf4f701",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_fd95ef36ccf103c57a206a86eacb36d5"
+      ],
+      "article_count": 47,
+      "word_count": 92977
+    },
+    "04 通用": {
+      "group_name": "04 通用",
+      "group_slug": "04",
+      "bundle_files": [
+        "04-part-001.html",
+        "04-part-002.html"
+      ],
+      "bundle_urls": [
+        "https://andyzhao2025.github.io/wechat-content-fetcher/notebooklm/01/04-part-001.html",
+        "https://andyzhao2025.github.io/wechat-content-fetcher/notebooklm/01/04-part-002.html"
+      ],
+      "article_ids": [
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_0e78b0005be9fadc97483f296697f226",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_11a1e1fff306a5062f816383aa875d6a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_1b95705e0ce674c72c21258cdd362421",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_201ee31966e976cf3251c78669fb0267",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_20224b61cc1e5ca5118666c663c59628",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_2775ed794d3bfe6b31cb15580c6a692c",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_30f6cc288f9342b3b412e284cd37a2bb",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_3731d987e1a180e35d9b73832aa855a2",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_391b953bc9fea1a49ed2e71a98877d04",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_3b17c8c20dbbe840f744150c5117da12",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_412a75c0cf85ed767fc22c721c255cee",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_4fbf0369f0c897c838eb7e7f54330802",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_5aa186b682379e9d8692a77fe65d2e00",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_602afd57879a52e9b63e7f442ea23988",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_60aefb2c6454f11f8e107a4b0d0e7a6f",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_676935e48ac7f98204a8abd7f6d785b8",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_6787f0595623641d9db9f4f72018208a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_6afc9499e54e76299023a5da0ec8997c",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_6eb136d576a36d5f3661123e8ef25335",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_7071536e0bed7884cf3d7d89550d24f9",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_7354e7bbb2b5ba199c1c5a179f19fb3e",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_73da9cd4c16a25c646d3309564e169a3",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_77b79eab4ac4a881ed5802aa37589082",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_812e3bc68edb424fd7b33d616df13afc",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_862abeffd7c577b9152f9a493e89fbf4",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_8cac82f857e5aae0ae3915d56b62abd3",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_903afc4aef19f7ec6dddec211922dc9b",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_9070eaff7d99835195cc0e44467200ae",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_9114d3535d11bee59ea747715fe8a48a",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_ad373adf28a7e3ba0bcaf5ef5b51cee0",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_af545cd2c4744ce4f1e9778a275f2b9f",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_b33abf0919eff40f435f84576aa1b06d",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_b9a66b7effa68c973a87e4aa73311d66",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_bb5e6527ff618c27f8adaea11b28936c",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_bf6d669f64029457367740b42820708d",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_ce759907f8458d0790e905a588a9a8ab",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_cebb915e433346156d59568d75ef3bdf",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_df994cee78b920b7fcbfaa36c00c18c1",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_e7bfa00c41641d8b0fd422fa1ae86d4f",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_f1b3411f0e810fc6d83c3b55b7ef0a60",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_f9b7b563d52206e287b61eca1693d182",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_fb5de03662da7734adf8bcc94eedcbb4",
+        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_fe4fbab3628c3cbe4d2d0ddcd9730126"
+      ],
+      "article_count": 43,
+      "word_count": 99344
+    }
+  }
 }
