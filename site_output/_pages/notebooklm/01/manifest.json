@@ -1,22 +1,6 @@
 {
   "target_key": "qlRg6iKAYt3T2XBkH-T7Wl72UbYdcLN3B_AzJl5AxEg=:folder_7402509031189406",
   "target_name": "01储能系统设计",
-  "generated_at": "2026-07-18T18:13:21.155340+00:00",
-  "groups": {
-    "02 交流侧": {
-      "group_name": "02 交流侧",
-      "group_slug": "02",
-      "bundle_files": [
-        "02-part-001.html"
-      ],
-      "bundle_urls": [
-        "https://andyzhao2025.github.io/wechat-content-fetcher/notebooklm/01/02-part-001.html"
-      ],
-      "article_ids": [
-        "wechatarticle_1447a9a45bff974bbf73bf04fdc1fd29_ffdbda5f2339494582cfb35027039b9e"
-      ],
-      "article_count": 1,
-      "word_count": 1296
-    }
-  }
+  "generated_at": "2026-07-19T18:13:19.854223+00:00",
+  "groups": {}
 }
